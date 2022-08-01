@@ -1,11 +1,11 @@
-uuid: 2b4f3cd8-499c-4e40-aeda-8f6ce8b9ab45
+uuid: 595244d7-6f13-4c85-a979-8e65e3c701e1
 langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: wFjZ2ZUHr_x1hTDlmlb6gA7sO_0hdvyA7QVNzcQInS8
-label: '28:9'
 id: '28_9'
+label: '28:9'
 description: ''
 aspect_ratio: '28:9'
 soft_limit_width: null

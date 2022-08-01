@@ -1,4 +1,4 @@
-uuid: ca1e7321-720e-4f98-9adc-a7ff721d765a
+uuid: cbc74f54-17a3-4327-b775-3147fd1fe4db
 langcode: en
 status: true
 dependencies:
@@ -20,6 +20,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  title: 1
   link_type: 17
+  title: 1
 field_type: link

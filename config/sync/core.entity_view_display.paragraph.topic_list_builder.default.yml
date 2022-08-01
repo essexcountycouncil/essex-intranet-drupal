@@ -1,4 +1,4 @@
-uuid: 5744b41e-4ca3-4cc3-8e59-a39d0a278757
+uuid: e17887c8-74ef-441f-9d16-8a8b6fcb1c0e
 langcode: en
 status: true
 dependencies:
@@ -17,26 +17,26 @@ bundle: topic_list_builder
 mode: default
 content:
   topic_list_header:
-    type: string
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    type: string
     region: content
   topic_list_links:
-    type: link_node_reference
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    type: link_node_reference
     region: content
   topic_list_term:
-    type: entity_reference_label
+    weight: 0
     label: hidden
     settings:
       link: false
     third_party_settings: {  }
-    weight: 0
+    type: entity_reference_label
     region: content
 hidden: {  }

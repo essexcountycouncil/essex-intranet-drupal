@@ -1,4 +1,4 @@
-uuid: 8efead84-369c-40e5-8402-86de29811496
+uuid: 6bbc4718-0351-4896-9201-094d74d5e375
 langcode: en
 status: true
 dependencies:
@@ -20,12 +20,12 @@ mode: search_result
 content:
   body:
     type: text_summary_or_trimmed
+    weight: 0
+    region: content
     label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 0
-    region: content
 hidden:
   content_moderation_control: true
   links: true

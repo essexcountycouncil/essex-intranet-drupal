@@ -1,4 +1,4 @@
-uuid: 53390022-2b03-4cef-9dd0-ed6ee6e5fdc9
+uuid: 746c837d-b417-40f3-9f09-e71a8b81e026
 langcode: en
 status: true
 dependencies:
@@ -23,21 +23,21 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:file'
-  handler_settings: {  }
-  file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'png gif jpg jpeg'
-  max_filesize: ''
-  max_resolution: ''
-  min_resolution: ''
   alt_field: true
   alt_field_required: true
   title_field: false
   title_field_required: false
+  max_resolution: ''
+  min_resolution: ''
   default_image:
     uuid: null
     alt: ''
     title: ''
     width: null
     height: null
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
 field_type: image

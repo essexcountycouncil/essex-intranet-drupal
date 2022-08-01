@@ -1,4 +1,4 @@
-uuid: 7b2df1e6-5e7d-4b08-9c1d-47fbb456930f
+uuid: 8f35d364-8e5a-41a6-bd9b-fd73d98b0e78
 langcode: en
 status: true
 dependencies:
@@ -13,9 +13,9 @@ id: 3_2_image
 label: '3:2 Image'
 image_style_mappings:
   -
-    image_mapping_type: image_style
-    image_mapping: large_3_2_2x
     breakpoint_id: localgov_media.bootstrap4_md_768px
     multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: large_3_2_2x
 breakpoint_group: localgov_media
 fallback_image_style: large_3_2_768x512

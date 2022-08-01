@@ -1,11 +1,11 @@
-uuid: 62b501a6-b688-452a-baca-233aba284ad0
+uuid: 70cef266-1824-4207-88e4-ff446befbd4d
 langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: deYYBttooAYkDLkqa35eU-VfGsLkYECnLG46xnvbUtc
-label: '7:3'
 id: '7_3'
+label: '7:3'
 description: ''
 aspect_ratio: '7:3'
 soft_limit_width: null

@@ -1,4 +1,4 @@
-uuid: 57acd6ec-cd10-4f36-b109-400b15c38412
+uuid: 4078cae1-9cfc-4266-b13b-2af1a6452c39
 langcode: en
 status: true
 dependencies:
@@ -12,8 +12,8 @@ entity_type: node
 type: string
 settings:
   max_length: 255
-  case_sensitive: false
   is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

@@ -1,4 +1,4 @@
-uuid: df925059-9cda-4882-980b-f0e0aedfcc7b
+uuid: 81155a87-ee98-441a-8a94-a2e83393d26c
 langcode: en
 status: true
 dependencies:
@@ -34,21 +34,21 @@ bundle: localgov_contact
 mode: default
 content:
   localgov_contact_address:
-    type: address_default
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    type: address_default
     region: content
   localgov_contact_email:
-    type: basic_string
+    weight: 9
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    type: basic_string
     region: content
   localgov_contact_facebook:
-    type: link
+    weight: 11
     label: hidden
     settings:
       trim_length: 80
@@ -57,18 +57,18 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 11
+    type: link
     region: content
   localgov_contact_heading:
-    type: string
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    type: string
     region: content
   localgov_contact_instagram:
-    type: link
+    weight: 12
     label: hidden
     settings:
       trim_length: 80
@@ -77,67 +77,67 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 12
+    type: link
     region: content
   localgov_contact_location:
-    type: geolocation_map
+    weight: 15
     label: hidden
     settings:
       set_marker: true
-      common_map: false
-      use_overridden_map_settings: false
       title: ''
       info_text: {  }
+      use_overridden_map_settings: false
+      common_map: false
       map_provider_id: google_maps
       map_provider_settings:
-        type: ROADMAP
-        zoom: 13
-        minZoom: 0
-        maxZoom: 18
-        rotateControl: false
         height: 400px
         width: 100%
-        gestureHandling: auto
+        type: ROADMAP
+        zoom: 13
+        maxZoom: 18
+        minZoom: 0
         mapTypeControl: 1
         streetViewControl: 1
         zoomControl: 1
         scrollwheel: 1
+        gestureHandling: auto
         draggable: 1
-        info_auto_display: 1
         style: ''
+        info_auto_display: 1
         marker_icon_path: ''
         disableAutoPan: 1
+        rotateControl: false
         fullscreenControl: 0
         preferScrollingToZooming: 0
         disableDoubleClickZoom: 0
     third_party_settings: {  }
-    weight: 15
+    type: geolocation_map
     region: content
   localgov_contact_minicom:
-    type: telephone_link
+    weight: 5
     label: inline
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 5
+    type: telephone_link
     region: content
   localgov_contact_mobile:
-    type: telephone_link
+    weight: 3
     label: inline
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 3
+    type: telephone_link
     region: content
   localgov_contact_office_hours:
-    type: office_hours
+    weight: 10
     label: above
     settings:
+      show_closed: all
+      office_hours_first_day: ''
       day_format: long
       time_format: g
-      compress: false
       grouped: true
-      show_closed: all
       closed_format: Closed
       separator:
         days: '<br />'
@@ -149,15 +149,15 @@ content:
         position: ''
         open_text: 'Currently open!'
         closed_text: 'Currently closed'
-      timezone_field: ''
-      office_hours_first_day: ''
       schema:
         enabled: true
+      compress: false
+      timezone_field: ''
     third_party_settings: {  }
-    weight: 10
+    type: office_hours
     region: content
   localgov_contact_other_social:
-    type: link
+    weight: 14
     label: hidden
     settings:
       trim_length: 80
@@ -166,10 +166,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 14
+    type: link
     region: content
   localgov_contact_other_url:
-    type: link
+    weight: 8
     label: inline
     settings:
       trim_length: 80
@@ -178,34 +178,34 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 8
+    type: link
     region: content
   localgov_contact_out_of_hours:
-    type: telephone_link
+    weight: 4
     label: inline
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 4
+    type: telephone_link
     region: content
   localgov_contact_phone:
-    type: telephone_link
+    weight: 2
     label: inline
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 2
+    type: telephone_link
     region: content
   localgov_contact_subheading:
-    type: string
+    weight: 1
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    type: string
     region: content
   localgov_contact_twitter:
-    type: link
+    weight: 13
     label: hidden
     settings:
       trim_length: 80
@@ -214,10 +214,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 13
+    type: link
     region: content
   localgov_contact_url:
-    type: link
+    weight: 7
     label: inline
     settings:
       trim_length: 80
@@ -226,7 +226,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 7
+    type: link
     region: content
 hidden:
   search_api_excerpt: true

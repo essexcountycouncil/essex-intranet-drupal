@@ -1,4 +1,4 @@
-uuid: ed7882fc-b44a-45d3-944e-7fb9667f97e6
+uuid: f9d78c05-761e-4f79-bd77-a43cfde38ebb
 langcode: en
 status: true
 dependencies:
@@ -22,12 +22,12 @@ widget_selector: single
 widget_selector_configuration: {  }
 widgets:
   19e5e98c-307e-437a-b850-0fab163d7fec:
-    id: view
-    uuid: 19e5e98c-307e-437a-b850-0fab163d7fec
-    label: 'Available library items'
-    weight: 1
     settings:
       submit_text: 'Select reusable paragraph'
       auto_select: false
       view: paragraphs_library_browser
       view_display: entity_browser
+    uuid: 19e5e98c-307e-437a-b850-0fab163d7fec
+    weight: 1
+    label: 'Available library items'
+    id: view

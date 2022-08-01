@@ -1,4 +1,4 @@
-uuid: 48d4986c-85ea-4d22-8778-7d608237982a
+uuid: 87ba5934-b00f-4ae4-97b0-dfce0f7ae2fc
 langcode: en
 status: true
 dependencies:
@@ -13,9 +13,9 @@ id: localgov_newsroom_featured
 label: 'LocalGov Newsroom featured'
 image_style_mappings:
   -
-    image_mapping_type: image_style
-    image_mapping: localgov_535x302
     breakpoint_id: localgov_media.bootstrap4_md_768px
     multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: localgov_535x302
 breakpoint_group: localgov_media
 fallback_image_style: localgov_248x181

@@ -1,4 +1,4 @@
-uuid: 1adba33d-822c-4141-80b4-bd1442844dc9
+uuid: 02aea397-3473-4a5e-9964-e47faa209018
 langcode: en
 status: true
 dependencies:
@@ -33,29 +33,31 @@ bundle: localgov_services_landing
 mode: search_index
 content:
   body:
-    type: text_default
     label: hidden
+    type: text_default
+    weight: 0
     settings: {  }
     third_party_settings: {  }
-    weight: 0
     region: content
   localgov_address:
-    type: text_default
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    type: text_default
     region: content
   localgov_address_first_line:
-    type: string
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    type: string
     region: content
   localgov_common_tasks:
     type: link
+    weight: 12
+    region: content
     label: hidden
     settings:
       trim_length: 80
@@ -64,51 +66,49 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 12
-    region: content
   localgov_contact_us_online:
     type: string
+    weight: 13
+    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 13
-    region: content
   localgov_destinations:
-    type: entity_reference_entity_view
+    weight: 1
     label: hidden
     settings:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 1
+    type: entity_reference_entity_view
     region: content
   localgov_email_address:
-    type: string
+    weight: 5
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    type: string
     region: content
   localgov_facebook:
     type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
     weight: 7
     region: content
-  localgov_hearing_difficulties_ph:
-    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  localgov_hearing_difficulties_ph:
     weight: 10
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   localgov_link_to_map:
-    type: link
+    weight: 9
     label: hidden
     settings:
       trim_length: 80
@@ -117,47 +117,47 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 9
+    type: link
     region: content
   localgov_opening_hours:
-    type: text_default
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    type: text_default
     region: content
   localgov_other_team_contacts:
     type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
     weight: 14
     region: content
-  localgov_phone:
-    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  localgov_phone:
+    type: string
     weight: 6
     region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   localgov_popular_topics:
-    type: taxonomy_vertical_list
+    weight: 11
     label: hidden
     settings:
       title: 'Popular topics'
     third_party_settings: {  }
-    weight: 11
+    type: taxonomy_vertical_list
     region: content
   localgov_twitter:
     type: string
+    weight: 8
+    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 8
-    region: content
 hidden:
   content_moderation_control: true
   links: true

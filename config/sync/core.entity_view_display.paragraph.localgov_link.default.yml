@@ -1,4 +1,4 @@
-uuid: 029ea279-b180-47be-a645-6d0cb65c89ca
+uuid: 63c7cade-d7a3-464b-baf2-a70de57ba946
 langcode: en
 status: true
 dependencies:
@@ -14,19 +14,19 @@ bundle: localgov_link
 mode: default
 content:
   localgov_title:
-    type: string
+    weight: 0
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    type: string
     region: content
   localgov_url:
-    type: string
+    weight: 1
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    type: string
     region: content
 hidden: {  }

@@ -1,4 +1,4 @@
-name: essex.gov.uk
+name: essex-intranet
 type: drupal9
 docroot: web
 php_version: "8.1"

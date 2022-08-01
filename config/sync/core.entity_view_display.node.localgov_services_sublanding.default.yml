@@ -1,4 +1,4 @@
-uuid: 563db8d3-5d96-4d17-9b6b-0dc221c147b6
+uuid: 96394c62-2d77-4d2f-836e-4c82580527d8
 langcode: en
 status: true
 dependencies:
@@ -19,12 +19,12 @@ mode: default
 content:
   localgov_topics:
     type: entity_reference_revisions_entity_view
+    weight: 0
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 0
     region: content
 hidden:
   body: true

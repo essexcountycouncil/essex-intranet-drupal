@@ -1,4 +1,4 @@
-uuid: 15b2f247-049c-436d-8be3-da7286c07a13
+uuid: 536b4768-ec29-4971-8b35-b133a4d849c5
 langcode: en
 status: true
 dependencies:
@@ -16,9 +16,9 @@ effects:
     id: image_scale_and_crop
     weight: -9
     data:
+      anchor: center-center
       width: 1440
       height: 620
-      anchor: center-center
   16515f15-3ced-4a56-9020-14ed737fd05d:
     uuid: 16515f15-3ced-4a56-9020-14ed737fd05d
     id: crop_crop

@@ -1,4 +1,4 @@
-uuid: 5b1ee467-468f-446a-9de6-5d5221dd48f0
+uuid: 24e6a4fa-e47a-4aa0-94e2-13c9ecc0a110
 langcode: en
 status: true
 dependencies:
@@ -24,20 +24,20 @@ bundle: localgov_services_page
 mode: default
 content:
   body:
-    type: text_default
     label: hidden
+    weight: 0
+    type: text_default
     settings: {  }
     third_party_settings: {  }
-    weight: 0
     region: content
   localgov_page_components:
-    type: entity_reference_entity_view
+    weight: 1
     label: hidden
     settings:
-      view_mode: default
       link: true
+      view_mode: default
     third_party_settings: {  }
-    weight: 1
+    type: entity_reference_entity_view
     region: content
 hidden:
   content_moderation_control: true

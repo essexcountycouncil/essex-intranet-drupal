@@ -1,4 +1,4 @@
-uuid: 729bc45e-d443-42c9-9126-987dbcf1e4b1
+uuid: 004b235f-bb14-410f-9a8b-f92c9182cfae
 langcode: en
 status: true
 dependencies:
@@ -17,31 +17,31 @@ bundle: topic_list_builder
 mode: default
 content:
   topic_list_header:
-    type: string_textfield
     weight: 0
-    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  topic_list_links:
-    type: link_default
-    weight: 2
+    type: string_textfield
     region: content
+  topic_list_links:
+    weight: 2
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-  topic_list_term:
-    type: entity_reference_autocomplete
-    weight: 1
+    type: link_default
     region: content
+  topic_list_term:
+    weight: 1
     settings:
       match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
 hidden:
   created: true
   status: true

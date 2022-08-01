@@ -1,4 +1,4 @@
-uuid: 9db07409-a26f-4943-8402-d3c505129946
+uuid: 3ebd9f85-b63e-49c8-9142-aec761d05ad1
 langcode: en
 status: true
 dependencies:
@@ -16,12 +16,12 @@ mode: default
 content:
   field_media_oembed_video:
     type: oembed
+    weight: 0
     label: hidden
     settings:
       max_width: 0
       max_height: 0
     third_party_settings: {  }
-    weight: 0
     region: content
 hidden:
   created: true

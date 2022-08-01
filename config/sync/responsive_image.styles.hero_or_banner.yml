@@ -1,4 +1,4 @@
-uuid: 89967654-863c-4a4b-80ca-dc769f644bfb
+uuid: f04c2e94-6fab-47a3-83d0-753e1baf3a5e
 langcode: en
 status: true
 dependencies:
@@ -14,14 +14,14 @@ id: hero_or_banner
 label: 'Hero or Banner'
 image_style_mappings:
   -
-    image_mapping_type: image_style
-    image_mapping: large_21_9_2x
     breakpoint_id: localgov_media.bootstrap4_xl_1200px
     multiplier: 1x
-  -
     image_mapping_type: image_style
-    image_mapping: large_21_9
+    image_mapping: large_21_9_2x
+  -
     breakpoint_id: localgov_media.bootstrap4_md_768px
     multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: large_21_9
 breakpoint_group: localgov_media
 fallback_image_style: small_21_9

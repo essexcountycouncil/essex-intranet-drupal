@@ -1,4 +1,4 @@
-uuid: 86518492-5085-41ad-8a73-c3b1e20303eb
+uuid: 9fd73e1d-f854-4e3b-b6b6-4d000c88cb73
 langcode: en
 status: true
 dependencies:
@@ -17,12 +17,12 @@ bundle: image
 mode: responsive_3x2
 content:
   field_media_image:
-    type: responsive_image
     label: visually_hidden
     settings:
       responsive_image_style: 3_2_image
       image_link: ''
     third_party_settings: {  }
+    type: responsive_image
     weight: 1
     region: content
 hidden:

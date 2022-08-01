@@ -24,6 +24,10 @@ Used by Ramblers
 ### Other
 Composer
 
+## Web server requirements
+* https://www.drupal.org/docs/system-requirements/web-server-requirements
+* https://www.nginx.com/resources/wiki/start/topics/recipes/drupal/
+
 ## Deployment steps
 From the root of this repository:
 * composer install

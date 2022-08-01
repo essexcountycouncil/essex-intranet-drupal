@@ -1,4 +1,4 @@
-uuid: d2f97877-ec69-49a9-8555-8045c429e2e1
+uuid: fcfb479b-9967-40b7-9835-c5c5aa40424b
 langcode: en
 status: true
 dependencies:
@@ -13,12 +13,12 @@ pattern: '[node:title]'
 selection_criteria:
   42d90085-1126-4394-9349-88a26a0317f5:
     id: node_type
-    negate: false
-    uuid: 42d90085-1126-4394-9349-88a26a0317f5
-    context_mapping:
-      node: node
     bundles:
       localgov_services_landing: localgov_services_landing
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 42d90085-1126-4394-9349-88a26a0317f5
 selection_logic: and
 weight: -5
 relationships: {  }

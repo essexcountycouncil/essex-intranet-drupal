@@ -1,8 +1,8 @@
 _core:
   default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
 langcode: en
-uuid: 4f2e49bc-f347-4209-9c83-27bb06586457
-name: Essex.gov.uk
+uuid: d5790a4e-6a23-427d-9930-76bb397b20c0
+name: 'Essex Intranet'
 mail: admin@example.com
 slogan: ''
 page:

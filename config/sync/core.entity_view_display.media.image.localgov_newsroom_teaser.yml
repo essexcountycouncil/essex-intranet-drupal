@@ -1,4 +1,4 @@
-uuid: 23a5c296-e610-46a8-8e57-7cb8b0b67ded
+uuid: 2c6080fd-c10f-4f0e-bd93-160a5e02c805
 langcode: en
 status: true
 dependencies:
@@ -17,14 +17,14 @@ bundle: image
 mode: localgov_newsroom_teaser
 content:
   field_media_image:
-    type: image
     label: visually_hidden
     settings:
-      image_link: ''
       image_style: localgov_newsroom_teaser
+      image_link: ''
       image_loading:
         attribute: lazy
     third_party_settings: {  }
+    type: image
     weight: 1
     region: content
 hidden:

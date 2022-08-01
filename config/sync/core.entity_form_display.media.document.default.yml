@@ -1,4 +1,4 @@
-uuid: b8513e51-f58f-4ee2-aedf-16a4681fb60b
+uuid: 951e25d1-a520-4ae6-971a-2ad2ef0c089c
 langcode: en
 status: true
 dependencies:
@@ -22,12 +22,12 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_media_document:
-    type: file_generic
-    weight: 0
-    region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
+    type: file_generic
+    weight: 0
+    region: content
   path:
     type: path
     weight: 4
@@ -36,20 +36,20 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 100
-    region: content
     settings:
       display_label: true
+    weight: 100
+    region: content
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 5
-    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
+    region: content
     third_party_settings: {  }
 hidden:
   moderation_state: true

@@ -1,4 +1,4 @@
-uuid: 622110e7-4acd-4bb0-92d4-890df403961c
+uuid: ff36ba67-9cb0-4ed8-be30-7bdd11292c19
 langcode: en
 status: true
 dependencies:
@@ -15,10 +15,10 @@ bundle: localgov_text
 mode: default
 content:
   localgov_text:
-    type: text_default
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    type: text_default
     region: content
 hidden: {  }
