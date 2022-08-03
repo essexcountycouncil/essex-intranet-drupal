@@ -32,6 +32,24 @@ class ScriptHandler {
     $drupalFinder->locateRoot(getcwd());
     $drupalRoot = $drupalFinder->getDrupalRoot();
 
+    if (
+      !$fs->exists($drupalRoot . '/sites/default/settings.php') &&
+      $fs->exists('assets/composer/settings.php'
+    )) {
+      $fs->symlink('assets/composer/settings.php', $drupalRoot . '/sites/default/settings.php', 0666);
+      $event->getIO()
+        ->write('Symbolically linked settings.php file');
+    }
+
+    if (
+      !$fs->exists($drupalRoot . '/sites/default/settings.local.php') &&
+      $fs->exists('assets/composer/settings.local.php'
+    )) {
+      $fs->symlink('assets/composer/settings.local.php', $drupalRoot . '/sites/default/settings.local.php', 0666);
+      $event->getIO()
+        ->write('Symbolically linked settings.local.php file');
+    }
+
      // Create a symbolic link for the custom modules directory.
     if (!$fs->exists($drupalRoot . '/modules/custom')) {
       $cwd = getcwd();
