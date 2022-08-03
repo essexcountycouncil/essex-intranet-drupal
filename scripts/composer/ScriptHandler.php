@@ -36,7 +36,10 @@ class ScriptHandler {
       !$fs->exists($drupalRoot . '/sites/default/settings.php') &&
       $fs->exists('assets/composer/settings.php'
     )) {
-      $fs->symlink('assets/composer/settings.php', $drupalRoot . '/sites/default/settings.php', 0666);
+      $cwd = getcwd();
+      chdir($drupalRoot . '/sites/default/');
+      $fs->symlink('../../assets/composer/settings.php', 'settings.php', 0666);
+      chdir($cwd);
       $event->getIO()
         ->write('Symbolically linked settings.php file');
     }
@@ -45,7 +48,10 @@ class ScriptHandler {
       !$fs->exists($drupalRoot . '/sites/default/settings.local.php') &&
       $fs->exists('assets/composer/settings.local.php'
     )) {
-      $fs->symlink('assets/composer/settings.local.php', $drupalRoot . '/sites/default/settings.local.php', 0666);
+      $cwd = getcwd();
+      chdir($drupalRoot . '/sites/default/');
+      $fs->symlink('../../assets/composer/settings.local.php', 'settings.local.php', 0666);
+      chdir($cwd);
       $event->getIO()
         ->write('Symbolically linked settings.local.php file');
     }
