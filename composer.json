@@ -102,8 +102,6 @@
         "pre-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
-        "post-install-cmd": "@drupal-build",
-        "post-update-cmd": "@drupal-build",
         "drupal-build": [
             "Composer\\Config::disableProcessTimeout",
             "@prepare-filesystem-for-update",
@@ -113,8 +111,10 @@
         ],
         "update-drupal": [
             "Composer\\Config::disableProcessTimeout",
-            "vendor/bin/drush --yes -l default deploy",
-            "vendor/bin/drush --yes -l default cache:rebuild"
+            "vendor/drush/drush/drush --yes -l default cache:rebuild",
+            "vendor/drush/drush/drush --yes -l default config-import",
+            "vendor/drush/drush/drush --yes -l default config-import",
+            "vendor/drush/drush/drush --yes -l default cache:rebuild"
         ],
         "prepare-filesystem-for-update": [
             "chmod 777 --quiet web/sites/default/default.*.yml; true"
