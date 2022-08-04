@@ -16,12 +16,12 @@ pattern: '[node:localgov_newsroom:entity:url:relative]/[node:localgov_news_date:
 selection_criteria:
   fa93e7c4-4c6f-4ed1-988b-ce660e1d6292:
     id: node_type
-    bundles:
-      localgov_news_article: localgov_news_article
     negate: false
+    uuid: fa93e7c4-4c6f-4ed1-988b-ce660e1d6292
     context_mapping:
       node: node
-    uuid: fa93e7c4-4c6f-4ed1-988b-ce660e1d6292
+    bundles:
+      localgov_news_article: localgov_news_article
 selection_logic: and
 weight: -5
 relationships: {  }

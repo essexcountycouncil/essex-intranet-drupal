@@ -2,9 +2,6 @@ uuid: caf707e1-1354-44b3-8aa6-52ee5ecc3552
 langcode: en
 status: true
 dependencies:
-  config:
-    - localgov_alert_banner.localgov_alert_banner_type.localgov_alert_banner
-    - localgov_alert_banner.localgov_alert_banner_type.localgov_full_page
   module:
     - content_moderation
 _core:
@@ -54,8 +51,5 @@ type_settings:
         - unpublished
       to: unpublished
       weight: 2
-  entity_types:
-    localgov_alert_banner:
-      - localgov_alert_banner
-      - localgov_full_page
+  entity_types: {  }
   default_moderation_state: unpublished

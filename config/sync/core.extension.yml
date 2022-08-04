@@ -15,6 +15,8 @@ module:
   contextual: 0
   crop: 0
   ctools: 0
+  date_recur: 0
+  date_recur_modular: 0
   datetime: 0
   datetime_range: 0
   dbal: 0
@@ -58,8 +60,6 @@ module:
   link_attributes: 0
   linkit: 0
   localgov_admin_theme_improvements: 0
-  localgov_alert_banner: 0
-  localgov_alert_banner_full_page: 0
   localgov_core: 0
   localgov_directories: 0
   localgov_directories_db: 0

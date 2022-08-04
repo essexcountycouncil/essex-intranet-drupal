@@ -7,7 +7,6 @@ dependencies:
   module:
     - filter
     - fontawesome
-    - localgov_alert_banner
     - localgov_geo
     - media
     - system
@@ -21,8 +20,5 @@ permissions:
   - 'access content'
   - 'access fontawesome additional settings'
   - 'use text format wysiwyg'
-  - 'view all localgov alert banner entities'
   - 'view geo'
-  - 'view localgov alert banner localgov_alert_banner entities'
-  - 'view localgov alert banner localgov_full_page entities'
   - 'view media'

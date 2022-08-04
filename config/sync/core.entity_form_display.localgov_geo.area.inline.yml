@@ -19,12 +19,12 @@ bundle: area
 mode: inline
 content:
   geo_file:
+    type: file_generic
     weight: 2
+    region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
-    type: file_generic
-    region: content
   label:
     type: string_textfield
     weight: 0
@@ -34,11 +34,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   location:
+    type: geofield_default
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: geofield_default
-    region: content
 hidden:
   created: true
   external_id: true

@@ -24,12 +24,12 @@ content:
     settings: {  }
     third_party_settings: {  }
   geo_file:
+    type: file_generic
     weight: 2
+    region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
-    type: file_generic
-    region: content
   label:
     type: string_textfield
     weight: 0
@@ -39,27 +39,27 @@ content:
       placeholder: ''
     third_party_settings: {  }
   location:
+    type: geofield_default
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: geofield_default
-    region: content
   status:
     type: boolean_checkbox
-    settings:
-      display_label: false
     weight: 3
     region: content
+    settings:
+      display_label: false
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
     weight: 4
     region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   external_id: true
