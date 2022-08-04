@@ -1,0 +1,21 @@
+uuid: 126ee80b-a88e-4145-a5e7-dfba794adfee
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_geo
+    - text
+_core:
+  default_config_hash: yVrBXZ34al69gVviC5s1bEuPLQxYIlHL1UZIUzO2RqU
+id: localgov_geo.accessibility
+field_name: accessibility
+entity_type: localgov_geo
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

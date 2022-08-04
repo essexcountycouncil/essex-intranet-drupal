@@ -1,0 +1,12 @@
+uuid: 46294f84-09f3-4333-b67a-e368e6110df7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 2BQ3ZnOwkj5LBB199e79_MMjnwSKOA3Bt9GU_Wi-Jm0
+id: node.message
+label: Message
+targetEntityType: node
+cache: true

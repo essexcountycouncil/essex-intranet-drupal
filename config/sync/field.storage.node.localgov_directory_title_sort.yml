@@ -1,0 +1,23 @@
+uuid: b3055166-6046-4617-b57f-801e867830cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: wKYSMfF33z4KroklfDAixQtspYvBmtG3XBfdavaq9f8
+id: node.localgov_directory_title_sort
+field_name: localgov_directory_title_sort
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

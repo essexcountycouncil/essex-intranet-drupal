@@ -1,0 +1,13 @@
+uuid: bcaafe52-961d-4ad4-8422-cd208b7f1451
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j3RRyeSrU8DVYj0Yv-6rekfSbs6PU0J4fSrmBsBCs_4
+name: 'Step by step page'
+type: localgov_step_by_step_page
+description: 'Step page associated with a step by step overview page.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
