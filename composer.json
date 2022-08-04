@@ -63,6 +63,11 @@
                     "path": "assets/composer/settings.php",
                     "overwrite": false
                 },
+                "[web-root]/sites/default/settings.local.php": {
+                    "mode": "replace",
+                    "path": "assets/composer/settings.local.php",
+                    "overwrite": false
+                },
                 "[web-root]/sites/default/settings.lando.php": {
                     "mode": "replace",
                     "path": "assets/composer/settings.lando.php",
@@ -102,6 +107,8 @@
         "pre-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
+        "post-install-cmd": "@drupal-build",
+        "post-update-cmd": "@drupal-build",
         "drupal-build": [
             "Composer\\Config::disableProcessTimeout",
             "@prepare-filesystem-for-update",
