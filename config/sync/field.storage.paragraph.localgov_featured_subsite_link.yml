@@ -1,0 +1,21 @@
+uuid: 29b7b877-4203-42d5-9802-d03c5d9ad457
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+_core:
+  default_config_hash: fVdqgjK-t2FAh9ANJPBy2PwnknUklUFX_NZopXNoCVE
+id: paragraph.localgov_featured_subsite_link
+field_name: localgov_featured_subsite_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

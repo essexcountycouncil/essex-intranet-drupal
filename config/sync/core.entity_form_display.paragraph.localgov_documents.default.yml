@@ -1,0 +1,26 @@
+uuid: e8a447e1-6cea-46ea-8d15-6cdc8a1df88a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.localgov_documents.localgov_documents
+    - paragraphs.paragraphs_type.localgov_documents
+  module:
+    - media_library
+_core:
+  default_config_hash: u3BLcM0OsQDns8K0mZKoQGnVRqhoQzRkWD7Or8FeLGM
+id: paragraph.localgov_documents.default
+targetEntityType: paragraph
+bundle: localgov_documents
+mode: default
+content:
+  localgov_documents:
+    type: media_library_widget
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,8 @@
+uuid: 8e9d655d-9a24-4599-9a1b-a43a7a340b74
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kwiMhnXg55hKt1AS7g-sgfw_WJMZ2vRPwbn5U-j5sxU
+id: localgov_full_page
+label: 'Full page'
