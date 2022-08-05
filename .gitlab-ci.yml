@@ -14,7 +14,7 @@ build_image:
     - docker build -t ${DOCKER_REGISTRY}/drupal-fpm -t drupal-fpm -f Dockerfile-drupal .
     - docker build -t ${DOCKER_REGISTRY}/nginx-drupal -t nginx-drupal -f Dockerfile-nginx .
     - docker push ${DOCKER_REGISTRY}/nginx-drupal
-    - docker push -t ${DOCKER_REGISTRY}/drupal-fpm
+    - docker push -${DOCKER_REGISTRY}/drupal-fpm
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
     
@@ -32,6 +32,7 @@ update-app-service:
     - echo "To do - Script for updating app service"
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
+      when: manual
 
 
 
