@@ -1,0 +1,8 @@
+/devops
+/database
+.gitlab-ci.yml
+docker*
+Docker*
+local-vars
+update-webapp.sh
+.gitlab-ci.yml
