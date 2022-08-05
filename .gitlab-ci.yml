@@ -11,9 +11,9 @@ build_image:
   before_script:
     - docker login -u${DOCKER_USER} -p${DOCKER_PASSWORD} ${DOCKER_REGISTRY}
   script:
-    - docker build -t ${DOCKER_REGISTRY}/nginx-drupal -f Dockerfile-nginx .
+    - docker build -t ${DOCKER_REGISTRY}/drupal-fpm -t drupal-fpm -f Dockerfile-drupal .
+    - docker build -t ${DOCKER_REGISTRY}/nginx-drupal -t nginx-drupal -f Dockerfile-nginx .
     - docker push ${DOCKER_REGISTRY}/nginx-drupal
-    - docker build -t ${DOCKER_REGISTRY}/drupal-fpm -f Dockerfile-drupal .
     - docker push -t ${DOCKER_REGISTRY}/drupal-fpm
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
