@@ -1,0 +1,33 @@
+uuid: 43a73d2f-e6c0-423b-bccc-4349625ad212
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.localgov_step_by_step_navigation
+  module:
+    - node
+    - views
+  theme:
+    - essex
+id: views_block__localgov_step_by_step_navigation_steps_for_overview
+theme: essex
+region: content_bottom
+weight: 0
+provider: null
+plugin: 'views_block:localgov_step_by_step_navigation-steps_for_overview'
+settings:
+  id: 'views_block:localgov_step_by_step_navigation-steps_for_overview'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      localgov_step_by_step_overview: localgov_step_by_step_overview
