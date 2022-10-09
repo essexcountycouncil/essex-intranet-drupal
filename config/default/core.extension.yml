@@ -83,6 +83,7 @@ module:
   localgov_page_components: 0
   localgov_paragraphs: 0
   localgov_paragraphs_layout: 0
+  localgov_paragraphs_views: 0
   localgov_review_date: 0
   localgov_roles: 0
   localgov_search: 0
@@ -100,6 +101,7 @@ module:
   localgov_workflows: 0
   media: 0
   media_library: 0
+  media_library_edit: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
