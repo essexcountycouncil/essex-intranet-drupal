@@ -27,3 +27,5 @@
 
 # Ignore temp files
 /.phpunit.result.cache
+
+certs/
