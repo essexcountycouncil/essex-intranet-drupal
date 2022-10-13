@@ -1,0 +1,28 @@
+uuid: 63008d91-eddf-404d-9a5e-9d16b51c3b4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_guides
+    - node
+  theme:
+    - essex
+id: guidecontents
+theme: essex
+region: content
+weight: 0
+provider: null
+plugin: localgov_guides_contents
+settings:
+  id: localgov_guides_contents
+  label: 'Guide contents'
+  label_display: visible
+  provider: localgov_guides
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      localgov_guides_overview: localgov_guides_overview
