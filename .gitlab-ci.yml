@@ -28,6 +28,13 @@ provision-database:
 
 update-app-service:
   stage: update-app-service
+  image: docker:20.10
+  services:
+    - docker:20.10-dind
+  before_script:
+    - apk add py3-pip gcc musl-dev python3-dev libffi-dev openssl openssl-dev cargo make
+    - pip install azure-cli
+    - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
   script:
     - echo "Container app is restarting - environment will be down temporarily"
     - az container restart --name lgDrupalContainerGroup --resource-group ecc-drupal-dev
