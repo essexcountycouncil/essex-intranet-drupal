@@ -1,0 +1,80 @@
+diff --git a/modules/localgov_subsites_paragraphs/localgov_subsites_paragraphs.install b/modules/localgov_subsites_paragraphs/localgov_subsites_paragraphs.install
+new file mode 100644
+index 0000000..5e90fbe
+--- /dev/null
++++ b/modules/localgov_subsites_paragraphs/localgov_subsites_paragraphs.install
+@@ -0,0 +1,74 @@
++<?php
++
++/**
++ * @file
++ * Install, update and uninstall functions for the LocalGov Subsites Paragraphs module.
++ */
++
++use Drupal\Core\Field\BaseFieldDefinition;
++use Drupal\field\Entity\FieldConfig;
++use Drupal\field\Entity\FieldStorageConfig;
++
++/**
++ * Adds the paragraph.localgov_media_with_text.localgov_media_with_text_size.
++ */
++function localgov_subsites_paragraphs_update_9001(&$sandbox) {
++  $result = [];
++
++  // First, localgov_directories_facets content entity.
++  // @see Drupal\localgov_directories\Entity\LocalgovDirectoriesFacets::baseFieldDefinitions()
++  $field_storage_def_for_media_size = BaseFieldDefinition::create('list_string')
++    ->setLabel(t('Media size'))
++    ->setDescription(t('Set the size of the media item when the Media layout is set to either left or right.'))
++    ->setTranslatable(TRUE)
++    ->setSettings([
++      'allowed_values' => [
++        'one-quarter' => 'One quarter',
++        'one-third' => 'One third',
++        'one-half' => 'One half',
++        'two-thirds' => 'Two thirds',
++        'three-quarters' => 'Three quarters'
++      ]
++    ])
++    ->setDefaultValue('')
++    ->setDisplayOptions('view', [
++      'label' => 'above',
++      'type' => 'list_default',
++      'weight' => -5,
++    ]);
++
++  FieldStorageConfig::create(array(
++    'field_name' => 'localgov_media_with_text_size',
++    'entity_type' => 'paragraph',
++    'bundle' => 'localgov_media_with_text',
++    'type' => 'list_string',
++    'cardinality' => -1,
++  ))->save();
++
++  if (!FieldConfig::loadByName('paragraph', 'localgov_media_with_text', 'localgov_media_with_text_size')) {
++    try {
++      Drupal::entityDefinitionUpdateManager()
++        ->installFieldStorageDefinition('localgov_media_with_text_size', 'paragraph', 'localgov_subsites_paragraphs', $field_storage_def_for_media_size);
++
++      FieldConfig::create([
++        'field_name' => 'localgov_media_with_text_size',
++        'entity_type' => 'paragraph',
++        'bundle' => 'localgov_media_with_text',
++        'label' => 'Media size',
++        'description' => "Set the size of the media item when the Media layout is set to either left or right.",
++        'required' => FALSE,
++      ])->save();
++    }
++    catch (\Exception $e) {
++      throw new Exception('asd');
++    }
++
++
++    $result[] = t('Added localgov_media_with_text_size to %bundle.', ['%bundle' => 'localgov_media_with_text']);
++  }
++  else {
++    $result[] = t('Not added localgov_media_with_text_size to %bundle as it already exists.', ['%bundle' => 'localgov_media_with_text']);
++  }
++
++  return implode(' ', $result);
++}
