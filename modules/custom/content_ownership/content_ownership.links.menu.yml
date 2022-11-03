@@ -1,0 +1,8 @@
+# Define the menu links for this module
+
+entity.content_owner_sme.collection:
+  title: 'Content Ownership'
+  route_name: entity.content_owner_sme.collection
+  description: 'List Content Ownership Contacts'
+  parent: system.admin_content
+  weight: 10

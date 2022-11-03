@@ -1,0 +1,50 @@
+# This file brings everything together
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.content_owner_sme.canonical:
+  path: 'admin/content//content_owner_sme/{content_owner_sme}'
+  defaults:
+    # Calls the view controller, defined in the annotation of the contact entity
+    _entity_view: 'content_owner_sme'
+    _title: 'Content Owner/SME'
+  requirements:
+    # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'content_owner_sme.view'
+
+entity.content_owner_sme.collection:
+  path: 'admin/content/content_ownership/list'
+  defaults:
+    # Calls the list controller, defined in the annotation of the contact entity.
+    _entity_list: 'content_owner_sme'
+    _title: 'Content Ownership List'
+  requirements:
+    # Checks for permission directly.
+    _permission: 'administer content owner/sme entity'
+
+content_owner_sme.contact_add:
+  path: 'admin/content/content_ownership/add'
+  defaults:
+    # Calls the form.add controller, defined in the contact entity.
+    _entity_form: content_owner_sme.add
+    _title: 'Add Content Ownership Contact'
+  requirements:
+    _entity_create_access: 'content_owner_sme'
+
+entity.content_owner_sme.edit_form:
+  path: 'admin/content/content_ownership/{content_owner_sme}/edit'
+  defaults:
+    # Calls the form.edit controller, defined in the contact entity.
+    _entity_form: content_owner_sme.edit
+    _title: 'Edit Content Ownership Contact'
+  requirements:
+    _entity_access: 'content_owner_sme.edit'
+
+entity.content_owner_sme.delete_form:
+  path: 'admin/content/content_ownership/{content_owner_sme}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the contact entity.
+    _entity_form: content_owner_sme.delete
+    _title: 'Delete Content Ownership Contact'
+  requirements:
+    _entity_access: 'content_owner_sme.delete'

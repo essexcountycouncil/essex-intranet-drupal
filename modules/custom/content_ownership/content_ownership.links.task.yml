@@ -1,0 +1,17 @@
+# Define the 'local' links for the module
+
+content_owner_sme.view:
+  route_name: entity.content_owner_sme.canonical
+  base_route: entity.content_owner_sme.canonical
+  title: View
+
+content_owner_sme.page_edit:
+  route_name: entity.content_owner_sme.edit_form
+  base_route: entity.content_owner_sme.canonical
+  title: Edit
+
+content_owner_sme.delete_confirm:
+  route_name:  entity.content_owner_sme.delete_form
+  base_route:  entity.content_owner_sme.canonical
+  title: Delete
+  weight: 10
