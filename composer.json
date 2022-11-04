@@ -17,6 +17,7 @@
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
+        "drupal/published_corrected_date": "^2.0",
         "drupal/stage_file_proxy": "^1.2",
         "localgovdrupal/localgov": "^2.0",
         "localgovdrupal/localgov_forms": "1.x-dev"
