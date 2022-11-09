@@ -79,7 +79,7 @@
 }
   
 .call-out-box__content {
-    background: var(--call-out-box-bg-color)
+    background: var(--call-out-box-bg-color);
 }
   
 .call-out-box__content h2 {
@@ -87,7 +87,7 @@
 }
   
 p.callout {
-    font-weight: 600;
+    font-weight: --heading-2-font-weight;
 }
   
 .callout.callout-primary {
@@ -103,7 +103,7 @@ input[type="submit"],
 .step-by-step-pages ol.step-list .step .step__title a {
     color: var(--color-link);
     display: inline-block;
-    font-weight: 600;
+    font-weight: --heading-2-font-weight;
 }
 
 .step-by-step-pages ol.step-list .step .step__title .step-show {
@@ -111,7 +111,7 @@ input[type="submit"],
 }
 
 .banner--primary .field--name-localgov-title {
-    font-weight: 600;
+    font-weight: --heading-2-font-weight;
 }
 
 .service-landing-page__contact {
