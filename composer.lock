@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f867300a008aa9c91fc83352952692eb",
+    "content-hash": "aae117b66e51fc415ec80f4c2b0d5c49",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -183,6 +183,18 @@
                 "source": "https://github.com/Chi-teck/drupal-code-generator/tree/2.6.1"
             },
             "time": "2022-09-15T09:13:57+00:00"
+        },
+        {
+            "name": "ckeditor/div",
+            "version": "4.10.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://download.ckeditor.com/div/releases/div_4.10.1.zip"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "ckeditor/plugins/div"
+            }
         },
         {
             "name": "clue/stream-filter",
