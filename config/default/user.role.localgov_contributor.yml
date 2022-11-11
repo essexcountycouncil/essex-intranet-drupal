@@ -42,7 +42,6 @@ label: Contributor
 weight: 4
 is_admin: null
 permissions:
-  - 'access content overview'
   - 'access media overview'
   - 'access page_components entity browser pages'
   - 'access paragraphs_library_items entity browser pages'
@@ -135,6 +134,7 @@ permissions:
   - 'reschedule scheduled transitions node localgov_subsites_overview'
   - 'reschedule scheduled transitions node localgov_subsites_page'
   - 'update media'
+  - 'use localgov_editorial transition approve'
   - 'use localgov_editorial transition create_new_draft'
   - 'use localgov_editorial transition reject'
   - 'use localgov_editorial transition submit_for_review'

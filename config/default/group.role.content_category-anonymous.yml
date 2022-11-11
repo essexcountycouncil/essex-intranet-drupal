@@ -1,0 +1,13 @@
+uuid: cd36dbcf-3e6e-40b5-8efb-3afa9e870411
+langcode: en
+status: true
+dependencies: {  }
+id: content_category-anonymous
+label: Anonymous
+weight: -102
+admin: false
+scope: outsider
+global_role: anonymous
+group_type: content_category
+permissions:
+  - 'view group_node:localgov_news_article entity'

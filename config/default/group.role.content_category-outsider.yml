@@ -1,0 +1,13 @@
+uuid: 55064a0b-9593-4d32-bc6b-8144157e6524
+langcode: en
+status: true
+dependencies: {  }
+id: content_category-outsider
+label: Outsider
+weight: -101
+admin: false
+scope: outsider
+global_role: authenticated
+group_type: content_category
+permissions:
+  - 'view group_node:localgov_news_article entity'

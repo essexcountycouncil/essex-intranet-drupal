@@ -1,0 +1,22 @@
+uuid: c8cbea4d-43ed-443f-9b98-0acaba99b365
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group_relationship.group_roles
+    - group.relationship_type.content_category-9376111be951852
+id: group_relationship.content_category-9376111be951852.group_roles
+field_name: group_roles
+entity_type: group_relationship
+bundle: content_category-9376111be951852
+label: Roles
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'group_type:group_role'
+  handler_settings:
+    group_type_id: content_category
+field_type: entity_reference

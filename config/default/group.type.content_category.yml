@@ -1,0 +1,12 @@
+uuid: d7adf1d6-31eb-41fc-9944-1b93ed22543f
+langcode: en
+status: true
+dependencies: {  }
+id: content_category
+label: 'Content Category'
+description: 'For handling the Approval flow of Content between different sections (Categorys) of Content pages.'
+new_revision: true
+creator_membership: true
+creator_wizard: false
+creator_roles:
+  - content_category-admin

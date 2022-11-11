@@ -1,0 +1,33 @@
+uuid: 8942a369-8680-48fa-9400-9b1f32760872
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.localgov_approvals_dashboard
+  module:
+    - group
+    - views
+  theme:
+    - essex
+id: views_block__localgov_approvals_dashboard_block_1
+theme: essex
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:localgov_approvals_dashboard-block_1'
+settings:
+  id: 'views_block:localgov_approvals_dashboard-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'
+    bundles:
+      content_category: content_category
