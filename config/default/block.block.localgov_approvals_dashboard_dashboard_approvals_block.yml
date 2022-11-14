@@ -1,4 +1,4 @@
-uuid: 8942a369-8680-48fa-9400-9b1f32760872
+uuid: 3035d974-d37f-4b32-9fd4-a0effed59e40
 langcode: en
 status: true
 dependencies:
@@ -9,14 +9,14 @@ dependencies:
     - views
   theme:
     - essex
-id: views_block__localgov_approvals_dashboard_block_1
+id: localgov_approvals_dashboard_dashboard_approvals_block
 theme: essex
 region: content
 weight: 0
 provider: null
-plugin: 'views_block:localgov_approvals_dashboard-block_1'
+plugin: 'views_block:localgov_approvals_dashboard-dashboard_approvals_block'
 settings:
-  id: 'views_block:localgov_approvals_dashboard-block_1'
+  id: 'views_block:localgov_approvals_dashboard-dashboard_approvals_block'
   label: ''
   label_display: visible
   provider: views
