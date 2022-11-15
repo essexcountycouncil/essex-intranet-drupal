@@ -5,6 +5,7 @@ dependencies:
   config:
     - facets.facet.localgov_news_category
     - field.field.node.localgov_news_article.body
+    - field.field.node.localgov_news_article.field_content_ownership
     - field.field.node.localgov_news_article.field_media_image
     - field.field.node.localgov_news_article.localgov_news_categories
     - field.field.node.localgov_news_article.localgov_news_date
@@ -14,6 +15,7 @@ dependencies:
   module:
     - datetime
     - entity_reference_facet_link
+    - entity_reference_revisions
     - text
     - user
   enforced:
@@ -32,6 +34,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_content_ownership:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   links:
     settings: {  }

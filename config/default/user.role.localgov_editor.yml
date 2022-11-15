@@ -25,6 +25,7 @@ dependencies:
   module:
     - content_moderation
     - entity_browser
+    - group
     - localgov_directories
     - localgov_geo
     - media
@@ -48,6 +49,7 @@ permissions:
   - 'access content overview'
   - 'access directory facets overview'
   - 'access geo overview'
+  - 'access group overview'
   - 'access media overview'
   - 'access page_components entity browser pages'
   - 'access paragraphs_library_items entity browser pages'

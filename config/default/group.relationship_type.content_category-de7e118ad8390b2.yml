@@ -1,0 +1,17 @@
+uuid: 6b52d4e6-7754-4044-a697-28ab70e2fc76
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.content_category
+    - node.type.localgov_news_article
+  module:
+    - gnode
+    - node
+id: content_category-de7e118ad8390b2
+group_type: content_category
+content_plugin: 'group_node:localgov_news_article'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false
