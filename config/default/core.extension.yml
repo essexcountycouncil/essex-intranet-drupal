@@ -118,6 +118,8 @@ module:
   preview_link: 0
   published_corrected_date: 0
   quickedit: 0
+  redirect: 0
+  redirect_404: 0
   responsive_image: 0
   responsive_preview: 0
   role_delegation: 0
