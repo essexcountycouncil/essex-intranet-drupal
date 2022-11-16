@@ -8,6 +8,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "github",
+            "url":  "https://github.com/essexcountycouncil/content_ownership"
         }
     ],
     "require": {
@@ -21,6 +25,7 @@
         "drupal/entitygroupfield": "1.0.0-alpha2",
         "drupal/group": "3.0.0-beta3 as 1.5",
         "drupal/stage_file_proxy": "^1.2",
+        "essexcountycouncil/content_ownership": "dev-main",
         "localgovdrupal/localgov": "^2.0",
         "localgovdrupal/localgov_forms": "1.x-dev"
     },
