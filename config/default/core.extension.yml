@@ -9,9 +9,11 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor: 0
+  ckeditor_div_manager: 0
   condition_field: 0
   config: 0
   content_moderation: 0
+  content_ownership: 0
   contextual: 0
   crop: 0
   ctools: 0
@@ -123,6 +125,8 @@ module:
   preview_link: 0
   published_corrected_date: 0
   quickedit: 0
+  redirect: 0
+  redirect_404: 0
   responsive_image: 0
   responsive_preview: 0
   role_delegation: 0

@@ -8,11 +8,31 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "github",
+            "url":  "https://github.com/essexcountycouncil/content_ownership"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/div",
+                "version": "4.10.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor/plugins/div"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/div/releases/div_4.10.1.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
         "composer/installers": "^1.10",
         "cweagans/composer-patches": "^1.6",
+        "drupal/ckeditor_div_manager": "^2.0",
         "drupal/config_split": "^2.0@RC",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
@@ -22,8 +42,10 @@
         "drupal/imagemagick": "^3.4",
         "drupal/published_corrected_date": "^2.0",
         "drupal/stage_file_proxy": "^1.2",
+        "essexcountycouncil/content_ownership": "dev-main",
         "localgovdrupal/localgov": "^2.0",
-        "localgovdrupal/localgov_forms": "1.x-dev"
+        "localgovdrupal/localgov_forms": "1.x-dev",
+        "ckeditor/div": "4.10.1"
     },
     "require-dev": {
         "brianium/paratest": "^6.0",
