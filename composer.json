@@ -22,6 +22,8 @@
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
         "drupal/published_corrected_date": "^2.0",
+        "drupal/entitygroupfield": "1.0.0-alpha2",
+        "drupal/group": "3.0.0-beta3 as 1.5",
         "drupal/stage_file_proxy": "^1.2",
         "essexcountycouncil/content_ownership": "dev-main",
         "localgovdrupal/localgov": "^2.0",
@@ -68,6 +70,11 @@
             },
             "localgovdrupal/localgov_paragraphs": {
                 "Added missing field which has been introduced recently.": "patches/missing_field.patch"
+            },
+            "drupal/entitygroupfield": {
+                "Breaks on fresh install": "patches/entitygroupfield-install.patch",
+                "\"Drupal\\group\\Entity\\GroupContent\" unexpected error": "https://www.drupal.org/files/issues/2022-10-14/issue-3315323-3.patch",
+                "Support for Groups v3": "patches/entitygroupfield-groupv3-2.patch"
             }
         },
         "drupal-scaffold": {

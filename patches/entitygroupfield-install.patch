@@ -1,0 +1,61 @@
+diff --git a/entitygroupfield.module b/entitygroupfield.module
+index 84120780a4875a9fb71df07ea4a457e956672e92..e1e38757e03584e2fbba4096821d6f99588c6f4c 100644
+--- a/entitygroupfield.module
++++ b/entitygroupfield.module
+@@ -68,13 +68,13 @@ function entitygroupfield_field_formatter_info_alter(array &$info) {
+  */
+ function entitygroupfield_get_entity_types() {
+   $entity_types = [];
+-  $plugin_manager = \Drupal::service('plugin.manager.group_content_enabler');
++  $plugin_manager = \Drupal::service('group_relation_type.manager');
+   foreach ($plugin_manager->getDefinitions() as $plugin_id => $plugin_definition) {
+-    if ($entity_type_definition = \Drupal::entityTypeManager()->getDefinition($plugin_definition['entity_type_id'], FALSE)) {
++    if ($entity_type_definition = \Drupal::entityTypeManager()->getDefinition($plugin_definition->getEntityTypeId(), FALSE)) {
+       // Check if fields can be attached to the entity type.
+       if ($entity_type_definition->entityClassImplements(FieldableEntityInterface::class)) {
+-        $entity_types[$plugin_definition['entity_type_id']]['label'] = (string) $entity_type_definition->getLabel();
+-        $entity_types[$plugin_definition['entity_type_id']]['bundles'][] = $plugin_definition['entity_bundle'];
++        $entity_types[$plugin_definition->getEntityTypeId()]['label'] = (string) $entity_type_definition->getLabel();
++        $entity_types[$plugin_definition->getEntityTypeId()]['bundles'][] = $plugin_definition->getEntityTypeId();
+       }
+     }
+   }
+@@ -94,9 +94,9 @@ function entitygroupfield_get_entity_types() {
+  */
+ function entitygroupfield_get_group_content_plugin_ids($entity_type_id, $bundle = NULL) {
+   $plugin_ids = [];
+-  foreach (\Drupal::service('plugin.manager.group_content_enabler')->getDefinitions() as $plugin_id => $plugin_info) {
+-    if ($plugin_info['entity_type_id'] === $entity_type_id) {
+-      if (isset($bundle) && !empty($plugin_info['entity_bundle']) && $plugin_info['entity_bundle'] !== $bundle) {
++  foreach (\Drupal::service('group_relation_type.manager')->getDefinitions() as $plugin_id => $plugin_info) {
++    if ($plugin_info->getEntityTypeId() === $entity_type_id) {
++      if (isset($bundle) && !empty($plugin_info->getEntityBundle()) && $plugin_info->getEntityBundle() !== $bundle) {
+         continue;
+       }
+       $plugin_ids[] = $plugin_id;
+diff --git a/src/Plugin/Field/FieldWidget/EntityGroupFieldWidgetBase.php b/src/Plugin/Field/FieldWidget/EntityGroupFieldWidgetBase.php
+index efac04d259db57def100c0036880c264aa6dff96..cd806d33a528029e1aa5e72f00eaa0125439f2ca 100644
+--- a/src/Plugin/Field/FieldWidget/EntityGroupFieldWidgetBase.php
++++ b/src/Plugin/Field/FieldWidget/EntityGroupFieldWidgetBase.php
+@@ -71,7 +71,7 @@ abstract class EntityGroupFieldWidgetBase extends WidgetBase implements Containe
+       $configuration['field_definition'],
+       $configuration['settings'],
+       $configuration['third_party_settings'],
+-      $container->get('plugin.manager.group_content_enabler'),
++      $container->get('group_relation_type.manager'),
+       $container->get('current_user'),
+       $container->get('entity_type.manager'),
+       $container->get('entity.repository')
+diff --git a/tests/src/Kernel/EntityGroupFieldKernelTestBase.php b/tests/src/Kernel/EntityGroupFieldKernelTestBase.php
+index 2bf85dd7a30e546f37ce99d7d2dd92049e1d79ba..2e2995350116ac10576dbcc01c0d6a41d3d10bc9 100644
+--- a/tests/src/Kernel/EntityGroupFieldKernelTestBase.php
++++ b/tests/src/Kernel/EntityGroupFieldKernelTestBase.php
+@@ -47,7 +47,7 @@ abstract class EntityGroupFieldKernelTestBase extends KernelTestBase {
+     $this->installEntitySchema('group_content');
+     $this->installConfig(['group']);
+
+-    $this->groupContentPluginManager = $this->container->get('plugin.manager.group_content_enabler');
++    $this->groupContentPluginManager = $this->container->get('group_relation_type.manager');
+
+     // Create a default group type.
+     $this->createGroupType([
