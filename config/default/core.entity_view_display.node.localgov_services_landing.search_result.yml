@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_result
     - field.field.node.localgov_services_landing.body
+    - field.field.node.localgov_services_landing.field_non_publishable_notes
     - field.field.node.localgov_services_landing.localgov_address
     - field.field.node.localgov_services_landing.localgov_address_first_line
     - field.field.node.localgov_services_landing.localgov_common_tasks
@@ -31,15 +32,16 @@ bundle: localgov_services_landing
 mode: search_result
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 0
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   content_moderation_control: true
+  field_non_publishable_notes: true
   links: true
   localgov_address: true
   localgov_address_first_line: true
@@ -55,3 +57,4 @@ hidden:
   localgov_phone: true
   localgov_popular_topics: true
   localgov_twitter: true
+  search_api_excerpt: true
