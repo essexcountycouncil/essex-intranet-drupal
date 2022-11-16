@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.localgov_media_with_text.localgov_link
     - field.field.paragraph.localgov_media_with_text.localgov_media_item
     - field.field.paragraph.localgov_media_with_text.localgov_media_position
+    - field.field.paragraph.localgov_media_with_text.localgov_media_with_text_size
     - field.field.paragraph.localgov_media_with_text.localgov_media_with_text_style
     - field.field.paragraph.localgov_media_with_text.localgov_opens_in_a_new_window
     - field.field.paragraph.localgov_media_with_text.localgov_text
@@ -81,4 +82,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  localgov_media_with_text_size: true
   status: true
