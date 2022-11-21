@@ -122,3 +122,11 @@ input[type="submit"],
 .menu--main > .menu-item:last-child a:after {
     content: none;
 }
+
+.lgd-header__inner {
+    justify-content: start;
+}
+
+.lgd-header .lgd-region--header {
+    margin-right: 0;
+}
