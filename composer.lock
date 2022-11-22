@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b92479f41c9baaf4f45aa62a7be32f8",
+    "content-hash": "f759b96d83c7d718c90c3aec12f7c7de",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2520,6 +2520,50 @@
             "support": {
                 "source": "https://cgit.drupalcode.org/ckeditor_div_manager",
                 "issues": "https://www.drupal.org/project/issues/ckeditor_div_manager"
+            }
+        },
+        {
+            "name": "drupal/cludo_search",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/cludo_search.git",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/cludo_search-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "b6bec32730bf19778e7136a271ccb5491d8a5662"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1598013524",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "darrenwh",
+                    "homepage": "https://www.drupal.org/user/2430804"
+                }
+            ],
+            "description": "Provides a search interface to a dedicated Cludo Search.",
+            "homepage": "https://www.drupal.org/project/cludo_search",
+            "support": {
+                "source": "https://git.drupalcode.org/project/cludo_search"
             }
         },
         {
@@ -18473,6 +18517,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/cludo_search": 10,
         "drupal/config_split": 5,
         "essexcountycouncil/content_ownership": 20,
         "localgovdrupal/localgov_forms": 20,
