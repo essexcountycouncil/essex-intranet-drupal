@@ -14,8 +14,8 @@ build_image:
     - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
     - docker login -u${DOCKER_USER} -p${DOCKER_PASSWORD} ${DOCKER_REGISTRY}
   script:
-    - docker build -t ${DOCKER_REGISTRY}/intranet-drupal-fpm:latest -t intranet-drupal-fpm:${$CI_PIPELINE_IID} -t intranet-drupal-fpm -f Dockerfile-drupal .
-    - docker build -t ${DOCKER_REGISTRY}/intranet-nginx-drupal:latest -t intranet-nginx-drupal:${$CI_PIPELINE_IID} -t intranet-nginx-drupal -f Dockerfile-nginx .
+    - docker build -t ${DOCKER_REGISTRY}/intranet-drupal-fpm:latest -t intranet-drupal-fpm:${CI_PIPELINE_IID} -t intranet-drupal-fpm -f Dockerfile-drupal .
+    - docker build -t ${DOCKER_REGISTRY}/intranet-nginx-drupal:latest -t intranet-nginx-drupal:${CI_PIPELINE_IID} -t intranet-nginx-drupal -f Dockerfile-nginx .
     - docker push ${DOCKER_REGISTRY}/intranet-nginx-drupal
     - docker push ${DOCKER_REGISTRY}/intranet-drupal-fpm
   rules:
@@ -41,7 +41,7 @@ update-app-service:
     - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
   script:
     - echo "Creating new revision of Container App"
-    - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-dev --revision-suffix ${$CI_PIPELINE_IID}
+    - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-dev --revision-suffix ${CI_PIPELINE_IID}
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: manual
