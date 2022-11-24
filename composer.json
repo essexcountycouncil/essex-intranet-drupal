@@ -93,6 +93,9 @@
                 "Breaks on fresh install": "patches/entitygroupfield-install.patch",
                 "\"Drupal\\group\\Entity\\GroupContent\" unexpected error": "https://www.drupal.org/files/issues/2022-10-14/issue-3315323-3.patch",
                 "Support for Groups v3": "patches/entitygroupfield-groupv3-2.patch"
+            },
+            "localgovdrupal/localgov_alert_banner": {
+                "Increase size of title field": "patches/localgov_alert_banner.patch"
             }
         },
         "drupal-scaffold": {
