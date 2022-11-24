@@ -10,6 +10,7 @@ module:
   breakpoint: 0
   ckeditor: 0
   ckeditor_div_manager: 0
+  cludo_search: 0
   condition_field: 0
   config: 0
   content_moderation: 0
@@ -31,12 +32,12 @@ module:
   entity: 0
   entity_browser: 0
   entity_browser_entity_form: 0
-  entitygroupfield: 0
   entity_hierarchy: 0
   entity_hierarchy_breadcrumb: 0
   entity_reference_facet_link: 0
   entity_reference_revisions: 0
   entity_usage: 0
+  entitygroupfield: 0
   facets: 0
   field: 0
   field_formatter_class: 0
@@ -149,13 +150,13 @@ module:
   toolbar: 0
   update: 0
   user: 0
+  variationcache: 0
   views_ui: 0
   viewsreference: 0
   webform: 0
   webform_ui: 0
   workflows: 0
   pathauto: 1
-  variationcache: 0
   views: 10
   paragraphs: 11
   localgov: 1000

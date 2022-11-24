@@ -1,0 +1,25 @@
+uuid: de9bb5db-7274-44db-b03a-7918a2f19583
+langcode: en
+status: true
+dependencies:
+  module:
+    - cludo_search
+    - system
+  theme:
+    - essex
+id: cludosearchblock
+theme: essex
+region: search
+weight: 0
+provider: null
+plugin: cludo_search
+settings:
+  id: cludo_search
+  label: 'Cludo Search block'
+  label_display: '0'
+  provider: cludo_search
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "<front>\r\n/csearch"

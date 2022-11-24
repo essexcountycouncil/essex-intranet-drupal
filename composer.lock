@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7fac9c05e3d7832c6fe0c3a96f3bde71",
+    "content-hash": "6679b1aa47964e3fcb20ef3071793f91",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -560,16 +560,16 @@
         },
         {
             "name": "consolidation/annotated-command",
-            "version": "4.6.1",
+            "version": "4.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "76835d35fcb0b879170129e82adfa1536b72921f"
+                "reference": "423715c6c5156d007e6d3357f7793d9dad510cd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/76835d35fcb0b879170129e82adfa1536b72921f",
-                "reference": "76835d35fcb0b879170129e82adfa1536b72921f",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/423715c6c5156d007e6d3357f7793d9dad510cd4",
+                "reference": "423715c6c5156d007e6d3357f7793d9dad510cd4",
                 "shasum": ""
             },
             "require": {
@@ -610,9 +610,9 @@
             "description": "Initialize Symfony Console commands from annotated command class methods.",
             "support": {
                 "issues": "https://github.com/consolidation/annotated-command/issues",
-                "source": "https://github.com/consolidation/annotated-command/tree/4.6.1"
+                "source": "https://github.com/consolidation/annotated-command/tree/4.7.0"
             },
-            "time": "2022-11-09T18:31:17+00:00"
+            "time": "2022-11-22T21:28:39+00:00"
         },
         {
             "name": "consolidation/config",
@@ -1157,28 +1157,31 @@
         },
         {
             "name": "davedevelopment/stiphle",
-            "version": "0.9.2",
+            "version": "0.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/davedevelopment/stiphle.git",
-                "reference": "76151e6474741adee258c1a4860a0460e319563b"
+                "reference": "634bd16c6b0a7e8f81a961e9ddc53916fe3ba939"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/davedevelopment/stiphle/zipball/76151e6474741adee258c1a4860a0460e319563b",
-                "reference": "76151e6474741adee258c1a4860a0460e319563b",
+                "url": "https://api.github.com/repos/davedevelopment/stiphle/zipball/634bd16c6b0a7e8f81a961e9ddc53916fe3ba939",
+                "reference": "634bd16c6b0a7e8f81a961e9ddc53916fe3ba939",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.1"
+                "php": "^5.6.0|^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.5",
-                "predis/predis": "^1.1"
+                "doctrine/cache": "^1.0",
+                "phpunit/phpunit": "^6.5|^7.5|^8.4",
+                "predis/predis": "^1.1",
+                "zendframework/zend-cache": "^2.8"
             },
             "suggest": {
                 "doctrine/cache": "~1.0",
-                "predis/predis": "~1.1"
+                "predis/predis": "~1.1",
+                "zendframework/zend-cache": "^2.8"
             },
             "type": "library",
             "autoload": {
@@ -1207,9 +1210,9 @@
             ],
             "support": {
                 "issues": "https://github.com/davedevelopment/stiphle/issues",
-                "source": "https://github.com/davedevelopment/stiphle/tree/0.9.2"
+                "source": "https://github.com/davedevelopment/stiphle/tree/master"
             },
-            "time": "2017-08-16T07:58:18+00:00"
+            "time": "2019-10-22T20:06:21+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2523,6 +2526,50 @@
             }
         },
         {
+            "name": "drupal/cludo_search",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/cludo_search.git",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/cludo_search-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "b6bec32730bf19778e7136a271ccb5491d8a5662"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1598013524",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "darrenwh",
+                    "homepage": "https://www.drupal.org/user/2430804"
+                }
+            ],
+            "description": "Provides a search interface to a dedicated Cludo Search.",
+            "homepage": "https://www.drupal.org/project/cludo_search",
+            "support": {
+                "source": "https://git.drupalcode.org/project/cludo_search"
+            }
+        },
+        {
             "name": "drupal/condition_field",
             "version": "2.0.1",
             "source": {
@@ -3156,22 +3203,22 @@
         },
         {
             "name": "drupal/date_recur",
-            "version": "3.2.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/date_recur.git",
-                "reference": "3.2.0"
+                "reference": "3.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/date_recur-3.2.0.zip",
-                "reference": "3.2.0",
-                "shasum": "33b6a5e6b10f4cb88c5d0e85ba4657a14ab22628"
+                "url": "https://ftp.drupal.org/files/projects/date_recur-3.1.0.zip",
+                "reference": "3.1.0",
+                "shasum": "bc2c1fa7825b8b88bf5624fcaef30aa0b9aca5f2"
             },
             "require": {
-                "drupal/core": "^9 || ^10",
-                "php": ">=8.0",
-                "rlanvin/php-rrule": "^1 || ^2"
+                "drupal/core": "^9",
+                "php": ">=7.4 <8.1",
+                "rlanvin/php-rrule": "1.*"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
@@ -3187,8 +3234,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.2.0",
-                    "datestamp": "1649146514",
+                    "version": "3.1.0",
+                    "datestamp": "1643545755",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5287,7 +5334,7 @@
             "extra": {
                 "drupal": {
                     "version": "2.2.12",
-                    "datestamp": "1669109964",
+                    "datestamp": "1669197065",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7127,16 +7174,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/essexcountycouncil/content_ownership.git",
-                "reference": "5f88140146519d7b3c2cbf8de4fc95e1573c68f0"
+                "reference": "4a8eb0b440ddbcf4aaf26892deb7ee59c4149c60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/essexcountycouncil/content_ownership/zipball/5f88140146519d7b3c2cbf8de4fc95e1573c68f0",
-                "reference": "5f88140146519d7b3c2cbf8de4fc95e1573c68f0",
+                "url": "https://api.github.com/repos/essexcountycouncil/content_ownership/zipball/4a8eb0b440ddbcf4aaf26892deb7ee59c4149c60",
+                "reference": "4a8eb0b440ddbcf4aaf26892deb7ee59c4149c60",
                 "shasum": ""
             },
             "default-branch": true,
-            "type": "drupal-custom-module",
+            "type": "drupal-module",
             "authors": [
                 {
                     "name": "Nathan Brettell",
@@ -7148,7 +7195,7 @@
                 "source": "https://github.com/essexcountycouncil/content_ownership/tree/main",
                 "issues": "https://github.com/essexcountycouncil/content_ownership/issues"
             },
-            "time": "2022-11-15T11:49:48+00:00"
+            "time": "2022-11-24T09:25:33+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -10537,24 +10584,23 @@
         },
         {
             "name": "rlanvin/php-rrule",
-            "version": "v2.3.2",
+            "version": "v1.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rlanvin/php-rrule.git",
-                "reference": "2221e8cdac037f3ead5bd17a8e19b0771534d4e7"
+                "reference": "1373df401e0926cf7548716dabbc0d19603a144d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rlanvin/php-rrule/zipball/2221e8cdac037f3ead5bd17a8e19b0771534d4e7",
-                "reference": "2221e8cdac037f3ead5bd17a8e19b0771534d4e7",
+                "url": "https://api.github.com/repos/rlanvin/php-rrule/zipball/1373df401e0926cf7548716dabbc0d19603a144d",
+                "reference": "1373df401e0926cf7548716dabbc0d19603a144d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.0"
+                "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpmd/phpmd": "@stable",
-                "phpunit/phpunit": "^5.7|^6.5|^8.0"
+                "phpunit/phpunit": "^4.8|^5.5|^6.5"
             },
             "suggest": {
                 "ext-intl": "Intl extension is needed for humanReadable()"
@@ -10580,9 +10626,9 @@
             ],
             "support": {
                 "issues": "https://github.com/rlanvin/php-rrule/issues",
-                "source": "https://github.com/rlanvin/php-rrule/tree/v2.3.2"
+                "source": "https://github.com/rlanvin/php-rrule/tree/v1.6.3"
             },
-            "time": "2022-05-03T13:11:22+00:00"
+            "time": "2019-01-13T09:49:03+00:00"
         },
         {
             "name": "stack/builder",
@@ -12858,33 +12904,34 @@
         },
         {
             "name": "symfony/string",
-            "version": "v6.1.7",
+            "version": "v5.4.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "823f143370880efcbdfa2dbca946b3358c4707e5"
+                "reference": "571334ce9f687e3e6af72db4d3b2a9431e4fd9ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/823f143370880efcbdfa2dbca946b3358c4707e5",
-                "reference": "823f143370880efcbdfa2dbca946b3358c4707e5",
+                "url": "https://api.github.com/repos/symfony/string/zipball/571334ce9f687e3e6af72db4d3b2a9431e4fd9ed",
+                "reference": "571334ce9f687e3e6af72db4d3b2a9431e4fd9ed",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.1",
+                "php": ">=7.2.5",
                 "symfony/polyfill-ctype": "~1.8",
                 "symfony/polyfill-intl-grapheme": "~1.0",
                 "symfony/polyfill-intl-normalizer": "~1.0",
-                "symfony/polyfill-mbstring": "~1.0"
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "~1.15"
             },
             "conflict": {
-                "symfony/translation-contracts": "<2.0"
+                "symfony/translation-contracts": ">=3.0"
             },
             "require-dev": {
-                "symfony/error-handler": "^5.4|^6.0",
-                "symfony/http-client": "^5.4|^6.0",
-                "symfony/translation-contracts": "^2.0|^3.0",
-                "symfony/var-exporter": "^5.4|^6.0"
+                "symfony/error-handler": "^4.4|^5.0|^6.0",
+                "symfony/http-client": "^4.4|^5.0|^6.0",
+                "symfony/translation-contracts": "^1.1|^2",
+                "symfony/var-exporter": "^4.4|^5.0|^6.0"
             },
             "type": "library",
             "autoload": {
@@ -12923,7 +12970,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v6.1.7"
+                "source": "https://github.com/symfony/string/tree/v5.4.15"
             },
             "funding": [
                 {
@@ -12939,7 +12986,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-10-10T09:34:31+00:00"
+            "time": "2022-10-05T15:16:54+00:00"
         },
         {
             "name": "symfony/translation",
@@ -16255,12 +16302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "da95b1ad6506ec4dd087e04627f74f16cdb78c43"
+                "reference": "0399700d159e09b16645945758b65b921d3491fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/da95b1ad6506ec4dd087e04627f74f16cdb78c43",
-                "reference": "da95b1ad6506ec4dd087e04627f74f16cdb78c43",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0399700d159e09b16645945758b65b921d3491fe",
+                "reference": "0399700d159e09b16645945758b65b921d3491fe",
                 "shasum": ""
             },
             "conflict": {
@@ -16439,6 +16486,7 @@
                 "ivankristianto/phpwhois": "<=4.3",
                 "jackalope/jackalope-doctrine-dbal": "<1.7.4",
                 "james-heinrich/getid3": "<1.9.21",
+                "jasig/phpcas": "<1.3.3",
                 "joomla/archive": "<1.1.12|>=2,<2.0.1",
                 "joomla/filesystem": "<1.6.2|>=2,<2.0.1",
                 "joomla/filter": "<1.4.4|>=2,<2.0.1",
@@ -16491,7 +16539,7 @@
                 "modx/revolution": "<= 2.8.3-pl|<2.8",
                 "mojo42/jirafeau": "<4.4",
                 "monolog/monolog": ">=1.8,<1.12",
-                "moodle/moodle": "<4.0.1",
+                "moodle/moodle": "<4.0.5",
                 "mustache/mustache": ">=2,<2.14.1",
                 "namshi/jose": "<2.2",
                 "neoan3-apps/template": "<1.1.1",
@@ -16787,7 +16835,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-22T00:16:41+00:00"
+            "time": "2022-11-23T23:04:03+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -18478,6 +18526,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/cludo_search": 10,
         "drupal/config_split": 5,
         "essexcountycouncil/content_ownership": 20,
         "localgovdrupal/localgov_forms": 20,
@@ -18487,5 +18536,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
