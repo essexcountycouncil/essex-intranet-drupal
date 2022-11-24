@@ -1,0 +1,61 @@
+diff --git a/localgov_alert_banner.install b/localgov_alert_banner.install
+index 6e7ca8f..d84efd8 100644
+--- a/localgov_alert_banner.install
++++ b/localgov_alert_banner.install
+@@ -13,6 +13,28 @@ use Drupal\field\Entity\FieldConfig;
+ use Drupal\field\Entity\FieldStorageConfig;
+ use Symfony\Component\Yaml\Yaml;
+ use Drupal\user\RoleInterface;
++use Drupal\Core\Database\Database;
++
++/**
++ * Update alert banner entity definition to increase size of title field.
++ */
++function localgov_alert_banner_update_9201() {
++  // Change length of the name field.
++  $schema = Database::getConnection()->schema();
++  $schema->changeField('localgov_alert_banner_field_data', 'title', 'title', [
++    'length' => '255',
++    'not null' => TRUE,
++    'type' => 'varchar',
++  ]);
++
++  // Change length of the name field in revisions.
++  $schema = Database::getConnection()->schema();
++  $schema->changeField('localgov_alert_banner_field_revision', 'title', 'title', [
++    'default' => NULL,
++    'length' => '255',
++    'type' => 'varchar',
++  ]);
++}
+ 
+ /**
+  * Implements hook_install().
+diff --git a/localgov_alert_banner.module b/localgov_alert_banner.module
+index 93b073d..5390883 100644
+--- a/localgov_alert_banner.module
++++ b/localgov_alert_banner.module
+@@ -6,6 +6,7 @@
+  */
+ 
+ use Drupal\Core\Cache\Cache;
++use Drupal\Core\Entity\EntityTypeInterface;
+ use Drupal\Core\Routing\RouteMatchInterface;
+ 
+ /**
+@@ -121,3 +122,15 @@ function localgov_alert_banner_configure_scheduled_transitions() {
+   }
+   user_role_grant_permissions('emergency_publisher', $permissions);
+ }
++
++/**
++ * @param $fields
++ * @param EntityTypeInterface $entity_type
++ *
++ * Makes sure the title field of the alert banner entity can be 255 characters
++ */
++function localgov_alert_banner_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
++    if ($entity_type->id() == 'localgov_alert_banner' && !empty($fields['title'])) {
++        $fields['title']->setSetting('max_length', 255);
++    }
++}
