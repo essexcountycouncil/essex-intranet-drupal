@@ -1,38 +1,6 @@
-.lgd-header {
-    background-image: url('../assets/images/red-gradient-curve-xl.png');
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.lgd-footer__pre-footer {
-    background-image: url('../assets/images/grey-gradient-xl.png');
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 @media only screen and (max-width: 767px) {
-    .lgd-header {
-        background-image: url('../assets/images/red-gradient-curve-sm.png');
-    }
-
     .lgd-header__nav--primary {
         margin-top: 2rem;
-    }
-
-    .lgd-footer__pre-footer {
-        background-image: url('../assets/images/grey-gradient-sm.png');
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .lgd-header {
-        background-image: url('../assets/images/red-gradient-curve-lg.png');
-    }
-
-    .lgd-footer__pre-footer {
-        background-image: url('../assets/images/grey-gradient-lg.png');
     }
 }
 
@@ -131,4 +99,34 @@ input[type="submit"],
 .accordion-pane button:focus {
     background-color: var(--color-white);
     color: var(--color-link);
+}
+
+.menu--main > .menu-item a {
+    padding: var(--spacing-smallest);
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.875rem;
+    position: relative;
+}
+
+.menu--main > .menu-item a:after {
+    content: '';
+    background-color: var(--color-white);
+    width: 1px;
+    height: 20px;
+    position: absolute;
+    right: -0.5rem;
+    top: 0.25rem;
+}
+
+.menu--main > .menu-item:last-child a:after {
+    content: none;
+}
+
+.lgd-header__inner {
+    justify-content: start;
+}
+
+.lgd-header .lgd-region--header {
+    margin-right: 0;
 }
