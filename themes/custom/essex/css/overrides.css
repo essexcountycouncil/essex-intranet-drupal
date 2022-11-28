@@ -4,19 +4,94 @@
     }
 }
 
+/* Alert banners */
+
 .localgov-alert-banner {
-    margin: var(--spacing-large);
+    margin-bottom: var(--spacing);
+}
+
+.localgov-alert-banner--major,
+.localgov-alert-banner--announcement,
+.localgov-alert-banner--minor {
+    background: var(--color-white);
+    border-width: 5px;
+    border-style: solid;
+}
+
+.localgov-alert-banner--major {
+    border-color: var(--alert-banner-bg-color-major);
 }
 
 .localgov-alert-banner--announcement {
-    background-color: #3a7d64;
+    border-color: #3a7d64;
 }
 
-.localgov-alert-banner--major .localgov-alert-banner__title,
-.localgov-alert-banner--announcement .localgov-alert-banner__title,
-.localgov-alert-banner--notable-person .localgov-alert-banner__title {
+.localgov-alert-banner--announcement .localgov-alert-banner__close {
+    border-color: var(--color-black);
+}
+
+.localgov-alert-banner--minor {
+    border-color: var(--alert-banner-bg-color-minor);
+}
+
+.localgov-alert-banner--notable-person,
+.localgov-alert-banner--notable-person .localgov-alert-banner__close {
     color: var(--color-white);
 }
+
+.localgov-alert-banner__actions {
+    align-items: flex-start;
+}
+
+.localgov-alert-banner__close {
+    border: 1px solid var(--color-black);
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.localgov-alert-banner__close:hover,
+.localgov-alert-banner__close:focus {
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+}
+
+.localgov-alert-banner .localgov-alert-banner__title {
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+}
+
+.localgov-alert-banner .localgov-alert-banner__inner {
+    background-position: 0 35px;
+    background-repeat: no-repeat;
+    background-size: 35px;
+    padding-left: 3rem;
+    padding-top: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .localgov-alert-banner .localgov-alert-banner__inner {
+        padding-left: 9rem;
+    }
+}
+
+.localgov-alert-banner--major .localgov-alert-banner__inner {
+    background-image: url('../assets/images/icons/icon_emergency_red.svg');
+}
+
+.localgov-alert-banner--announcement .localgov-alert-banner__inner {
+    background-image: url('../assets/images/icons/icon_info_green.svg');
+}
+
+.localgov-alert-banner--minor .localgov-alert-banner__inner {
+    background-image: url('../assets/images/icons/icon_warning_yellow.svg');
+}
+
+.localgov-alert-banner--notable-person .localgov-alert-banner__inner {
+    background-image: url('../assets/images/icons/warning_white_round.svg');
+}
+
+
+/* Guide navigation */
 
 .lgd-guide-nav .lgd-guide-nav__list-item > a {
     font-weight: 600;
