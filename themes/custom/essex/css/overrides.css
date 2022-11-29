@@ -1,3 +1,15 @@
+/* Banner image */
+
+.banner__image img {
+    max-height: 250px;
+}
+
+@media only screen and (min-width: 768px) {
+    .banner__image img {
+        min-height: 350px;
+    }
+}
+
 @media only screen and (max-width: 767px) {
   .lgd-header__nav--primary {
     margin-top: 2rem;
