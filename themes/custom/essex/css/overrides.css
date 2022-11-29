@@ -131,6 +131,25 @@ input[type="submit"],
     margin-right: 0;
 }
 
+/* Heading underline marker */
+h1,
+.field--type-text-long h2 {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-bottom: 0.5rem;
+}
+
+h1:after,
+.field--type-text-long h2:after {
+    content: '';
+    background-color: var(--color-accent);
+    width: 70px;
+    height: 8px;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+}
+
 /* Guide navigation */
 .lgd-guide-nav {
     background-color: var(--color-white) !important;
