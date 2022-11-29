@@ -55,4 +55,5 @@ body {
   --breadcrumbs-link-color: var(--color-black);
   --quote-author-color: var(--color-black);
   --tabs-button-bg-color: var(--color-grey-lighter);
+  --sidebar-exposed-form-bg-color: var(--color-white);
 }
