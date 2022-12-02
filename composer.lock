@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05ca4439a39a50aa0d3d494eaacb1048",
+    "content-hash": "4130a2eb44388514ba2be9f8b9f4c109",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5879,6 +5879,54 @@
             }
         },
         {
+            "name": "drupal/permissions_filter",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/permissions_filter.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/permissions_filter-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "a53ea4aebf14236ad3748f09d5bf03c3e2d71de5"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1660570361",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ajay_reddy",
+                    "homepage": "https://www.drupal.org/user/3261994"
+                },
+                {
+                    "name": "DieterHolvoet",
+                    "homepage": "https://www.drupal.org/user/3567222"
+                }
+            ],
+            "description": "Create a filter for permission page.",
+            "homepage": "https://www.drupal.org/project/permissions_filter",
+            "support": {
+                "source": "https://git.drupalcode.org/project/permissions_filter"
+            }
+        },
+        {
             "name": "drupal/preview_link",
             "version": "1.7.0",
             "source": {
@@ -7244,12 +7292,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/essexcountycouncil/content_ownership.git",
-                "reference": "4a8eb0b440ddbcf4aaf26892deb7ee59c4149c60"
+                "reference": "1c6b80b3e41fc28f85db15139d700370908e7a4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/essexcountycouncil/content_ownership/zipball/4a8eb0b440ddbcf4aaf26892deb7ee59c4149c60",
-                "reference": "4a8eb0b440ddbcf4aaf26892deb7ee59c4149c60",
+                "url": "https://api.github.com/repos/essexcountycouncil/content_ownership/zipball/1c6b80b3e41fc28f85db15139d700370908e7a4e",
+                "reference": "1c6b80b3e41fc28f85db15139d700370908e7a4e",
                 "shasum": ""
             },
             "default-branch": true,
@@ -7265,7 +7313,7 @@
                 "source": "https://github.com/essexcountycouncil/content_ownership/tree/main",
                 "issues": "https://github.com/essexcountycouncil/content_ownership/issues"
             },
-            "time": "2022-11-24T09:25:33+00:00"
+            "time": "2022-12-01T09:58:36+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
