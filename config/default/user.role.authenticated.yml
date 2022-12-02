@@ -5,6 +5,8 @@ dependencies:
   config:
     - filter.format.wysiwyg
   module:
+    - content_ownership
+    - eu_cookie_compliance
     - filter
     - fontawesome
     - localgov_alert_banner
@@ -20,8 +22,10 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access fontawesome additional settings'
+  - 'display eu cookie compliance popup'
   - 'use text format wysiwyg'
   - 'view all localgov alert banner entities'
+  - 'view content owner/sme entity'
   - 'view geo'
   - 'view localgov alert banner localgov_alert_banner entities'
   - 'view media'

@@ -22,8 +22,10 @@ dependencies:
     - node.type.localgov_subsites_page
     - workflows.workflow.localgov_editorial
   module:
+    - cludo_search
     - content_moderation
     - entity_browser
+    - entity_hierarchy
     - media
     - node
     - paragraphs
@@ -42,6 +44,7 @@ label: Contributor
 weight: 4
 is_admin: null
 permissions:
+  - 'access cludo search content'
   - 'access media overview'
   - 'access page_components entity browser pages'
   - 'access paragraphs_library_items entity browser pages'
@@ -119,20 +122,7 @@ permissions:
   - 'edit own localgov_subsites_page content'
   - 'edit own remote_video media'
   - 'edit paragraph library item'
-  - 'reschedule scheduled transitions node localgov_directories_page'
-  - 'reschedule scheduled transitions node localgov_directories_venue'
-  - 'reschedule scheduled transitions node localgov_directory_promo_page'
-  - 'reschedule scheduled transitions node localgov_event'
-  - 'reschedule scheduled transitions node localgov_guides_overview'
-  - 'reschedule scheduled transitions node localgov_guides_page'
-  - 'reschedule scheduled transitions node localgov_services_landing'
-  - 'reschedule scheduled transitions node localgov_services_page'
-  - 'reschedule scheduled transitions node localgov_services_status'
-  - 'reschedule scheduled transitions node localgov_services_sublanding'
-  - 'reschedule scheduled transitions node localgov_step_by_step_overview'
-  - 'reschedule scheduled transitions node localgov_step_by_step_page'
-  - 'reschedule scheduled transitions node localgov_subsites_overview'
-  - 'reschedule scheduled transitions node localgov_subsites_page'
+  - 'reorder entity_hierarchy children'
   - 'update media'
   - 'use localgov_editorial transition approve'
   - 'use localgov_editorial transition create_new_draft'
@@ -158,12 +148,17 @@ permissions:
   - 'view localgov_subsites_page revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
+  - 'view scheduled transitions localgov_alert_banner localgov_alert_banner'
+  - 'view scheduled transitions node localgov_directories_org'
   - 'view scheduled transitions node localgov_directories_page'
   - 'view scheduled transitions node localgov_directories_venue'
+  - 'view scheduled transitions node localgov_directory'
   - 'view scheduled transitions node localgov_directory_promo_page'
   - 'view scheduled transitions node localgov_event'
   - 'view scheduled transitions node localgov_guides_overview'
   - 'view scheduled transitions node localgov_guides_page'
+  - 'view scheduled transitions node localgov_news_article'
+  - 'view scheduled transitions node localgov_newsroom'
   - 'view scheduled transitions node localgov_services_landing'
   - 'view scheduled transitions node localgov_services_page'
   - 'view scheduled transitions node localgov_services_status'
