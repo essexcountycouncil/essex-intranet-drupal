@@ -13,7 +13,7 @@
 /* Alert banners */
 
 .localgov-alert-banner {
-    margin-bottom: var(--spacing);
+    margin: var(--spacing);
 }
 
 .localgov-alert-banner--major,
