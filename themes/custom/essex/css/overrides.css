@@ -92,13 +92,6 @@
     background-image: url('../assets/images/icons/icon_warning_yellow.svg');
 }
 
-
-/* Guide navigation */
-
-.lgd-guide-nav .lgd-guide-nav__list-item > a {
-  font-weight: 600;
-}
-
 .service-cta-block .service-cta-block__link--cta-info {
   background-color: var(--color-link);
 }
@@ -336,10 +329,18 @@ h1:after,
     left: 0;
 }
 
-/* Guide navigation */
+/* Guide Contents */
+.block-localgov-guides-contents {
+    margin: var(--spacing-largest) 0;
+}
+
 .lgd-guide-nav {
     background-color: var(--color-white) !important;
     border: 1px solid var(--color-black);
+}
+
+.lgd-guide-nav .lgd-guide-nav__list-item > a {
+    font-weight: 600;
 }
 
 @media only screen and (min-width: 768px) {
