@@ -1,0 +1,31 @@
+uuid: f5697b19-3f31-4dc1-9610-26ec4158bccd
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov
+    - system
+  theme:
+    - essex
+_core:
+  default_config_hash: G3wwIAYo1fyw5qaQywazqr-r0a6zdt08kvzHhgCYTVs
+id: essex_localgov_home_welcome_block_scarfolk
+theme: essex
+region: content_top
+weight: -10
+provider: null
+plugin: localgov_home_welcome_block
+settings:
+  id: localgov_home_welcome_block
+  label: 'Welcome to Essex Intranet'
+  label_display: '0'
+  provider: localgov
+  localgov_home_welcome_message:
+    value: "<h1>Welcome to Essex Intranet</h1>\r\n"
+    format: wysiwyg
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

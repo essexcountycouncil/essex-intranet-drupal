@@ -844,7 +844,8 @@ display:
         type: normal
         title: 'Needs review'
         description: ''
-        weight: 0
+        weight: -46
+        enabled: false
         expanded: false
         menu_name: main
         parent: ''
