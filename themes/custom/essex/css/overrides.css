@@ -487,3 +487,55 @@ tbody tr {
 .link-block__content {
     padding-left: var(--spacing-larger);
 }
+
+/* Labelled icon component */
+.services--feature-block {
+    border-radius: 0.5rem;
+    background-color: #3a7d64;
+    text-align: center;
+    float: left;
+    width: calc(50% - 0.5rem);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.services--feature-block:nth-of-type(odd) {
+    margin-right: 0.5rem;
+}
+
+.services--feature-block:nth-of-type(even) {
+    margin-left: 0.5rem;
+}
+
+.services--feature-block a {
+    display: block;
+    padding: 1rem 1.25rem;
+    color: var(--color-white);
+    text-decoration: none;
+    width: 100%;
+    min-height: 97px;
+}
+
+.services--feature-block a:hover {
+    text-decoration: underline
+}
+
+.services--feature-block a:focus {
+    color: var(--color-black);
+}
+
+.services--feature-icon {
+    margin-bottom: 0.75rem;
+    font-size: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .services--feature-block {
+        margin-right: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .services--feature-block:nth-of-type(2n) {
+        margin-right: 0;
+    }
+}
