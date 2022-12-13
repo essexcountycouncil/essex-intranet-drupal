@@ -18,8 +18,8 @@ RUN apt-get update \
   unzip \
   sudo \
   procps \
-  php-apcu \
-  php-uploadprogress \
+  php8.1-apcu \
+  php8.1-uploadprogress \
   php8.1-fpm \
   php8.1-xml \
   php8.1-mbstring \
@@ -53,6 +53,8 @@ RUN apt-get update \
   libxpm-dev \
   libfreetype6-dev \
   && apt-get clean all
+
+RUN update-alternatives --set php /usr/bin/php8.1
 
 RUN pecl channel-update pecl.php.net \
     && pecl install xdebug imagick memcached
