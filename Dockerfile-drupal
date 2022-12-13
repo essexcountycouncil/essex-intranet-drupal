@@ -57,7 +57,7 @@ RUN apt-get update \
 RUN update-alternatives --set php /usr/bin/php8.1
 
 RUN pecl channel-update pecl.php.net \
-    && pecl install xdebug imagick memcached
+    && pecl install imagick memcached
 
 # Download and install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
