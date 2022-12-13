@@ -1,9 +1,15 @@
 uuid: 42554161-8911-4e4e-aa52-cf153b6621c9
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - eu_cookie_compliance_gtm
+third_party_settings:
+  eu_cookie_compliance_gtm:
+    gtm_data:
+      analytics: '@status'
 id: strictly_necessary_cookies
 label: 'Strictly Necessary cookies'
-description: 'These cookies are essential for basic functionality such as remembering your progress through a form.They always need to be on.'
-checkbox_default_state: checked
+description: 'These cookies are essential for basic functionality such as remembering your progress through a form. They always need to be on.'
+checkbox_default_state: required
 weight: -10
