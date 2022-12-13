@@ -9,8 +9,8 @@ dependencies:
     - essex
 id: guidecontents
 theme: essex
-region: content
-weight: 0
+region: content_top
+weight: -7
 provider: null
 plugin: localgov_guides_contents
 settings:
