@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.wysiwyg
   module:
+    - cludo_search
     - content_ownership
     - eu_cookie_compliance
     - filter
@@ -20,6 +21,7 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
+  - 'access cludo search content'
   - 'access content'
   - 'access fontawesome additional settings'
   - 'display eu cookie compliance popup'
