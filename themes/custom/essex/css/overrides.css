@@ -406,8 +406,6 @@ h1:after,
 
 .cludo-search-block-search-form #edit-submit {
   background: url('../assets/images/search.svg') no-repeat 50% var(--color-white);
-  /*background-color: #565656;*/
-  /*-webkit-mask-image: url(../assets/images/search.svg);*/
   padding: 1em 2em;
   text-indent: -9999px;
   border: 0;
