@@ -1,0 +1,25 @@
+uuid: 57094c16-731a-489b-b407-fc2cce7dd4e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - eu_cookie_compliance
+    - system
+  theme:
+    - essex
+id: eucookiecompliancebuttonblock
+theme: essex
+region: content_top
+weight: 0
+provider: null
+plugin: eu_cookie_compliance_button_block
+settings:
+  id: eu_cookie_compliance_button_block
+  label: 'EU Cookie Compliance Button Block'
+  label_display: visible
+  provider: eu_cookie_compliance
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /cookies
