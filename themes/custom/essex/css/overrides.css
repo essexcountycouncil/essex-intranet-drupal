@@ -1,7 +1,18 @@
+/* Logo */
+.branding__item--logo a {
+    display: block;
+}
+
+.branding__item--logo a:focus {
+    outline-width: 3px;
+    outline-style: solid;
+}
+
+
 /* Alert banners */
 
 .localgov-alert-banner {
-    margin-bottom: var(--spacing);
+    margin: var(--spacing);
 }
 
 .localgov-alert-banner--major,

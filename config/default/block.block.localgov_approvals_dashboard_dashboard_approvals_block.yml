@@ -12,7 +12,7 @@ dependencies:
 id: localgov_approvals_dashboard_dashboard_approvals_block
 theme: essex
 region: content
-weight: 0
+weight: -12
 provider: null
 plugin: 'views_block:localgov_approvals_dashboard-dashboard_approvals_block'
 settings:
