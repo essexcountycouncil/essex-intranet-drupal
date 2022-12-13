@@ -4,6 +4,6 @@ status: true
 dependencies: {  }
 id: strictly_necessary_cookies
 label: 'Strictly Necessary cookies'
-description: 'These cookies are essential for basic functionality such as remembering your progress through a form.They always need to be on.'
+description: 'These cookies are essential for basic functionality such as remembering your progress through a form. They always need to be on.'
 checkbox_default_state: checked
 weight: -10
