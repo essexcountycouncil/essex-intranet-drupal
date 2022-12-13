@@ -23,8 +23,11 @@ dependencies:
     - node.type.localgov_subsites_page
     - workflows.workflow.localgov_editorial
   module:
+    - cludo_search
     - content_moderation
+    - content_ownership
     - entity_browser
+    - entity_hierarchy
     - group
     - localgov_directories
     - localgov_geo
@@ -46,6 +49,7 @@ label: Editor
 weight: 2
 is_admin: null
 permissions:
+  - 'access cludo search content'
   - 'access content overview'
   - 'access directory facets overview'
   - 'access geo overview'
@@ -54,12 +58,18 @@ permissions:
   - 'access page_components entity browser pages'
   - 'access paragraphs_library_items entity browser pages'
   - 'access toolbar'
+  - 'add content owner/sme entity'
+  - 'add scheduled transitions localgov_alert_banner localgov_alert_banner'
+  - 'add scheduled transitions node localgov_directories_org'
   - 'add scheduled transitions node localgov_directories_page'
   - 'add scheduled transitions node localgov_directories_venue'
+  - 'add scheduled transitions node localgov_directory'
   - 'add scheduled transitions node localgov_directory_promo_page'
   - 'add scheduled transitions node localgov_event'
   - 'add scheduled transitions node localgov_guides_overview'
   - 'add scheduled transitions node localgov_guides_page'
+  - 'add scheduled transitions node localgov_news_article'
+  - 'add scheduled transitions node localgov_newsroom'
   - 'add scheduled transitions node localgov_services_landing'
   - 'add scheduled transitions node localgov_services_page'
   - 'add scheduled transitions node localgov_services_status'
@@ -68,6 +78,7 @@ permissions:
   - 'add scheduled transitions node localgov_step_by_step_page'
   - 'add scheduled transitions node localgov_subsites_overview'
   - 'add scheduled transitions node localgov_subsites_page'
+  - 'administer content owner/sme entity'
   - 'create directory facets'
   - 'create document media'
   - 'create geo'
@@ -163,6 +174,7 @@ permissions:
   - 'edit any localgov_subsites_overview content'
   - 'edit any localgov_subsites_page content'
   - 'edit any remote_video media'
+  - 'edit content owner/sme entity'
   - 'edit directory facets'
   - 'edit geo'
   - 'edit own document media'
@@ -184,12 +196,18 @@ permissions:
   - 'edit own localgov_subsites_page content'
   - 'edit own remote_video media'
   - 'edit paragraph library item'
+  - 'reorder entity_hierarchy children'
+  - 'reschedule scheduled transitions localgov_alert_banner localgov_alert_banner'
+  - 'reschedule scheduled transitions node localgov_directories_org'
   - 'reschedule scheduled transitions node localgov_directories_page'
   - 'reschedule scheduled transitions node localgov_directories_venue'
+  - 'reschedule scheduled transitions node localgov_directory'
   - 'reschedule scheduled transitions node localgov_directory_promo_page'
   - 'reschedule scheduled transitions node localgov_event'
   - 'reschedule scheduled transitions node localgov_guides_overview'
   - 'reschedule scheduled transitions node localgov_guides_page'
+  - 'reschedule scheduled transitions node localgov_news_article'
+  - 'reschedule scheduled transitions node localgov_newsroom'
   - 'reschedule scheduled transitions node localgov_services_landing'
   - 'reschedule scheduled transitions node localgov_services_page'
   - 'reschedule scheduled transitions node localgov_services_status'
@@ -227,6 +245,7 @@ permissions:
   - 'view all revisions'
   - 'view all scheduled transitions'
   - 'view any unpublished content'
+  - 'view content owner/sme entity'
   - 'view directory facets'
   - 'view latest version'
   - 'view localgov_directories_page revisions'
@@ -246,12 +265,17 @@ permissions:
   - 'view localgov_subsites_page revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
+  - 'view scheduled transitions localgov_alert_banner localgov_alert_banner'
+  - 'view scheduled transitions node localgov_directories_org'
   - 'view scheduled transitions node localgov_directories_page'
   - 'view scheduled transitions node localgov_directories_venue'
+  - 'view scheduled transitions node localgov_directory'
   - 'view scheduled transitions node localgov_directory_promo_page'
   - 'view scheduled transitions node localgov_event'
   - 'view scheduled transitions node localgov_guides_overview'
   - 'view scheduled transitions node localgov_guides_page'
+  - 'view scheduled transitions node localgov_news_article'
+  - 'view scheduled transitions node localgov_newsroom'
   - 'view scheduled transitions node localgov_services_landing'
   - 'view scheduled transitions node localgov_services_page'
   - 'view scheduled transitions node localgov_services_status'

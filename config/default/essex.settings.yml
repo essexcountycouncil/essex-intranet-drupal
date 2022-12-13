@@ -5,7 +5,7 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: themes/custom/essex/assets/images/seax.png
+  path: themes/custom/essex/assets/images/ECC_logo_intranet_white.svg
 favicon:
   use_default: 1
 localgov_base_remove_css: 0

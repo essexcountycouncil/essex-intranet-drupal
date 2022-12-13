@@ -1,132 +1,478 @@
-@media only screen and (max-width: 767px) {
-    .lgd-header__nav--primary {
-        margin-top: 2rem;
-    }
-}
+/* Alert banners */
 
 .localgov-alert-banner {
-    margin: var(--spacing-large);
+    margin-bottom: var(--spacing);
+}
+
+.localgov-alert-banner--major,
+.localgov-alert-banner--announcement,
+.localgov-alert-banner--minor {
+    background: var(--color-white);
+    border-width: 5px;
+    border-style: solid;
+}
+
+.localgov-alert-banner--major {
+    border-color: var(--alert-banner-bg-color-major);
 }
 
 .localgov-alert-banner--announcement {
-    background-color: #3a7d64;
+    border-color: #3a7d64;
 }
 
-.localgov-alert-banner--major .localgov-alert-banner__title,
-.localgov-alert-banner--announcement .localgov-alert-banner__title,
-.localgov-alert-banner--notable-person .localgov-alert-banner__title {
+.localgov-alert-banner--announcement .localgov-alert-banner__close {
+    border-color: var(--color-black);
+}
+
+.localgov-alert-banner--minor {
+    border-color: var(--alert-banner-bg-color-minor);
+}
+
+.localgov-alert-banner--notable-person,
+.localgov-alert-banner--notable-person .localgov-alert-banner__close {
     color: var(--color-white);
+}
+
+.localgov-alert-banner__actions {
+    align-items: flex-start;
+}
+
+.localgov-alert-banner__close {
+    border: 1px solid var(--color-black);
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.localgov-alert-banner__close:hover,
+.localgov-alert-banner__close:focus {
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+}
+
+.localgov-alert-banner .localgov-alert-banner__title {
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+}
+
+.localgov-alert-banner .localgov-alert-banner__inner {
+    background-position: 0 35px;
+    background-repeat: no-repeat;
+    background-size: 35px;
+    padding-left: 3rem;
+    padding-top: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .localgov-alert-banner .localgov-alert-banner__inner {
+        padding-left: 9rem;
+    }
+}
+
+.localgov-alert-banner--major .localgov-alert-banner__inner {
+    background-image: url('../assets/images/icons/icon_emergency_red.svg');
+}
+
+.localgov-alert-banner--announcement .localgov-alert-banner__inner {
+    background-image: url('../assets/images/icons/icon_info_green.svg');
+}
+
+.localgov-alert-banner--minor .localgov-alert-banner__inner {
+    background-image: url('../assets/images/icons/icon_warning_yellow.svg');
+}
+
+.service-cta-block .service-cta-block__link--cta-info {
+  background-color: var(--color-link);
+}
+
+.service-cta-block .service-cta-block__link--cta-action {
+  background-color: var(--color-black);
+}
+
+.service-cta-block .service-cta-block__link:hover,
+.service-cta-block .service-cta-block__link:focus {
+  background-color: var(--color-focus);
+  color: var(--color-black);
+}
+
+.service-cta-block .service-cta-block__link:hover .service-cta-block__link-icon svg path,
+.service-cta-block .service-cta-block__link:focus .service-cta-block__link-icon svg path {
+  fill: var(--color-black);
+}
+
+.service-statuses__label {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.call-out-box__content {
+  background: var(--call-out-box-bg-color);
+}
+
+.call-out-box__content h2 {
+  color: var(--color-white);
+}
+
+p.callout {
+  font-weight: --heading-2-font-weight;
+}
+
+.callout.callout-primary {
+  background-color: var(--color-black);
+}
+
+input[type="submit"],
+.lgd-prev-next__list .lgd-prev-next__link {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.step-by-step-pages ol.step-list .step .step__title a {
+  color: var(--color-link);
+  display: inline-block;
+  font-weight: --heading-2-font-weight;
+}
+
+.step-by-step-pages ol.step-list .step .step__title .step-show {
+  display: block;
+}
+
+.banner--primary .field--name-localgov-title {
+  font-weight: --heading-2-font-weight;
+}
+
+.service-landing-page__contact {
+  border-color: var(--color-link);
+}
+
+.step-by-step-pages .step-master {
+  color: var(--color-black);
+}
+
+.accordion-pane button {
+  background-color: var(--color-link);
+  border-color: var(--color-link);
+}
+
+.accordion-pane button:hover,
+.accordion-pane button:focus {
+  background-color: var(--color-white);
+  color: var(--color-link);
+}
+
+.menu--main > .menu-item a {
+  padding: var(--spacing-smallest);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.875rem;
+  position: relative;
+}
+
+.menu--main > .menu-item a:after {
+  content: '';
+  background-color: var(--color-white);
+  width: 1px;
+  height: 20px;
+  position: absolute;
+  right: -0.5rem;
+  top: 0.25rem;
+}
+
+.menu--main > .menu-item:last-child a:after {
+  content: none;
+}
+
+.lgd-header__inner {
+  justify-content: start;
+}
+
+.lgd-header .lgd-region--header {
+    margin-right: 0;
+}
+
+
+/* RESPONSIVENESS */
+.views-col:nth-child(2) {
+    padding: 0 2rem;
+}
+
+.lgd-page-section {
+    margin-bottom: 1.5rem;
+}
+
+.lgd-page-section {
+    padding-right: var(--spacing-padding-horizontal);
+    padding-left: var(--spacing-padding-horizontal);
+}
+
+@media only screen and (max-width: 767px) {
+    .lgd-row__one-third {
+        margin-bottom: var(--spacing-large);
+    }
+}
+
+/* Three column layout responsiveness */
+
+.layout--threecol-33-34-33 {
+    justify-content: space-between;
+}
+
+.paragraph--type--page-section .layout--threecol-33-34-33 .layout__region--first,
+.paragraph--type--page-section .layout--threecol-33-34-33 .layout__region--second, 
+.paragraph--type--page-section .layout--threecol-33-34-33 .layout__region--third {
+    padding: 0;
+}
+
+@media only screen and (min-width: 640px) {
+    .layout--threecol-33-34-33 > .layout__region--first,
+    .layout--threecol-33-34-33 > .layout__region--second,
+    .layout--threecol-33-34-33 > .layout__region--third {
+        flex: 0 1 31%;
+    }
+}
+
+/* Media with text component */
+@media only screen and (max-width: 768px) {
+    .media-with-text--media-left {
+        flex-direction: column;
+    }
+
+    .media-with-text--media-right {
+        flex-direction: column-reverse;
+    }
+}
+
+.media-with-text__body {
+    padding: 1.75rem;
+}
+
+.media-with-text__body {
+    padding: 1.75rem;
+}
+
+.media-with-text--default .media-with-text__body {
+    background-color: #c3d3e5;
+}
+
+.media-with-text--default .media-with-text__link {
+    background-color: var(--color-white);
+    padding: var(--spacing-smaller);
+    display: inline-block;
+    margin-top: var(--spacing-large);
+}
+
+.media-with-text--featured {
+    position: relative;
+    overflow: hidden;
+    border: 0;
+    padding: 4rem 6rem 4rem 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .media-with-text--featured {
+        padding: 4rem;
+    }
+}
+
+.media-with-text--featured .contextual-region {
+    position: static;
+}
+
+.media-with-text--featured img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    object-fit: cover;
+}
+
+.media-with-text--featured .media-with-text__body {
+    background-color: var(--color-white);
+    position: relative;
+    z-index: 10;
+}
+
+@media only screen and (min-width: 768px) {
+    .media-with-text--featured .media-with-text__body {
+        width: 40%;
+    }
+}
+
+/* Heading underline marker */
+h1,
+.field--type-text-long h2 {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-bottom: 0.5rem;
+}
+
+h1:after,
+.field--type-text-long h2:after {
+    content: '';
+    background-color: var(--color-accent);
+    width: 70px;
+    height: 8px;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+}
+
+/* Guide Contents */
+.block-localgov-guides-contents {
+    margin: var(--spacing-largest) 0;
+}
+
+.lgd-guide-nav {
+    background-color: var(--color-white) !important;
+    border: 1px solid var(--color-black);
 }
 
 .lgd-guide-nav .lgd-guide-nav__list-item > a {
     font-weight: 600;
 }
 
-.service-cta-block .service-cta-block__link--cta-info {
-    background-color: var(--color-link);
-}
-  
-.service-cta-block .service-cta-block__link--cta-action {
-    background-color: var(--color-black);
-}
-  
-.service-cta-block .service-cta-block__link:hover,
-.service-cta-block .service-cta-block__link:focus {
-    background-color: var(--color-focus);
-    color: var(--color-black);
-}
-  
-.service-cta-block .service-cta-block__link:hover .service-cta-block__link-icon svg path,
-.service-cta-block .service-cta-block__link:focus .service-cta-block__link-icon svg path {
-    fill: var(--color-black);
-}
-  
-.service-statuses__label {
-    color: var(--color-white);
-    font-weight: 600;
-}
-  
-.call-out-box__content {
-    background: var(--call-out-box-bg-color);
-}
-  
-.call-out-box__content h2 {
-    color: var(--color-white);
-}
-  
-p.callout {
-    font-weight: --heading-2-font-weight;
-}
-  
-.callout.callout-primary {
-    background-color: var(--color-black);
-}
-  
-input[type="submit"],
-.lgd-prev-next__list .lgd-prev-next__link {
-    background-color: var(--color-black);
-    border-color: var(--color-black);
-}
-  
-.step-by-step-pages ol.step-list .step .step__title a {
-    color: var(--color-link);
-    display: inline-block;
-    font-weight: --heading-2-font-weight;
+@media only screen and (min-width: 768px) {
+    .lgd-guide-nav__list-item {
+        margin-right: var(--spacing-large);
+    }
 }
 
-.step-by-step-pages ol.step-list .step .step__title .step-show {
-    display: block;
+/* Sidebar blocks */
+.sidebar .lgd-region__inner > *,
+.blog-channel__sidebar > *,
+.newsroom__sidebar > * {
+    border: 1px solid var(--color-black);
 }
 
-.banner--primary .field--name-localgov-title {
-    font-weight: --heading-2-font-weight;
+/* Hero, banner image and content */
+.banner {
+    display: flex;
+    align-items: center;
 }
 
-.service-landing-page__contact {
-    border-color: var(--color-link);
-}
-
-.step-by-step-pages .step-master {
-    color: var(--color-black);
-}
-
-.accordion-pane button {
-    background-color: var(--color-link);
-    border-color: var(--color-link);
-}
-
-.accordion-pane button:hover,
-.accordion-pane button:focus {
-    background-color: var(--color-white);
-    color: var(--color-link);
-}
-
-.menu--main > .menu-item a {
-    padding: var(--spacing-smallest);
-    display: inline-block;
-    text-decoration: none;
-    font-size: 0.875rem;
-    position: relative;
-}
-
-.menu--main > .menu-item a:after {
-    content: '';
-    background-color: var(--color-white);
-    width: 1px;
-    height: 20px;
+.banner__image {
     position: absolute;
-    right: -0.5rem;
-    top: 0.25rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.menu--main > .menu-item:last-child a:after {
+.banner,
+.banner__image img {
+    height: 450px;
+}
+
+@media only screen and (min-width: 768px) {
+    .banner,
+    .banner__image img {
+        height: 350px;
+    }
+}
+
+.banner .lgd-container {
+    width: 100%;
+}
+
+.banner h1 {
+  background: var(--color-white);
+  padding: 0.35em 1em;
+  font-weight: 600;
+  margin-bottom: var(--spacing-large);
+}
+
+.banner h1::after {
     content: none;
 }
 
-.lgd-header__inner {
-    justify-content: start;
+/* Hero and Hero content */
+.hero__container {
+  position: relative;
 }
 
-.lgd-header .lgd-region--header {
-    margin-right: 0;
+.path-frontpage .banner__content {
+  background: transparent;
+  border: 0;
+  padding: 0 var(--spacing-padding-horizontal);
+  margin: 0;
+}
+
+.banner__content .cludo-search-block-search-form .form-item-search-keys > label {
+  display: none;
+}
+
+.banner__content .cludo-search-block-search-form .form-item,
+.banner__content .cludo-search-block-search-form .form-submit {
+  display: inline-block;
+}
+
+.banner .cludo-search-block-search-form .form-submit {
+    border: 0;
+}
+
+/* Search */
+.cludo-search-block-search-form form {
+    display: flex;
+}
+
+.cludo-search-block-search-form .form-item {
+    border: 1px solid var(--color-black);
+    margin-right: var(--spacing-smaller);
+    margin-bottom: 0;
+}
+
+.cludo-search-block-search-form .form-submit {
+    background-color: var(--color-white);
+    background-image: url('../assets/images/icons/magnifying-glass.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    text-indent: -999rem;
+    direction: ltr;
+    min-width: 3.5rem;
+}
+
+
+/* Tables */
+table {
+    margin-top: 0.8125rem;
+    margin-bottom: 1.625rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table caption {
+    text-align: left;
+    font-weight: var(--font-semibold);
+}
+
+thead th {
+    border-bottom: 2px solid var(--color-black);
+    
+}
+
+thead th,
+tbody td {
+    padding: 1.625rem 1.625rem 1.625rem 0;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--color-black);
+}
+
+/* Link and Summary component */
+.link-block {
+    border-top: 3px solid #6a6a6a;
+    padding-top: var(--spacing);
+    margin-bottom: var(--spacing-mega);
+}
+
+.link-block__title {
+    font-size: var(--font-size-h3);
+}
+
+.link-block__content {
+    padding-left: var(--spacing-larger);
 }

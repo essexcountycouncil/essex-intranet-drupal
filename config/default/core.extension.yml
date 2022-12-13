@@ -125,6 +125,7 @@ module:
   paragraphs_library: 0
   path: 0
   path_alias: 0
+  permissions_filter: 0
   preview_link: 0
   published_corrected_date: 0
   quickedit: 0
@@ -161,6 +162,7 @@ module:
   views: 10
   paragraphs: 11
   localgov: 1000
+  eu_cookie_compliance: 1001
 theme:
   claro: 0
   stable: 0
