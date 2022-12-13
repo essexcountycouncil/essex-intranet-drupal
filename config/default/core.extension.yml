@@ -38,6 +38,7 @@ module:
   entity_reference_revisions: 0
   entity_usage: 0
   entitygroupfield: 0
+  eu_cookie_compliance_gtm: 0
   facets: 0
   field: 0
   field_formatter_class: 0
@@ -56,7 +57,9 @@ module:
   geolocation: 0
   geolocation_google_maps: 0
   gnode: 0
+  google_tag: 0
   group: 0
+  gull_cookie_settings_block: 0
   help: 0
   history: 0
   image: 0
