@@ -164,14 +164,24 @@ input[type="submit"],
 
 .accordion-pane button {
   background-color: var(--color-link);
-  background-image: url('../assets/images/icons/chevron-down.svg');
-  background-position: 100% 50%;
-  background-repeat: no-repeat;
   border-color: var(--color-link);
+  position: relative;
 }
 
-.accordion-pane button[aria-expanded="true"] {
-    background-image: url('../assets/images/icons/chevron-up.svg');
+.accordion-pane button:after {
+    content: '';
+    background-image: url('../assets/images/icons/chevron-white.svg');
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 11px;
+    position: absolute;
+    right: 2rem;
+    top: 1.25rem;
+}
+
+.accordion-pane button[aria-expanded="true"]:after {
+    transform: rotate(180deg);
 }
 
 .accordion-pane button:hover,
@@ -180,6 +190,10 @@ input[type="submit"],
   color: var(--color-link);
 }
 
+.accordion-pane button:hover:after,
+.accordion-pane button:focus:after {
+    background-image: url('../assets/images/icons/chevron-blue.svg');
+}
 
 
 .menu--main > .menu-item a {
