@@ -159,9 +159,19 @@ input[type="submit"],
   color: var(--color-black);
 }
 
+
+/* Accordion */
+
 .accordion-pane button {
   background-color: var(--color-link);
+  background-image: url('../assets/images/icons/chevron-down.svg');
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
   border-color: var(--color-link);
+}
+
+.accordion-pane button[aria-expanded="true"] {
+    background-image: url('../assets/images/icons/chevron-up.svg');
 }
 
 .accordion-pane button:hover,
@@ -169,6 +179,8 @@ input[type="submit"],
   background-color: var(--color-white);
   color: var(--color-link);
 }
+
+
 
 .menu--main > .menu-item a {
   padding: var(--spacing-smallest);
