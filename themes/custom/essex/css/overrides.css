@@ -91,12 +91,15 @@
     background-image: url('../assets/images/icons/icon_warning_yellow.svg');
 }
 
+
+/* CTAs */
+
 .service-cta-block .service-cta-block__link--cta-info {
-  background-color: var(--color-link);
+  background-color: var(--color-green);
 }
 
 .service-cta-block .service-cta-block__link--cta-action {
-  background-color: var(--color-black);
+  background-color: var(--color-green);
 }
 
 .service-cta-block .service-cta-block__link:hover,
