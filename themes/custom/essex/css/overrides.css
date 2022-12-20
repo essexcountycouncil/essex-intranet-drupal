@@ -465,6 +465,15 @@ h1:after,
 }
 
 /* Search */
+.lgd-header .region-primary-menu  {
+  order: 1;
+}
+
+.lgd-header .lgd-region--search {
+  width: 70%;
+  margin-top: 0;
+}
+
 .lgd-header .cludo-search-block-search-form .form-item-search-keys {
   margin: 0;
 }
@@ -490,6 +499,10 @@ h1:after,
     display: flex;
 }
 
+.cludo-search-block-search-form form input#edit-search-keys {
+  padding: var(--spacing-small);
+}
+
 .cludo-search-block-search-form .form-item {
     border: 1px solid var(--color-black);
     margin-right: var(--spacing-smaller);
@@ -504,6 +517,7 @@ h1:after,
     text-indent: -999rem;
     direction: ltr;
     min-width: 3.5rem;
+    padding: var(--spacing-small);
 }
 
 
@@ -697,4 +711,43 @@ tbody tr {
 
 .eu-cookie-compliance-category label {
     display: inline-block;
+}
+
+/* Events View */
+.view-localgov-events-listing {
+
+}
+
+.view-localgov-events-listing .views-col {
+  display: flex;
+  padding: var(--spacing) 0;
+}
+
+.view-localgov-events-listing .calendar {
+  padding: var(--spacing-small);
+  background: #DCD9D9;
+  text-align: center;
+  font-weight: bold;
+  margin-right: var(--spacing-small);
+}
+
+.view-localgov-events-listing .calendar .inner {
+  background: #f2f2f2;
+  padding: var(--spacing-smallest) var(--spacing-small);
+  margin-top: 0.25em;
+}
+
+.view-localgov-events-listing .calendar .inner .month {
+  color: var(--color-section-header-bg);
+}
+
+.view-localgov-events-listing .event-info h3 a,
+.view-localgov-events-listing .more-link a {
+  color: var(--color-black);
+}
+
+.view-localgov-events-listing .more-link a:after {
+  content: "";
+  /* space for adding chevron image */
+  padding: 1em;
 }
