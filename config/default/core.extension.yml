@@ -123,6 +123,8 @@ module:
   mysql: 0
   node: 0
   office_hours: 0
+  openid_connect: 0
+  openid_connect_azure_b2c: 0
   options: 0
   page_cache: 0
   paragraphs_library: 0
@@ -162,6 +164,7 @@ module:
   workflows: 0
   extlink: 1
   pathauto: 1
+  externalauth: 10
   views: 10
   paragraphs: 11
   localgov: 1000

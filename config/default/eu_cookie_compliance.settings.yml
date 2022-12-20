@@ -72,9 +72,9 @@ domain_all_sites: false
 settings_tab_enabled: false
 containing_element: body
 cookie_policy_version: 1.0.0
-cookie_value_disagreed: '0'
-cookie_value_agreed_show_thank_you: '1'
-cookie_value_agreed: '2'
+cookie_value_disagreed: denied
+cookie_value_agreed_show_thank_you: granted
+cookie_value_agreed: granted
 accessibility_focus: false
 close_button_action: close_banner
 reject_button_label: ''

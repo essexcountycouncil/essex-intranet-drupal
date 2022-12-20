@@ -7,7 +7,7 @@ dependencies:
 third_party_settings:
   eu_cookie_compliance_gtm:
     gtm_data:
-      analytics: '@status'
+      analytics_storage: '@status'
 id: analytics_cookies
 label: 'Analytics cookies'
 description: 'We use Google Analytics cookies to measure how you use intranet.essex.gov.uk. The data we collect helps us improve the website.'
