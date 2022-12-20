@@ -162,7 +162,6 @@ module:
   webform: 0
   webform_ui: 0
   workflows: 0
-  extlink: 1
   pathauto: 1
   externalauth: 10
   views: 10
