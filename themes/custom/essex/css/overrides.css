@@ -457,6 +457,17 @@ h1:after,
   position: relative;
 }
 
+.lgd-region--hero .banner--primary .banner__content {
+  margin: 0;
+  position: absolute;
+  top: 4em;
+}
+
+.lgd-region--hero-content {
+  position: absolute;
+  bottom: 1em;
+}
+
 .path-frontpage .banner__content {
   background: transparent;
   border: 0;
