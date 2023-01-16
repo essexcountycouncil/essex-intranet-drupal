@@ -155,7 +155,7 @@ deploy-to-preprod:
     - echo "Creating new revision of Container App"
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-pre --yaml revision.yml --subscription "Essex County Council (intranet)"
   rules:
-    - if: '$CI_COMMIT_BRANCH == "/^release\//"'
+    - if: $CI_COMMIT_BRANCH =~ /^release\//
       when: manual
 
 # drush-deploy-preprod:
@@ -168,7 +168,7 @@ deploy-to-preprod:
 #   script:
 #     - az containerapp exec --command /drupal/deploy.sh --name intranet --container drupal --resource-group rg-ecc-intranet-uks-pre --subscription "Essex County Council (intranet)"
 #   rules:
-#     - if: '$CI_COMMIT_BRANCH == "/^release\//"'
+#     - if: $CI_COMMIT_BRANCH =~ /^release\//
 #       when: manual
 
 deploy-to-prod:
@@ -221,7 +221,7 @@ deploy-to-prod:
       EOF
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"  
   rules:
-    - if: '$CI_COMMIT_BRANCH == "/^release\//"'
+    - if: $CI_COMMIT_BRANCH =~ /^release\//
       when: manual
 
 # drush-deploy-prod:
@@ -234,5 +234,5 @@ deploy-to-prod:
 #   script:
 #     - az containerapp exec --command /drupal/deploy.sh --name intranet --container drupal --resource-group rg-ecc-intranet-uks-prod --subscription "Essex County Council (intranet)"
 #   rules:
-#     - if: '$CI_COMMIT_BRANCH == "/^release\//"'
+#     - if: '$CI_COMMIT_BRANCH =~ /^release\//
 #       when: manual
