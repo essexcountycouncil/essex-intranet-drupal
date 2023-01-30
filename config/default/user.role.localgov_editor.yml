@@ -93,6 +93,7 @@ permissions:
   - 'add scheduled transitions node localgov_subsites_page'
   - 'administer content owner/sme entity'
   - 'administer group'
+  - 'administer paragraphs library'
   - 'administer redirects'
   - 'bypass node access'
   - 'create content_category group'
