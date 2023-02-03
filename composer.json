@@ -8,17 +8,53 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "github",
+            "url":  "https://github.com/essexcountycouncil/content_ownership"
+        },
+        {
+            "type": "github",
+            "url":  "https://github.com/MatthewWilkes/openid_connect_azure_b2c"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/div",
+                "version": "4.10.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor/plugins/div"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/div/releases/div_4.10.1.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
+        "ckeditor/div": "4.10.1",
         "composer/installers": "^1.10",
         "cweagans/composer-patches": "^1.6",
+        "drupal/ckeditor_div_manager": "^2.0",
+        "drupal/cludo_search": "^1.0@beta",
         "drupal/config_split": "^2.0@RC",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
+        "drupal/entitygroupfield": "1.0.0-alpha2",
+        "drupal/eu_cookie_compliance": "^1.24",
+        "drupal/eu_cookie_compliance_gtm": "^1.0@alpha",
+        "drupal/group": "3.0.0-beta3 as 1.5",
+        "drupal/imagemagick": "^3.4",
+        "drupal/permissions_filter": "^1.3",
+        "drupal/published_corrected_date": "^2.0",
         "drupal/stage_file_proxy": "^1.2",
-        "localgovdrupal/localgov": "^2.0"
+        "essexcountycouncil/content_ownership": "dev-main",
+        "localgovdrupal/localgov": "^2.0",
+        "localgovdrupal/localgov_forms": "1.x-dev",
+        "matthewwilkes/openid_connect_azure_b2c": "dev-main"
     },
     "require-dev": {
         "brianium/paratest": "^6.0",
@@ -58,6 +94,17 @@
         "patches": {
             "drupal/core": {
                 "Allow an install hook in profiles installing from configuration. See https://www.drupal.org/project/drupal/issues/2982052": "https://www.drupal.org/files/issues/2022-05-19/2982052-80.patch"
+            },
+            "localgovdrupal/localgov_paragraphs": {
+                "Added missing field which has been introduced recently.": "patches/missing_field.patch"
+            },
+            "drupal/entitygroupfield": {
+                "Breaks on fresh install": "patches/entitygroupfield-install.patch",
+                "\"Drupal\\group\\Entity\\GroupContent\" unexpected error": "https://www.drupal.org/files/issues/2022-10-14/issue-3315323-3.patch",
+                "Support for Groups v3": "patches/entitygroupfield-groupv3-2.patch"
+            },
+            "localgovdrupal/localgov_alert_banner": {
+                "Increase size of title field": "patches/localgov_alert_banner.patch"
             }
         },
         "drupal-scaffold": {

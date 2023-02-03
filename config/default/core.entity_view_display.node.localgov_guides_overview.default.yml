@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.localgov_guides_overview.body
+    - field.field.node.localgov_guides_overview.field_content_owner
+    - field.field.node.localgov_guides_overview.field_content_sme
+    - field.field.node.localgov_guides_overview.field_non_publishable_notes
     - field.field.node.localgov_guides_overview.localgov_guides_description
     - field.field.node.localgov_guides_overview.localgov_guides_list_format
     - field.field.node.localgov_guides_overview.localgov_guides_pages
@@ -33,12 +36,30 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_content_owner:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_content_sme:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
 hidden:
+  entitygroupfield: true
+  field_non_publishable_notes: true
   localgov_guides_description: true
   localgov_guides_list_format: true
   localgov_guides_pages: true

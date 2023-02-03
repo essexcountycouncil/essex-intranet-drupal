@@ -1,0 +1,14 @@
+uuid: 884d903d-01ea-454e-a1e1-943a4b0800c4
+langcode: en
+status: true
+dependencies: {  }
+id: content_category-member
+label: Member
+weight: -100
+admin: false
+scope: insider
+global_role: authenticated
+group_type: content_category
+permissions:
+  - 'view group'
+  - 'view group_node:localgov_news_article entity'

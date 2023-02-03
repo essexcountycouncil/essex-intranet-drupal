@@ -1,0 +1,22 @@
+uuid: 328dfa4e-dc01-463e-b90c-3ecd355e4a78
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_alert_banner
+  theme:
+    - essex
+id: alertbanner
+theme: essex
+region: banner
+weight: 0
+provider: null
+plugin: localgov_alert_banner_block
+settings:
+  id: localgov_alert_banner_block
+  label: 'Alert banner'
+  label_display: '0'
+  provider: localgov_alert_banner
+  include_types:
+    localgov_alert_banner: '0'
+visibility: {  }

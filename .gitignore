@@ -29,3 +29,12 @@
 /.phpunit.result.cache
 
 certs/
+
+# Ignore .DS_Store files from Mac
+.DS_Store
+
+# Ignore private folder
+/private
+
+# Ignore config which may contain secrets
+**/openid_connect.client.azure_b2c.yml

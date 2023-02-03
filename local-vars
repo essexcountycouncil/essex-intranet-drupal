@@ -1,5 +1,0 @@
-#!/bin/bash
-export ARM_CLIENT_ID="b3e48eab-1a0f-482c-8bbf-c21d6a20547c"
-export ARM_CLIENT_SECRET="p2P8Q~e5TmqEGwCYpkZdMDWO~jRad5~uj51q8cgn"
-export ARM_SUBSCRIPTION_ID="b90d1121-fa3c-4cdf-95ad-00f2c0b10672"
-export ARM_TENANT_ID="ebea4ad6-fbbf-43bd-8449-c56e26692c35"

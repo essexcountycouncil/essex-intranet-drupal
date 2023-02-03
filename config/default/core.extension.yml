@@ -9,9 +9,12 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor: 0
+  ckeditor_div_manager: 0
+  cludo_search: 0
   condition_field: 0
   config: 0
   content_moderation: 0
+  content_ownership: 0
   contextual: 0
   crop: 0
   ctools: 0
@@ -26,6 +29,7 @@ module:
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
   editor: 0
+  entity: 0
   entity_browser: 0
   entity_browser_entity_form: 0
   entity_hierarchy: 0
@@ -33,13 +37,17 @@ module:
   entity_reference_facet_link: 0
   entity_reference_revisions: 0
   entity_usage: 0
+  entitygroupfield: 0
+  eu_cookie_compliance_gtm: 0
   facets: 0
   field: 0
   field_formatter_class: 0
   field_group: 0
   field_ui: 0
   file: 0
+  file_mdm: 0
   filter: 0
+  flexible_permissions: 0
   fontawesome: 0
   geocoder: 0
   geocoder_field: 0
@@ -48,11 +56,17 @@ module:
   geofield_map: 0
   geolocation: 0
   geolocation_google_maps: 0
+  gnode: 0
+  google_tag: 0
+  group: 0
+  gull_cookie_settings_block: 0
   help: 0
   history: 0
   image: 0
   image_widget_crop: 0
+  imagemagick: 0
   inline_entity_form: 0
+  inline_form_errors: 0
   layout_discovery: 0
   layout_paragraphs: 0
   leaflet: 0
@@ -72,6 +86,7 @@ module:
   localgov_directories_promo_page: 0
   localgov_directories_venue: 0
   localgov_events: 0
+  localgov_forms: 0
   localgov_geo: 0
   localgov_geo_address: 0
   localgov_geo_area: 0
@@ -108,13 +123,19 @@ module:
   mysql: 0
   node: 0
   office_hours: 0
+  openid_connect: 0
+  openid_connect_azure_b2c: 0
   options: 0
   page_cache: 0
   paragraphs_library: 0
   path: 0
   path_alias: 0
+  permissions_filter: 0
   preview_link: 0
+  published_corrected_date: 0
   quickedit: 0
+  redirect: 0
+  redirect_404: 0
   responsive_image: 0
   responsive_preview: 0
   role_delegation: 0
@@ -125,6 +146,7 @@ module:
   search_api_autocomplete: 0
   search_api_db: 0
   simple_sitemap: 0
+  sophron: 0
   system: 0
   tablefield: 0
   taxonomy: 0
@@ -134,13 +156,18 @@ module:
   toolbar: 0
   update: 0
   user: 0
+  variationcache: 0
   views_ui: 0
   viewsreference: 0
+  webform: 0
+  webform_ui: 0
   workflows: 0
   pathauto: 1
+  externalauth: 10
   views: 10
   paragraphs: 11
   localgov: 1000
+  eu_cookie_compliance: 1001
 theme:
   claro: 0
   stable: 0

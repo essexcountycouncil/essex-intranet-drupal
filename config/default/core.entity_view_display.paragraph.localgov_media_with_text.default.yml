@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.localgov_media_with_text.localgov_link
     - field.field.paragraph.localgov_media_with_text.localgov_media_item
     - field.field.paragraph.localgov_media_with_text.localgov_media_position
+    - field.field.paragraph.localgov_media_with_text.localgov_media_with_text_size
     - field.field.paragraph.localgov_media_with_text.localgov_media_with_text_style
     - field.field.paragraph.localgov_media_with_text.localgov_opens_in_a_new_window
     - field.field.paragraph.localgov_media_with_text.localgov_text
@@ -53,6 +54,7 @@ content:
 hidden:
   localgov_heading_level: true
   localgov_media_position: true
+  localgov_media_with_text_size: true
   localgov_media_with_text_style: true
   localgov_opens_in_a_new_window: true
   localgov_title: true
