@@ -1,0 +1,18 @@
+diff --git a/localgov_eu_cookie_compliance.module b/localgov_eu_cookie_compliance.module
+index f6a6f46..af679f2 100644
+--- a/localgov_eu_cookie_compliance.module
++++ b/localgov_eu_cookie_compliance.module
+@@ -179,9 +179,10 @@ function _localgov_eu_cookie_compliance_is_cookie_settings_page(): bool {
+ function _localgov_eu_cookie_compliance_defer_tracker_scripts(array &$attachment_list): void {
+ 
+   $target_head_items = [
+-    'hotjar_script_tag',
+-    'google_analytics_tracking_script',
+-    'google_analytics_tracking_file',
++      'hotjar_script_tag',
++      'google_analytics_tracking_script',
++      'google_analytics_tracking_file',
++      'google_tag_script_tag__ecc_public'
+   ];
+   $renderer = Drupal::service('renderer');
+ 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39bc03d45ec2392600c1706a3459a3f0",
+    "content-hash": "350667802f67db7321fda1430a42ef7d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8848,6 +8848,37 @@
                 "source": "https://github.com/localgovdrupal/localgov_directories/tree/2.3.6"
             },
             "time": "2022-11-07T14:23:00+00:00"
+        },
+        {
+            "name": "localgovdrupal/localgov_eu_cookie_compliance",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance.git",
+                "reference": "29226a228caf427b004aa75e88ce847e607f531c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/localgovdrupal/localgov_eu_cookie_compliance/zipball/29226a228caf427b004aa75e88ce847e607f531c",
+                "reference": "29226a228caf427b004aa75e88ce847e607f531c",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/eu_cookie_compliance": "^1.24.0"
+            },
+            "default-branch": true,
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Extends the functionality of the eu_cookie_compliance contrib module.",
+            "homepage": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance",
+            "support": {
+                "issues": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance/issues",
+                "source": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance/tree/1.x"
+            },
+            "time": "2023-01-27T17:07:43+00:00"
         },
         {
             "name": "localgovdrupal/localgov_events",
@@ -18904,6 +18935,7 @@
         "drupal/config_split": 5,
         "drupal/eu_cookie_compliance_gtm": 15,
         "essexcountycouncil/content_ownership": 20,
+        "localgovdrupal/localgov_eu_cookie_compliance": 20,
         "localgovdrupal/localgov_forms": 20,
         "matthewwilkes/openid_connect_azure_b2c": 20,
         "roave/security-advisories": 20
