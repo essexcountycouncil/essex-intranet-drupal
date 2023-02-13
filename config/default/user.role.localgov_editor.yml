@@ -1,4 +1,4 @@
-uuid: 30c4fea1-3722-4c7a-89b8-be8b49612d54
+uuid: d01fcafb-cc61-41b9-bd6b-76d0a1a1af3f
 langcode: en
 status: true
 dependencies:
@@ -27,15 +27,12 @@ dependencies:
     - workflows.workflow.localgov_alert_banners
     - workflows.workflow.localgov_editorial
   module:
-    - cludo_search
     - content_moderation
     - content_ownership
     - entity_browser
     - entity_hierarchy
-    - group
     - localgov_alert_banner
     - localgov_directories
-    - localgov_geo
     - media
     - node
     - paragraphs
@@ -56,14 +53,10 @@ _core:
   default_config_hash: 4An-9EwjN-WBPoDDXW2pHfJSkp7TOTuMXMl4PND1xbg
 id: localgov_editor
 label: Editor
-weight: -3
+weight: -4
 is_admin: null
 permissions:
-  - 'access cludo search content'
   - 'access content overview'
-  - 'access directory facets overview'
-  - 'access geo overview'
-  - 'access group overview'
   - 'access in-place editing'
   - 'access localgov alert banner listing page'
   - 'access media overview'
@@ -92,44 +85,29 @@ permissions:
   - 'add scheduled transitions node localgov_subsites_overview'
   - 'add scheduled transitions node localgov_subsites_page'
   - 'administer content owner/sme entity'
-  - 'administer group'
+  - 'administer menu'
   - 'administer paragraphs library'
   - 'administer redirects'
-  - 'bypass node access'
-  - 'create content_category group'
   - 'create directory facets'
   - 'create document media'
-  - 'create geo'
   - 'create image media'
-  - 'create localgov_directories_org content'
-  - 'create localgov_directories_page content'
-  - 'create localgov_directories_venue content'
-  - 'create localgov_directory content'
-  - 'create localgov_directory_promo_page content'
-  - 'create localgov_event content'
   - 'create localgov_guides_overview content'
   - 'create localgov_guides_page content'
   - 'create localgov_news_article content'
   - 'create localgov_newsroom content'
   - 'create localgov_services_landing content'
   - 'create localgov_services_page content'
-  - 'create localgov_services_status content'
-  - 'create localgov_services_sublanding content'
-  - 'create localgov_step_by_step_overview content'
-  - 'create localgov_step_by_step_page content'
   - 'create localgov_subsites_overview content'
-  - 'create localgov_subsites_page content'
   - 'create media'
   - 'create paragraph library item'
   - 'create remote_video media'
   - 'create url aliases'
+  - 'delete any localgov_guides_overview content'
+  - 'delete any localgov_guides_page content'
+  - 'delete any localgov_news_article content'
+  - 'delete any localgov_services_landing content'
+  - 'delete any localgov_services_page content'
   - 'delete content owner/sme entity'
-  - 'delete directory facets'
-  - 'delete geo'
-  - 'delete own localgov_services_sublanding content'
-  - 'delete own localgov_step_by_step_overview content'
-  - 'delete own localgov_step_by_step_page content'
-  - 'delete own localgov_subsites_overview content'
   - 'edit any document media'
   - 'edit any image media'
   - 'edit any localgov_directories_org content'
@@ -154,7 +132,6 @@ permissions:
   - 'edit any webform'
   - 'edit content owner/sme entity'
   - 'edit directory facets'
-  - 'edit geo'
   - 'edit own document media'
   - 'edit own image media'
   - 'edit own localgov_directories_org content'
@@ -179,6 +156,7 @@ permissions:
   - 'edit own webform'
   - 'edit paragraph library item'
   - 'generate preview links'
+  - 'manage localgov alert banner localgov_alert_banner entities'
   - 'reorder entity_hierarchy children'
   - 'reschedule scheduled transitions localgov_alert_banner localgov_alert_banner'
   - 'reschedule scheduled transitions node localgov_directories_org'
