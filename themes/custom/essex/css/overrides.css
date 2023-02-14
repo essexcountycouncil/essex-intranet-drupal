@@ -551,9 +551,11 @@ thead th {
 
 }
 
-thead th,
-tbody td {
-    padding: 1.625rem 1.625rem 1.625rem 0;
+table td p {
+    margin: 0;
+}
+table td p + p {
+    margin-bottom: var(--vertical-rhythm-spacing);
 }
 
 tbody tr {
