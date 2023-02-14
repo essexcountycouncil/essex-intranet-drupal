@@ -559,7 +559,7 @@ table td p + p {
 }
 
 tbody tr {
-    border-bottom: 1px solid var(--color-black);
+    border: 1px solid var(--color-black);
 }
 
 /* Link and Summary component */
