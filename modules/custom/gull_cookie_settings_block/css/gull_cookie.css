@@ -5,7 +5,7 @@
 
 [class^="eu-cookie-compliance-categories"] {
     position: relative;
-    height: 3rem;
+    min-height: 3rem;
     display: inline-block;
     margin: 1rem 1rem 1rem 0
 }
