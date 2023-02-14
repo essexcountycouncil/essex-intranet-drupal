@@ -229,7 +229,7 @@ input[type="submit"],
 }
 
 .lgd-header__inner {
-  justify-content: start;
+  justify-content: end;
 }
 
 .lgd-header .lgd-region--header {
@@ -481,7 +481,8 @@ h1:after,
 }
 
 .lgd-header .lgd-region--search {
-  width: 70%;
+  width: 100%;
+  max-width: 440px;
   margin-top: 0;
 }
 
