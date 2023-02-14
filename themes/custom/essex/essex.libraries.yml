@@ -33,3 +33,8 @@ fonts:
 #   css:
 #     theme:
 #       css/sample.css: {}
+
+the_center:
+  css:
+    theme:
+      layouts/the_center/the-center.css: {}
