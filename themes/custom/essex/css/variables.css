@@ -58,4 +58,5 @@ body {
   --tabs-button-bg-color: var(--color-grey-lighter);
   --sidebar-exposed-form-bg-color: var(--color-white);
   --link-and-summary-title-icon-margin: var(--spacing);
+  --measure: 100ch;
 }

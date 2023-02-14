@@ -325,13 +325,7 @@ input[type="submit"],
     position: relative;
     overflow: hidden;
     border: 0;
-    padding: 4rem 6rem 4rem 2rem;
-}
-
-@media only screen and (min-width: 768px) {
-    .media-with-text--featured {
-        padding: 4rem;
-    }
+    padding: clamp(var(--spacing-larger), 3vw, var(--spacing-jumbo)) var(--spacing-larger);
 }
 
 .media-with-text--featured .contextual-region {
@@ -351,20 +345,15 @@ input[type="submit"],
     background-color: var(--color-white);
     position: relative;
     z-index: 10;
-}
-
-@media only screen and (min-width: 768px) {
-    .media-with-text--featured .media-with-text__body {
-        width: 40%;
-    }
+    max-width:33ch;
 }
 
 /* Heading underline marker */
 h1,
 .field--type-text-long h2 {
     position: relative;
-    margin-bottom: 2.5rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: var(--spacing-largest);
+    padding-bottom: var(--spacing-smaller);
 }
 
 h1:after,

@@ -1,0 +1,12 @@
+layout_the_center:
+  label: 'The Center'
+  path: layouts/the_center
+  template: layout--thecenter
+  library: essex/the_center
+  category: 'Columns: 1'
+  default_region: content
+  icon_map:
+    - [side, content, side]
+  regions:
+    content:
+      label: Content
