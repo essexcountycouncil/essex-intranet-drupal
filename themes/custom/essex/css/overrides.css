@@ -115,7 +115,7 @@
 
 .service-statuses__label {
   color: var(--color-white);
-  font-weight: 600;
+  font-weight: var(--heading-font-weight);
 }
 
 .call-out-box__content {
@@ -389,7 +389,7 @@ h1:after,
 }
 
 .lgd-guide-nav .lgd-guide-nav__list-item > a {
-    font-weight: 600;
+    font-weight: var(--heading-font-weight);
 }
 
 @media only screen and (min-width: 768px) {
@@ -440,7 +440,7 @@ h1:after,
 .banner h1 {
   background: var(--color-white);
   padding: 0.35em 1em;
-  font-weight: 600;
+  font-weight: var(--heading-font-weight);
   margin-bottom: var(--spacing-large);
 }
 
@@ -738,7 +738,7 @@ tbody tr {
   padding: var(--spacing-small);
   background: #DCD9D9;
   text-align: center;
-  font-weight: bold;
+  font-weight: var(--heading-font-weight);
   margin-right: var(--spacing-small);
 }
 
