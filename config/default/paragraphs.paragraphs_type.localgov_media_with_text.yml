@@ -4,6 +4,8 @@ status: true
 dependencies:
   content:
     - 'file:file:12e92721-debd-4f34-9c13-7bcfcdf56e29'
+  module:
+    - layout_paragraphs
 _core:
   default_config_hash: heQEhnV1BVu9XDi4vyPniqvkDzPn4NTSyuSIWkLuM30
 id: localgov_media_with_text
@@ -11,4 +13,7 @@ label: 'Media with text'
 icon_uuid: 12e92721-debd-4f34-9c13-7bcfcdf56e29
 icon_default: 'data:image/svg+xml;base64,'
 description: 'Image or video promo block with layout options.'
-behavior_plugins: {  }
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }
