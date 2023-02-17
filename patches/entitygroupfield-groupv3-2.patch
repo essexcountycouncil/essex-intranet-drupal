@@ -24,37 +24,6 @@ index 8412078..f60e4a0 100644
          ->setLabel($field_label)
          ->setTranslatable(FALSE)
          ->setComputed(TRUE)
-diff --git a/src/Field/EntityGroupFieldItemList.php b/src/Field/EntityGroupFieldItemList.php
-index 7a99e01..6e91ade 100644
---- a/src/Field/EntityGroupFieldItemList.php
-+++ b/src/Field/EntityGroupFieldItemList.php
-@@ -4,7 +4,7 @@ namespace Drupal\entitygroupfield\Field;
- 
- use Drupal\Core\Field\EntityReferenceFieldItemList;
- use Drupal\Core\TypedData\ComputedItemListTrait;
--use Drupal\group\Entity\GroupContent;
-+use Drupal\group\Entity\GroupRelationship;
- 
- /**
-  * A computed property for the related groups.
-@@ -28,7 +28,7 @@ class EntityGroupFieldItemList extends EntityReferenceFieldItemList {
-       return NULL;
-     }
- 
--    $group_contents = GroupContent::loadByEntity($this->getEntity());
-+    $group_contents = GroupRelationship::loadByEntity($this->getEntity());
-     if (empty($group_contents)) {
-       return NULL;
-     }
-@@ -67,7 +67,7 @@ class EntityGroupFieldItemList extends EntityReferenceFieldItemList {
-         $group_content_ids[] = $group_content_entity->id();
-       }
-       // Deleting entities.
--      $group_contents = GroupContent::loadByEntity($host_entity);
-+      $group_contents = GroupRelationship::loadByEntity($host_entity);
-       foreach ($group_contents as $group_content_id => $group_content_entity) {
-         if (!in_array($group_content_id, $group_content_ids)) {
-           $group_content_entity->delete();
 diff --git a/src/Plugin/Field/FieldWidget/EntityGroupFieldWidgetBase.php b/src/Plugin/Field/FieldWidget/EntityGroupFieldWidgetBase.php
 index efac04d..67e6e03 100644
 --- a/src/Plugin/Field/FieldWidget/EntityGroupFieldWidgetBase.php
@@ -96,15 +65,6 @@ index efac04d..67e6e03 100644
      $this->currentUser = $current_user;
      $this->entityTypeManager = $entity_type_manager;
      $this->entityRepository = $entity_repository;
-@@ -71,7 +72,7 @@ abstract class EntityGroupFieldWidgetBase extends WidgetBase implements Containe
-       $configuration['field_definition'],
-       $configuration['settings'],
-       $configuration['third_party_settings'],
--      $container->get('plugin.manager.group_content_enabler'),
-+      $container->get('group_relation_type.manager'),
-       $container->get('current_user'),
-       $container->get('entity_type.manager'),
-       $container->get('entity.repository')
 @@ -862,9 +863,10 @@ abstract class EntityGroupFieldWidgetBase extends WidgetBase implements Containe
      $selected_group = NestedArray::getValue($form_state->getValues(), $parent_keys);
  
