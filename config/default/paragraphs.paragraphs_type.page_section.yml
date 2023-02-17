@@ -19,5 +19,6 @@ behavior_plugins:
     available_layouts:
       localgov_subsites_one_column_flexible: Flexible
       layout_onecol: 'One column'
+      layout_the_center: 'The Center'
       layout_twocol: 'Two column'
       layout_threecol_33_34_33: 'Three column 33/34/33'
