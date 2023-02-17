@@ -1,7 +1,9 @@
 uuid: 79779aef-056a-4fa0-8fa4-a793d96d440b
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - layout_paragraphs
 _core:
   default_config_hash: wss5SCcDyxBt_9KZtnoQa18qCZvLcRfcatehaPn5uMM
 id: localgov_documents
@@ -9,4 +11,7 @@ label: Documents
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }
