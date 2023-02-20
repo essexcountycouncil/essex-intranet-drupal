@@ -325,7 +325,7 @@ input[type="submit"],
     position: relative;
     overflow: hidden;
     border: 0;
-    padding: clamp(var(--spacing-larger), 3vw, var(--spacing-jumbo)) var(--spacing-larger);
+    padding: clamp(var(--spacing-large), 3vw, var(--spacing-jumbo)) var(--spacing-larger) clamp(var(--spacing-jumbo), 3vw, var(--spacing-jumbo));
 }
 
 .media-with-text--featured .contextual-region {
