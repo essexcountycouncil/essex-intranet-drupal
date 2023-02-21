@@ -27,7 +27,6 @@ dependencies:
     - workflows.workflow.localgov_alert_banners
     - workflows.workflow.localgov_editorial
   module:
-    - cludo_search
     - content_moderation
     - content_ownership
     - entity_browser
@@ -58,7 +57,6 @@ label: Editor
 weight: -3
 is_admin: null
 permissions:
-  - 'access cludo search content'
   - 'access content overview'
   - 'access group overview'
   - 'access in-place editing'
