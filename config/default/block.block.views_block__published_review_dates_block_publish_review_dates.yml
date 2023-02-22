@@ -11,8 +11,8 @@ dependencies:
     - essex
 id: views_block__published_review_dates_block_publish_review_dates
 theme: essex
-region: content_top
-weight: -11
+region: content_bottom
+weight: 0
 provider: null
 plugin: 'views_block:published_review_dates-block_publish_review_dates'
 settings:
@@ -42,3 +42,4 @@ visibility:
       localgov_services_status: localgov_services_status
       localgov_step_by_step_overview: localgov_step_by_step_overview
       localgov_subsites_overview: localgov_subsites_overview
+
