@@ -86,6 +86,10 @@ deploy-to-dev:
                 value: drupal_intranet
               - name: MYSQL_PASSWORD
                 secretRef: mysql-password
+              - name: OPENID_CONNECT_PARAMS
+                secretRef: openid-connect-params
+
+
       EOF
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-dev --yaml revision.yml --subscription "Essex County Council (intranet)"
   rules:
@@ -150,6 +154,8 @@ deploy-to-preprod:
                 value: drupal_intranet
               - name: MYSQL_PASSWORD
                 secretRef: mysql-password
+              - name: OPENID_CONNECT_PARAMS
+                secretRef: openid-connect-params
       EOF
     - echo "Creating new revision of Container App"
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-pre --yaml revision.yml --subscription "Essex County Council (intranet)"
@@ -218,6 +224,8 @@ deploy-to-prod:
                 value: drupal_intranet
               - name: MYSQL_PASSWORD
                 secretRef: mysql-password
+              - name: OPENID_CONNECT_PARAMS
+                secretRef: openid-connect-params
       EOF
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"  
   rules:
