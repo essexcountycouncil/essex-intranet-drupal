@@ -760,3 +760,7 @@ tbody tr {
 .path-frontpage article>.field__items {
   padding-top: clamp(var(--spacing), 3vw, var(--spacing-large))
 }
+
+.branding__item--logo {
+  --header-logo-width: clamp(170px, 20vw, 200px);
+}
