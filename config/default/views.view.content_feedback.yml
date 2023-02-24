@@ -206,7 +206,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="/form/feedback-form?reference={{ raw_arguments.nid }}" title="Feedback Form">Submit content feedback</a>'
+            text: "<p>Is something missing or not working on this page?\r\n<a class=\"button button__report-feedback\" href=\"/form/feedback-form?reference={{ raw_arguments.nid }}\" title=\"Feedback Form\">Report a problem</a></p>"
             make_link: false
             path: ''
             absolute: false
