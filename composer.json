@@ -53,6 +53,7 @@
         "drupal/stage_file_proxy": "^2.0",
         "essexcountycouncil/content_ownership": "dev-main",
         "localgovdrupal/localgov": "^2.0",
+        "localgovdrupal/localgov_eu_cookie_compliance": " 1.x-dev",
         "localgovdrupal/localgov_forms": "1.x-dev",
         "matthewwilkes/openid_connect_azure_b2c": "dev-main"
     },
@@ -98,6 +99,9 @@
             },
             "localgovdrupal/localgov_paragraphs": {
                 "Added missing field which has been introduced recently.": "patches/missing_field.patch"
+            },
+            "localgovdrupal/localgov_eu_cookie_compliance": {
+                "Improve spinner": "patches/localgov_cookie_compliance_save.patch"
             },
             "drupal/entitygroupfield": {
                 "Breaks on fresh install": "patches/entitygroupfield-install.patch",
