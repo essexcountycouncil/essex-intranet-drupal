@@ -48,8 +48,25 @@
   }
 
   function setupSaveSettingsFeedback() {
-    $(".eu-cookie-compliance-save-preferences-button").click(function (e) {
-      $("<p>" + Drupal.t("Saved") + "</p>").appendTo(e.target).hide(2000);
-    });
+
+    var toneButton = document.querySelector('.eu-cookie-compliance-save-preferences-button');
+
+    toneButton.addEventListener("click", function () {
+      toneButton.innerHTML = "Saving";
+      toneButton.classList.add('spinning');
+
+      setTimeout(
+        function () {
+          toneButton.classList.remove('spinning');
+          toneButton.innerHTML = "Preferences Saved <i class='fas fa-check'></i>";
+        }, 2000);
+
+    }, false);
+
+    toneButton.addEventListener("blur", function () {
+      toneButton.innerHTML = "Save Preferences  <i class='fas fa-check'></i>";
+    }, false);
+
   }
+
 })(jQuery, Drupal);

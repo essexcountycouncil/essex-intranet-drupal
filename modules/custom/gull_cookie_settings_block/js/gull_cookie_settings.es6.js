@@ -105,10 +105,11 @@
    * Provide feedback when the "Save cookie settings" button is clicked.
    */
   function setupSaveSettingsFeedback() {
-    $(".eu-cookie-compliance-save-preferences-button").click(e => {
-      $(`<p>${Drupal.t("Saved")}</p>`)
-        .appendTo(e.target)
-        .hide(2000);
-    });
+    // $(".eu-cookie-compliance-save-preferences-button").click(e => {
+    //   $(`<p>${Drupal.t("Saved")}</p>`)
+    //     .appendTo(e.target)
+    //     .hide(2000);
+    // });
+    console.log('setupSaveSettingsFeedback')
   }
 })(jQuery, Drupal);
