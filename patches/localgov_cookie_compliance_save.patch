@@ -70,7 +70,11 @@
  
 --- a/css/save-animation.css	2023-02-28 16:51:31.008248791 +0000
 +++ b/css/save-animation.css	2023-02-28 16:49:13.173233688 +0000
-@@ -0,0 +1,30 @@
+@@ -0,0 +1,34 @@
++.eu-cookie-compliance-save-preferences-button {
++    position: relative;
++}
++
 +.eu-cookie-compliance-save-preferences-button.spinning {
 +    padding-right: 40px;
 +}   
