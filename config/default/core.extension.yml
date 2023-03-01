@@ -28,6 +28,7 @@ module:
   diff: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
+  ecc_cookie_compliance: 0
   editor: 0
   entity: 0
   entity_browser: 0
@@ -59,7 +60,6 @@ module:
   gnode: 0
   google_tag: 0
   group: 0
-  gull_cookie_settings_block: 0
   help: 0
   history: 0
   image: 0
@@ -88,6 +88,7 @@ module:
   localgov_directories_page: 0
   localgov_directories_promo_page: 0
   localgov_directories_venue: 0
+  localgov_eu_cookie_compliance: 0
   localgov_events: 0
   localgov_forms: 0
   localgov_geo: 0
