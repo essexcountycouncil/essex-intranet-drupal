@@ -95,7 +95,8 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "Allow an install hook in profiles installing from configuration. See https://www.drupal.org/project/drupal/issues/2982052": "https://www.drupal.org/files/issues/2022-05-19/2982052-80.patch"
+                "Allow an install hook in profiles installing from configuration. See https://www.drupal.org/project/drupal/issues/2982052": "https://www.drupal.org/files/issues/2022-05-19/2982052-80.patch",
+                "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch"
             },
             "localgovdrupal/localgov_paragraphs": {
                 "Added missing field which has been introduced recently.": "patches/missing_field.patch"
