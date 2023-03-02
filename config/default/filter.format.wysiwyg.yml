@@ -106,5 +106,5 @@ filters:
     status: true
     weight: 0
     settings:
-      tablesaw_type: stack
+      tablesaw_type: swipe
       tablesaw_persist: '1'
