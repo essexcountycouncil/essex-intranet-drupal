@@ -765,8 +765,13 @@ tbody tr {
   --header-logo-width: clamp(170px, 20vw, 200px);
 }
 
-.region-pre-footer {
+.footer__before-pre {
   background-color: var(--color-section-pre-footer-bg);
+  color: var(--color-pre-footer-text);
+}
+
+.lgd-footer__pre-footer {
+  background-color: var(--color-section-footer-bg);
   color: var(--color-pre-footer-text);
 }
 
