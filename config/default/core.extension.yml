@@ -142,6 +142,7 @@ module:
   redirect_404: 0
   responsive_image: 0
   responsive_preview: 0
+  responsive_tables_filter: 0
   role_delegation: 0
   scheduled_transitions: 0
   schema_article: 0

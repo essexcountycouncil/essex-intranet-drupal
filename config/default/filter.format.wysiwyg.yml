@@ -11,6 +11,7 @@ dependencies:
     - editor
     - linkit
     - media
+    - responsive_tables_filter
 _core:
   default_config_hash: DsgACm5gAgK8K1UNs_KD3K7ryJg0n9yQIWMYYuKb8Tw
 name: WYSIWYG
@@ -99,3 +100,11 @@ filters:
         document: document
         image: image
         remote_video: remote_video
+  filter_responsive_tables_filter:
+    id: filter_responsive_tables_filter
+    provider: responsive_tables_filter
+    status: true
+    weight: 0
+    settings:
+      tablesaw_type: swipe
+      tablesaw_persist: '1'
