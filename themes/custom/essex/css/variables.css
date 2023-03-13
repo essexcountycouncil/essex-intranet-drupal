@@ -61,4 +61,6 @@ body {
   --link-and-summary-title-icon-margin: var(--spacing);
   --measure: 100ch;
   --spacing-jumbo: 3rem;
+  --table-bg-color: transparent;
+  --table-border: none;
 }
