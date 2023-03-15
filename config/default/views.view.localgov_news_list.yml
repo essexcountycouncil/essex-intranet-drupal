@@ -305,6 +305,7 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      title: ''
       pager:
         type: some
         options:
@@ -388,6 +389,7 @@ display:
         options:
           view_mode: teaser
       defaults:
+        title: false
         pager: false
         style: false
         row: false
