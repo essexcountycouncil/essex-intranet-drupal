@@ -380,13 +380,18 @@ h1:after,
 
 .banner,
 .banner__image img {
-    height: 450px;
+    height: 350px;
 }
 
 @media only screen and (min-width: 768px) {
     .banner,
     .banner__image img {
-        height: 350px;
+        height: 200px;
+        min-height: 200px;
+    }
+
+    .banner {
+        margin-bottom: 2rem;
     }
 }
 
@@ -396,13 +401,27 @@ h1:after,
 
 .banner h1 {
   background: var(--color-white);
-  padding: 0.35em 1em;
+  padding: 0.3875em 1em;
+  font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: var(--spacing-large);
 }
 
+@media only screen and (min-width: 768px) {
+    .banner h1 {
+        margin-right: 3.375rem;
+    }
+}
+
 .banner h1::after {
     content: none;
+}
+
+.banner .form-text {
+    border: 0;
+    border-color: transparent;
+    padding: 1.219rem 1rem; /* 59px 16px */
+    max-width: 34rem; /* 544px */
 }
 
 .path-frontpage h1:after {
@@ -448,7 +467,6 @@ h1:after,
 }
 
 .cludo-search-block-search-form .form-item {
-    border: 1px solid var(--color-black);
     margin-right: var(--spacing-smaller);
     margin-bottom: 0;
 }
@@ -457,10 +475,11 @@ h1:after,
     background-color: var(--color-white);
     background-image: url('../assets/images/icons/magnifying-glass.svg');
     background-repeat: no-repeat;
+    background-size: 25px;
     background-position: 50% 50%;
     text-indent: -999rem;
     direction: ltr;
-    min-width: 3.5rem;
+    min-width: 3.625rem; /* 58px */
 }
 
 
