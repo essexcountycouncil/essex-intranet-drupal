@@ -8,6 +8,16 @@
   outline-style: solid;
 }
 
+/* Buttons */
+.button {
+  padding: var(--spacing-small) var(--spacing);
+  background: var(--color-accent);
+  cursor: pointer;
+  width: max-content;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
 
 /* Alert banners */
 
@@ -778,15 +788,6 @@ tbody tr {
 .lgd-footer__pre-footer {
   background-color: var(--color-section-footer-bg);
   color: var(--color-pre-footer-text);
-}
-
-.view-display-id-block_feedback_form .button {
-  padding: var(--spacing-small) var(--spacing);
-  background: var(--color-accent);
-  cursor: pointer;
-  width: max-content;
-  color: var(--color-white);
-  text-decoration: none;
 }
 
 .view-display-id-block_feedback_form .field-content>div {
