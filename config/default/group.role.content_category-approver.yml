@@ -4,15 +4,14 @@ status: true
 dependencies: {  }
 id: content_category-approver
 label: Approver
-weight: null
+weight: -10
 admin: false
-scope: insider
-global_role: localgov_news_editor
+scope: individual
+global_role: null
 group_type: content_category
 permissions:
-  0: 'view group'
-  1: 'update any group_node:localgov_news_article entity'
-  2: 'update own group_node:localgov_news_article entity'
-  3: 'view group_node:localgov_news_article entity'
-  4: 'view unpublished group_node:localgov_news_article entity'
-  6: 'create group_node:localgov_news_article entity'
+  - 'view group'
+  - 'update any group_node:localgov_news_article entity'
+  - 'update own group_node:localgov_news_article entity'
+  - 'view group_node:localgov_news_article entity'
+  - 'view unpublished group_node:localgov_news_article entity'

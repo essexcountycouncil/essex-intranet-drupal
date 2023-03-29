@@ -1,0 +1,22 @@
+uuid: 750d532e-ba47-4334-96fc-715988d6f8a5
+langcode: en
+status: true
+dependencies: {  }
+id: content_category-contributor
+label: Contributor
+weight: -10
+admin: false
+scope: insider
+global_role: localgov_news_editor
+group_type: content_category
+permissions:
+  0: 'create group_node:localgov_news_article entity'
+  1: 'delete any group_node:localgov_news_article entity'
+  2: 'delete own group_node:localgov_news_article entity'
+  3: 'update any group_node:localgov_news_article entity'
+  4: 'update own group_node:localgov_news_article entity'
+  5: 'view group_node:localgov_news_article entity'
+  6: 'view unpublished group_node:localgov_news_article entity'
+  7: 'create group_node:localgov_news_article relationship'
+  8: 'view group'
+  10: 'access group_node overview'
