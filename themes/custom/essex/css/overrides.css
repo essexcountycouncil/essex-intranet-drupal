@@ -450,7 +450,8 @@ h1:after,
 .lgd-region--hero .banner--primary .banner__content {
   margin: 0;
   position: absolute;
-  top: clamp(1rem, 2vw, 2.4375rem);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .lgd-region--hero-content {
