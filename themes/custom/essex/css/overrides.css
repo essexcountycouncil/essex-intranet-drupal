@@ -594,6 +594,18 @@ tbody tr {
   margin-left: 0.5rem;
 }
 
+@media (max-width: 400px) {
+  .services--feature-block {
+    width: 100%;
+    float: none;
+    margin-inside: 0;
+  }
+  .services--feature-block:nth-of-type(odd),
+  .services--feature-block:nth-of-type(even) {
+    margin-inline: 0;
+  }
+}
+
 .services--feature-block a {
   display: block;
   padding: 1rem 1.25rem;
@@ -619,7 +631,6 @@ tbody tr {
 @media only screen and (min-width: 768px) {
   .services--feature-block {
     margin-right: 1.25rem;
-    margin-bottom: 1.5rem;
   }
 
   .services--feature-block:nth-of-type(2n) {
