@@ -413,8 +413,9 @@ h1:after,
 }
 
 .path-frontpage .banner h1 {
-  --font-size-h1: clamp(1.5rem, 2.5vw, 2.5rem);
-  width: clamp(300px, 40vw, 682px);
+  --font-size-h1: clamp(1.5rem, 2.5vw, 2.562rem);
+  width: fit-content;
+  -moz-width: fit-content;
   padding: calc(var(--spacing) - 0.5px) var(--spacing-large);
 }
 
@@ -423,9 +424,9 @@ h1:after,
 }
 
 .path-frontpage .banner__image img {
-  height: 200px;
-  max-height: 200px;
-  min-height: 200px;
+  height: 230px;
+  max-height: 230px;
+  min-height: 230px;
   width: 100%;
   max-width: 100%;
   object-fit: cover;
@@ -439,7 +440,7 @@ h1:after,
 .lgd-region--hero .banner--primary .banner__content {
   margin: 0;
   position: absolute;
-  top: clamp(1rem, 2vw, 1.3rem);
+  top: clamp(1rem, 2vw, 2.4375rem);
 }
 
 .lgd-region--hero-content {
@@ -492,7 +493,7 @@ h1:after,
 
 .path-frontpage .cludo-search-block-search-form form input#edit-search-keys {
   max-width: 544px;
-  min-height: 59px;
+  min-height: 45px;
 }
 
 .cludo-search-block-search-form .form-item {
@@ -507,8 +508,8 @@ h1:after,
 }
 
 .path-frontpage .cludo-search-block-search-form .form-submit {
-  height: 59px;
-  width: 58px;
+  height: 45px;
+  width: 50px;
 }
 
 .cludo-search-block-search-form .form-item input:focus,
