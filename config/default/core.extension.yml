@@ -149,6 +149,9 @@ module:
   search_api: 0
   search_api_autocomplete: 0
   search_api_db: 0
+  search_api_location: 0
+  search_api_location_geocoder: 0
+  search_api_location_views: 0
   simple_sitemap: 0
   sophron: 0
   system: 0
