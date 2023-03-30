@@ -1,7 +1,10 @@
 uuid: 884d903d-01ea-454e-a1e1-943a4b0800c4
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - group.type.content_category
+    - user.role.authenticated
 id: content_category-member
 label: Member
 weight: -100

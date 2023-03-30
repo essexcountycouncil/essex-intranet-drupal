@@ -1,7 +1,10 @@
 uuid: cd36dbcf-3e6e-40b5-8efb-3afa9e870411
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - group.type.content_category
+    - user.role.anonymous
 id: content_category-anonymous
 label: Anonymous
 weight: -102
