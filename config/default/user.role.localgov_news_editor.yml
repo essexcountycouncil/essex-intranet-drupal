@@ -29,6 +29,7 @@ dependencies:
   module:
     - content_moderation
     - entity_hierarchy
+    - group
     - media
     - node
     - paragraphs
@@ -52,6 +53,7 @@ weight: -8
 is_admin: null
 permissions:
   - 'access content overview'
+  - 'access group overview'
   - 'access in-place editing'
   - 'access media overview'
   - 'access responsive preview'

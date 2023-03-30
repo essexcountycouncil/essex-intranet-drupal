@@ -1,7 +1,9 @@
 uuid: 6d2df5b2-70d0-4b66-a66a-5cfd64cf452b
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - group.type.content_category
 id: content_category-approver
 label: Approver
 weight: -10
@@ -10,8 +12,8 @@ scope: individual
 global_role: null
 group_type: content_category
 permissions:
-  - 'view group'
   - 'update any group_node:localgov_news_article entity'
   - 'update own group_node:localgov_news_article entity'
+  - 'view group'
   - 'view group_node:localgov_news_article entity'
   - 'view unpublished group_node:localgov_news_article entity'
