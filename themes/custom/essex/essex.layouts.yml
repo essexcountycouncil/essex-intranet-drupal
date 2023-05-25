@@ -10,3 +10,15 @@ layout_the_center:
   regions:
     content:
       label: Content
+layout_autogrid:
+  label: 'Auto Grid'
+  path: layouts/autogrid
+  template: layout--autogrid
+  library: essex/autogrid
+  category: 'Custom'
+  default_region: content
+  icon_map:
+    - [content]
+  regions:
+    content:
+      label: Content

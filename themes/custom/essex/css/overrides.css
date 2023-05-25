@@ -612,6 +612,7 @@ tbody tr {
     float: none;
     margin-inside: 0;
   }
+
   .services--feature-block:nth-of-type(odd),
   .services--feature-block:nth-of-type(even) {
     margin-inline: 0;
@@ -748,7 +749,6 @@ tbody tr {
 }
 
 /* Events View */
-.view-localgov-events-listing {}
 
 .view-localgov-events-listing .views-col {
   display: flex;
@@ -791,6 +791,20 @@ tbody tr {
 
 .branding__item--logo {
   --header-logo-width: clamp(170px, 20vw, 200px);
+}
+
+.path-frontpage .lgd-page-section:has(section.media-with-text) {
+  margin-bottom: -2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .path-frontpage .lgd-page-section:has(section.media-with-text) {
+    margin-bottom: 16px;
+  }
+}
+
+.layout__region:empty {
+  display: none;
 }
 
 .footer__before-pre {

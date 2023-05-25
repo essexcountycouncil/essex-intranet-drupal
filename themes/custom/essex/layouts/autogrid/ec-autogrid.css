@@ -1,0 +1,5 @@
+.ec-autogrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  grid-gap: 1rem;
+}

@@ -38,3 +38,7 @@ the_center:
   css:
     theme:
       layouts/the_center/the-center.css: {}
+autogrid:
+  css:
+    theme:
+      layouts/autogrid/ec-autogrid.css: {}
