@@ -464,6 +464,8 @@ h1:after,
   border: 0;
   padding: 0 var(--spacing-padding-horizontal);
   margin: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Search */
@@ -503,8 +505,7 @@ h1:after,
 }
 
 .path-frontpage .cludo-search-block-search-form form input#edit-search-keys {
-  max-width: 544px;
-  min-height: 45px;
+  min-height: 59px;
 }
 
 .cludo-search-block-search-form .form-item {
@@ -516,11 +517,14 @@ h1:after,
 .path-frontpage .cludo-search-block-search-form .form-item,
 .path-frontpage .cludo-search-block-search-form input {
   border-width: 0;
+  width: 926px;
+  border-radius: var(--border-radius);
 }
 
 .path-frontpage .cludo-search-block-search-form .form-submit {
-  height: 45px;
+  height: 59px;
   width: 50px;
+  border-radius: var(--border-radius);
 }
 
 .cludo-search-block-search-form .form-item input:focus,
