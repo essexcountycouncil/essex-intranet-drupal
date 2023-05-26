@@ -1,4 +1,5 @@
 stages:
+  - Test1
   - build
   - development
   - development-postdeploy
@@ -6,6 +7,16 @@ stages:
   - preproduction-postdeploy
   - production
   - production-postdeploy
+
+Test:Required:
+  stage: Test1
+  image: wodby/php:8.1
+  before_script:
+    - ''
+  script:
+    # - composer install && composer tests-required
+    - composer validate
+  allow_failure: false
 
 build-and-push-images:
   stage: build
@@ -34,11 +45,13 @@ build-and-push-images:
   only:
     - develop
     - /^release\//
+    - /^chore\/pipeline-troubleshooting
 
 deploy-to-dev:
   image: mcr.microsoft.com/azure-cli
   stage: development
-  needs: ["build-and-push-images"]
+  needs:
+    - job: build-and-push-images
   environment:
     name: development
     url: https://essex-intranet.nomensa.xyz/
@@ -55,7 +68,7 @@ deploy-to-dev:
         echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
       fi
     - echo "Creating new revision of Container App"
-    - | 
+    - |
       cat > revision.yml <<EOF
       properties:
         template:
@@ -68,7 +81,7 @@ deploy-to-dev:
                 memory: 0.5Gi
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
-                volumeName: filesharevol      
+                volumeName: filesharevol
             - image: acreccuksdev.azurecr.io/intranet-drupal-fpm$tag
               name: drupal
               resources:
@@ -93,7 +106,10 @@ deploy-to-dev:
       EOF
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-dev --yaml revision.yml --subscription "Essex County Council (intranet)"
   rules:
-    - when: manual
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+      when: manual
+    - if: '$CI_COMMIT_BRANCH =~ /^release\//'
+      when: manual
 
 drush-deploy-dev:
   image: mcr.microsoft.com/azure-cli
@@ -107,7 +123,10 @@ drush-deploy-dev:
   script:
     - timeout 1200 socat EXEC:'az containerapp exec --command /drupal/deploy.sh --name intranet --container drupal --resource-group rg-ecc-intranet-uks-dev',pty,setsid,ctty STDIO,ignoreeof
   rules:
-    - when: manual
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+      when: manual
+    - if: '$CI_COMMIT_BRANCH =~ /^release\//'
+      when: manual
 
 deploy-to-preprod:
   image: mcr.microsoft.com/azure-cli
@@ -119,11 +138,11 @@ deploy-to-preprod:
   before_script:
     - az extension add --name containerapp
     - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
-  script:    
+  script:
     - echo "Importing image from Development  into Pre-Production"
     - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --image intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
     - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --image intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
-    - | 
+    - |
       cat > revision.yml <<EOF
       properties:
         template:
@@ -193,7 +212,7 @@ deploy-to-prod:
     - az acr import --force --name acreccuksprod --source acreccukspre.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --image intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
     - az acr import --force --name acreccuksprod --source acreccukspre.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --image intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
     - echo "Creating new revision of Container App"
-    - | 
+    - |
       cat > revision.yml <<EOF
       properties:
         template:
@@ -227,7 +246,7 @@ deploy-to-prod:
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
       EOF
-    - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"  
+    - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^release\//'
       when: manual
