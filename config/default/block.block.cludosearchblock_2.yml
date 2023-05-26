@@ -10,7 +10,7 @@ dependencies:
 id: cludosearchblock_2
 theme: essex
 region: hero_content
-weight: 0
+weight: -12
 provider: null
 plugin: cludo_search
 settings:

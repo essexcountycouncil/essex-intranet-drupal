@@ -1,0 +1,8 @@
+uuid: 9bfdc270-8576-4141-9de4-51a17b1ac91e
+langcode: en
+status: true
+dependencies: {  }
+id: quick-actions
+label: 'Quick Actions'
+description: ''
+locked: false
