@@ -1,0 +1,25 @@
+uuid: 17973b00-edad-4762-b187-64c2ca22374a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.quick-actions
+  module:
+    - system
+  theme:
+    - essex
+id: quick_actions
+theme: essex
+region: hero_content
+weight: -11
+provider: null
+plugin: 'system_menu_block:quick-actions'
+settings:
+  id: 'system_menu_block:quick-actions'
+  label: 'Quick Actions'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

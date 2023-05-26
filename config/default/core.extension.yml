@@ -121,6 +121,7 @@ module:
   media: 0
   media_library: 0
   media_library_edit: 0
+  menu_item_limit: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0

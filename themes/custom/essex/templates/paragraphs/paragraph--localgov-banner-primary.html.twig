@@ -68,11 +68,13 @@
     <a class="banner__link" href="{{ banner_url }}">
   {% endif %}
       {% if is_front %}
-        <div class="lgd-container">
-          <div class="banner__content">
-            <h1 class="page-title">{{ paragraph.localgov_title.value }}</h1>
-            <div class="blocks">
-              {{ banner_content }}
+        <div class="banner__content">
+          <div class="lgd-container">
+            <div class="ecc-container">
+              <h1 class="page-title sr-only">{{ paragraph.localgov_title.value }}</h1>
+              <div class="blocks">
+                {{ banner_content }}
+              </div>
             </div>
           </div>
         </div>
