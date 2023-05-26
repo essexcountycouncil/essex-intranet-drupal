@@ -110,6 +110,8 @@ deploy-to-dev:
       when: manual
     - if: '$CI_COMMIT_BRANCH =~ /^release\//'
       when: manual
+    - if: '$CI_COMMIT_BRANCH =~ /^chore\/pipeline-troubleshooting'
+      when: manual
 
 drush-deploy-dev:
   image: mcr.microsoft.com/azure-cli
