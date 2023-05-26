@@ -1,4 +1,5 @@
 stages:
+  - Test1
   - build
   - development
   - development-postdeploy
