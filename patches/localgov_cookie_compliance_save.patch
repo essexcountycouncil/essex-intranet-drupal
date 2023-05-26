@@ -24,7 +24,7 @@
 +    }, false);
 +
 +    saveButton.addEventListener("blur", function () {
-+      saveButton.innerHTML = "Save Preferences  <i class='fas fa-check'></i>";
++      saveButton.innerHTML = "Submit Preferences  <i class='fas fa-check'></i>";
 +    }, false);
 +
    }
@@ -51,7 +51,7 @@
 +    }, false);
 +
 +    saveButton.addEventListener("blur", function () {
-+      saveButton.innerHTML = "Save Preferences  <i class='fas fa-check'></i>";
++      saveButton.innerHTML = "Submit Preferences  <i class='fas fa-check'></i>";
 +    }, false);
    }
  })(jQuery, Drupal);
