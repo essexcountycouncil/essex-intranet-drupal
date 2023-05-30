@@ -511,10 +511,13 @@ nav.navigation--quick-actions li a {
   text-decoration: none;
   border-radius: var(--border-radius);
   position: relative;
+  border: 0.18em solid var(--color-black);
 }
+
 nav.navigation--quick-actions li a:hover {
-  text-decoration: underline;
+  border-color: var(--color-section-header-bg);
 }
+
 nav.navigation--quick-actions li a:after {
   content: "";
   background-image: url("data:image/svg+xml,%3Csvg width='24' height='14' fill='none' viewBox='0 0 24 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23 1L12 12L1 0.999999' stroke='black' stroke-width='2'/%3E%3C/svg%3E");
@@ -607,6 +610,7 @@ nav.navigation--quick-actions li a:after {
   .path-frontpage .cludo-search-block-search-form .form-item,
   .path-frontpage .cludo-search-block-search-form input {
     width: 100%;
+    min-height: 100%;
   }
 }
 
