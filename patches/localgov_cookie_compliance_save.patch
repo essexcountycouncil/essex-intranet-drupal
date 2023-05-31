@@ -12,13 +12,13 @@
 +    var saveButton = document.querySelector('.eu-cookie-compliance-save-preferences-button');
 +
 +    saveButton.addEventListener("click", function () {
-+      saveButton.innerHTML = "Saving";
++      saveButton.innerHTML = "Submitting";
 +      saveButton.classList.add('spinning');
 +
 +      setTimeout(
 +        function () {
 +          saveButton.classList.remove('spinning');
-+          saveButton.innerHTML = "Preferences Saved <i class='fas fa-check'></i>";
++          saveButton.innerHTML = "Preferences Submitted <i class='fas fa-check'></i>";
 +        }, 2000);
 +
 +    }, false);
@@ -41,12 +41,12 @@
 +    var saveButton = document.querySelector('.eu-cookie-compliance-save-preferences-button');
 +
 +    saveButton.addEventListener("click", function () {
-+      saveButton.innerHTML = "Saving";
++      saveButton.innerHTML = "Submitting";
 +      saveButton.classList.add('spinning');
 +
 +      setTimeout(function () {
 +        saveButton.classList.remove('spinning');
-+        saveButton.innerHTML = "Preferences Saved <i class='fas fa-check'></i>";
++        saveButton.innerHTML = "Preferences Submitted <i class='fas fa-check'></i>";
 +      }, 2000);
 +    }, false);
 +
