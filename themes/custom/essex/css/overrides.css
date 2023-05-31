@@ -275,7 +275,7 @@ input[type="submit"],
   padding-left: var(--spacing-padding-horizontal);
 }
 
-@media only screen and  (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
   .ecc-container {
     width: 926px;
     margin: 0 auto;
@@ -488,7 +488,7 @@ h1:after,
 }
 
 nav.navigation--quick-actions {
-  margin: 1em  0;
+  margin: 1em 0;
 }
 
 nav.navigation--quick-actions h2 {
@@ -544,6 +544,7 @@ nav.navigation--quick-actions li a:after {
     background: #C8C8C8;
   }
 }
+
 /* Search */
 .lgd-header .region-primary-menu {
   order: 1;
@@ -607,6 +608,7 @@ nav.navigation--quick-actions li a:after {
 }
 
 @media (min-width: 768px) {
+
   .path-frontpage .cludo-search-block-search-form .form-item,
   .path-frontpage .cludo-search-block-search-form input {
     width: 100%;
@@ -898,6 +900,16 @@ tbody tr {
   .path-frontpage .lgd-page-section:has(section.media-with-text) {
     margin-bottom: 16px;
   }
+}
+
+.layout:not(.layout--onecol) .media-with-text:not(.media-with-text--featured) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+}
+
+.layout:not(.layout--onecol) .media-with-text:not(.media-with-text--featured) .media-with-text__media * {
+  height: 100%;
+  object-fit: cover;
 }
 
 .layout__region:empty {
