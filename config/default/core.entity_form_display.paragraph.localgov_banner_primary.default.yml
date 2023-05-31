@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.localgov_banner_primary.localgov_image
-    - field.field.paragraph.localgov_banner_primary.localgov_subsites_banner_logo
     - field.field.paragraph.localgov_banner_primary.localgov_subsites_banner_text
     - field.field.paragraph.localgov_banner_primary.localgov_title
     - field.field.paragraph.localgov_banner_primary.localgov_url
@@ -21,13 +20,6 @@ content:
   localgov_image:
     type: media_library_widget
     weight: 0
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
-  localgov_subsites_banner_logo:
-    type: media_library_widget
-    weight: 3
     region: content
     settings:
       media_types: {  }
