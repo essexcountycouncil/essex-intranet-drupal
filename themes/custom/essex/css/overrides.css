@@ -356,6 +356,7 @@ input[type="submit"],
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -914,6 +915,26 @@ tbody tr {
 
 .layout__region:empty {
   display: none;
+}
+
+.layout.layout--twocol>.layout__region--first,
+.layout.layout--twocol>.layout__region--second {
+  padding: 0.75rem 0;
+}
+
+.layout--twocol>.layout__region--first section,
+.layout--twocol>.layout__region--second section {
+  height: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+  .layout--twocol>.layout__region--first section {
+    margin-right: 0.96875rem;
+  }
+
+  .layout--twocol>.layout__region--second section {
+    margin-left: 0.96875rem;
+  }
 }
 
 .footer__before-pre {
