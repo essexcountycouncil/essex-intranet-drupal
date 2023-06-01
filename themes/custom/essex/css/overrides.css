@@ -465,7 +465,7 @@ h1:after,
   position: relative;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 760px) {
   .lgd-region--hero .banner--primary .banner__content {
     margin: 0;
     position: absolute;
@@ -532,17 +532,18 @@ nav.navigation--quick-actions li a:after {
   transform: rotate(270deg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
+  .banner--primary,
+  .banner__content {
+    position: static !important;
+  }
+
   nav.navigation--quick-actions h2 {
     display: block;
   }
 
   nav.navigation--quick-actions ul.menu {
     grid-template-columns: 1fr;
-  }
-
-  nav.navigation--quick-actions li a {
-    background: #C8C8C8;
   }
 }
 
@@ -578,11 +579,11 @@ nav.navigation--quick-actions li a:after {
   display: flex;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .cludo-search-block-search-form form {
     position: absolute;
-    top: -50%;
-    transform: translateY(-50%);
+    top: 15%;
+    transform: translateY(50%);
     left: 0;
     padding-inline: 1em;
   }
@@ -608,7 +609,7 @@ nav.navigation--quick-actions li a:after {
   border-radius: var(--border-radius);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 760px) {
 
   .path-frontpage .cludo-search-block-search-form .form-item,
   .path-frontpage .cludo-search-block-search-form input {
@@ -633,7 +634,7 @@ nav.navigation--quick-actions li a:after {
 
 .cludo-search-block-search-form .form-submit {
   background-color: var(--color-white);
-  background-image: url('../assets/images/icons/magnifying-glass.svg');
+  background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.7008 19.0204L17.4165 14.7368C17.2231 14.5435 16.961 14.4361 16.686 14.4361H15.9855C17.1716 12.9194 17.8763 11.0118 17.8763 8.93663C17.8763 4 13.8756 0 8.93815 0C4.00068 0 0 4 0 8.93663C0 13.8733 4.00068 17.8733 8.93815 17.8733C11.0137 17.8733 12.9216 17.1686 14.4386 15.9828V16.6831C14.4386 16.9581 14.546 17.2202 14.7394 17.4135L19.0237 21.6971C19.4276 22.101 20.0808 22.101 20.4804 21.6971L21.6965 20.4812C22.1004 20.0773 22.1004 19.4243 21.7008 19.0204ZM8.93815 14.4361C5.90004 14.4361 3.43775 11.9785 3.43775 8.93663C3.43775 5.89903 5.89574 3.43716 8.93815 3.43716C11.9763 3.43716 14.4386 5.89474 14.4386 8.93663C14.4386 11.9742 11.9806 14.4361 8.93815 14.4361Z' fill='%23000'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 1.5rem;
@@ -641,6 +642,10 @@ nav.navigation--quick-actions li a:after {
   direction: ltr;
   min-width: 3.5rem;
   padding: var(--spacing-small);
+}
+
+.cludo-search-block-search-form .form-submit:hover {
+  background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.7008 19.0204L17.4165 14.7368C17.2231 14.5435 16.961 14.4361 16.686 14.4361H15.9855C17.1716 12.9194 17.8763 11.0118 17.8763 8.93663C17.8763 4 13.8756 0 8.93815 0C4.00068 0 0 4 0 8.93663C0 13.8733 4.00068 17.8733 8.93815 17.8733C11.0137 17.8733 12.9216 17.1686 14.4386 15.9828V16.6831C14.4386 16.9581 14.546 17.2202 14.7394 17.4135L19.0237 21.6971C19.4276 22.101 20.0808 22.101 20.4804 21.6971L21.6965 20.4812C22.1004 20.0773 22.1004 19.4243 21.7008 19.0204ZM8.93815 14.4361C5.90004 14.4361 3.43775 11.9785 3.43775 8.93663C3.43775 5.89903 5.89574 3.43716 8.93815 3.43716C11.9763 3.43716 14.4386 5.89474 14.4386 8.93663C14.4386 11.9742 11.9806 14.4361 8.93815 14.4361Z' fill='%23e40037'/%3E%3C/svg%3E%0A");
 }
 
 
