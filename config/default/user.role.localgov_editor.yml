@@ -37,6 +37,7 @@ dependencies:
     - localgov_directories
     - localgov_geo
     - media
+    - menu_admin_per_menu
     - node
     - paragraphs
     - paragraphs_library
@@ -94,7 +95,9 @@ permissions:
   - 'administer content owner/sme entity'
   - 'administer group'
   - 'administer paragraphs library'
+  - 'administer quick-actions menu items'
   - 'administer redirects'
+  - 'administer tools menu items'
   - 'bypass node access'
   - 'create content_category group'
   - 'create directory facets'

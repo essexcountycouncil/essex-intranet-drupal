@@ -32,6 +32,7 @@ dependencies:
     - entity_hierarchy
     - localgov_alert_banner
     - media
+    - menu_admin_per_menu
     - node
     - paragraphs
     - paragraphs_library
@@ -78,6 +79,7 @@ permissions:
   - 'add scheduled transitions node localgov_step_by_step_page'
   - 'add scheduled transitions node localgov_subsites_overview'
   - 'add scheduled transitions node localgov_subsites_page'
+  - 'administer quick-actions menu items'
   - 'create document media'
   - 'create image media'
   - 'create localgov_directories_org content'
