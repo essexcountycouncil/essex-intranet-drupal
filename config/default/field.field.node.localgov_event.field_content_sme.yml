@@ -1,0 +1,26 @@
+uuid: 55948d07-44a4-4dea-8cbb-94a3e26e2590
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_sme
+    - node.type.localgov_event
+id: node.localgov_event.field_content_sme
+field_name: field_content_sme
+entity_type: node
+bundle: localgov_event
+label: 'Content SME'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: content_sme_reference
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: 0
+field_type: entity_reference

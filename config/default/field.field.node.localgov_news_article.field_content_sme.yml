@@ -1,0 +1,26 @@
+uuid: a39edb58-9f42-42b7-b8ed-4fc415da41b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_sme
+    - node.type.localgov_news_article
+id: node.localgov_news_article.field_content_sme
+field_name: field_content_sme
+entity_type: node
+bundle: localgov_news_article
+label: 'Content SME'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: content_sme_reference
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: 0
+field_type: entity_reference

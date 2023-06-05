@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.localgov_services_status.body
+    - field.field.node.localgov_services_status.field_content_owner
+    - field.field.node.localgov_services_status.field_content_sme
     - field.field.node.localgov_services_status.localgov_service_status
     - field.field.node.localgov_services_status.localgov_service_status_on_landi
     - field.field.node.localgov_services_status.localgov_service_status_on_list
@@ -27,8 +29,25 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_content_owner:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_content_sme:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   content_moderation_control: true
+  entitygroupfield: true
   links: true
   localgov_service_status: true
   localgov_service_status_on_landi: true

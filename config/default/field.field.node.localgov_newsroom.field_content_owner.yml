@@ -1,0 +1,26 @@
+uuid: c3d3de29-8946-4aa1-a67c-93ef13f2b7dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_owner
+    - node.type.localgov_newsroom
+id: node.localgov_newsroom.field_content_owner
+field_name: field_content_owner
+entity_type: node
+bundle: localgov_newsroom
+label: 'Content Owner'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: content_ownership
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: 0
+field_type: entity_reference

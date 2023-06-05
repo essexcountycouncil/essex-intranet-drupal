@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.localgov_services_status.body
+    - field.field.node.localgov_services_status.field_content_owner
+    - field.field.node.localgov_services_status.field_content_sme
     - field.field.node.localgov_services_status.localgov_service_status
     - field.field.node.localgov_services_status.localgov_service_status_on_landi
     - field.field.node.localgov_services_status.localgov_service_status_on_list
@@ -40,6 +42,9 @@ content:
     weight: 100
     region: content
 hidden:
+  entitygroupfield: true
+  field_content_owner: true
+  field_content_sme: true
   localgov_service_status: true
   localgov_service_status_on_landi: true
   localgov_service_status_on_list: true

@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.localgov_subsites_overview.field_content_owner
+    - field.field.node.localgov_subsites_overview.field_content_sme
     - field.field.node.localgov_subsites_overview.localgov_subsites_banner
     - field.field.node.localgov_subsites_overview.localgov_subsites_content
     - field.field.node.localgov_subsites_overview.localgov_subsites_hide_menu
@@ -32,6 +34,9 @@ content:
     weight: 0
     region: content
 hidden:
+  entitygroupfield: true
+  field_content_owner: true
+  field_content_sme: true
   links: true
   localgov_subsites_banner: true
   localgov_subsites_content: true

@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.localgov_guides_overview.field_content_owner
     - field.field.node.localgov_guides_overview.field_content_sme
     - field.field.node.localgov_guides_overview.field_non_publishable_notes
+    - field.field.node.localgov_guides_overview.field_test
     - field.field.node.localgov_guides_overview.localgov_guides_description
     - field.field.node.localgov_guides_overview.localgov_guides_list_format
     - field.field.node.localgov_guides_overview.localgov_guides_pages
@@ -42,6 +43,7 @@ hidden:
   field_content_owner: true
   field_content_sme: true
   field_non_publishable_notes: true
+  field_test: true
   links: true
   localgov_guides_description: true
   localgov_guides_list_format: true
