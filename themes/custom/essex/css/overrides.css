@@ -150,10 +150,25 @@ input[type="submit"],
   border-color: var(--color-black);
 }
 
+/* Step by step navigation */
+
+.block-views-blocklocalgov-step-by-step-navigation-steps-for-overview,
+.block-views-blocklocalgov-step-by-step-navigation-steps {
+  padding-right: var(--spacing-padding-horizontal);
+  padding-left: var(--spacing-padding-horizontal);
+  max-width: var(--width-container);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.step-by-step-pages {
+  max-width: 48rem;
+}
+
 .step-by-step-pages ol.step-list .step .step__title a {
   color: var(--color-link);
   display: inline-block;
-  font-weight: --heading-2-font-weight;
+  font-weight: var(--heading-2-font-weight);
 }
 
 .step-by-step-pages ol.step-list .step .step__title .step-show {
@@ -170,6 +185,15 @@ input[type="submit"],
 
 .step-by-step-pages .step-master {
   color: var(--color-black);
+}
+
+/* Step by step navigation sidebar */
+.sidebar .lgd-region__inner .step-by-step__navigation-sidebar {
+  background: #ededed;
+  border-width: 0.3125rem 0 0 0;
+  border-style: solid;
+  border-color: var(--color-accent);
+  margin: 0 0.5rem;
 }
 
 
