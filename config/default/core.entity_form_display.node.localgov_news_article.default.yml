@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.localgov_news_article.body
+    - field.field.node.localgov_news_article.field_content_owner
+    - field.field.node.localgov_news_article.field_content_sme
     - field.field.node.localgov_news_article.field_media_image
     - field.field.node.localgov_news_article.localgov_news_categories
     - field.field.node.localgov_news_article.localgov_news_date
@@ -131,6 +133,26 @@ content:
       label: 'Group name'
       multiple: true
       required: false
+    third_party_settings: {  }
+  field_content_owner:
+    type: entity_reference_autocomplete
+    weight: 27
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_content_sme:
+    type: entity_reference_autocomplete
+    weight: 28
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_media_image:
     type: media_library_widget

@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.localgov_directory_promo_page.body
+    - field.field.node.localgov_directory_promo_page.field_content_owner
+    - field.field.node.localgov_directory_promo_page.field_content_sme
     - field.field.node.localgov_directory_promo_page.localgov_directory_address
     - field.field.node.localgov_directory_promo_page.localgov_directory_banner
     - field.field.node.localgov_directory_promo_page.localgov_directory_channels
@@ -129,6 +131,26 @@ content:
     weight: 2
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_content_owner:
+    type: entity_reference_autocomplete
+    weight: 51
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_content_sme:
+    type: entity_reference_autocomplete
+    weight: 52
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   localgov_directory_address:
     type: address_default
@@ -288,4 +310,10 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  entitygroupfield: true

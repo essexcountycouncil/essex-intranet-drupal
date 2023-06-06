@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_index
     - field.field.node.localgov_step_by_step_page.body
+    - field.field.node.localgov_step_by_step_page.field_content_owner
+    - field.field.node.localgov_step_by_step_page.field_content_sme
     - field.field.node.localgov_step_by_step_page.localgov_step_parent
     - field.field.node.localgov_step_by_step_page.localgov_step_section_title
     - field.field.node.localgov_step_by_step_page.localgov_step_summary
@@ -55,5 +57,8 @@ content:
     weight: 2
     region: content
 hidden:
+  entitygroupfield: true
+  field_content_owner: true
+  field_content_sme: true
   links: true
   search_api_excerpt: true
