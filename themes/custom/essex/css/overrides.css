@@ -533,6 +533,7 @@ nav.navigation--quick-actions li a:after {
 }
 
 @media (max-width: 760px) {
+
   .banner--primary,
   .banner__content {
     position: static !important;
@@ -927,9 +928,8 @@ tbody tr {
   padding: 0.75rem 0;
 }
 
-.layout--twocol>.layout__region--first section,
-.layout--twocol>.layout__region--second section {
-  height: 100%;
+.media-with-text--media-top .media-with-text__media {
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 640px) {
