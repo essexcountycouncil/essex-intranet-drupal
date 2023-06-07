@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.localgov_services_landing.localgov_other_team_contacts
     - field.field.node.localgov_services_landing.localgov_phone
     - field.field.node.localgov_services_landing.localgov_popular_topics
+    - field.field.node.localgov_services_landing.localgov_services_parent
     - field.field.node.localgov_services_landing.localgov_twitter
     - node.type.localgov_services_landing
   module:
@@ -139,6 +140,14 @@ content:
       title: 'Popular topics'
     third_party_settings: {  }
     weight: 11
+    region: content
+  localgov_services_parent:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
     region: content
   localgov_twitter:
     type: string
