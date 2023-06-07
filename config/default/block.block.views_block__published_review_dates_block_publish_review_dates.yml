@@ -12,7 +12,7 @@ dependencies:
 id: views_block__published_review_dates_block_publish_review_dates
 theme: essex
 region: content_bottom
-weight: 0
+weight: -12
 provider: null
 plugin: 'views_block:published_review_dates-block_publish_review_dates'
 settings:
