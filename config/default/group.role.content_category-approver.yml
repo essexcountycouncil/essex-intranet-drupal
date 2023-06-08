@@ -12,6 +12,8 @@ scope: individual
 global_role: null
 group_type: content_category
 permissions:
+  - 'access group_node overview'
+  - 'create group_node:localgov_news_article entity'
   - 'update any group_node:localgov_news_article entity'
   - 'update own group_node:localgov_news_article entity'
   - 'view group'
