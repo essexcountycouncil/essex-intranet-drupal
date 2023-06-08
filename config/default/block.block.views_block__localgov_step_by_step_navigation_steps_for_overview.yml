@@ -5,18 +5,17 @@ dependencies:
   config:
     - views.view.localgov_step_by_step_navigation
   module:
-    - block_classes
     - node
     - views
   theme:
     - essex
-third_party_settings:
-  block_classes:
-    block_class: step-by-step__navigation-sidebar
+  third_party_settings:
+    block_classes:
+      block_class: step-by-step__navigation-sidebar
 id: views_block__localgov_step_by_step_navigation_steps_for_overview
 theme: essex
-region: sidebar_second
-weight: -11
+region: content_bottom
+weight: 0
 provider: null
 plugin: 'views_block:localgov_step_by_step_navigation-steps_for_overview'
 settings:
