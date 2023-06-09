@@ -18,6 +18,7 @@ behavior_plugins:
     enabled: true
     available_layouts:
       layout_the_center: 'The Center'
+      layout_autogrid: 'Auto Grid'
       localgov_layout_onecol: 'One column (simple)'
       localgov_layout_twocol: 'Two column (simple)'
       localgov_layout_threecol_33_34_33: 'Three column 33/34/33 (simple)'
