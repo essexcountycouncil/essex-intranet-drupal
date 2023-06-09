@@ -498,11 +498,6 @@ h1:after,
   }
 }
 
-.lgd-region--hero-content {
-  position: absolute;
-  bottom: 1em;
-}
-
 .path-frontpage .banner__content {
   background: transparent;
   border: 0;
@@ -510,6 +505,9 @@ h1:after,
   margin: 0;
   width: 100%;
   max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav.navigation--quick-actions {
@@ -556,12 +554,17 @@ nav.navigation--quick-actions li a:after {
   transform: rotate(270deg);
 }
 
+.banner--primary {
+  display: grid;
+  grid-template: "container";
+}
+
+.banner--primary>* {
+  grid-area: container;
+}
+
 @media (max-width: 760px) {
 
-  .banner--primary,
-  .banner__content {
-    position: static !important;
-  }
 
   nav.navigation--quick-actions h2 {
     display: block;
@@ -602,15 +605,13 @@ nav.navigation--quick-actions li a:after {
 
 .cludo-search-block-search-form form {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 760px) {
   .cludo-search-block-search-form form {
-    position: absolute;
-    top: 15%;
-    transform: translateY(50%);
-    left: 0;
-    padding-inline: 1em;
+    margin: 5rem 0 8rem;
   }
 }
 
@@ -632,6 +633,7 @@ nav.navigation--quick-actions li a:after {
 .path-frontpage .cludo-search-block-search-form input {
   border-width: 0;
   border-radius: var(--border-radius);
+  min-height: 100%;
 }
 
 @media (min-width: 760px) {
@@ -639,7 +641,6 @@ nav.navigation--quick-actions li a:after {
   .path-frontpage .cludo-search-block-search-form .form-item,
   .path-frontpage .cludo-search-block-search-form input {
     width: 100%;
-    min-height: 100%;
   }
 }
 

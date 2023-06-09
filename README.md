@@ -14,12 +14,22 @@ Use [DDEV](https://ddev.readthedocs.io/en/latest/users/install/ddev-installation
 6. `ddev drush uli`
 
 ## PHP requirements
+
 The DDEV `config.yaml` file is configured with the requirements for local development and provides an approximate
 equivalent to what is used in production.
+
 - [PHP 8.1](https://www.drupal.org/docs/getting-started/system-requirements/php-requirements)
 - [Composer 2.x](https://getcomposer.org/)
 
 ## Web server requirements
+
 Once again, DDEV has the details configured for NGINX for local development.
+
 - [See Drupal's web server requirements page](https://www.drupal.org/docs/system-requirements/web-server-requirements)
 - [NGINX with drupal](https://www.nginx.com/resources/wiki/start/topics/recipes/drupal/)
+
+## Import images
+
+```
+ddev drush en stage_file_proxy -y && ddev drush cset stage_file_proxy.settings origin '<https://beta.intranet.essex.gov.uk>' -y
+```
