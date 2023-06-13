@@ -1,0 +1,20 @@
+uuid: 8c78609a-6c44-410e-ace8-00ca46fb35fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_secondary_news_item
+field_name: field_secondary_news_item
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

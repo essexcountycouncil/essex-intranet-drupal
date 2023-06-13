@@ -1,0 +1,47 @@
+uuid: 86ae9c87-6344-4605-a997-a19a017eee4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.newsroom_component.field_primary_news_item
+    - field.field.paragraph.newsroom_component.field_secondary_news_item
+    - field.field.paragraph.newsroom_component.field_tertiary_news_item
+    - paragraphs.paragraphs_type.newsroom_component
+id: paragraph.newsroom_component.default
+targetEntityType: paragraph
+bundle: newsroom_component
+mode: default
+content:
+  field_primary_news_item:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_secondary_news_item:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tertiary_news_item:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
