@@ -1,0 +1,40 @@
+diff --git a/src/Plugin/Field/FieldWidget/EntityGroupFieldWidgetBase.php b/src/Plugin/Field/FieldWidget/EntityGroupFieldWidgetBase.php
+--- a/src/Plugin/Field/FieldWidget/EntityGroupFieldWidgetBase.php
++++ b/src/Plugin/Field/FieldWidget/EntityGroupFieldWidgetBase.php	(date 1686673621382)
+@@ -240,7 +240,7 @@
+       if ($entity_plugin_id == 'group_membership') {
+         if ($items->getEntity()->id() == $account->id()) {
+           $can_delete = $group->hasPermission("leave group", $account);
+-          $can_edit = $group->hasPermission("update own group_membership content", $account);
++          $can_edit = $group->hasPermission("update own group_membership entity", $account);
+         }
+         else {
+           $can_delete = $group->hasPermission("administer members", $account);
+@@ -248,7 +248,7 @@
+         }
+       }
+       else {
+-        $can_delete = $host->isNew() ? FALSE : $group->hasPermission("delete any $entity_plugin_id content", $account);
++        $can_delete = $host->isNew() ? FALSE : $group->hasPermission("delete any $entity_plugin_id entity", $account);
+-        $can_edit = $group->hasPermission("update any $entity_plugin_id content", $account);
++        $can_edit = $group->hasPermission("update any $entity_plugin_id entity", $account);
+       }
+       // Checking if can delete own.
+@@ -258,7 +258,7 @@
+         }
+       }
+       if (!$can_delete && $gcontent_entity->getOwnerId() == $account->id()) {
+-        $can_delete = $group->hasPermission("delete own $entity_plugin_id content", $account);
++        $can_delete = $group->hasPermission("delete own $entity_plugin_id entity", $account);
+       }
+       // Checking if can update own.
+       if (!$can_edit) {
+@@ -269,7 +269,7 @@
+           $group_content_owner = $gcontent_entity->getEntity()->id();
+         }
+         if ($group_content_owner == $account->id()) {
+-          $can_edit = $group->hasPermission("update own $entity_plugin_id content", $account);
++          $can_edit = $group->hasPermission("update own $entity_plugin_id entity", $account);
+         }
+       }
+
