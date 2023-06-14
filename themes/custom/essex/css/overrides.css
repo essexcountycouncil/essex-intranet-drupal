@@ -688,11 +688,19 @@ nav.navigation--quick-actions li a:after {
   margin-bottom: 0;
 }
 
+.path-frontpage .cludo-search-block-search-form .form-item {
+  border: 0;
+}
+
 .path-frontpage .cludo-search-block-search-form .form-item,
 .path-frontpage .cludo-search-block-search-form input {
-  border-width: 0;
   border-radius: var(--border-radius);
   min-height: 100%;
+}
+
+.path-frontpage .cludo-search-block-search-form input,
+.path-frontpage .cludo-search-block-search-form .form-submit {
+  border: 1px solid #989898;
 }
 
 @media (min-width: 760px) {
