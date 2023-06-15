@@ -1,0 +1,10 @@
+uuid: dde324bc-a727-4d07-8cc6-6269acb69d4a
+langcode: en
+status: true
+dependencies: {  }
+id: newsroom_component
+label: 'Newsroom component'
+icon_uuid: null
+icon_default: null
+description: 'Only use this on a two-column layout.'
+behavior_plugins: {  }

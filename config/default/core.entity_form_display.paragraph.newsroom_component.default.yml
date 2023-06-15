@@ -1,0 +1,38 @@
+uuid: 86ae9c87-6344-4605-a997-a19a017eee4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.newsroom_component.field_featured_news
+    - field.field.paragraph.newsroom_component.field_news_cards
+    - paragraphs.paragraphs_type.newsroom_component
+  module:
+    - dynamic_entity_reference
+id: paragraph.newsroom_component.default
+targetEntityType: paragraph
+bundle: newsroom_component
+mode: default
+content:
+  field_featured_news:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_news_cards:
+    type: dynamic_entity_reference_default
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

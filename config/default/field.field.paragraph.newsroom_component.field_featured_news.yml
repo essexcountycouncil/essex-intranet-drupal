@@ -1,0 +1,29 @@
+uuid: 711432fc-a78b-4e5e-9a5b-ecadbdec0b18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_featured_news
+    - node.type.localgov_news_article
+    - paragraphs.paragraphs_type.newsroom_component
+id: paragraph.newsroom_component.field_featured_news
+field_name: field_featured_news
+entity_type: paragraph
+bundle: newsroom_component
+label: 'Featured news'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      localgov_news_article: localgov_news_article
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
