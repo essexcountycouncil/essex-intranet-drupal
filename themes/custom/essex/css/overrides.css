@@ -1100,6 +1100,8 @@ tbody tr {
   background-color: var(--color-grey-lighter);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+  height: 100%;
 }
 
 .featured-news__card,
@@ -1156,6 +1158,7 @@ tbody tr {
   .news-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
     grid-gap: 1em;
     margin: 1em 0;
   }
