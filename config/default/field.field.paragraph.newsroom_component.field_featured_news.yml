@@ -1,18 +1,18 @@
-uuid: de8361e1-b31e-4d00-9057-7d99f2c44a7b
+uuid: 711432fc-a78b-4e5e-9a5b-ecadbdec0b18
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_tertiary_news_item
+    - field.storage.paragraph.field_featured_news
     - node.type.localgov_news_article
     - paragraphs.paragraphs_type.newsroom_component
-id: paragraph.newsroom_component.field_tertiary_news_item
-field_name: field_tertiary_news_item
+id: paragraph.newsroom_component.field_featured_news
+field_name: field_featured_news
 entity_type: paragraph
 bundle: newsroom_component
-label: 'Tertiary news item'
+label: 'Featured news'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

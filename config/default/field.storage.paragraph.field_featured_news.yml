@@ -1,12 +1,12 @@
-uuid: febd22dc-718c-444b-b438-97585e6fab5c
+uuid: 09a00be4-4a90-4d71-a5e4-4325609bd328
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - paragraphs
-id: paragraph.field_tertiary_news_item
-field_name: field_tertiary_news_item
+id: paragraph.field_featured_news
+field_name: field_featured_news
 entity_type: paragraph
 type: entity_reference
 settings:
