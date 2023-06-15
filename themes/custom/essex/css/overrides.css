@@ -1121,7 +1121,7 @@ tbody tr {
   margin-right: 10px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 640px) {
   .featured-news__card article,
   .news-card article {
     gap: 10px;
@@ -1144,7 +1144,7 @@ tbody tr {
   justify-content: space-between;
 }
 
-@media (min-width: 762px) {
+@media (min-width: 640px) {
   .news-card article {
     background: none;
   }
