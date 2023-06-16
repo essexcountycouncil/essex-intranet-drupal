@@ -206,7 +206,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div><p>Is something missing or not working on this page?\r\n</p><a class=\"button button__report-feedback\" href=\"/form/feedback-form?reference={{ raw_arguments.nid }}\" title=\"Feedback Form\">Report a problem</a></div>"
+            text: "<div><p>This is a new website – your feedback will help us improve it.\r\n</p><a class=\"button button__report-feedback\" href=\"/form/feedback-form?reference={{ raw_arguments.nid }}\" title=\"Feedback Form\">Give feedback</a></div>"
             make_link: false
             path: ''
             absolute: false
