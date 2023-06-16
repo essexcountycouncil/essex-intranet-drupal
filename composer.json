@@ -194,7 +194,7 @@
             "vendor/drush/drush/drush --yes -l default cache:rebuild"
         ],
         "prepare-filesystem-for-update": [
-            "chmod 777 --quiet web/sites/default/default.*.yml; true"
+            "chmod 777 web/sites/default/default.*.yml; true"
         ],
         "secure-site": [
             "chmod 444 web/sites/default/settings.php",
