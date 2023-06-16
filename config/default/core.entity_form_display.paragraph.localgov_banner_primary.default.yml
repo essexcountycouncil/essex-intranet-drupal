@@ -50,4 +50,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  localgov_subsites_banner_logo: true
   status: true
