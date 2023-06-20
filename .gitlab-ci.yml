@@ -14,8 +14,7 @@ Test:Required:
   before_script:
     - ''
   script:
-    # - composer install && composer tests-required
-    - composer validate
+    - composer install && composer tests-required
   allow_failure: false
 
 build-and-push-images:
