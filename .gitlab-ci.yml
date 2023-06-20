@@ -9,7 +9,7 @@ stages:
   - production-postdeploy
 
 Test:Required:
-  stage: Test1
+  stage: Test
   image: wodby/php:8.1
   before_script:
     - ''
@@ -38,14 +38,15 @@ build-and-push-images:
       fi
     - docker pull ${DOCKER_REGISTRY}/intranet-nginx-drupal || true
     - docker pull ${DOCKER_REGISTRY}/intranet-drupal-fpm || true
-    - docker build -t ${DOCKER_REGISTRY}/intranet-drupal-fpm${tag} -t intranet-drupal-fpm -f Dockerfile-drupal .
-    - docker build -t ${DOCKER_REGISTRY}/intranet-nginx-drupal${tag} -t intranet-nginx-drupal -f Dockerfile-nginx .
+    - docker build -t ${DOCKER_REGISTRY}/intranet-drupal-fpm -t ${DOCKER_REGISTRY}/intranet-drupal-fpm${tag} -t intranet-drupal-fpm -f Dockerfile-drupal .
+    - docker build -t ${DOCKER_REGISTRY}/intranet-nginx-drupal -t ${DOCKER_REGISTRY}/intranet-nginx-drupal${tag} -t intranet-nginx-drupal -f Dockerfile-nginx .
     - docker push ${DOCKER_REGISTRY}/intranet-nginx-drupal${tag}
+    - docker push ${DOCKER_REGISTRY}/intranet-nginx-drupal
     - docker push ${DOCKER_REGISTRY}/intranet-drupal-fpm${tag}
+    - docker push ${DOCKER_REGISTRY}/intranet-drupal-fpm
   only:
     - develop
     - /^release\//
-    - /^chore\/pipeline-troubleshooting
 
 deploy-to-dev:
   image: mcr.microsoft.com/azure-cli
@@ -54,7 +55,7 @@ deploy-to-dev:
     - job: build-and-push-images
   environment:
     name: development
-    url: https://essex-intranet.nomensa.xyz/
+    url: https://dev.essex-intranet.nomensa.xyz/
   before_script:
     - az extension add --name containerapp
     - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
@@ -73,6 +74,14 @@ deploy-to-dev:
       properties:
         template:
           revisionSuffix: ${CI_PIPELINE_ID}
+          scale:
+            minReplicas: 0
+            maxReplicas: 2
+            rules:
+              - name: "http-rule"
+                http:
+                  metadata:
+                    concurrentRequests: 40
           containers:
             - image: acreccuksdev.azurecr.io/intranet-nginx-drupal$tag
               name: nginx
@@ -82,6 +91,16 @@ deploy-to-dev:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
+              env:
+              - name: X_ROBOTS_TAG
+                value: noindex
+              probes:
+              - type: liveness
+                httpGet:
+                  path: "/08b5d5dc-f2de-4c78-86a7-d3ea80037430"
+                  port: 80
+                initialDelaySeconds: 5
+                periodSeconds: 3
             - image: acreccuksdev.azurecr.io/intranet-drupal-fpm$tag
               name: drupal
               resources:
@@ -101,8 +120,12 @@ deploy-to-dev:
                 secretRef: mysql-password
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
-
-
+              probes:
+              - type: liveness
+                tcpSocket:
+                  port: 9000
+                initialDelaySeconds: 5
+                periodSeconds: 3
       EOF
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-dev --yaml revision.yml --subscription "Essex County Council (intranet)"
   rules:
@@ -134,19 +157,29 @@ deploy-to-preprod:
   needs: ["deploy-to-dev"]
   environment:
     name: preproduction
-    url: https://essex-intranet-pp.nomensa.xyz/
+    url: https://preprod.essex-intranet.nomensa.xyz/
   before_script:
     - az extension add --name containerapp
     - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
   script:
     - echo "Importing image from Development  into Pre-Production"
     - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --image intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
+    - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --image intranet-nginx-drupal:latest --subscription "Essex County Council (Common)"
     - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --image intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
+    - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --image intranet-drupal-fpm:latest --subscription "Essex County Council (Common)"
     - |
       cat > revision.yml <<EOF
       properties:
         template:
           revisionSuffix: ${CI_PIPELINE_ID}
+          scale:
+            minReplicas: 1
+            maxReplicas: 3
+            rules:
+              - name: "http-rule"
+                http:
+                  metadata:
+                    concurrentRequests: 40
           containers:
             - image: acreccukspre.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG}
               name: nginx
@@ -156,6 +189,16 @@ deploy-to-preprod:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
+              env:
+              - name: X_ROBOTS_TAG
+                value: noindex
+              probes:
+              - type: liveness
+                httpGet:
+                  path: "/08b5d5dc-f2de-4c78-86a7-d3ea80037430"
+                  port: 80
+                initialDelaySeconds: 5
+                periodSeconds: 3
             - image: acreccukspre.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG}
               name: drupal
               resources:
@@ -175,6 +218,12 @@ deploy-to-preprod:
                 secretRef: mysql-password
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
+              probes:
+              - type: liveness
+                tcpSocket:
+                  port: 9000
+                initialDelaySeconds: 5
+                periodSeconds: 3
       EOF
     - echo "Creating new revision of Container App"
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-pre --yaml revision.yml --subscription "Essex County Council (intranet)"
@@ -203,20 +252,30 @@ deploy-to-prod:
   needs: ["deploy-to-preprod"]
   environment:
     name: production
-    url: https://essex.gov.uk/
+    url: https://beta.intranet.essex.gov.uk/
   before_script:
     - az extension add --name containerapp
     - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
   script:
     - echo "Importing image from Pre-Production into Production"
     - az acr import --force --name acreccuksprod --source acreccukspre.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --image intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
+    - az acr import --force --name acreccuksprod --source acreccukspre.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --image intranet-nginx-drupal:latest --subscription "Essex County Council (Common)"
     - az acr import --force --name acreccuksprod --source acreccukspre.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --image intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
+    - az acr import --force --name acreccuksprod --source acreccukspre.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --image intranet-drupal-fpm:latest --subscription "Essex County Council (Common)"
     - echo "Creating new revision of Container App"
     - |
       cat > revision.yml <<EOF
       properties:
         template:
           revisionSuffix: ${CI_PIPELINE_ID}
+          scale:
+            minReplicas: 1
+            maxReplicas: 3
+            rules:
+              - name: "http-rule"
+                http:
+                  metadata:
+                    concurrentRequests: 40
           containers:
             - image: acreccuksprod.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG}
               name: nginx
@@ -226,6 +285,18 @@ deploy-to-prod:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
+              env:
+              - name: X_ROBOTS_TAG
+                value: none
+              - name: CANONICAL_HOST
+                value: beta.intranet.essex.gov.uk
+              probes:
+              - type: liveness
+                httpGet:
+                  path: "/08b5d5dc-f2de-4c78-86a7-d3ea80037430"
+                  port: 80
+                initialDelaySeconds: 5
+                periodSeconds: 3
             - image: acreccuksprod.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG}
               name: drupal
               resources:
@@ -245,6 +316,12 @@ deploy-to-prod:
                 secretRef: mysql-password
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
+              probes:
+              - type: liveness
+                tcpSocket:
+                  port: 9000
+                initialDelaySeconds: 5
+                periodSeconds: 3
       EOF
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"
   rules:
