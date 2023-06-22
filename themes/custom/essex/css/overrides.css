@@ -422,7 +422,6 @@ nav.lgd-prev-next ul.lgd-prev-next__list li {
 }
 
 .media-with-text--featured {
-  --vertical-rhythm-spacing: clamp(var(--spacing-large), 2.5vw, var(--spacing-mega));
   position: relative;
   overflow: hidden;
   border: 0;
