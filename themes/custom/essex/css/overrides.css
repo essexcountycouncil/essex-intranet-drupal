@@ -677,8 +677,23 @@ nav.navigation--quick-actions li a:after {
   padding: var(--spacing-small);
 }
 
-.path-frontpage .cludo-search-block-search-form form input#edit-search-keys {
+.path-frontpage .cludo-search-block-search-form .js-form-item-search-keys input {
   min-height: 59px;
+}
+
+@media (min-width: 760px) {
+  .path-frontpage .cludo-search-block-search-form input {
+    font-size: 18px;
+  }
+}
+
+.path-frontpage .cludo-search-block-search-form input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #5e5e5e;
+  opacity: 1; /* Firefox */
+}
+
+.path-frontpage .cludo-search-block-search-form input::-ms-input-placeholder { /* Microsoft Edge */
+  color: #5e5e5e;
 }
 
 .cludo-search-block-search-form .form-item {
