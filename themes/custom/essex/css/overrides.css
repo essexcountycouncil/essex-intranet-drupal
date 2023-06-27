@@ -998,7 +998,7 @@ tbody tr {
 
 .field__item:first-of-type .field--name-localgov-text:has(> h2),
 .path-frontpage article>.field__items {
-  padding-top: clamp(var(--spacing), 3vw, var(--spacing-mega))
+  padding-top: clamp(0.75rem, 2vw, var(--spacing))
 }
 
 .branding__item--logo {
@@ -1161,7 +1161,7 @@ tbody tr {
 .featured-news__card,
 .news-card > .field__item {
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .featured-news__card article .card-content,
@@ -1184,7 +1184,6 @@ tbody tr {
   text-align: right;
   font-size: var(--font-size-small);
   vertical-align: bottom;
-  margin-right: 10px;
   margin-top: auto;
 }
 
