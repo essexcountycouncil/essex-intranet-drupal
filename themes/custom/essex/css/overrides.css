@@ -421,6 +421,24 @@ nav.lgd-prev-next ul.lgd-prev-next__list li {
   margin-top: var(--spacing-large);
 }
 
+.media-with-text--default .media-with-text__media img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 640px) {
+  .media-with-text--default .media-with-text__media img {
+    max-height: 250px;
+  }
+}
+
+@media screen and (min-width: 890px) {
+  .media-with-text--default .media-with-text__media img {
+    max-height: none;
+  }
+}
+
 .media-with-text--featured {
   position: relative;
   overflow: hidden;
@@ -1012,6 +1030,12 @@ tbody tr {
   max-height: clamp(260px, 35vw, 1000px);
   width: 100%;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 640px) {
+  .layout:not(.layout--onecol) .media-with-text:not(.media-with-text--featured) .media-with-text__media * {
+    max-height: 200px;
+  }
 }
 
 .layout__region:empty {
