@@ -795,7 +795,7 @@ body.path-csearch #edit-prompt {
 
 body.path-csearch .cludo-search-form #edit-basic {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 body.path-csearch .cludo-search-form #edit-submit {
@@ -831,6 +831,37 @@ body.path-csearch .cludo-search-form button:hover,
 body.path-csearch .cludo-search-form input[type="submit"]:focus,
 body.path-csearch .cludo-search-form input[type="submit"]:hover {
   --button-text-color-hover: white;
+}
+
+body.path-csearch .search_page_list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 80%;
+}
+
+body.path-csearch .search_page_list .active,
+body.path-csearch .search_page_list a {
+  display: block;
+  height: 100%;
+}
+
+body.path-csearch #cludo-search-results ul.search_page_list li {
+  text-align: center;
+  min-width: var(--touch-size);
+  min-height: var(--touch-size);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+body.path-csearch #cludo-search-results ul.search_page_list li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 /* Tables */
