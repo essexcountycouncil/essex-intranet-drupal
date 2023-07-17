@@ -864,6 +864,19 @@ body.path-csearch #cludo-search-results ul.search_page_list li a {
   height: 100%;
 }
 
+body.path-csearch .search_autocomplete {
+  list-style-type: none;
+  border: var(--border);
+  padding: var(--spacing-smaller);
+  margin-top: -3px;
+
+}
+
+body.path-csearch .search_autocomplete li {
+  padding: var(--spacing-smaller);
+  cursor: pointer;
+}
+
 /* Tables */
 table {
   margin-top: 0.8125rem;
