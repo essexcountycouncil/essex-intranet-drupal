@@ -117,13 +117,30 @@ span.semi-bold {
   background-color: var(--color-green);
 }
 
-.service-cta-block .service-cta-block__link:hover,
+.service-cta-block .service-cta-block__link:hover {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.service-cta-block .service-cta-block__link .service-cta-block__link-title {
+  border-bottom: 2px solid transparent;
+}
+
+.service-cta-block .service-cta-block__link:hover .service-cta-block__link-title {
+  display: inline-block;
+  border-bottom: 2px solid var(--color-white);
+
+}
+
+.service-cta-block .service-cta-block__link:hover .service-cta-block__link-icon svg path {
+  fill: var(--color-white);
+}
+
 .service-cta-block .service-cta-block__link:focus {
   background-color: var(--color-focus);
   color: var(--color-black);
 }
 
-.service-cta-block .service-cta-block__link:hover .service-cta-block__link-icon svg path,
 .service-cta-block .service-cta-block__link:focus .service-cta-block__link-icon svg path {
   fill: var(--color-black);
 }
