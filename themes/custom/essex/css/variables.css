@@ -63,4 +63,5 @@ body {
   --spacing-jumbo: 3rem;
   --table-bg-color: transparent;
   --table-border: none;
+  --touch-size: 45px;
 }
