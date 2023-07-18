@@ -1,0 +1,5 @@
+/** Extends gin admin theme. **/
+
+#block-gin-content span.semi-bold {
+  font-weight: 600;
+}

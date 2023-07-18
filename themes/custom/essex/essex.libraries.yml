@@ -20,6 +20,11 @@ fonts:
     theme:
       css/fonts.css: {}
 
+gin:
+  css:
+    theme:
+      css/gin.css: {}
+
 # sample-library
 #   css:
 #     theme:
