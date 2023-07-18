@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - localgov_guides
-    - node
   theme:
     - essex
 id: guidesprevnextblock
@@ -18,11 +17,4 @@ settings:
   label: 'Guides prev next block'
   label_display: '0'
   provider: localgov_guides
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      localgov_guides_overview: localgov_guides_overview
+visibility: {  }
