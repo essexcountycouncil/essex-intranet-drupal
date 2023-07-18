@@ -189,6 +189,12 @@ tabs region on all localgov_drupal websites. Yay!
     are within the footer element to assist screenreaders and other
     automated tools.
     #}
+    {%
+      set footer_grid_classes = [
+        has_footer_first and has_footer_second ? 'lgd-row__one-third',
+        has_footer_first and not has_footer_second ? 'lgd-row__two-thirds',
+      ]
+    %}
     <footer class="lgd-footer">
       <div class="footer__before-pre">
         {% if has_pre_footer %}
@@ -241,12 +247,12 @@ tabs region on all localgov_drupal websites. Yay!
         {% endif %}
       {% endblock %}
       {# End Footer #}
-    {%
-        set footer_lower_grid_classes = [
-        has_lower_footer_first and has_lower_footer_second ? 'lgd-row__one-third',
-        has_lower_footer_first and not has_lower_footer_second ? 'lgd-row__two-thirds',
-      ]
-    %}
+      {%
+          set footer_lower_grid_classes = [
+          has_lower_footer_first and has_lower_footer_second ? 'lgd-row__one-third',
+          has_lower_footer_first and not has_lower_footer_second ? 'lgd-row__two-thirds',
+        ]
+      %}
       {# Begin Post-footer #}
       {% block post_footer %}
         {% if has_lower_footer_first or has_lower_footer_second or has_lower_footer_third %}
