@@ -15,7 +15,9 @@ libraries-extend:
     # - essex/other-library-to-load-on-every-page
   # Add libraries here that extend specific libraries.
   # localgov_base/sample-library:
-    # - essex/sample-library
+  # - essex/sample-library
+ckeditor_stylesheets:
+  - css/base/ckeditor.css
 
 regions:
   tabs: "Tabs"
