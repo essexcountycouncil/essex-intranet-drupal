@@ -893,6 +893,15 @@ body.path-csearch .search_autocomplete li {
   cursor: pointer;
 }
 
+body.path-csearch #cludo-search-results ul .search-results-item {
+  padding: 1rem;
+  margin: var(--spacing) 0;
+}
+
+body.path-csearch #cludo-search-results ul .search-results-item:nth-child(odd) {
+  background: var(--color-grey-lightest);
+}
+
 /* Tables */
 table {
   margin-top: 0.8125rem;
