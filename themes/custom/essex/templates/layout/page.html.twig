@@ -209,7 +209,7 @@ tabs region on all localgov_drupal websites. Yay!
             <div class="lgd-container">
               <div class="lgd-row">
                 {% if has_footer_first %}
-                  <div class="lgd-row__one-third">
+                <div{{ attributes.addClass(footer_grid_classes) }}>
                     {{ page.footer_first }}
                   </div>
                 {% endif %}
@@ -260,7 +260,7 @@ tabs region on all localgov_drupal websites. Yay!
             <div class="lgd-container">
               <div class="lgd-row">
                 {% if has_lower_footer_first %}
-                  <div class="lgd-row__one-third">
+              <div{{ attributes.addClass(footer_lower_grid_classes) }}></div>
                     {{ page.lower_footer_first }}
                   </div>
                 {% endif %}
