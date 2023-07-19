@@ -122,6 +122,9 @@
             },
             "localgovdrupal/localgov_alert_banner": {
                 "Increase size of title field": "patches/localgov_alert_banner.patch"
+            },
+            "drupal/cludo_search": {
+                "Change title of search page.": "patches/cludo_search-page-title.patch"
             }
         },
         "drupal-scaffold": {
