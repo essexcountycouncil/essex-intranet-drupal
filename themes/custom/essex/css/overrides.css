@@ -800,8 +800,10 @@ nav.navigation--quick-actions li a:after {
 
 /* Search results page */
 
-body.path-csearch .cludo-search-search-form input {
-  max-width: 764px;
+@media only screen and (min-width: 1024px) {
+  body.path-csearch .cludo-search-search-form input {
+    width: 764px;
+  }
 }
 
 body.path-csearch #edit-prompt {
@@ -825,7 +827,6 @@ body.path-csearch .cludo-search-form #edit-submit {
   background-size: 1.5rem;
   text-indent: -999rem;
   direction: ltr;
-  min-width: 3.5rem;
   padding: var(--spacing-small);
   border-color: var(--input-border-color);
 }
