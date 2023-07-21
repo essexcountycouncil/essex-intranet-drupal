@@ -214,7 +214,6 @@ input[type="submit"],
   border: none;
   color: var(--color-link);
   font-weight: bold;
-  font-size: 1.125rem;
   text-decoration: none;
 }
 
@@ -230,14 +229,14 @@ a.lgd-prev-next__link:hover .link_title {
   margin-left: 10px;
 }
 
-nav.lgd-prev-next .lgd-prev-next__link--next {
-  flex-direction: column;
-  align-items: initial;
-}
-
 nav.lgd-prev-next .lgd-prev-next__icon--next {
   display: inline-block;
   vertical-align: middle;
+}
+
+nav.lgd-prev-next .lgd-prev-next__link--next {
+  flex-direction: column;
+  align-items: initial;
 }
 
 nav.lgd-prev-next .lgd-prev-next__icon path,
@@ -263,6 +262,7 @@ nav.lgd-prev-next ul.lgd-prev-next__list {
 nav.lgd-prev-next ul.lgd-prev-next__list li {
   margin-top: var(--spacing-small);
   margin-bottom: var(--spacing-small);
+  line-height: var(--spacing-larger);
   width: fit-content;
   width: -moz-fit-content;
 }
