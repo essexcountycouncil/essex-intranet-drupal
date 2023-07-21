@@ -806,6 +806,15 @@ nav.navigation--quick-actions li a:after {
   }
 }
 
+
+#cludo-search-results {
+  width: 768px;
+}
+
+#cludo-search-results ul .search-results-item>h2 {
+  margin-bottom: var(--vertical-rhythm-spacing);
+}
+
 body.path-csearch #edit-prompt {
   display: none;
 
@@ -897,10 +906,6 @@ body.path-csearch .search_autocomplete li {
 body.path-csearch #cludo-search-results ul .search-results-item {
   padding: 1rem;
   margin: var(--spacing) 0;
-}
-
-body.path-csearch #cludo-search-results ul .search-results-item:nth-child(odd) {
-  background: var(--color-grey-lightest);
 }
 
 /* Tables */
