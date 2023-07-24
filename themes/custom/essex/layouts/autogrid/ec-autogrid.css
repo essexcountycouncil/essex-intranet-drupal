@@ -1,15 +1,7 @@
-.ec-autogrid {
-  padding-bottom: 0 !important;
-}
-
-.ec-autogrid>* {
-  margin-bottom: clamp(1.5rem, 1.5vw, 3.875rem);
-}
-
 @media only screen and (min-width: 768px) {
   .ec-autogrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
-    grid-gap: clamp(var(--spacing), 2.5vw, var(--spacing-largest));
+    column-gap: var(--spacing-largest);
   }
 }
