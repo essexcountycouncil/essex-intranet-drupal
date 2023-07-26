@@ -43,9 +43,11 @@ build-and-push-images:
     - docker push ${DOCKER_REGISTRY}/intranet-nginx-drupal
     - docker push ${DOCKER_REGISTRY}/intranet-drupal-fpm${tag}
     - docker push ${DOCKER_REGISTRY}/intranet-drupal-fpm
-  only:
-    - develop
-    - /^release\//
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+      when: manual
+    - if: '$CI_COMMIT_BRANCH =~ /^release\//'
+      when: manual
 
 deploy-to-dev:
   image: mcr.microsoft.com/azure-cli
