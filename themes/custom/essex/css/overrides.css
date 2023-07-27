@@ -213,6 +213,10 @@ input[type="submit"],
   color: var(--color-black);
 }
 
+.lgd-prev-next .lgd-icon {
+  align-self: flex-start;
+}
+
 .lgd-prev-next__list .lgd-prev-next__link {
   background-color: transparent;
   border: none;
@@ -266,7 +270,7 @@ nav.lgd-prev-next ul.lgd-prev-next__list {
 nav.lgd-prev-next ul.lgd-prev-next__list li {
   margin-top: var(--spacing-small);
   margin-bottom: var(--spacing-small);
-  line-height: var(--spacing-larger);
+  line-height: var(--spacing-large);
   width: fit-content;
   width: -moz-fit-content;
 }
