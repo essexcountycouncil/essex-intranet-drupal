@@ -920,10 +920,6 @@ body.path-csearch .search_autocomplete li {
   cursor: pointer;
 }
 
-body.path-csearch #cludo-search-results ul .search-results-item {
-  /* margin: var(--spacing) 0; */
-}
-
 /* Tables */
 table {
   margin-top: 0.8125rem;
