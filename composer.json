@@ -125,7 +125,8 @@
                 "Increase size of title field": "patches/localgov_alert_banner.patch"
             },
             "drupal/cludo_search": {
-                "Change title of search page.": "patches/cludo_search-page-tweaks.patch"
+                "Change title of search page.": "patches/cludo_search-page-tweaks.patch",
+                "Remove cludo supplied search page template.": "patches/cludo_remove_default_template"
             }
         },
         "drupal-scaffold": {
