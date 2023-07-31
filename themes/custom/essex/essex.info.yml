@@ -3,8 +3,6 @@ description: "Essex sub-theme, which uses localgov_base as its base theme."
 type: theme
 core_version_requirement: ^8.8 || ^9
 base theme: "localgov_base"
-ckeditor_stylesheets:
-  - css/ckeditor.css
 
 libraries-extend:
   # Add libraries that you want to load on every page of your site to the list
@@ -18,8 +16,6 @@ libraries-extend:
   # Add libraries here that extend specific libraries.
   # localgov_base/sample-library:
     # - essex/sample-library
-  gin/gin:
-    - essex/gin
 
 regions:
   tabs: "Tabs"
