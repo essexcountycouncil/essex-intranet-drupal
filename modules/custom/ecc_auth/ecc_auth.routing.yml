@@ -1,0 +1,20 @@
+ecc_auth.popunder:
+  path: /ecc-auth
+  defaults:
+    _controller: \Drupal\ecc_auth\Controller\EccAuthController::popunder
+  requirements:
+    _access: 'TRUE'
+
+ecc_auth.popunder_loggedin:
+  path: /ecc-auth/logged-in
+  defaults:
+    _controller: \Drupal\ecc_auth\Controller\EccAuthController::popunder_loggedin
+  requirements:
+    _access: 'TRUE'
+
+ecc_auth.popunder_already_loggedin:
+  path: /ecc-auth/already-logged-in
+  defaults:
+    _controller: \Drupal\ecc_auth\Controller\EccAuthController::popunder_loggedin
+  requirements:
+    _access: 'TRUE'

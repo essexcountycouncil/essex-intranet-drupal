@@ -1,0 +1,14 @@
+popunder:
+  version: VERSION
+  js:
+    js/popunder.js: {}
+
+popunder_loggedin:
+  version: VERSION
+  js:
+    js/popunder-loggedin.js: {}
+
+popunder_already_loggedin:
+  version: VERSION
+  js:
+    js/popunder-loggedin.js: {}

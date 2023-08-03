@@ -68,3 +68,13 @@ function essex_preprocess_breadcrumb(&$variables) {
   ];
   $variables['#cache']['contexts'][] = 'url';
 }
+
+function essex_preprocess_page(&$variables)
+{
+  if (\Drupal::routeMatch()->getRouteName() === 'ecc_auth.popunder_loggedin') {
+    $variables['#attached']['library'][] = 'ecc_auth/popunder_loggedin';
+  }
+  elseif (\Drupal::currentUser()->isAnonymous()) {
+    $variables['#attached']['library'][] = 'ecc_auth/popunder';
+  }
+}
