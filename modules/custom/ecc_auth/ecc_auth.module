@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ecc_auth_preprocess_page(&$variables) {
+  if (\Drupal::routeMatch()->getRouteName() === 'ecc_auth.popunder_loggedin') {
+    $variables['#attached']['library'][] = 'ecc_auth/popunder_loggedin';
+  }
+  elseif (\Drupal::currentUser()->isAnonymous()) {
+    $variables['#attached']['library'][] = 'ecc_auth/popunder';
+  }
+}

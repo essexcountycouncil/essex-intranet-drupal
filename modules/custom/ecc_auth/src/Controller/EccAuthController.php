@@ -48,7 +48,7 @@ class EccAuthController extends ControllerBase {
     protected OpenIDConnectSessionInterface $session,
     protected RendererInterface $renderer
   ) {
-    $this ->context = new RenderContext();
+    $this->context = new RenderContext();
   }
 
   /**
@@ -58,7 +58,10 @@ class EccAuthController extends ControllerBase {
    *    A render array or a Response object.
    */
   public function popunder() {
-    if ($this->currentUser()->isAnonymous()) {
+    $header = \Drupal::request()->headers->get('essex');
+    \Drupal::logger('mine')->debug('header: ' . $header);
+//    if ($header === 'true' && $this->currentUser()->isAnonymous()) {
+      if ($this->currentUser()->isAnonymous()) {
       // Avoid early rendering errors.
       /** @var \Drupal\Core\Cache\CacheableDependencyInterface $result */
       $response = $this->renderer->executeInRenderContext($this->context, function() {
@@ -66,11 +69,11 @@ class EccAuthController extends ControllerBase {
       });
       return $response;
     }
-    return new RedirectResponse('/ecc-auth/already-loggedin');
+    return new RedirectResponse('/ecc-auth/already-logged-in');
   }
 
   /**
-   * ECC Auth in popunder.
+   * Route to close popunder after user has been logged in.
    *
    * @return array|\Symfony\Component\HttpFoundation\Response
    *    A render array or a Response object.
@@ -87,14 +90,14 @@ class EccAuthController extends ControllerBase {
   }
 
   /**
-   * ECC Auth in popunder.
+   * Route to close popunder if user is already logged in.
    *
    * @return array|\Symfony\Component\HttpFoundation\Response
    *    A render array or a Response object.
    */
   public function popunder_already_loggedin() {
     return [
-      '#markup' => 'You have been logged in using your Essex account. This window can be closed.',
+      '#markup' => 'You are already logged in. This window can be closed.',
       '#attached' => [
         'library' => [
           'ecc_auth/popunder-already-loggedin',

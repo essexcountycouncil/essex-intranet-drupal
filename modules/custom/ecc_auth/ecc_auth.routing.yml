@@ -15,6 +15,6 @@ ecc_auth.popunder_loggedin:
 ecc_auth.popunder_already_loggedin:
   path: /ecc-auth/already-logged-in
   defaults:
-    _controller: \Drupal\ecc_auth\Controller\EccAuthController::popunder_loggedin
+    _controller: \Drupal\ecc_auth\Controller\EccAuthController::popunder_already_loggedin
   requirements:
     _access: 'TRUE'
