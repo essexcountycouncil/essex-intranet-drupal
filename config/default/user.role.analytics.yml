@@ -2,10 +2,13 @@ uuid: fba73c63-c253-42a4-96fd-4ce725687258
 langcode: en
 status: true
 dependencies:
+  config:
+    - rest.resource.ecc_auth_access
   module:
     - eu_cookie_compliance
     - google_tag
     - metatag
+    - rest
     - system
     - toolbar
 id: analytics
@@ -19,4 +22,5 @@ permissions:
   - 'administer eu cookie compliance popup'
   - 'administer google tag manager'
   - 'administer meta tags'
+  - 'restful get ecc_auth_access'
   - 'view the administration theme'

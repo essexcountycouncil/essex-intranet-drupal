@@ -1,0 +1,18 @@
+uuid: 0fead652-5ac9-4908-a4de-68f27b957cbb
+langcode: en
+status: true
+dependencies:
+  module:
+    - ecc_auth
+    - serialization
+    - user
+id: ecc_auth_access
+plugin_id: ecc_auth_access
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie

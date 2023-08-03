@@ -24,6 +24,7 @@ dependencies:
     - node.type.localgov_step_by_step_page
     - node.type.localgov_subsites_overview
     - node.type.localgov_subsites_page
+    - rest.resource.ecc_auth_access
     - workflows.workflow.localgov_alert_banners
     - workflows.workflow.localgov_editorial
   module:
@@ -39,6 +40,7 @@ dependencies:
     - quickedit
     - redirect
     - responsive_preview
+    - rest
     - scheduled_transitions
     - system
     - toolbar
@@ -100,6 +102,7 @@ permissions:
   - 'reorder entity_hierarchy children'
   - 'reschedule scheduled transitions node localgov_news_article'
   - 'reschedule scheduled transitions node localgov_newsroom'
+  - 'restful get ecc_auth_access'
   - 'revert localgov_news_article revisions'
   - 'revert localgov_newsroom revisions'
   - 'revert localgov_subsites_overview revisions'

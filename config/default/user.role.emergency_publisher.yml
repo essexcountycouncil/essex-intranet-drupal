@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - rest.resource.ecc_auth_access
     - workflows.workflow.localgov_alert_banners
   module:
     - content_moderation
     - localgov_alert_banner
+    - rest
     - scheduled_transitions
     - system
     - toolbar
@@ -25,6 +27,7 @@ permissions:
   - 'add scheduled transitions localgov_alert_banner localgov_alert_banner'
   - 'manage all localgov alert banner entities'
   - 'reschedule scheduled transitions localgov_alert_banner localgov_alert_banner'
+  - 'restful get ecc_auth_access'
   - 'use localgov_alert_banners transition create_new_draft'
   - 'use localgov_alert_banners transition publish'
   - 'use localgov_alert_banners transition unpublish'

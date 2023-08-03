@@ -24,6 +24,7 @@ dependencies:
     - node.type.localgov_step_by_step_page
     - node.type.localgov_subsites_overview
     - node.type.localgov_subsites_page
+    - rest.resource.ecc_auth_access
     - workflows.workflow.localgov_editorial
   module:
     - cludo_search
@@ -40,6 +41,7 @@ dependencies:
     - preview_link
     - quickedit
     - responsive_preview
+    - rest
     - scheduled_transitions
     - system
     - toolbar
@@ -135,6 +137,7 @@ permissions:
   - 'reorder entity_hierarchy children'
   - 'reschedule scheduled transitions localgov_alert_banner localgov_alert_banner'
   - 'reschedule scheduled transitions node localgov_directories_page'
+  - 'restful get ecc_auth_access'
   - 'update media'
   - 'use localgov_editorial transition create_new_draft'
   - 'use localgov_editorial transition reject'

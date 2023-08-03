@@ -24,6 +24,7 @@ dependencies:
     - node.type.localgov_step_by_step_page
     - node.type.localgov_subsites_overview
     - node.type.localgov_subsites_page
+    - rest.resource.ecc_auth_access
     - workflows.workflow.localgov_alert_banners
     - workflows.workflow.localgov_editorial
   module:
@@ -46,6 +47,7 @@ dependencies:
     - quickedit
     - redirect
     - responsive_preview
+    - rest
     - scheduled_transitions
     - system
     - toolbar
@@ -146,6 +148,7 @@ permissions:
   - 'delete media'
   - 'delete own document media'
   - 'delete own image media'
+  - 'delete own localgov_guides_overview content'
   - 'delete own localgov_services_sublanding content'
   - 'delete own localgov_step_by_step_overview content'
   - 'delete own localgov_step_by_step_page content'
@@ -221,6 +224,7 @@ permissions:
   - 'reschedule scheduled transitions node localgov_step_by_step_page'
   - 'reschedule scheduled transitions node localgov_subsites_overview'
   - 'reschedule scheduled transitions node localgov_subsites_page'
+  - 'restful get ecc_auth_access'
   - 'revert all revisions'
   - 'revert localgov_directories_org revisions'
   - 'revert localgov_directories_page revisions'

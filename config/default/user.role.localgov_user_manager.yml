@@ -2,9 +2,12 @@ uuid: c4493bae-15a5-4b46-86a9-886100a7d1d1
 langcode: en
 status: true
 dependencies:
+  config:
+    - rest.resource.ecc_auth_access
   module:
     - cludo_search
     - group
+    - rest
     - role_delegation
     - search_api
     - system
@@ -36,6 +39,7 @@ permissions:
   - 'assign localgov_user_manager role'
   - 'create content_category group'
   - 'delete any webform submission'
+  - 'restful get ecc_auth_access'
   - 'view any webform submission'
   - 'view the administration theme'
   - 'view user email addresses'
