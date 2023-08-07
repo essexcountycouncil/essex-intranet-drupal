@@ -1176,7 +1176,6 @@ tbody tr {
 
 .layout:not(.layout--onecol) .media-with-text:not(.media-with-text--featured) .media-with-text__media * {
   height: 100%;
-  max-height: clamp(260px, 35vw, 1000px);
   width: 100%;
   object-fit: cover;
 }

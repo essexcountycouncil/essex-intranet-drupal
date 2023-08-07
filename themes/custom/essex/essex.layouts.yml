@@ -1,9 +1,9 @@
 layout_the_center:
-  label: 'The Center'
+  label: "The Center"
   path: layouts/the_center
   template: layout--thecenter
   library: essex/the_center
-  category: 'Columns: 1'
+  category: "Columns: 1"
   default_region: content
   icon_map:
     - [side, content, side]
@@ -11,14 +11,39 @@ layout_the_center:
     content:
       label: Content
 layout_autogrid:
-  label: 'Auto Grid'
+  label: "Auto Grid"
   path: layouts/autogrid
   template: layout--autogrid
   library: essex/autogrid
-  category: 'Custom'
+  category: "Custom"
   default_region: content
   icon_map:
     - [content]
+  regions:
+    content:
+      label: Content
+layout_autogrid-25-25-50:
+  label: "Autogrid 25-25-50"
+  path: layouts/ec-autogrid-25-25-50
+  template: layout--ec-autogrid-25-25-50
+  library: essex/ec-autogrid-25-25-50
+  category: "Custom"
+  default_region: content
+  icon_map:
+    - [card1, card2, content, content]
+  regions:
+    content:
+      label: Content
+ec-autogrid-50-50-c-50-50:
+  label: "Autogrid 50-50-c-50-50"
+  path: layouts/ec-autogrid-50-50-c-50-50
+  template: layout--ec-autogrid-50-50-c-50-50
+  library: essex/ec-autogrid-50-50-c-50-50
+  category: "Custom"
+  default_region: content
+  icon_map:
+    - [card1, content]
+    - [card1, content2]
   regions:
     content:
       label: Content

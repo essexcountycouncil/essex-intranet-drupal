@@ -47,3 +47,11 @@ autogrid:
   css:
     theme:
       layouts/autogrid/ec-autogrid.css: {}
+ec-autogrid-25-25-50:
+  css:
+    theme:
+      layouts/ec-autogrid-25-25-50/ec-autogrid-25-25-50.css: {}
+ec-autogrid-50-50-c-50-50:
+  css:
+    theme:
+      layouts/ec-autogrid-50-50-c-50-50/ec-autogrid-50-50-c-50-50.css: {}
