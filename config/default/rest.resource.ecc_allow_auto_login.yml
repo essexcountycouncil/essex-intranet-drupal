@@ -1,4 +1,4 @@
-uuid: 0fead652-5ac9-4908-a4de-68f27b957cbb
+uuid: 6ae8d446-8248-4d1b-ba15-4b3759e828b4
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - ecc_auth
     - serialization
     - user
-id: ecc_auth_access
-plugin_id: ecc_auth_access
+id: ecc_allow_auto_login
+plugin_id: ecc_allow_auto_login
 granularity: resource
 configuration:
   methods:

@@ -52,24 +52,21 @@ class EccAuthController extends ControllerBase {
   }
 
   /**
-   * ECC Auth in popunder.
+   * Auto login.
    *
    * @return array|\Symfony\Component\HttpFoundation\Response
    *    A render array or a Response object.
    */
-  public function popunder() {
-    $header = \Drupal::request()->headers->get('essex');
-    \Drupal::logger('mine')->debug('header: ' . $header);
-//    if ($header === 'true' && $this->currentUser()->isAnonymous()) {
-      if ($this->currentUser()->isAnonymous()) {
+  public function auto_login() {
+    if ($this->currentUser()->isAnonymous()) {
       // Avoid early rendering errors.
       /** @var \Drupal\Core\Cache\CacheableDependencyInterface $result */
       $response = $this->renderer->executeInRenderContext($this->context, function() {
-        return $this->getResponse();
+        return $this->getAutoLoginResponse();
       });
       return $response;
     }
-    return new RedirectResponse('/ecc-auth/already-logged-in');
+    return new RedirectResponse('/user/auto-login/already-logged-in');
   }
 
   /**
@@ -78,12 +75,12 @@ class EccAuthController extends ControllerBase {
    * @return array|\Symfony\Component\HttpFoundation\Response
    *    A render array or a Response object.
    */
-  public function popunder_loggedin() {
+  public function auto_login_logged_in() {
     return [
       '#markup' => 'You have been logged in using your Essex account. This window can be closed.',
       '#attached' => [
         'library' => [
-          'ecc_auth/popunder-loggedin',
+          'ecc_auto/auto-login-logged-in',
         ],
       ],
     ];
@@ -95,28 +92,40 @@ class EccAuthController extends ControllerBase {
    * @return array|\Symfony\Component\HttpFoundation\Response
    *    A render array or a Response object.
    */
-  public function popunder_already_loggedin() {
+  public function auto_login_already_logged_in() {
     return [
       '#markup' => 'You are already logged in. This window can be closed.',
       '#attached' => [
         'library' => [
-          'ecc_auth/popunder-already-loggedin',
+          'ecc_auth/auto-login-already-logged-in',
         ],
       ],
     ];
   }
 
-  protected function getResponse() {
-    $client = $this->entityTypeManager()
-      ->getStorage('openid_connect_client')
-      ->loadByProperties([
-        'id' => self::CLIENT,
-      ])[self::CLIENT];
-    $plugin = $client->getPlugin();
-    $scopes = $this->claims->getScopes($plugin);
-    $this->session->saveDestination();
-    $this->session->saveOp('login');
-    return $plugin->authorize($scopes);
+  /**
+   * Authorise and get response.
+   *
+   * @return \Symfony\Component\HttpFoundation\Response|array
+   *    A response object.
+   */
+  protected function getAutoLoginResponse() {
+    try {
+      $client = $this->entityTypeManager()
+        ->getStorage('openid_connect_client')
+        ->loadByProperties([
+          'id' => self::CLIENT,
+        ])[self::CLIENT];
+      $plugin = $client->getPlugin();
+      $scopes = $this->claims->getScopes($plugin);
+      $this->session->saveDestination();
+      $this->session->saveOp('login');
+      return $plugin->authorize($scopes);
+    }
+    catch (\Exception $e) {
+      // Close the popunder.
+      new RedirectResponse('/user/auto-login/already-logged-in');
+    }
   }
 
 }

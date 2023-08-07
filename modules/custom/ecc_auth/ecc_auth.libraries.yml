@@ -1,14 +1,14 @@
-popunder:
+auto_login:
   version: VERSION
   js:
-    js/popunder.js: {}
+    js/auto-login.js: {}
 
-popunder_loggedin:
+auto_login_logged_in:
   version: VERSION
   js:
-    js/popunder-loggedin.js: {}
+    js/auto-login-logged-in.js: {}
 
-popunder_already_loggedin:
+auto_login_already_logged_in:
   version: VERSION
   js:
-    js/popunder-loggedin.js: {}
+    js/auto-login-already-logged-in.js: {}

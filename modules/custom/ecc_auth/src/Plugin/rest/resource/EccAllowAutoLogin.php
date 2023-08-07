@@ -8,23 +8,18 @@ use Drupal\rest\ResourceResponse;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a Rest Resource for user details.
+ * Provides a Rest Resource for checking whether auto-login is allowed.
  *
  * @RestResource(
- *   id = "ecc_auth_access",
- *   label = @Translation("ECC Auth access"),
+ *   id = "ecc_allow_auto_login",
+ *   label = @Translation("ECC Allow Auth-login"),
  *   uri_paths = {
- *     "canonical" = "/api/internal/v1/ecc_auth",
- *     "https://www.drupal.org/link-relations/create" = "/api/internal/v1/ecc_auth"
+ *     "canonical" = "/api/internal/v1/allow_auto_login",
+ *     "https://www.drupal.org/link-relations/create" = "/api/internal/v1/allow_auto_login"
  *   }
  * )
  */
-class EccAuthAccess extends ResourceBase {
-
-  const CACHE_CONTEXTS = [
-    'user',
-    'supporter',
-  ];
+class EccAllowAutoLogin extends ResourceBase {
 
   /**
    * Current user.
@@ -79,9 +74,8 @@ class EccAuthAccess extends ResourceBase {
       else {
         $auth = TRUE;
       }
-  }
-
-    return new ModifiedResourceResponse(['auth' => $auth]);
+    }
+    return new ModifiedResourceResponse(['allow_auto_login' => $auth]);
   }
 
 }
