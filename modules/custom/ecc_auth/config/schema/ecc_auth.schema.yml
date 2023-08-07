@@ -2,6 +2,9 @@ ecc_auth.settings:
   type: config_object
   label: "Essex Auth settings"
   mapping:
+    enabled:
+      type: boolean
+      label: "Enabled"
     require_header:
       type: boolean
       label: "Require header"

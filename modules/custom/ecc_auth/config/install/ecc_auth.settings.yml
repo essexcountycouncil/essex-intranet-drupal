@@ -1,3 +1,4 @@
+enabled: true
 require_header: true
 header_key: essex
 expected_header_value: 'true'

@@ -1,30 +1,40 @@
 <?php
 
+use Drupal\user\UserInterface;
+
 /**
  * Implements hook_preprocess_HOOK().
  */
 function ecc_auth_preprocess_page(&$variables) {
-  $config = \Drupal::config('ecc_auth.settings');
-  $require_header = $config->get('require_header') ?: FALSE;
-  if ($require_header) {
-    $header_key = $config->get('header_key');
-    $expected_header_value = $config->get('expected_header_value');
-    if ($header_key && $expected_header_value) {
-      $actual_header_value = \Drupal::request()->headers->get($header_key);
-      \Drupal::logger('mine')->debug('header: ' . $actual_header_value);
-    }
-    if (empty($actual_header_value) || $actual_header_value !== $expected_header_value) {
-      return;
-    }
-  }
   $account = \Drupal::currentUser();
-  if (\Drupal::routeMatch()->getRouteName() === 'ecc_auth.popunder_loggedin') {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name === 'ecc_auth.popunder_loggedin') {
     if ($account->isAuthenticated()) {
       $variables['#attached']['library'][] = 'ecc_auth/popunder_loggedin';
     }
     return;
   }
-  if ($account->isAnonymous()) {
+  if ($route_name === 'entity.node.canonical' && $account->isAnonymous()) {
     $variables['#attached']['library'][] = 'ecc_auth/popunder';
   }
+}
+
+/**
+ * Implements hook_user_login().
+ *
+ * Set a cookie showing the user has logged in from the Essex network.
+ */
+function ecc_auth_user_login(UserInterface $account) {
+  $config = \Drupal::config('ecc_auth.settings');
+  if ($config->get('require_header')) {
+    $header_key = $config->get('header_key');
+    $expected_header_value = $config->get('expected_header_value');
+    if ($header_key && $expected_header_value) {
+      $actual_header_value = \Drupal::request()->headers->get($header_key);
+    }
+    if (empty($actual_header_value) || $actual_header_value !== $expected_header_value) {
+      return;
+    }
+  }
+  setcookie('essex-user', 'true', time() + 31536000, '/');
 }
