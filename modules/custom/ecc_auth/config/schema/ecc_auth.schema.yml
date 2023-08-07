@@ -5,12 +5,3 @@ ecc_auth.settings:
     enabled:
       type: boolean
       label: "Enabled"
-    require_header:
-      type: boolean
-      label: "Require header"
-    header_key:
-      type: string
-      label: "Header key"
-    expected_header_value:
-      type: string
-      label: "Expected header value"

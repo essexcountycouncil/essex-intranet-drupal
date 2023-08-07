@@ -16,15 +16,28 @@ function cookieExists(name) {
 
 }
 
-async function callAllowAutoLogin() {
+async function checkAllowed() {
   let url = 'https://essex-intranet.ddev.site/api/internal/v1/allow_auto_login';
   try {
     let res = await fetch(url);
-    return await res.json();
+    $isEssex = await res.headers.get('Essex') === 'true';
+    if (!$isEssex) {
+      // TODO: Remove.
+      console.log('Header does not match');
+
+      return false;
+    }
+    json = await res.json();
+
+    // TODO: Remove.
+    console.log(json);
+
+    return json && json.allow_auto_login;
   } catch (error) {
     // TODO: Remove.
     console.log(error);
   }
+  return false;
 }
 
 async function loadpopunder(){
@@ -37,19 +50,16 @@ async function loadpopunder(){
     return;
   }
 
-  // Do not run if the user hasn't logged in before on the Essex network.
+  // Do not run unless the user has logged in before on the Essex network.
   if (!cookieExists('essex-user')) {
     return;
   }
 
-
-  const json = await callAllowAutoLogin();
-  // TODO: Remove.
-  console.log(json);
-
-  if (!json || !json.allow_auto_login) {
+  if (!(await checkAllowed())) {
+    console.log('Not allowed');
     return;
   }
+  console.log('Allowed');
 
   winPopunder=window.open(url,"Window", features)
   winPopunder.blur()

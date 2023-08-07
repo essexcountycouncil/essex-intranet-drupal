@@ -59,22 +59,8 @@ class EccAllowAutoLogin extends ResourceBase {
    */
   public function get() {
     $config = $this->configFactory->get('ecc_auth.settings');
-    $require_header = $config->get('require_header') ?: FALSE;
-    $auth = FALSE;
-    if ($this->currentUser->isAnonymous()) {
-      if ($require_header) {
-        $header_key = $config->get('header_key');
-        $expected_header_value = $config->get('expected_header_value');
-        if ($header_key && $expected_header_value) {
-          $actual_header_value = $this->requestStack->getCurrentRequest()->headers->get($header_key);
-          \Drupal::logger('mine')->debug('header: ' . $actual_header_value);
-        }
-        $auth = !empty($actual_header_value) && $actual_header_value === $expected_header_value;
-      }
-      else {
-        $auth = TRUE;
-      }
-    }
+    $enabled = $config->get('enabled') ?: FALSE;
+    $auth = $enabled && $this->currentUser->isAnonymous();
     return new ModifiedResourceResponse(['allow_auto_login' => $auth]);
   }
 
