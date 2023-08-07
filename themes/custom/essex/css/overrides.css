@@ -1,6 +1,5 @@
-/* WYSIWYG */
-span.semi-bold {
-  font-weight: 600;
+.lgd-page-section>.layout>.layout__region {
+  padding: 0;
 }
 
 .layout__region>* {
@@ -225,6 +224,10 @@ input[type="submit"],
   color: var(--color-black);
 }
 
+.lgd-prev-next .lgd-icon {
+  align-self: flex-start;
+}
+
 .lgd-prev-next__list .lgd-prev-next__link {
   background-color: transparent;
   border: none;
@@ -278,7 +281,7 @@ nav.lgd-prev-next ul.lgd-prev-next__list {
 nav.lgd-prev-next ul.lgd-prev-next__list li {
   margin-top: var(--spacing-small);
   margin-bottom: var(--spacing-small);
-  line-height: var(--spacing-larger);
+  line-height: var(--spacing-large);
   width: fit-content;
   width: -moz-fit-content;
 }
@@ -384,10 +387,6 @@ nav.lgd-prev-next ul.lgd-prev-next__list li {
 /* RESPONSIVENESS */
 .views-col:nth-child(2) {
   padding: 0 2rem;
-}
-
-.lgd-page-section {
-  margin-bottom: clamp(1px, 1.5vw, var(--spacing-mega))
 }
 
 .lgd-page-section {
@@ -816,8 +815,34 @@ nav.navigation--quick-actions li a:after {
 
 /* Search results page */
 
-body.path-csearch .cludo-search-search-form input {
-  max-width: 764px;
+body.path-csearch .cludo-search-search-form input.form-text {
+  max-height: 52px;
+}
+
+@media only screen and (min-width: 1024px) {
+  body.path-csearch .cludo-search-search-form input.form-text {
+    width: 764px;
+
+  }
+}
+
+#cludo-search-results {
+  width: 768px;
+}
+
+#cludo-search-results ul .search-results-item h2 {
+  margin-bottom: var(--vertical-rhythm-spacing);
+  color: var(--color-link);
+  text-decoration: underline;
+  margin-bottom: 0;
+}
+
+#cludo-search-results .search-results-item a {
+  margin-bottom: 1.875rem;
+}
+
+#cludo-search-results .search-results-item a:hover h2 {
+  text-decoration-thickness: max(3px, 0.225rem, 0.12em);
 }
 
 body.path-csearch #edit-prompt {
@@ -834,15 +859,13 @@ body.path-csearch .cludo-search-form #edit-submit {
   background-color: transparent;
   width: 52px;
   height: 52px;
-  margin: 22px 0 0 0.5rem;
+  margin: 0 0 0 0.5rem;
   background-image: url('../assets/images/icons/magnifying-glass.svg');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 1.5rem;
   text-indent: -999rem;
   direction: ltr;
-  min-width: 3.5rem;
-  padding: var(--spacing-small);
   border-color: var(--input-border-color);
 }
 
@@ -907,15 +930,6 @@ body.path-csearch .search_autocomplete {
 body.path-csearch .search_autocomplete li {
   padding: var(--spacing-smaller);
   cursor: pointer;
-}
-
-body.path-csearch #cludo-search-results ul .search-results-item {
-  padding: 1rem;
-  margin: var(--spacing) 0;
-}
-
-body.path-csearch #cludo-search-results ul .search-results-item:nth-child(odd) {
-  background: var(--color-grey-lightest);
 }
 
 /* Tables */
@@ -1202,11 +1216,11 @@ tbody tr {
 
 @media only screen and (min-width: 640px) {
   .paragraph--type--page-section .layout--twocol>.layout__region--first {
-    padding-right: calc(var(--spacing-mega) / 2);
+    padding-right: calc(var(--spacing-largest) / 2);
   }
 
   .paragraph--type--page-section .layout--twocol>.layout__region--second {
-    padding-left: calc(var(--spacing-mega) / 2);
+    padding-left: calc(var(--spacing-largest) / 2);
   }
 }
 
