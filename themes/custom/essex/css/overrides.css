@@ -823,10 +823,11 @@ body.path-csearch .cludo-search-search-form input.form-text {
   margin-bottom: var(--vertical-rhythm-spacing);
   color: var(--color-link);
   text-decoration: underline;
+  margin-bottom: 0;
 }
 
 #cludo-search-results .search-results-item a {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-bottom: 1.875rem;
 }
 
 #cludo-search-results .search-results-item a:hover h2 {
