@@ -3,12 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - rest.resource.ecc_auth_access
     - workflows.workflow.localgov_alert_banners
   module:
     - content_moderation
     - localgov_alert_banner
-    - rest
     - scheduled_transitions
     - system
     - toolbar

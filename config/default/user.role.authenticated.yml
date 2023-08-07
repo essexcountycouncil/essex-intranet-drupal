@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.wysiwyg
-    - rest.resource.ecc_auth_access
+    - rest.resource.ecc_allow_auto_login
   module:
     - cludo_search
     - content_ownership
@@ -30,6 +30,7 @@ permissions:
   - 'access fontawesome additional settings'
   - 'display eu cookie compliance popup'
   - 'edit own webform submission'
+  - 'restful get ecc_allow_auto_login'
   - 'restful get ecc_auth_access'
   - 'use search_api_autocomplete for localgov_directory_channel'
   - 'use search_api_autocomplete for localgov_news_search'
