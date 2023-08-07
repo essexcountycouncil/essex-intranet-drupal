@@ -10,6 +10,7 @@
   .ec-autogrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
-    grid-gap: clamp(var(--spacing), 2.5vw, var(--spacing-largest));
+    column-gap: var(--spacing-largest);
+    row-gap: var(--spacing-largest);
   }
 }
