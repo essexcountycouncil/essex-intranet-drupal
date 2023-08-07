@@ -1206,6 +1206,10 @@ tbody tr {
   }
 }
 
+.layout--twocol>.layout__region>*+* {
+  margin-top: var(--spacing-largest);
+}
+
 .layout__region:empty {
   display: none;
 }
