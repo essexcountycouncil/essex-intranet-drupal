@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
  */
 class EccAuthController extends ControllerBase {
 
-  public const CLIENT = 'nomensa';
+  public const CLIENT = 'essex';
 
   /**
    * Render context.
@@ -111,21 +111,27 @@ class EccAuthController extends ControllerBase {
    */
   protected function getAutoLoginResponse() {
     try {
-      $client = $this->entityTypeManager()
+      $client_id = $this->config('ecc_auth.settings')
+        ->get('client') ?? self::CLIENT;
+      $clients = $this->entityTypeManager()
         ->getStorage('openid_connect_client')
         ->loadByProperties([
-          'id' => self::CLIENT,
-        ])[self::CLIENT];
-      $plugin = $client->getPlugin();
-      $scopes = $this->claims->getScopes($plugin);
-      $this->session->saveDestination();
-      $this->session->saveOp('login');
-      return $plugin->authorize($scopes);
+          'id' => $client_id,
+        ]);
+      if (!empty($clients)) {
+        if ($client = $clients[$client_id]) {
+          $plugin = $client->getPlugin();
+          $scopes = $this->claims->getScopes($plugin);
+          $this->session->saveDestination();
+          $this->session->saveOp('login');
+          return $plugin->authorize($scopes);
+        }
+      }
     }
     catch (\Exception $e) {
-      // Close the auto-login window.
-      new RedirectResponse('/user/auto-login/already-logged-in');
     }
+    // Close the auto-login window.
+    new RedirectResponse('/user/auto-login/already-logged-in');
   }
 
 }

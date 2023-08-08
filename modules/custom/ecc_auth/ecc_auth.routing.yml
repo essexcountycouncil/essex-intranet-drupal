@@ -18,3 +18,11 @@ ecc_auth.auto_login_already_logged_in:
     _controller: \Drupal\ecc_auth\Controller\EccAuthController::auto_login_already_logged_in
   requirements:
     _access: 'TRUE'
+
+ecc_auth.settings:
+  path: '/admin/config/ecc_auth'
+  defaults:
+    _title: 'Auto-login settings'
+    _form: '\Drupal\ecc_auth\Form\SettingsForm'
+  requirements:
+    _permission: 'administer ecc_auth'

@@ -5,3 +5,6 @@ ecc_auth.settings:
     enabled:
       type: boolean
       label: "Enabled"
+    client:
+      type: string
+      label: "OpenID Connect client id"
