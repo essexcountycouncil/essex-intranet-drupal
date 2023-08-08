@@ -11,7 +11,7 @@
 }
 
 .field--name-localgov-subsites-content>.field__item {
-  margin: clamp(var(--spacing-smallest), 2.5vw, var(--spacing-largest));
+  margin: var(--spacing-largest) clamp(var(--spacing-smallest), 2.5vw, var(--spacing-largest));
 }
 
 .paragraph--type--page-section .layout__region {

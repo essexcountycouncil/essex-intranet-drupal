@@ -2,7 +2,7 @@
   .ec-autogrid-50-50-c-50-50 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: clamp(var(--spacing), 2.5vw, var(--spacing-largest));
+    grid-gap: var(--spacing-largest);
   }
 
   .ec-autogrid-50-50-c-50-50>*:nth-child(3n+1) {
