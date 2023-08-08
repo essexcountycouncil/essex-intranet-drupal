@@ -1,6 +1,6 @@
 console.log('here');
 
-const url = "https://essex-intranet.ddev.site/user/auto-login?destination=/user/auto-login/logged-in";
+const url = "/user/auto-login?destination=/user/auto-login/logged-in";
 
 const features= "width=500,height=550,top=300,left=250,scrollbars=1,resizable=1,toolbar=0,menubar=0,status=1,directories=0";
 
@@ -17,7 +17,7 @@ function cookieExists(name) {
 }
 
 async function checkAllowed() {
-  let url = 'https://essex-intranet.ddev.site/api/internal/v1/allow_auto_login';
+  let url = '/api/internal/v1/allow_auto_login';
   try {
     let res = await fetch(url);
     $isEssex = await res.headers.get('Essex') === 'true';
@@ -45,8 +45,8 @@ async function loadpopunder(){
   console.log('loadpopunder');
 
   const currentUrl = window.location.href;
-  // Do not run on the popupunder url.
-  if (currentUrl.includes('/user/auto')) {
+  // Do not run on the auto-login urls.
+  if (currentUrl.includes('/user/auto-login')) {
     return;
   }
 
