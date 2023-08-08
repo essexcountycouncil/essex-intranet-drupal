@@ -1,7 +1,7 @@
 @media only screen and (min-width: 768px) {
   .ec-autogrid-25-25-50 {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: .33fr 0.33fr 0.711fr;
     grid-gap: clamp(var(--spacing), 2.5vw, var(--spacing-largest));
   }
 
