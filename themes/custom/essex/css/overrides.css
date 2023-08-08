@@ -221,6 +221,7 @@ input[type="submit"],
   background-color: transparent;
   border: none;
   color: var(--color-link);
+  font-size: 1.125rem;
   font-weight: bold;
   text-decoration: none;
 }
