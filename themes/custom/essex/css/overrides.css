@@ -2,6 +2,22 @@
   padding: 0;
 }
 
+.layout__region>* {
+  margin: var(--spacing-larger) 0;
+
+  @media only screen and (min-width: 768px) {
+    margin: 0;
+  }
+}
+
+.field--name-localgov-subsites-content>.field__item {
+  margin: var(--spacing-largest) clamp(var(--spacing-smallest), 2.5vw, var(--spacing-largest));
+}
+
+.paragraph--type--page-section .layout__region {
+  padding: 0;
+}
+
 /* Logo */
 .branding__item--logo a {
   display: block;
@@ -948,7 +964,7 @@ tbody tr {
 .link-block {
   border-top: 3px solid #6a6a6a;
   padding-top: var(--spacing);
-  margin-bottom: var(--spacing-mega);
+  margin-bottom: var(--spacing-large);
 }
 
 .link-block__title {
@@ -1171,16 +1187,6 @@ tbody tr {
   --header-logo-width: clamp(170px, 20vw, 200px);
 }
 
-.path-frontpage .lgd-page-section:has(section.media-with-text) {
-  margin-bottom: -2px;
-}
-
-@media only screen and (min-width: 768px) {
-  .path-frontpage .lgd-page-section:has(section.media-with-text) {
-    margin-bottom: 16px;
-  }
-}
-
 @media only screen and (min-width: 768px) {
   .layout:not(.layout--onecol) .media-with-text:not(.media-with-text--featured) {
     display: grid;
@@ -1198,6 +1204,10 @@ tbody tr {
   .layout:not(.layout--onecol) .media-with-text:not(.media-with-text--featured) .media-with-text__media * {
     max-height: 200px;
   }
+}
+
+.layout--twocol>.layout__region>*+* {
+  margin-top: var(--spacing-largest);
 }
 
 .layout__region:empty {
@@ -1334,8 +1344,13 @@ div:has(.featured-teaser),
   font-size: 1.25rem;
 }
 
-.featured-news__card+.news-card>.field__item {
-  margin-top: var(--spacing-large);
+.featured-news__card,
+.news-card>.field__item {
+  margin-top: 0;
+}
+
+.featured-news__card:first-of-type {
+  margin-bottom: var(--spacing-largest)
 }
 
 .featured-news__card article .card-content,
@@ -1393,7 +1408,8 @@ div:has(.featured-teaser),
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr;
-    column-gap: var(--spacing-large);
+    grid-gap: 1em;
+    margin: 0;
   }
 
   .featured-news__card .card-image {
