@@ -1,9 +1,16 @@
-console.log('here');
+const autoLoginUrl = "/user/auto-login?destination=/user/auto-login/logged-in";
 
-const url = "/user/auto-login?destination=/user/auto-login/logged-in";
+const autoLoginUrlPattern = '/user/auto-login';
 
-const features= "width=500,height=550,top=300,left=250,scrollbars=1,resizable=1,toolbar=0,menubar=0,status=1,directories=0";
+const allowAutoLoginEndpoint = '/api/internal/v1/allow_auto_login';
 
+const autoLoginFeatures= "width=500,height=500,top=0,left=0,screenX=0,screenY=0,scrollbars=1,resizable=1,toolbar=0,menubar=0,statusbar=1";
+
+/**
+ * Get a cookie.
+ * @param {string} name
+ * @returns {string}
+ */
 function getCookie(name) {
   return cookieValue = document.cookie
     .split("; ")
@@ -11,15 +18,24 @@ function getCookie(name) {
     ?.split("=")[1];
 }
 
+/**
+ * Check a cookie exists.
+ * @param {string} name
+ * @returns {boolean}
+ */
 function cookieExists(name) {
   return !!getCookie(name);
-
 }
 
+/**
+ * Check if auto-login is allowed.
+ * Response from API endpoint must contain JSON {"allow_auto_login": true}.
+ * Response must contain Essex header to show browser is on Essex network.
+ * @returns {Promise<any|boolean>}
+ */
 async function checkAllowed() {
-  let url = '/api/internal/v1/allow_auto_login';
   try {
-    let res = await fetch(url);
+    let res = await fetch(allowAutoLoginEndpoint);
     $isEssex = await res.headers.get('Essex') === 'true';
     if (!$isEssex) {
       // TODO: Remove.
@@ -40,13 +56,17 @@ async function checkAllowed() {
   return false;
 }
 
-async function loadpopunder(){
+/**
+ * Load auto-login window if it is required and allowed.
+ * @returns {Promise<void>}
+ */
+async function loadAutoLoginWindow() {
   // TODO: Remove.
-  console.log('loadpopunder');
+  console.log('loadAutoLoginWindow');
 
   const currentUrl = window.location.href;
   // Do not run on the auto-login urls.
-  if (currentUrl.includes('/user/auto-login')) {
+  if (currentUrl.includes(autoLoginUrlPattern)) {
     return;
   }
 
@@ -61,8 +81,8 @@ async function loadpopunder(){
   }
   console.log('Allowed');
 
-  winPopunder=window.open(url,"Window", features)
-  winPopunder.blur()
+  winAutoLoginWindow = window.open(autoLoginUrl, "Window", autoLoginFeatures)
+  winAutoLoginWindow.blur()
 
   // Reload after user has been logged in.
   window.addEventListener('message', (e) => {
@@ -76,4 +96,4 @@ async function loadpopunder(){
   });
 }
 
-loadpopunder();
+loadAutoLoginWindow();

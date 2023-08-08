@@ -70,7 +70,7 @@ class EccAuthController extends ControllerBase {
   }
 
   /**
-   * Route to close popunder after user has been logged in.
+   * Route to close auto-login window after user has been logged in.
    *
    * @return array|\Symfony\Component\HttpFoundation\Response
    *    A render array or a Response object.
@@ -87,7 +87,7 @@ class EccAuthController extends ControllerBase {
   }
 
   /**
-   * Route to close popunder if user is already logged in.
+   * Route to close auto-login window if user is already logged in.
    *
    * @return array|\Symfony\Component\HttpFoundation\Response
    *    A render array or a Response object.
@@ -123,7 +123,7 @@ class EccAuthController extends ControllerBase {
       return $plugin->authorize($scopes);
     }
     catch (\Exception $e) {
-      // Close the popunder.
+      // Close the auto-login window.
       new RedirectResponse('/user/auto-login/already-logged-in');
     }
   }
