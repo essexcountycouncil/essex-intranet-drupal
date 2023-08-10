@@ -11,7 +11,7 @@ function oidc_auto_login_preprocess_page(&$variables) {
       }
       break;
 
-    case 'oidc_auto_login.auto_login_logged_in':
+    case 'oidc_auto_login.logged_in':
       if (\Drupal::currentUser()->isAuthenticated()) {
         $variables['#attached']['library'][] = 'oidc_auto_login/logged_in';
       }

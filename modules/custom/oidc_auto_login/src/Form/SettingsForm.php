@@ -58,13 +58,11 @@ class SettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('header_required'),
     ];
 
-
     $form['auto_login_settings']['header_key'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Header key'),
       '#default_value' => $config->get('header_key'),
     ];
-
 
     $form['auto_login_settings']['header_value'] = [
       '#type' => 'textfield',

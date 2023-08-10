@@ -4,7 +4,7 @@ const autoLoginUrlPattern = '/user/auto-login';
 
 const allowAutoLoginEndpoint = '/api/v1/oidc_auto_login_allowed';
 
-const autoLoginFeatures= "width=500,height=500,top=0,left=0,screenX=0,screenY=0,scrollbars=1,resizable=1,toolbar=0,menubar=0,statusbar=1";
+const autoLoginFeatures = "width=500,height=500,top=0,left=0,screenX=0,screenY=0,scrollbars=1,resizable=1,toolbar=0,menubar=0,statusbar=1";
 
 /**
  * Get a cookie.
@@ -16,15 +16,6 @@ function getCookie(name) {
     .split("; ")
     .find((row) => row.startsWith(name + "="))
     ?.split("=")[1];
-}
-
-/**
- * Check a cookie exists.
- * @param {string} name
- * @returns {boolean}
- */
-function cookieExists(name) {
-  return !!getCookie(name);
 }
 
 /**

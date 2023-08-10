@@ -4,7 +4,6 @@ namespace Drupal\oidc_auto_login\Plugin\rest\resource;
 
 use Drupal\rest\ModifiedResourceResponse;
 use Drupal\rest\Plugin\ResourceBase;
-use Drupal\rest\ResourceResponse;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -36,6 +35,8 @@ class OidcAutoLoginAllowed extends ResourceBase {
   protected $configFactory;
 
   /**
+   * Request stack.
+   *
    * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $requestStack;
@@ -76,4 +77,5 @@ class OidcAutoLoginAllowed extends ResourceBase {
     }
     return new ModifiedResourceResponse(['allow_auto_login' => $auth]);
   }
+
 }

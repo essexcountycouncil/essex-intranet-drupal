@@ -11,7 +11,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- * Class OidcAutoLoginController.
+ * OpenID Connect Auto-login Controller.
  *
  * @package Drupal\oidc_auto_login
  */
@@ -36,10 +36,14 @@ class OidcAutoLoginController extends ControllerBase {
   }
 
   /**
-   * Constructs a BlockContent object.
+   * Constructor.
    *
-   * @param \Drupal\geolocation\GeocoderManager $geocoder_manager
-   *   Geocoder manager.
+   * @param \Drupal\openid_connect\OpenIDConnectClaims $claims
+   *   The OpenID Connect claims service.
+   * @param \Drupal\openid_connect\OpenIDConnectSessionInterface $session
+   *   Session service of the OpenID Connect module.
+   * @param \Drupal\Core\Render\RendererInterface $renderer
+   *   Renderer service.
    */
   public function __construct(
     protected OpenIDConnectClaims $claims,
@@ -53,13 +57,13 @@ class OidcAutoLoginController extends ControllerBase {
    * Auto login.
    *
    * @return array|\Symfony\Component\HttpFoundation\Response
-   *    A render array or a Response object.
+   *   A render array or a Response object.
    */
   public function login() {
     if ($this->currentUser()->isAnonymous()) {
       // Avoid early rendering errors.
       /** @var \Drupal\Core\Cache\CacheableDependencyInterface $result */
-      $response = $this->renderer->executeInRenderContext($this->context, function() {
+      $response = $this->renderer->executeInRenderContext($this->context, function () {
         return $this->getAutoLoginResponse();
       });
       return $response;
@@ -71,9 +75,9 @@ class OidcAutoLoginController extends ControllerBase {
    * Route to close auto-login window after user has been logged in.
    *
    * @return array|\Symfony\Component\HttpFoundation\Response
-   *    A render array or a Response object.
+   *   A render array or a Response object.
    */
-  public function logged_in() {
+  public function loggedIn() {
     return [
       '#markup' => 'You have been logged in using your OpenID Connect account. This window can be closed.',
       '#attached' => [
@@ -88,9 +92,9 @@ class OidcAutoLoginController extends ControllerBase {
    * Route to close auto-login window if user is already logged in.
    *
    * @return array|\Symfony\Component\HttpFoundation\Response
-   *    A render array or a Response object.
+   *   A render array or a Response object.
    */
-  public function already_logged_in() {
+  public function alreadyLoggedIn() {
     return [
       '#markup' => 'You are already logged in. This window can be closed.',
       '#attached' => [
@@ -105,7 +109,7 @@ class OidcAutoLoginController extends ControllerBase {
    * Authorise and get response.
    *
    * @return \Symfony\Component\HttpFoundation\Response|array
-   *    A response object.
+   *   A response object.
    */
   protected function getAutoLoginResponse() {
     try {
