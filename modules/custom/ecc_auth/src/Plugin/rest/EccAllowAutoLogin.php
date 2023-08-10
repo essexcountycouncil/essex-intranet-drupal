@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\oidc_auto_login\Plugin\rest\resource;
+namespace Drupal\ecc_auth\Plugin\rest\resource;
 
 use Drupal\rest\ModifiedResourceResponse;
 use Drupal\rest\Plugin\ResourceBase;
