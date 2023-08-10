@@ -50,7 +50,6 @@
         "drupal/eu_cookie_compliance_gtm": "^1.0@alpha",
         "drupal/group": "3.0.0 as 1.5",
         "drupal/health_check_url": "^3.1",
-        "drupal/http_response_headers": "^2.0@RC",
         "drupal/imagemagick": "^3.4",
         "drupal/menu_admin_per_menu": "^1.5",
         "drupal/menu_item_limit": "^2.0",
