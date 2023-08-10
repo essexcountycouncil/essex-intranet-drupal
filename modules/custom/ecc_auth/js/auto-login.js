@@ -35,14 +35,7 @@ function cookieExists(name) {
  */
 async function checkAllowed() {
   try {
-    let res = await fetch(allowAutoLoginEndpoint);
-    $isEssex = await res.headers.get('Essex') === 'true';
-    if (!$isEssex) {
-      // TODO: Remove.
-      console.log('Header does not match');
-
-      return false;
-    }
+    const res = await fetch(allowAutoLoginEndpoint);
     json = await res.json();
 
     // TODO: Remove.
@@ -52,8 +45,9 @@ async function checkAllowed() {
   } catch (error) {
     // TODO: Remove.
     console.log(error);
+
+    return false;
   }
-  return false;
 }
 
 /**
@@ -70,30 +64,29 @@ async function loadAutoLoginWindow() {
     return;
   }
 
-  // Do not run unless the user has logged in before on the Essex network.
-  if (!cookieExists('essex-user')) {
+  // Do not run if auto-login has failed before in this session.
+  if (getCookie('oidc-auto-login') === 'disabled') {
     return;
   }
 
   if (!(await checkAllowed())) {
+    document.cookie = "oidc-auto-login=disabled"
     console.log('Not allowed');
     return;
   }
   console.log('Allowed');
 
   winAutoLoginWindow = window.open(autoLoginUrl, "Window", autoLoginFeatures)
-  winAutoLoginWindow.blur()
+  if (winAutoLoginWindow) {
+    document.cookie = "oidc-auto-login=enabled"
+    winAutoLoginWindow.blur()
+  }
+  else {
+    document.cookie = "oidc-auto-login=disabled"
+    console.log('Popup blocked');
+    return;
+  }
 
-  // Reload after user has been logged in.
-  window.addEventListener('message', (e) => {
-    const { loggedin } = e.data;
-    if (loggedin) {
-      // TODO: Remove.
-      console.log('User has logged in from the other window');
-
-      window.location.reload();
-    }
-  });
 }
 
 loadAutoLoginWindow();

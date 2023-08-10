@@ -8,12 +8,12 @@ ecc_auth.settings:
     client:
       type: string
       label: "OpenID Connect client id"
-    require_header:
+    header_required:
       type: boolean
       label: "Require header"
     header_key:
       type: string
       label: "Header key"
-    expected_header_value:
+    header_value:
       type: string
       label: "Expected header value"

@@ -1,2 +1,5 @@
 enabled: true
-client: essex
+client: nomensa
+header_required: true
+header_key: essex
+header_value: 'true'

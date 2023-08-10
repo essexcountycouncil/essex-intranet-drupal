@@ -61,9 +61,9 @@ class EccAllowAutoLogin extends ResourceBase {
     $auth = FALSE;
     $config = $this->configFactory->get('ecc_auth.settings');
     if ($config->get('enabled') && $this->currentUser->isAnonymous()) {
-      if ($config->get('require_header')) {
+      if ($config->get('header_required')) {
         $header_key = $config->get('header_key');
-        $expected_header_value = $config->get('expected_header_value');
+        $expected_header_value = $config->get('header_value');
         if ($header_key && $expected_header_value) {
           $actual_header_value = $this->requestStack->getCurrentRequest()->headers->get($header_key);
           \Drupal::logger('mine')->debug('header: ' . $actual_header_value);
