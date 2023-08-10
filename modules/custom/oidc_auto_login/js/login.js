@@ -52,6 +52,7 @@ async function loadAutoLoginWindow() {
 
   if (!(await checkAllowed())) {
     document.cookie = "oidc-auto-login=disabled"
+    return;
   }
 
   winAutoLoginWindow = window.open(autoLoginUrl, "Window", autoLoginFeatures)
