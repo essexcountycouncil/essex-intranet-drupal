@@ -28,14 +28,8 @@ async function checkAllowed() {
     const res = await fetch(allowAutoLoginEndpoint);
     json = await res.json();
 
-    // TODO: Remove.
-    console.log(json);
-
     return json && json.allow_auto_login;
   } catch (error) {
-    // TODO: Remove.
-    console.log(error);
-
     return false;
   }
 }
@@ -45,9 +39,6 @@ async function checkAllowed() {
  * @returns {Promise<void>}
  */
 async function loadAutoLoginWindow() {
-  // TODO: Remove.
-  console.log('loadAutoLoginWindow');
-
   const currentUrl = window.location.href;
   // Do not run on the auto-login urls.
   if (currentUrl.includes(autoLoginUrlPattern)) {
@@ -61,10 +52,7 @@ async function loadAutoLoginWindow() {
 
   if (!(await checkAllowed())) {
     document.cookie = "oidc-auto-login=disabled"
-    console.log('Not allowed');
-    return;
   }
-  console.log('Allowed');
 
   winAutoLoginWindow = window.open(autoLoginUrl, "Window", autoLoginFeatures)
   if (winAutoLoginWindow) {
@@ -73,10 +61,7 @@ async function loadAutoLoginWindow() {
   }
   else {
     document.cookie = "oidc-auto-login=disabled"
-    console.log('Popup blocked');
-    return;
   }
-
 }
 
 loadAutoLoginWindow();

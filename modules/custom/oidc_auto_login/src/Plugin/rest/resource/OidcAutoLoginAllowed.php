@@ -67,7 +67,6 @@ class OidcAutoLoginAllowed extends ResourceBase {
         $expected_header_value = $config->get('header_value');
         if ($header_key && $expected_header_value) {
           $actual_header_value = $this->requestStack->getCurrentRequest()->headers->get($header_key);
-          \Drupal::logger('mine')->debug('header: ' . $actual_header_value);
         }
         $auth = !empty($actual_header_value) && $actual_header_value === $expected_header_value;
       }
