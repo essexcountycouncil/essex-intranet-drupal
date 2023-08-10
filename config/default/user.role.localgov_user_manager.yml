@@ -36,7 +36,6 @@ permissions:
   - 'assign localgov_user_manager role'
   - 'create content_category group'
   - 'delete any webform submission'
-  - 'restful get ecc_auth_access'
   - 'view any webform submission'
   - 'view the administration theme'
   - 'view user email addresses'

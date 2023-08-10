@@ -222,7 +222,6 @@ permissions:
   - 'reschedule scheduled transitions node localgov_step_by_step_page'
   - 'reschedule scheduled transitions node localgov_subsites_overview'
   - 'reschedule scheduled transitions node localgov_subsites_page'
-  - 'restful get ecc_auth_access'
   - 'revert all revisions'
   - 'revert localgov_directories_org revisions'
   - 'revert localgov_directories_page revisions'

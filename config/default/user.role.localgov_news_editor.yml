@@ -100,7 +100,6 @@ permissions:
   - 'reorder entity_hierarchy children'
   - 'reschedule scheduled transitions node localgov_news_article'
   - 'reschedule scheduled transitions node localgov_newsroom'
-  - 'restful get ecc_auth_access'
   - 'revert localgov_news_article revisions'
   - 'revert localgov_newsroom revisions'
   - 'revert localgov_subsites_overview revisions'

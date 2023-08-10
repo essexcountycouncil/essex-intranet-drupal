@@ -19,5 +19,4 @@ permissions:
   - 'administer eu cookie compliance popup'
   - 'administer google tag manager'
   - 'administer meta tags'
-  - 'restful get ecc_auth_access'
   - 'view the administration theme'

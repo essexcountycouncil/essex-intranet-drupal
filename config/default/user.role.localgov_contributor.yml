@@ -135,7 +135,6 @@ permissions:
   - 'reorder entity_hierarchy children'
   - 'reschedule scheduled transitions localgov_alert_banner localgov_alert_banner'
   - 'reschedule scheduled transitions node localgov_directories_page'
-  - 'restful get ecc_auth_access'
   - 'update media'
   - 'use localgov_editorial transition create_new_draft'
   - 'use localgov_editorial transition reject'
