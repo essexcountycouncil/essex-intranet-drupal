@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ecc_auth\Plugin\rest\resource;
+namespace Drupal\oidc_auto_login\Plugin\rest\resource;
 
 use Drupal\rest\ModifiedResourceResponse;
 use Drupal\rest\Plugin\ResourceBase;
@@ -11,15 +11,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Provides a Rest Resource for checking whether auto-login is allowed.
  *
  * @RestResource(
- *   id = "ecc_allow_auto_login",
- *   label = @Translation("ECC Allow Auth-login"),
+ *   id = "oidc_auto_login_allowed",
+ *   label = @Translation("Allow OpenId Connect auto-login"),
  *   uri_paths = {
- *     "canonical" = "/api/internal/v1/allow_auto_login",
- *     "https://www.drupal.org/link-relations/create" = "/api/internal/v1/allow_auto_login"
+ *     "canonical" = "/api/v1/oidc_auto_login_allowed",
+ *     "https://www.drupal.org/link-relations/create" = "/api/v1/oidc_auto_login_allowed"
  *   }
  * )
  */
-class EccAllowAutoLogin extends ResourceBase {
+class OidcAutoLoginAllowed extends ResourceBase {
 
   /**
    * Current user.
@@ -59,7 +59,7 @@ class EccAllowAutoLogin extends ResourceBase {
    */
   public function get() {
     $auth = FALSE;
-    $config = $this->configFactory->get('ecc_auth.settings');
+    $config = $this->configFactory->get('oidc_auto_login.settings');
     if ($config->get('enabled') && $this->currentUser->isAnonymous()) {
       if ($config->get('header_required')) {
         $header_key = $config->get('header_key');

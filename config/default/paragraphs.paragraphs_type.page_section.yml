@@ -23,5 +23,3 @@ behavior_plugins:
       layout_twocol: 'Two column'
       layout_threecol_33_34_33: 'Three column 33/34/33'
       layout_autogrid: 'Auto Grid'
-      layout_autogrid-25-25-50: 'Autogrid 25-25-50'
-      ec-autogrid-50-50-c-50-50: 'Autogrid 50-50-c-50-50'

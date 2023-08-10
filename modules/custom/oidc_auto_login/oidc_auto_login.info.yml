@@ -1,6 +1,6 @@
-name: "Essex Auth"
+name: "OpenID Connect Auto-login"
 type: module
-description: ""
+description: "OpenID Connect Auto-login"
 core_version_requirement: ^9 || ^10
 package: Custom
 dependencies:

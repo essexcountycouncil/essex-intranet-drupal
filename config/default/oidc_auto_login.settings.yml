@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: 0e6ehRzUiSqmn3UDZTPGqihtSWxeIvhwXy-VLg6i-fo
+enabled: true
+client: client
+require_header: false
+header_key: key
+header_value: value

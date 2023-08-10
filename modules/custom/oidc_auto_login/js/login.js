@@ -2,7 +2,7 @@ const autoLoginUrl = "/user/auto-login?destination=/user/auto-login/logged-in";
 
 const autoLoginUrlPattern = '/user/auto-login';
 
-const allowAutoLoginEndpoint = '/api/internal/v1/allow_auto_login';
+const allowAutoLoginEndpoint = '/api/v1/oidc_auto_login_allowed';
 
 const autoLoginFeatures= "width=500,height=500,top=0,left=0,screenX=0,screenY=0,scrollbars=1,resizable=1,toolbar=0,menubar=0,statusbar=1";
 
@@ -30,7 +30,6 @@ function cookieExists(name) {
 /**
  * Check if auto-login is allowed.
  * Response from API endpoint must contain JSON {"allow_auto_login": true}.
- * Response must contain Essex header to show browser is on Essex network.
  * @returns {Promise<any|boolean>}
  */
 async function checkAllowed() {

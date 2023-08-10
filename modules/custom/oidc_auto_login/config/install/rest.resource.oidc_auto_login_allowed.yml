@@ -1,13 +1,12 @@
-uuid: 6ae8d446-8248-4d1b-ba15-4b3759e828b4
 langcode: en
 status: true
 dependencies:
   module:
-    - ecc_auth
+    - oidc_auto_login
     - serialization
     - user
-id: ecc_allow_auto_login
-plugin_id: ecc_allow_auto_login
+id: oidc_auto_login_allowed
+plugin_id: oidc_auto_login_allowed
 granularity: resource
 configuration:
   methods:

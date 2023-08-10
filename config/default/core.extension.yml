@@ -31,7 +31,6 @@ module:
   diff: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
-  ecc_auth: 0
   ecc_cludo_search: 0
   ecc_cookie_compliance: 0
   ecc_menu: 0
@@ -135,6 +134,7 @@ module:
   mysql: 0
   node: 0
   office_hours: 0
+  oidc_auto_login: 0
   openid_connect: 0
   openid_connect_azure_b2c: 0
   options: 0

@@ -1,5 +1,0 @@
-enabled: true
-client: essex
-require_header: true
-header_key: essex
-header_value: 'true'

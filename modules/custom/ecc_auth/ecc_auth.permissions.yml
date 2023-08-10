@@ -1,4 +1,0 @@
-administer ecc_auth:
-  title: 'Administer ECC Auth module'
-  description: 'Allow access to the administration pages for ECC Auth'
-  restrict access: true

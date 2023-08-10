@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ecc_auth\Controller;
+namespace Drupal\oidc_auto_login\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Render\RenderContext;
@@ -11,13 +11,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- * Class EccAuthController.
+ * Class OidcAutoLoginController.
  *
- * @package Drupal\ecc_auth
+ * @package Drupal\oidc_auto_login
  */
-class EccAuthController extends ControllerBase {
-
-  public const CLIENT = 'essex';
+class OidcAutoLoginController extends ControllerBase {
 
   /**
    * Render context.
@@ -57,7 +55,7 @@ class EccAuthController extends ControllerBase {
    * @return array|\Symfony\Component\HttpFoundation\Response
    *    A render array or a Response object.
    */
-  public function auto_login() {
+  public function login() {
     if ($this->currentUser()->isAnonymous()) {
       // Avoid early rendering errors.
       /** @var \Drupal\Core\Cache\CacheableDependencyInterface $result */
@@ -75,12 +73,12 @@ class EccAuthController extends ControllerBase {
    * @return array|\Symfony\Component\HttpFoundation\Response
    *    A render array or a Response object.
    */
-  public function auto_login_logged_in() {
+  public function logged_in() {
     return [
-      '#markup' => 'You have been logged in using your Essex account. This window can be closed.',
+      '#markup' => 'You have been logged in using your OpenID Connect account. This window can be closed.',
       '#attached' => [
         'library' => [
-          'ecc_auto/auto-login-logged-in',
+          'oidc_auto_login/logged_in',
         ],
       ],
     ];
@@ -92,12 +90,12 @@ class EccAuthController extends ControllerBase {
    * @return array|\Symfony\Component\HttpFoundation\Response
    *    A render array or a Response object.
    */
-  public function auto_login_already_logged_in() {
+  public function already_logged_in() {
     return [
       '#markup' => 'You are already logged in. This window can be closed.',
       '#attached' => [
         'library' => [
-          'ecc_auth/auto-login-already-logged-in',
+          'oidc_auto_login/already_logged_in',
         ],
       ],
     ];
@@ -111,8 +109,8 @@ class EccAuthController extends ControllerBase {
    */
   protected function getAutoLoginResponse() {
     try {
-      $client_id = $this->config('ecc_auth.settings')
-        ->get('client') ?? self::CLIENT;
+      $client_id = $this->config('oidc_auto_login.settings')
+        ->get('client');
       $clients = $this->entityTypeManager()
         ->getStorage('openid_connect_client')
         ->loadByProperties([
