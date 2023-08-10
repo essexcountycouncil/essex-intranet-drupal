@@ -1,0 +1,6 @@
+ecc_auth.settings:
+  title: 'Auto-login settings'
+  description: 'Configure OpenID Connect auto-login'
+  route_name: ecc_auth.settings
+  base_route: entity.openid_connect_client.list
+  weight: 5
