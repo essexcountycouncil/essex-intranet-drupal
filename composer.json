@@ -48,6 +48,7 @@
         "drupal/entitygroupfield": "1.0.0-alpha2",
         "drupal/eu_cookie_compliance": "^1.24",
         "drupal/eu_cookie_compliance_gtm": "^1.0@alpha",
+        "drupal/fathom_analytics": "^3.0",
         "drupal/group": "3.0.0 as 1.5",
         "drupal/health_check_url": "^3.1",
         "drupal/imagemagick": "^3.4",
@@ -101,18 +102,13 @@
     "extra": {
         "enable-patching": true,
         "patches": {
+            "drupal/cludo_search": {
+                "Change title of search page.": "patches/cludo_search-page-tweaks.patch",
+                "Remove cludo supplied search page template.": "patches/cludo_remove_default_template"
+            },
             "drupal/core": {
                 "Allow an install hook in profiles installing from configuration. See https://www.drupal.org/project/drupal/issues/2982052": "https://www.drupal.org/files/issues/2022-05-19/2982052-80.patch",
                 "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch"
-            },
-            "drupal/group": {
-                "Apply some custom functionality for Essex when adding members to Groups ECCI-287/ECCI-286": "patches/essex-group-membership.patch"
-            },
-            "localgovdrupal/localgov_paragraphs": {
-                "Added missing field which has been introduced recently.": "patches/missing_field.patch"
-            },
-            "localgovdrupal/localgov_eu_cookie_compliance": {
-                "Improve spinner": "patches/localgov_cookie_compliance_save.patch"
             },
             "drupal/entitygroupfield": {
                 "Breaks on fresh install": "patches/entitygroupfield-install.patch",
@@ -121,12 +117,20 @@
                 "Broken dropbutton in Groups field when used with Claro": "https://www.drupal.org/files/issues/2022-04-04/entitygroupfield-matching-expected-dropbutton-markup-3183134-6.patch",
                 "Alter permissions check to use different wording": "patches/entitygroupfield-permissions.patch"
             },
+            "drupal/fathom_analytics": {
+                "Issue #3380665: Defer attribute should be boolean": "https://git.drupalcode.org/project/fathom_analytics/-/merge_requests/2.diff"
+            },
+            "drupal/group": {
+                "Apply some custom functionality for Essex when adding members to Groups ECCI-287/ECCI-286": "patches/essex-group-membership.patch"
+            },
             "localgovdrupal/localgov_alert_banner": {
                 "Increase size of title field": "patches/localgov_alert_banner.patch"
             },
-            "drupal/cludo_search": {
-                "Change title of search page.": "patches/cludo_search-page-tweaks.patch",
-                "Remove cludo supplied search page template.": "patches/cludo_remove_default_template"
+            "localgovdrupal/localgov_paragraphs": {
+                "Added missing field which has been introduced recently.": "patches/missing_field.patch"
+            },
+            "localgovdrupal/localgov_eu_cookie_compliance": {
+                "Improve spinner": "patches/localgov_cookie_compliance_save.patch"
             }
         },
         "drupal-scaffold": {
