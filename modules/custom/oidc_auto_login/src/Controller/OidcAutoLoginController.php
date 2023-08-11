@@ -133,7 +133,7 @@ class OidcAutoLoginController extends ControllerBase {
     catch (\Exception $e) {
     }
     // Close the auto-login window.
-    new RedirectResponse('/user/auto-login/already-logged-in');
+    return new RedirectResponse('/user/auto-login/already-logged-in');
   }
 
 }

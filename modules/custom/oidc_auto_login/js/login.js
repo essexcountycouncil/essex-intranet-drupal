@@ -35,7 +35,7 @@ async function checkAllowed() {
 }
 
 /**
- * Load auto-login window if it is required and allowed.
+ * Load auto-login window if it is allowed.
  * @returns {Promise<void>}
  */
 async function loadAutoLoginWindow() {
