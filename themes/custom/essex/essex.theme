@@ -63,7 +63,7 @@ function essex_preprocess_breadcrumb(&$variables) {
 
   $node = $route_match->getParameter('node');
 
-  // ECCW-393: Remove duplicate breadcrumb on subsites pages.
+  // ECCI-393: Remove duplicate breadcrumb on subsites pages.
   if (!$node || $node->bundle() !== 'localgov_subsites_page') {
     $page_title = \Drupal::service('title_resolver')
       ->getTitle($request, $route_match->getRouteObject());
