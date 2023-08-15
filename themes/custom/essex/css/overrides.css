@@ -1353,10 +1353,13 @@ div:has(.featured-teaser),
   }
 }
 
+
 @media (min-width: 641px) {
-  .paragraph--type--newsroom-component {
-    display: grid;
-    grid-template-columns: subgrid;
+  @supports (subgrid) {
+    .paragraph--type--newsroom-component {
+      display: grid;
+      grid-template-columns: subgrid;
+    }
   }
 }
 
@@ -1366,7 +1369,7 @@ div:has(.featured-teaser),
 }
 
 .featured-news__card:first-of-type {
-  margin-bottom: var(--spacing-largest)
+  margin-bottom: var(--spacing-largest);
 }
 
 .featured-news__card article .card-content,
