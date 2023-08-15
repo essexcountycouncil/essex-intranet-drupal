@@ -102,9 +102,20 @@
     "extra": {
         "enable-patching": true,
         "patches": {
+            "drupal/cludo_search": {
+                "Change title of search page.": "patches/cludo_search-page-tweaks.patch",
+                "Remove cludo supplied search page template.": "patches/cludo_remove_default_template"
+            },
             "drupal/core": {
                 "Allow an install hook in profiles installing from configuration. See https://www.drupal.org/project/drupal/issues/2982052": "https://www.drupal.org/files/issues/2022-05-19/2982052-80.patch",
                 "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch"
+            },
+            "drupal/entitygroupfield": {
+                "Breaks on fresh install": "patches/entitygroupfield-install.patch",
+                "\"Drupal\\group\\Entity\\GroupContent\" unexpected error": "https://www.drupal.org/files/issues/2022-10-14/issue-3315323-3.patch",
+                "Support for Groups v3": "patches/entitygroupfield-groupv3-2.patch",
+                "Broken dropbutton in Groups field when used with Claro": "https://www.drupal.org/files/issues/2022-04-04/entitygroupfield-matching-expected-dropbutton-markup-3183134-6.patch",
+                "Alter permissions check to use different wording": "patches/entitygroupfield-permissions.patch"
             },
             "drupal/group": {
                 "Apply some custom functionality for Essex when adding members to Groups ECCI-287/ECCI-286": "patches/essex-group-membership.patch"
@@ -115,19 +126,11 @@
             "localgovdrupal/localgov_eu_cookie_compliance": {
                 "Improve spinner": "patches/localgov_cookie_compliance_save.patch"
             },
-            "drupal/entitygroupfield": {
-                "Breaks on fresh install": "patches/entitygroupfield-install.patch",
-                "\"Drupal\\group\\Entity\\GroupContent\" unexpected error": "https://www.drupal.org/files/issues/2022-10-14/issue-3315323-3.patch",
-                "Support for Groups v3": "patches/entitygroupfield-groupv3-2.patch",
-                "Broken dropbutton in Groups field when used with Claro": "https://www.drupal.org/files/issues/2022-04-04/entitygroupfield-matching-expected-dropbutton-markup-3183134-6.patch",
-                "Alter permissions check to use different wording": "patches/entitygroupfield-permissions.patch"
+            "localgovdrupal/localgov_services": {
+                "New parent bundles for ServicesSelection": "patches/localgov_services.patch"
             },
-            "localgovdrupal/localgov_alert_banner": {
-                "Increase size of title field": "patches/localgov_alert_banner.patch"
-            },
-            "drupal/cludo_search": {
-                "Change title of search page.": "patches/cludo_search-page-tweaks.patch",
-                "Remove cludo supplied search page template.": "patches/cludo_remove_default_template"
+            "localgovdrupal/localgov_subsites": {
+                "Show page heading block for subsites pages": "patches/localgov_subsites.patch"
             }
         },
         "drupal-scaffold": {
