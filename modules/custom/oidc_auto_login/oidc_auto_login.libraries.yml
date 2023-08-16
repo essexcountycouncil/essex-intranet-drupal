@@ -1,0 +1,14 @@
+login:
+  version: VERSION
+  js:
+    js/login.js: {}
+
+logged_in:
+  version: VERSION
+  js:
+    js/logged-in.js: {}
+
+already_logged_in:
+  version: VERSION
+  js:
+    js/already-logged-in.js: {}
