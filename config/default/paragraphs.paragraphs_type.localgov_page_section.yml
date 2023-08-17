@@ -17,6 +17,10 @@ behavior_plugins:
   layout_paragraphs:
     enabled: true
     available_layouts:
-      localgov_layout_onecol: 'One column'
-      localgov_layout_twocol: 'Two column'
-      localgov_layout_threecol_33_34_33: 'Three column 33/34/33'
+      layout_the_center: 'The Center'
+      layout_autogrid: 'Auto Grid'
+      layout_autogrid-25-25-50: 'Autogrid 25-25-50'
+      ec-autogrid-50-50-c-50-50: 'Autogrid 50-50-c-50-50'
+      localgov_layout_onecol: 'One column (simple)'
+      localgov_layout_twocol: 'Two column (simple)'
+      localgov_layout_threecol_33_34_33: 'Three column 33/34/33 (simple)'

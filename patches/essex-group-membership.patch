@@ -1,0 +1,22 @@
+diff --git a/src/Entity/Form/GroupRelationshipForm.php b/src/Entity/Form/GroupRelationshipForm.php
+--- a/src/Entity/Form/GroupRelationshipForm.php
++++ b/src/Entity/Form/GroupRelationshipForm.php
+@@ -55,6 +55,18 @@
+       $form['entity_id']['#access'] = FALSE;
+     }
+
++    $form['path']['#access'] = FALSE;
++
++    $form['entity_id']['widget'][0]['target_id']['#selection_handler'] = 'views';
++    $form['entity_id']['widget'][0]['target_id']['#selection_settings'] = [
++      'view' => [
++        'view_name' => 'user_list',
++        'display_name' => 'user_reference',
++        'arguments' => []
++      ],
++      'match_operator' => 'CONTAINS'
++    ];
++
+     return $form;
+   }
+

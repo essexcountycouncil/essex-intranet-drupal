@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ecc_cludo_search_form_cludo_search_block_search_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $placeholder = t('Search the Intranet');
+  $form['search_keys']['#attributes']['placeholder'] = $placeholder;
+  $form['search_keys']['#attributes']['onfocus'] = "this.placeholder = ''";
+  $form['search_keys']['#attributes']['onblur'] = "this.placeholder = '" . $placeholder . "'";
+}

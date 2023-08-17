@@ -16,10 +16,11 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: views
+  handler: content_ownership
   handler_settings:
-    view:
-      view_name: content_ownership
-      display_name: entity_reference_content_owner
-      arguments: {  }
+    target_bundles: {  }
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: 0
 field_type: entity_reference

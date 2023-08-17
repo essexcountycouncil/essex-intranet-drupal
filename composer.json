@@ -37,8 +37,10 @@
         "ckeditor/div": "4.10.1",
         "composer/installers": "^1.10",
         "cweagans/composer-patches": "^1.6",
+        "drupal/block_classes": "^1.0",
         "drupal/ckeditor_div_manager": "^2.0",
         "drupal/cludo_search": "^1.0@beta",
+        "drupal/config_ignore": "^2.4",
         "drupal/config_split": "^2.0@RC",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
@@ -46,13 +48,18 @@
         "drupal/entitygroupfield": "1.0.0-alpha2",
         "drupal/eu_cookie_compliance": "^1.24",
         "drupal/eu_cookie_compliance_gtm": "^1.0@alpha",
-        "drupal/group": "3.0.0-beta3 as 1.5",
+        "drupal/group": "3.0.0 as 1.5",
+        "drupal/health_check_url": "^3.1",
         "drupal/imagemagick": "^3.4",
+        "drupal/menu_admin_per_menu": "^1.5",
+        "drupal/menu_item_limit": "^2.0",
+        "drupal/office_hours": "^1.11",
         "drupal/permissions_filter": "^1.3",
         "drupal/published_corrected_date": "^2.0",
-        "drupal/stage_file_proxy": "^1.2",
+        "drupal/stage_file_proxy": "^2.0",
         "essexcountycouncil/content_ownership": "dev-main",
         "localgovdrupal/localgov": "^2.0",
+        "localgovdrupal/localgov_eu_cookie_compliance": " 1.x-dev",
         "localgovdrupal/localgov_forms": "1.x-dev",
         "matthewwilkes/openid_connect_azure_b2c": "dev-main"
     },
@@ -61,6 +68,7 @@
         "drupal/coder": "^8.3",
         "drupal/config_inspector": "^1.3",
         "drupal/core-dev": "^9.1",
+        "kint-php/kint": "^5.0",
         "mglaman/phpstan-drupal": "^1.0",
         "phpspec/prophecy-phpunit": "^2",
         "phpstan/phpstan": "^1.0",
@@ -81,7 +89,8 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "php-http/discovery": true
         }
     },
     "autoload": {
@@ -93,18 +102,31 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "Allow an install hook in profiles installing from configuration. See https://www.drupal.org/project/drupal/issues/2982052": "https://www.drupal.org/files/issues/2022-05-19/2982052-80.patch"
+                "Allow an install hook in profiles installing from configuration. See https://www.drupal.org/project/drupal/issues/2982052": "https://www.drupal.org/files/issues/2022-05-19/2982052-80.patch",
+                "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch"
+            },
+            "drupal/group": {
+                "Apply some custom functionality for Essex when adding members to Groups ECCI-287/ECCI-286": "patches/essex-group-membership.patch"
             },
             "localgovdrupal/localgov_paragraphs": {
                 "Added missing field which has been introduced recently.": "patches/missing_field.patch"
             },
+            "localgovdrupal/localgov_eu_cookie_compliance": {
+                "Improve spinner": "patches/localgov_cookie_compliance_save.patch"
+            },
             "drupal/entitygroupfield": {
                 "Breaks on fresh install": "patches/entitygroupfield-install.patch",
                 "\"Drupal\\group\\Entity\\GroupContent\" unexpected error": "https://www.drupal.org/files/issues/2022-10-14/issue-3315323-3.patch",
-                "Support for Groups v3": "patches/entitygroupfield-groupv3-2.patch"
+                "Support for Groups v3": "patches/entitygroupfield-groupv3-2.patch",
+                "Broken dropbutton in Groups field when used with Claro": "https://www.drupal.org/files/issues/2022-04-04/entitygroupfield-matching-expected-dropbutton-markup-3183134-6.patch",
+                "Alter permissions check to use different wording": "patches/entitygroupfield-permissions.patch"
             },
             "localgovdrupal/localgov_alert_banner": {
                 "Increase size of title field": "patches/localgov_alert_banner.patch"
+            },
+            "drupal/cludo_search": {
+                "Change title of search page.": "patches/cludo_search-page-tweaks.patch",
+                "Remove cludo supplied search page template.": "patches/cludo_remove_default_template"
             }
         },
         "drupal-scaffold": {
@@ -178,14 +200,14 @@
             "vendor/drush/drush/drush --yes -l default cache:rebuild"
         ],
         "prepare-filesystem-for-update": [
-            "chmod 777 --quiet web/sites/default/default.*.yml; true"
+            "chmod 777 web/sites/default/default.*.yml; true"
         ],
         "secure-site": [
             "chmod 444 web/sites/default/settings.php",
             "chmod 444 web/sites/default/default.*.yml",
             "chmod 444 web/sites/default/*.services.yml"
         ],
-        "checker-security": "vendor/bin/drush pm:security",
+        "checker-security": "bin/drush pm:security",
         "checker-php-compatibility": "vendor/bin/phpcs --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ruleset.xml --runtime-set testVersion 7.2 src",
         "checker-drupal": "vendor/bin/drupal-check -ad src",
         "checker-drupal-3rd": "vendor/bin/drupal-check -ad web/themes web/modules",
@@ -196,9 +218,11 @@
         ],
         "phpunit-modules": "sudo -u www-data -E vendor/bin/phpunit -v --debug modules",
         "cghooks": "[ -h vendor/bin/cghooks -a -w ../.git ] && vendor/bin/cghooks --git-dir=../.git",
-        "phpcs": "vendor/bin/phpcs --standard=Drupal,DrupalPractice modules/custom",
-        "phpcbf": "vendor/bin/phpcbf --standard=Drupal,DrupalPractice modules/custom",
-        "phpcs-setup": "vendor/bin/phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer",
-        "composer-validate": "composer validate"
+        "phpcs": "bin/phpcs --standard=Drupal,DrupalPractice --ignore=*/node_modules/* web/modules/custom web/themes/custom",
+        "phpcbf": "bin/phpcbf --standard=Drupal,DrupalPractice web/modules/custom",
+        "tests-required": [
+            "composer validate",
+            "composer checker-security"
+        ]
     }
 }

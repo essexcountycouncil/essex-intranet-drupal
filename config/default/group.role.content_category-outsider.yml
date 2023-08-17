@@ -1,7 +1,10 @@
 uuid: 55064a0b-9593-4d32-bc6b-8144157e6524
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - group.type.content_category
+    - user.role.authenticated
 id: content_category-outsider
 label: Outsider
 weight: -101

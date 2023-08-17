@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_index
+    - field.field.node.localgov_subsites_page.field_content_owner
+    - field.field.node.localgov_subsites_page.field_content_sme
     - field.field.node.localgov_subsites_page.localgov_subsites_banner
     - field.field.node.localgov_subsites_page.localgov_subsites_content
     - field.field.node.localgov_subsites_page.localgov_subsites_parent
@@ -31,7 +33,7 @@ content:
     label: hidden
     settings:
       view_mode: default
-      link: false
+      link: ''
     third_party_settings: {  }
     weight: 0
     region: content
@@ -60,6 +62,9 @@ content:
     weight: 3
     region: content
 hidden:
+  entitygroupfield: true
+  field_content_owner: true
+  field_content_sme: true
   links: true
   localgov_subsites_banner: true
   search_api_excerpt: true

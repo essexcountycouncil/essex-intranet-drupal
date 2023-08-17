@@ -1,7 +1,9 @@
 uuid: 2e7877c4-0838-4d18-9119-63cc1d19a84b
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - layout_paragraphs
 _core:
   default_config_hash: RVl03y8_-n-7TFl2wAXFauZhEjAql9iOIjXzBjW1eIQ
 id: localgov_box_link
@@ -9,4 +11,7 @@ label: 'Box link'
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

@@ -1,0 +1,147 @@
+--- a/js/localgov_eu_cookie_compliance.es6.js
++++ b/js/localgov_eu_cookie_compliance.es6.js	(date 1685627638828)
+@@ -24,7 +24,7 @@
+    * @see Drupal.eu_cookie_compliance.initPopup();
+    */
+   Drupal.behaviors.activateCookieSettingsForm = {
+-    attach(context) {
++    attach(context, settings) {
+       // Load accepted cookie categories and update their checkboxes.
+       const selectedCookieCategories = Drupal.eu_cookie_compliance.getAcceptedCategories();
+
+@@ -37,6 +37,9 @@
+         selectedCookieCategories
+       );
+       Drupal.eu_cookie_compliance.attachSavePreferencesEvents();
++      const ecc_cookies = {
++        prevDestination: settings.path.prevDestination || "/"
++      };
+
+       once("localgov-eu-cookie-compliance-radios", "#eu-cookie-compliance-categories", context).forEach(displayCheckboxAsRadios);
+     }
+--- a/js/localgov_eu_cookie_compliance.js
++++ b/js/localgov_eu_cookie_compliance.js	(date 1685627940472)
+@@ -7,7 +7,7 @@
+
+ (function setupCookieSettingsBlock($, Drupal) {
+   Drupal.behaviors.activateCookieSettingsForm = {
+-    attach(context) {
++    attach(context, settings) {
+       const selectedCookieCategories = Drupal.eu_cookie_compliance.getAcceptedCategories();
+
+       Drupal.eu_cookie_compliance.setAcceptedCategories(selectedCookieCategories);
+@@ -16,6 +16,10 @@
+       Drupal.eu_cookie_compliance.setPreferenceCheckboxes(selectedCookieCategories);
+       Drupal.eu_cookie_compliance.attachSavePreferencesEvents();
+
++      ecc_cookies = {
++        prevDestination: settings.path.prevDestination || "/"
++      };
++
+       once("localgov-eu-cookie-compliance-radios", "#eu-cookie-compliance-categories", context).forEach(displayCheckboxAsRadios);
+     }
+   };
+--- a/js/localgov_eu_cookie_compliance.es6.js
++++ b/js/localgov_eu_cookie_compliance.es6.js	(date 1685629152098)
+@@ -107,19 +107,22 @@
+     const saveButtonLabel = saveButton.innerHTML;
+
+     saveButton.addEventListener("click", function () {
+-      saveButton.innerHTML = `${Drupal.t("Saving")}`;
++      saveButton.innerHTML = `${Drupal.t("Submitting")}`;
+       saveButton.classList.add('spinning');
+
+       setTimeout(
+         function () {
+           saveButton.classList.remove('spinning');
+-          saveButton.innerHTML = `${Drupal.t("Preferences saved")}  <i class="fas fa-check"></i>`;
++          saveButton.innerHTML = `${Drupal.t("Preferences Submitted")}  <i class="fas fa-check"></i>`;
+         }, 2000);
+-
++      setTimeout(
++        function () {
++        window.location.replace(ecc_cookies.prevDestination);
++      }, 1000);
+     }, false);
+
+     saveButton.addEventListener("blur", function () {
+-      saveButton.innerHTML = saveButtonLabel;
++      saveButton.innerHTML = `${Drupal.t("Submit Preferences")}  <i class="fas fa-check"></i>`;
+     }, false);
+
+   }
+--- a/js/localgov_eu_cookie_compliance.js
++++ b/js/localgov_eu_cookie_compliance.js
+@@ -56,17 +56,21 @@
+     const saveButtonLabel = saveButton.innerHTML;
+
+     saveButton.addEventListener("click", function () {
+-      saveButton.innerHTML = `${Drupal.t("Saving")}`;
++      saveButton.innerHTML = `${Drupal.t("Submitting")}`;
+       saveButton.classList.add('spinning');
+
+       setTimeout(function () {
+         saveButton.classList.remove('spinning');
+-        saveButton.innerHTML = `${Drupal.t("Preferences saved")}  <i class="fas fa-check"></i>`;
++        saveButton.innerHTML = `${Drupal.t("Preferences Submitted")}  <i class="fas fa-check"></i>`;
++
++        setTimeout(function () {
++          window.location.replace(ecc_cookies.prevDestination);
++        }, 1000)
+       }, 2000);
+     }, false);
+
+     saveButton.addEventListener("blur", function () {
+-      saveButton.innerHTML = saveButtonLabel;
++      saveButton.innerHTML = `${Drupal.t("Preferences Submitted")}  <i class="fas fa-check"></i>`;
+     }, false);
+   }
+ })(jQuery, Drupal);
+--- a/localgov_eu_cookie_compliance.libraries.yml
++++ b/localgov_eu_cookie_compliance.libraries.yml	(date 1685630882946)
+@@ -4,6 +4,7 @@
+   css:
+     theme:
+       css/eu-cookie-compliance.css: {}
++      css/save-animation.css: {}
+   dependencies:
+     - eu_cookie_compliance/eu_cookie_compliance_bare
+
+--- a/css/save-animation.css	2023-02-28 16:51:31.008248791 +0000
++++ b/css/save-animation.css	2023-02-28 16:49:13.173233688 +0000
+@@ -0,0 +1,34 @@
++.eu-cookie-compliance-save-preferences-button {
++    position: relative;
++}
++
++.eu-cookie-compliance-save-preferences-button.spinning {
++    padding-right: 40px;
++}
++
++.eu-cookie-compliance-save-preferences-button.spinning:before {
++    content: "";
++    position: absolute;
++    width: 0px;
++    height: 0px;
++    border-radius: 50%;
++    right: 6px;
++    top: 50%;
++    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.1);
++    border-right: 3px solid var(--color-accent);
++    animation: rotate360 .5s infinite linear, space .1s forwards ease;
++}
++
++@keyframes rotate360 {
++    100% {
++        transform: rotate(360deg);
++    }
++}
++
++@keyframes space {
++    100% {
++        margin: -8px 5px 0 0;
++        width: 15px;
++        height: 15px;
++    }
++}
+\ No newline at end of file

@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.localgov_newsroom.field_content_owner
+    - field.field.node.localgov_newsroom.field_content_sme
     - field.field.node.localgov_newsroom.localgov_newsroom_featured
     - node.type.localgov_newsroom
   module:
@@ -17,6 +19,27 @@ targetEntityType: node
 bundle: localgov_newsroom
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_content_owner:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_content_sme:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -47,4 +70,5 @@ content:
     weight: 0
     region: content
 hidden:
+  entitygroupfield: true
   search_api_excerpt: true

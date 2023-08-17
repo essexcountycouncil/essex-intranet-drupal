@@ -2,6 +2,8 @@ uuid: c53ef2e7-b2cd-4c05-87f0-22b0dbec7a08
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.group_relationship.group_roles
   module:
     - group
     - user
@@ -693,7 +695,29 @@ display:
           required: true
           group_relation_plugins:
             group_membership: group_membership
-      header: {  }
+        gid:
+          id: gid
+          table: group_relationship_field_data
+          field: gid
+          relationship: none
+          group_type: group
+          admin_label: Group
+          entity_type: group_relationship
+          entity_field: gid
+          plugin_id: standard
+          required: false
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: '<a class="button button-group-membership" href="content/add/group_membership">Add member to {{ arguments.gid }} Group</a>'
+          tokenize: true
       footer: {  }
       display_extenders: {  }
     cache_metadata:

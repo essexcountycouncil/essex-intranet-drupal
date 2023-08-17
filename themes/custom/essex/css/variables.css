@@ -51,11 +51,17 @@ body {
   --heading-3-font-weight: 600;
   --header-logo-width: 200px;
   --banner-content-bg-color: #414745;
-  --color-section-pre-footer-bg: #414745;
+  --color-section-pre-footer-bg: #444a48;
+  --color-section-footer-bg: #414745;
   --color-section-header-bg: #e40037;
   --breadcrumbs-link-color: var(--color-black);
   --quote-author-color: var(--color-black);
   --tabs-button-bg-color: var(--color-grey-lighter);
   --sidebar-exposed-form-bg-color: var(--color-white);
   --link-and-summary-title-icon-margin: var(--spacing);
+  --measure: 100ch;
+  --spacing-jumbo: 3rem;
+  --table-bg-color: transparent;
+  --table-border: none;
+  --touch-size: 45px;
 }

@@ -1,0 +1,26 @@
+uuid: aec45980-2074-41e6-bfee-3bdc068498bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_sme
+    - node.type.localgov_directories_org
+id: node.localgov_directories_org.field_content_sme
+field_name: field_content_sme
+entity_type: node
+bundle: localgov_directories_org
+label: 'Content SME'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: content_sme_reference
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: 0
+field_type: entity_reference

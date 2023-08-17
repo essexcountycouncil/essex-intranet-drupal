@@ -1,0 +1,23 @@
+uuid: a20e34ba-f6f3-4448-bd74-19135abc0f3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - dynamic_entity_reference
+    - node
+    - paragraphs
+id: paragraph.field_news_cards
+field_name: field_news_cards
+entity_type: paragraph
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: false
+  entity_type_ids:
+    node: node
+module: dynamic_entity_reference
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -6,6 +6,7 @@ module:
   admin_toolbar_tools: 0
   automated_cron: 0
   block: 0
+  block_classes: 0
   block_content: 0
   breakpoint: 0
   ckeditor: 0
@@ -13,6 +14,8 @@ module:
   cludo_search: 0
   condition_field: 0
   config: 0
+  config_filter: 0
+  config_ignore: 0
   content_moderation: 0
   content_ownership: 0
   contextual: 0
@@ -28,6 +31,9 @@ module:
   diff: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
+  ecc_cludo_search: 0
+  ecc_cookie_compliance: 0
+  ecc_menu: 0
   editor: 0
   entity: 0
   entity_browser: 0
@@ -59,7 +65,7 @@ module:
   gnode: 0
   google_tag: 0
   group: 0
-  gull_cookie_settings_block: 0
+  health_check_url: 0
   help: 0
   history: 0
   image: 0
@@ -67,6 +73,9 @@ module:
   imagemagick: 0
   inline_entity_form: 0
   inline_form_errors: 0
+  jquery_ui: 0
+  jquery_ui_autocomplete: 0
+  jquery_ui_menu: 0
   layout_discovery: 0
   layout_paragraphs: 0
   leaflet: 0
@@ -85,6 +94,7 @@ module:
   localgov_directories_page: 0
   localgov_directories_promo_page: 0
   localgov_directories_venue: 0
+  localgov_eu_cookie_compliance: 0
   localgov_events: 0
   localgov_forms: 0
   localgov_geo: 0
@@ -117,6 +127,7 @@ module:
   media: 0
   media_library: 0
   media_library_edit: 0
+  menu_item_limit: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
@@ -145,6 +156,9 @@ module:
   search_api: 0
   search_api_autocomplete: 0
   search_api_db: 0
+  search_api_location: 0
+  search_api_location_geocoder: 0
+  search_api_location_views: 0
   simple_sitemap: 0
   sophron: 0
   system: 0
@@ -162,6 +176,7 @@ module:
   webform: 0
   webform_ui: 0
   workflows: 0
+  menu_admin_per_menu: 1
   pathauto: 1
   externalauth: 10
   views: 10
@@ -171,6 +186,7 @@ module:
 theme:
   claro: 0
   stable: 0
+  stable9: 0
   gin: 0
   localgov_base: 0
   localgov_scarfolk: 0

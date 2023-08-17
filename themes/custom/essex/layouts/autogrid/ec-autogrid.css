@@ -1,0 +1,8 @@
+@media only screen and (min-width: 768px) {
+  .ec-autogrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+    column-gap: var(--spacing-largest);
+    row-gap: var(--spacing-largest);
+  }
+}

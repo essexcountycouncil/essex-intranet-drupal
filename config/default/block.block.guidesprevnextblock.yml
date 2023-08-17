@@ -4,13 +4,12 @@ status: true
 dependencies:
   module:
     - localgov_guides
-    - node
   theme:
     - essex
 id: guidesprevnextblock
 theme: essex
 region: content_bottom
-weight: -8
+weight: -13
 provider: null
 plugin: localgov_guides_prev_next_block
 settings:
@@ -18,11 +17,4 @@ settings:
   label: 'Guides prev next block'
   label_display: '0'
   provider: localgov_guides
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      localgov_guides_overview: localgov_guides_overview
+visibility: {  }
