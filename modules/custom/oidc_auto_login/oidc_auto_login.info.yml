@@ -1,0 +1,7 @@
+name: "OpenID Connect Auto-login"
+type: module
+description: "OpenID Connect Auto-login"
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - openid_connect:openid_connect

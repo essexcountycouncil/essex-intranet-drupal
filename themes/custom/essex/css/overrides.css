@@ -213,7 +213,7 @@ input[type="submit"],
 }
 
 .banner--primary .field--name-localgov-title {
-  font-weight: --heading-2-font-weight;
+  font-weight: var(--heading-2-font-weight);
 }
 
 .service-landing-page__contact {
@@ -1304,6 +1304,8 @@ div:has(.featured-teaser),
   height: 100%;
 }
 
+
+
 .featured-news__card article,
 .news-card article {
   background-color: #e8e8e8;
@@ -1345,13 +1347,29 @@ div:has(.featured-teaser),
   font-size: 1.25rem;
 }
 
+@media (max-width: 640px) {
+  .paragraph--type--newsroom-component .field--name-field-news-cards>.field__item+.field__item {
+    margin-top: var(--spacing-largest);
+  }
+}
+
+
+@media (min-width: 641px) {
+  @supports (subgrid) {
+    .paragraph--type--newsroom-component {
+      display: grid;
+      grid-template-columns: subgrid;
+    }
+  }
+}
+
 .featured-news__card,
 .news-card>.field__item {
   margin-top: 0;
 }
 
 .featured-news__card:first-of-type {
-  margin-bottom: var(--spacing-largest)
+  margin-bottom: var(--spacing-largest);
 }
 
 .featured-news__card article .card-content,
@@ -1396,7 +1414,7 @@ div:has(.featured-teaser),
   justify-content: space-between;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .news-card article {
     background: none;
   }
@@ -1531,4 +1549,32 @@ footer .menu--social-media .linkedin:focus {
 footer .block-localgov-powered-by-block,
 footer .lgd-footer__footer a {
   color: var(--color-white);
+}
+
+/* Contact Component */
+
+.paragraph--type--localgov-contact {
+  margin: 1em 0;
+  padding: 0.2em 0 0.2em 2em;
+  border-left: 8px solid var(--color-grey-light);
+}
+
+.paragraph--type--localgov-contact .field {
+  margin: 0.35em 0;
+}
+
+.paragraph--type--localgov-contact .field--name-localgov-contact-heading {
+  font-size: var(--font-size-h3);
+  font-weight: var(--heading-3-font-weight);
+  line-height: var(--heading-3-line-height);
+  margin-bottom: 1em;
+}
+
+.paragraph--type--localgov-contact .field:not(.field--type-address):not(.field--type-office-hours) .field__label,
+.paragraph--type--localgov-contact .field:not(.field--type-address):not(.field--type-office-hours) .field__item {
+  display: inline-block;
+}
+
+.lgd-region--content .paragraph--type--localgov-contact a {
+  word-break: break-word;
 }

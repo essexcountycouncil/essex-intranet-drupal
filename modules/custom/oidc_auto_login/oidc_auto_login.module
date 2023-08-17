@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function oidc_auto_login_preprocess_page(&$variables) {
+  switch (\Drupal::routeMatch()->getRouteName()) {
+    case 'entity.node.canonical':
+      if (\Drupal::currentUser()->isAnonymous()) {
+        $variables['#attached']['library'][] = 'oidc_auto_login/login';
+      }
+      break;
+
+    case 'oidc_auto_login.logged_in':
+      if (\Drupal::currentUser()->isAuthenticated()) {
+        $variables['#attached']['library'][] = 'oidc_auto_login/logged_in';
+      }
+  }
+}
