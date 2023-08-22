@@ -1088,6 +1088,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
+      title: ''
       fields:
         localgov_event_date_value_1:
           id: localgov_event_date_value_1
@@ -1418,6 +1419,7 @@ display:
           separator: ''
           hide_empty: false
       defaults:
+        title: false
         pager: false
         use_more: false
         use_more_always: false
