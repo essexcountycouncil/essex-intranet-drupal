@@ -1,0 +1,28 @@
+@media only screen and (min-width: 768px) {
+  .ec-autogrid-50-2x2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: var(--spacing-largest);
+  }
+
+  .ec-autogrid-50-2x2>*:nth-child(5n+1) {
+    grid-column: 1;
+    grid-row: span 2;
+  }
+
+  .ec-autogrid-50-2x2>*:nth-child(5n+2) {
+    grid-column: 2;
+  }
+
+  .ec-autogrid-50-2x2>*:nth-child(5n+3) {
+    grid-column: 3;
+  }
+
+  .ec-autogrid-50-2x2>*:nth-child(5n+3) {
+    grid-column: 2;
+  }
+
+  .ec-autogrid-50-2x2>*:nth-child(5n+3) {
+    grid-column: 3;
+  }
+}

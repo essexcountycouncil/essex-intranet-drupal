@@ -55,3 +55,7 @@ ec-autogrid-50-50-c-50-50:
   css:
     theme:
       layouts/ec-autogrid-50-50-c-50-50/ec-autogrid-50-50-c-50-50.css: {}
+ec-autogrid-50-2x2:
+  css:
+    theme:
+      layouts/ec-autogrid-50-2x2/ec-autogrid-50-2x2.css: {}

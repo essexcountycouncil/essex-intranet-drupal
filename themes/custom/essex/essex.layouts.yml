@@ -47,3 +47,16 @@ ec-autogrid-50-50-c-50-50:
   regions:
     content:
       label: Content
+ec-autogrid-50-2x2:
+  label: "Autogrid ec-autogrid-50-2x2"
+  path: layouts/ec-autogrid-50-2x2
+  template: layout--ec-autogrid-50-2x2
+  library: essex/ec-autogrid-50-2x2
+  category: "Custom"
+  default_region: content
+  icon_map:
+    - [card1, card1, content, content2]
+    - [card1, card1, content3, content4]
+  regions:
+    content:
+      label: Content
