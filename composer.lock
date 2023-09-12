@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22da4d165242f9c960a9b5bf1e83f083",
+    "content-hash": "4b72a18e325569d890f866e436043dca",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7764,6 +7764,29 @@
                 }
             ],
             "time": "2023-06-06T18:46:18+00:00"
+        },
+        {
+            "name": "ecc_menu/ecc_menu",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/essexcountycouncil/ecc_menu.git",
+                "reference": "f9ddd726109f85d4748c61c6be14a9a5bf68d7e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/essexcountycouncil/ecc_menu/zipball/f9ddd726109f85d4748c61c6be14a9a5bf68d7e2",
+                "reference": "f9ddd726109f85d4748c61c6be14a9a5bf68d7e2",
+                "shasum": ""
+            },
+            "type": "drupal-module",
+            "description": "Shared Drupal menu functionality for Essex County Council",
+            "homepage": "https://github.com/essexcountycouncil/ecc_menu",
+            "support": {
+                "source": "https://github.com/essexcountycouncil/ecc_menu/tree/1.0",
+                "issues": "https://github.com/essexcountycouncil/ecc_menu/issues"
+            },
+            "time": "2023-09-11T13:26:28+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -19596,6 +19619,7 @@
     "stability-flags": {
         "drupal/cludo_search": 10,
         "drupal/config_split": 5,
+        "drupal/gin": 5,
         "essexcountycouncil/content_ownership": 20,
         "localgovdrupal/localgov_eu_cookie_compliance": 20,
         "localgovdrupal/localgov_forms": 20,
@@ -19606,5 +19630,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
