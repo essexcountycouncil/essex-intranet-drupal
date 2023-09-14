@@ -653,6 +653,7 @@ nav.navigation--quick-actions li a {
   border-radius: var(--border-radius);
   position: relative;
   border: 0.18em solid var(--color-black);
+  display: block;
 }
 
 nav.navigation--quick-actions li a:hover {
