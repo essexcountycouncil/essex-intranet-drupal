@@ -1148,6 +1148,16 @@ tbody tr {
   padding: var(--spacing) 0;
 }
 
+@media only screen and (min-width: 752px) {
+  .view-localgov-events-listing .views-col {
+    margin-right: var(--spacing-large);
+  }
+
+  .view-localgov-events-listing .views-col.col-3 {
+    margin-right: 0;
+  }
+}
+
 .view-localgov-events-listing .calendar {
   padding: var(--spacing-small);
   background: #DCD9D9;
