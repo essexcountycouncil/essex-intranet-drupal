@@ -481,6 +481,19 @@ nav.lgd-prev-next ul.lgd-prev-next__list li {
   }
 }
 
+@media screen and (min-width: 1008px) {
+  .media-with-text--media-left .media-with-text__inner,
+  .media-with-text--media-right .media-with-text__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .media-with-text--media-left .media-with-text__body,
+  .media-with-text--media-right .media-with-text__body {
+    min-width: 50%;
+  }
+}
+
 .media-with-text--featured {
   position: relative;
   overflow: hidden;
