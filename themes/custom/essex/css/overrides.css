@@ -341,6 +341,10 @@ nav.lgd-prev-next ul.lgd-prev-next__list li {
 }
 
 @media only screen and (min-width: 768px) {
+  .menu--main>.menu-item:last-child {
+    margin-right: -0.25rem;
+  }
+
   .menu--main>.menu-item a {
     padding: var(--spacing-smallest);
     display: inline-block;
@@ -807,7 +811,7 @@ nav.navigation--quick-actions li a:after {
   text-indent: -999rem;
   direction: ltr;
   min-width: 3.5rem;
-  padding: var(--spacing-small);
+  padding: var(--spacing);
 }
 
 .cludo-search-block-search-form .form-submit:hover {
@@ -1142,6 +1146,16 @@ tbody tr {
 .view-localgov-events-listing .views-col {
   display: flex;
   padding: var(--spacing) 0;
+}
+
+@media only screen and (min-width: 752px) {
+  .view-localgov-events-listing .views-col {
+    margin-right: var(--spacing-large);
+  }
+
+  .view-localgov-events-listing .views-col.col-3 {
+    margin-right: 0;
+  }
 }
 
 .view-localgov-events-listing .calendar {
