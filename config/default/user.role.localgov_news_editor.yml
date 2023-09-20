@@ -72,6 +72,7 @@ permissions:
   - 'create paragraph library item'
   - 'create remote_video media'
   - 'create url aliases'
+  - 'delete any media'
   - 'delete own media'
   - 'edit any image media'
   - 'edit any localgov_news_article content'
