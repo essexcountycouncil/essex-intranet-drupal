@@ -68,7 +68,6 @@ permissions:
   - 'create document media'
   - 'create image media'
   - 'create localgov_news_article content'
-  - 'create localgov_subsites_overview content'
   - 'create paragraph library item'
   - 'create remote_video media'
   - 'create url aliases'
