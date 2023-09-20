@@ -33,6 +33,7 @@ dependencies:
     - content_ownership
     - entity_browser
     - entity_hierarchy
+    - entity_usage
     - group
     - localgov_alert_banner
     - localgov_directories
@@ -64,6 +65,7 @@ permissions:
   - 'access cludo search content'
   - 'access content overview'
   - 'access directory facets overview'
+  - 'access entity usage statistics'
   - 'access geo overview'
   - 'access group overview'
   - 'access in-place editing'

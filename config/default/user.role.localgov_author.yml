@@ -32,6 +32,7 @@ dependencies:
     - content_ownership
     - entity_browser
     - entity_hierarchy
+    - entity_usage
     - localgov_alert_banner
     - localgov_directories
     - localgov_geo
@@ -59,6 +60,7 @@ is_admin: null
 permissions:
   - 'access cludo search content'
   - 'access content overview'
+  - 'access entity usage statistics'
   - 'access in-place editing'
   - 'access localgov alert banner listing page'
   - 'access media overview'
