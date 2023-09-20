@@ -204,6 +204,7 @@ permissions:
   - 'edit own webform'
   - 'edit paragraph library item'
   - 'generate preview links'
+  - 'manage localgov alert banner localgov_alert_banner entities'
   - 'reorder entity_hierarchy children'
   - 'reschedule scheduled transitions localgov_alert_banner localgov_alert_banner'
   - 'reschedule scheduled transitions node localgov_directories_org'
