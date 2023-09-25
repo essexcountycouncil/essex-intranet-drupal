@@ -864,26 +864,15 @@ body.path-csearch .cludo-search-search-form input.form-text {
   text-decoration-thickness: max(3px, 0.225rem, 0.12em);
 }
 
-#cludo-search-results ul .search-results-item {
-  font-size: 1.125rem /* 18 px */
-}
-
-#cludo-search-results ul .search-results-item h2 {
-  font-size: 1.565rem; /* 25px */
-}
-
 @media only screen and (min-width: 768px) {
+  #cludo-search-results ul.search_page_list li a,
   #cludo-search-results .search-result-count,
-  #cludo-search-results ul .search-results-item {
+  #cludo-search-results ul .search-results-item > p {
     font-size: 1.125rem /* 18 px */
   }
 
-  #cludo-search-results ul .search-results-item {
-    font-size: var(--font-size);
-  }
-
   #cludo-search-results ul .search-results-item h2 {
-    font-size: var(--font-size-h2);
+    font-size: 1.565rem; /* 25px */
   }
 }
 
