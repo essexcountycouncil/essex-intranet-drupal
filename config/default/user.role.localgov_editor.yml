@@ -33,6 +33,7 @@ dependencies:
     - content_ownership
     - entity_browser
     - entity_hierarchy
+    - geocoder
     - group
     - localgov_alert_banner
     - localgov_directories
@@ -65,9 +66,11 @@ permissions:
   - 'access content overview'
   - 'access directory facets overview'
   - 'access geo overview'
+  - 'access geocoder api endpoints'
   - 'access group overview'
   - 'access in-place editing'
   - 'access localgov alert banner listing page'
+  - 'access localgov_geo_library entity browser pages'
   - 'access media overview'
   - 'access page_components entity browser pages'
   - 'access paragraphs_library_items entity browser pages'
