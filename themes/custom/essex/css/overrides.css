@@ -865,7 +865,7 @@ body.path-csearch .cludo-search-search-form input.form-text {
 }
 
 @media only screen and (min-width: 768px) {
-  #cludo-search-results ul.search_page_list li a,
+  #cludo-search-results ul.search_page_list li,
   #cludo-search-results .search-result-count,
   #cludo-search-results ul .search-results-item > p {
     font-size: 1.125rem /* 18 px */
