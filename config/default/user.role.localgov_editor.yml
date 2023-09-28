@@ -134,6 +134,7 @@ permissions:
   - 'create webform'
   - 'delete any document media'
   - 'delete any image media'
+  - 'delete any localgov_event content'
   - 'delete any localgov_guides_overview content'
   - 'delete any localgov_guides_page content'
   - 'delete any localgov_news_article content'
