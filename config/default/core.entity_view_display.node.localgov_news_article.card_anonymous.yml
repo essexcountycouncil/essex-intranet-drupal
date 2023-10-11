@@ -1,9 +1,9 @@
-uuid: 11678ed6-0bed-48ad-bab8-4f586c7f114f
+uuid: 08d092dd-9076-4aa0-b986-17650c678bbd
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser_anonymous
+    - core.entity_view_mode.node.card_anonymous
     - field.field.node.localgov_news_article.body
     - field.field.node.localgov_news_article.field_content_owner
     - field.field.node.localgov_news_article.field_content_sme
@@ -22,16 +22,16 @@ dependencies:
       - localgov_news
 _core:
   default_config_hash: T3PrBFQlZHLL6PIlyZqMvmSjh3fs5EiJsyXHC_Z1uMw
-id: node.localgov_news_article.teaser_anonymous
+id: node.localgov_news_article.card_anonymous
 targetEntityType: node
 bundle: localgov_news_article
-mode: teaser_anonymous
+mode: card_anonymous
 content:
   field_media_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: localgov_newsroom_teaser
+      view_mode: medium_8_7
       link: false
     third_party_settings:
       field_formatter_class:
@@ -43,8 +43,10 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      date_format: 'j F Y'
-    third_party_settings: {  }
+      date_format: j/m/Y
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 1
     region: content
 hidden:
