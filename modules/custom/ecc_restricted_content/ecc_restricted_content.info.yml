@@ -1,0 +1,5 @@
+name: "Essex Restricted Content"
+type: module
+description: "Essex Restricted Content"
+core_version_requirement: ^9 || ^10
+package: Custom
