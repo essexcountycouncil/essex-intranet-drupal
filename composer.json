@@ -81,6 +81,7 @@
         "drupal/simple_sitemap": "^4.1",
         "drupal/smtp": "^1.2",
         "drupal/stage_file_proxy": "^2.0",
+        "drupal/title_field_for_manage_display": "^2.1",
         "drupal/ultimate_cron": "^2.0@alpha",
         "essexcountycouncil/content_ownership": "dev-main",
         "essexcountycouncil/ecc_cludo_search": "^1.0",

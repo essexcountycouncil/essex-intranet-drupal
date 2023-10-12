@@ -1618,3 +1618,68 @@ footer .lgd-footer__footer a {
 .lgd-region--content .paragraph--type--localgov-contact a {
   word-break: break-word;
 }
+
+
+/* Events listing */
+.node--type-localgov-event .lgd-teaser__date {
+  color: #6f6f6f;
+  font-size: 0.75rem;
+  margin-bottom: var(--spacing);
+}
+
+.node--type-localgov-event h2:not(.node--type-localgov-event h2.lgd-teaser__title) {
+  display: none;
+}
+
+.node--type-localgov-event .lgd-teaser__title {
+  font-size: var(--font-size-h3);
+}
+
+.node--type-localgov-event .lgd-teaser__image {
+  margin-bottom: 1.5rem;
+}
+
+.node--type-localgov-event .lgd-teaser__image img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .node--type-localgov-event .lgd-teaser__image {
+    float: left;
+    width: var(--teaser-image-with);
+    margin-bottom: 0;
+  }
+}
+
+.views-exposed-form select {
+  appearance: none;
+  background-image: url('../assets/images/icons/chevron-down-solid.svg');
+  background-position: calc(100% - 1rem) 50%;
+  background-repeat: no-repeat;
+  background-size: 12px;
+}
+
+
+/* Event page */
+
+.page-node-type-localgov-event .lgd-page-title-block {
+  border: 0;
+  margin-bottom: 0;
+}
+
+.page-node-type-localgov-event .field--name-localgov-event-call-to-action {
+  margin: var(--spacing-larger) 0;
+}
+
+.page-node-type-localgov-event .field--name-localgov-event-date:after {
+  content: '';
+  width: calc(100% - 2rem);
+  height: 1px;
+  background: var(--border-color);
+  position: absolute;
+}
+
+.page-node-type-localgov-event .field--name-field-media-image,
+.page-node-type-localgov-event .field--name-body {
+  margin: 3.5rem 0 var(--spacing-large);
+}

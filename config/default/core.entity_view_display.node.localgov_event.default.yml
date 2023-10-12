@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.localgov_event.body
     - field.field.node.localgov_event.field_content_owner
     - field.field.node.localgov_event.field_content_sme
+    - field.field.node.localgov_event.field_display_title
     - field.field.node.localgov_event.localgov_event_call_to_action
     - field.field.node.localgov_event.localgov_event_categories
     - field.field.node.localgov_event.localgov_event_date
@@ -20,6 +21,7 @@ dependencies:
     - node.type.localgov_event
   module:
     - date_recur
+    - field_formatter_class
     - link
     - text
     - user
@@ -35,12 +37,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_content_owner:
     type: entity_reference_label
@@ -48,7 +50,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_content_sme:
     type: entity_reference_label
@@ -56,7 +58,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   localgov_event_call_to_action:
     type: link
@@ -68,7 +70,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   localgov_event_date:
     type: date_recur_basic_formatter
@@ -76,23 +78,27 @@ content:
     settings:
       timezone_override: ''
       format_type: localgov_event_date_full
-      separator: to
+      separator: 'to '
       show_next: 10
       count_per_item: false
       occurrence_format_type: localgov_event_date_full
       same_end_date_format_type: localgov_event_date_hour
       interpreter: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 1
     region: content
   localgov_event_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: scale_crop_7_3_large
+      view_mode: responsive_3x2
       link: false
-    third_party_settings: {  }
-    weight: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
     region: content
   localgov_event_location:
     type: entity_reference_entity_view
@@ -101,7 +107,7 @@ content:
       view_mode: embed
       link: false
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   localgov_event_provider:
     type: entity_reference_label
@@ -109,7 +115,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   localgov_event_venue:
     type: entity_reference_label
@@ -117,10 +123,11 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
 hidden:
   entitygroupfield: true
+  field_display_title: true
   links: true
   localgov_event_categories: true
   localgov_event_locality: true

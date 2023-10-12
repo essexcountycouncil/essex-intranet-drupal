@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.localgov_event.body
     - field.field.node.localgov_event.field_content_owner
     - field.field.node.localgov_event.field_content_sme
+    - field.field.node.localgov_event.field_display_title
     - field.field.node.localgov_event.localgov_event_call_to_action
     - field.field.node.localgov_event.localgov_event_categories
     - field.field.node.localgov_event.localgov_event_date
@@ -21,7 +22,9 @@ dependencies:
     - node.type.localgov_event
   module:
     - date_recur
+    - field_formatter_class
     - text
+    - title_field_for_manage_display
     - user
 _core:
   default_config_hash: ydJMWGHVgdJTIj4omnGi9gjq3FKP91_e3K8YQkBlNCo
@@ -36,12 +39,24 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
+    region: content
+  field_display_title:
+    type: title_value_field_formatter
+    label: hidden
+    settings:
+      tag: h2
+      linked: '1'
+      classes: lgd-teaser__title
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
     region: content
   localgov_event_date:
     type: date_recur_basic_formatter
@@ -49,23 +64,27 @@ content:
     settings:
       timezone_override: ''
       format_type: localgov_event_date_full
-      separator: to
+      separator: 'to '
       show_next: 1
       count_per_item: false
       occurrence_format_type: localgov_event_date_full
       same_end_date_format_type: localgov_event_date_hour
       interpreter: ''
-    third_party_settings: {  }
-    weight: 1
+    third_party_settings:
+      field_formatter_class:
+        class: lgd-teaser__date
+    weight: 3
     region: content
   localgov_event_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: localgov_event_thumbnail
+      view_mode: responsive_3x2
       link: false
-    third_party_settings: {  }
-    weight: 0
+    third_party_settings:
+      field_formatter_class:
+        class: lgd-teaser__image
+    weight: 1
     region: content
 hidden:
   entitygroupfield: true
