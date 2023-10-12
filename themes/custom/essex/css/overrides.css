@@ -1641,6 +1641,11 @@ footer .lgd-footer__footer a {
 
 .node--type-localgov-event .lgd-teaser__image img {
   width: 100%;
+  max-inline-size: 100%;
+  block-size: auto;
+  height: auto;
+  object-fit: cover;
+  max-height: 450px;
 }
 
 @media only screen and (min-width: 768px) {
