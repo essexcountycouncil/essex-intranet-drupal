@@ -1,0 +1,19 @@
+uuid: 2f8d271f-7899-4272-b993-57790c4ebf94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_title
+    - node.type.localgov_newsroom
+id: node.localgov_newsroom.field_display_title
+field_name: field_display_title
+entity_type: node
+bundle: localgov_newsroom
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
