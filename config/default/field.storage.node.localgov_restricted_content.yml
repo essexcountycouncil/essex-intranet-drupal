@@ -1,11 +1,11 @@
-uuid: 9baa245f-f6f5-4e94-b179-da41bda1dc18
+uuid: 655a223b-1341-48e2-b9c5-2525b96eda4a
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_restricted_content
-field_name: field_restricted_content
+id: node.localgov_restricted_content
+field_name: localgov_restricted_content
 entity_type: node
 type: boolean
 settings: {  }

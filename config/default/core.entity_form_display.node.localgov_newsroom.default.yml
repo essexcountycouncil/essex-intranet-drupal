@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.localgov_newsroom.field_content_owner
     - field.field.node.localgov_newsroom.field_content_sme
-    - field.field.node.localgov_newsroom.field_restricted_content
+    - field.field.node.localgov_newsroom.localgov_restricted_content
     - field.field.node.localgov_newsroom.localgov_newsroom_featured
     - node.type.localgov_newsroom
     - workflows.workflow.localgov_editorial
@@ -21,7 +21,7 @@ third_party_settings:
   field_group:
     group_privacy:
       children:
-        - field_restricted_content
+        - localgov_restricted_content
       label: Privacy
       region: content
       parent_name: ''
@@ -68,13 +68,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_restricted_content:
-    type: boolean_checkbox
-    weight: 15
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   localgov_newsroom_featured:
     type: entity_reference_autocomplete
     weight: 2
@@ -84,6 +77,13 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  localgov_restricted_content:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   localgov_review_date:
     type: review_date

@@ -1,12 +1,12 @@
-uuid: cac3fdca-66d5-4149-afc5-cb80a6a867d1
+uuid: 193b10d4-bed9-4cd9-9f1e-faca33a8e202
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_restricted_content
+    - field.storage.node.localgov_restricted_content
     - node.type.localgov_news_article
-id: node.localgov_news_article.field_restricted_content
-field_name: field_restricted_content
+id: node.localgov_news_article.localgov_restricted_content
+field_name: localgov_restricted_content
 entity_type: node
 bundle: localgov_news_article
 label: 'Restricted content'

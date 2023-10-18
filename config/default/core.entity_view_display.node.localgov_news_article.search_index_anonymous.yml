@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.localgov_news_article.field_content_owner
     - field.field.node.localgov_news_article.field_content_sme
     - field.field.node.localgov_news_article.field_media_image
-    - field.field.node.localgov_news_article.field_restricted_content
+    - field.field.node.localgov_news_article.localgov_restricted_content
     - field.field.node.localgov_news_article.localgov_news_categories
     - field.field.node.localgov_news_article.localgov_news_date
     - field.field.node.localgov_news_article.localgov_news_related
@@ -33,10 +33,10 @@ hidden:
   field_content_owner: true
   field_content_sme: true
   field_media_image: true
-  field_restricted_content: true
   links: true
   localgov_news_categories: true
   localgov_news_date: true
   localgov_news_related: true
   localgov_newsroom: true
+  localgov_restricted_content: true
   search_api_excerpt: true

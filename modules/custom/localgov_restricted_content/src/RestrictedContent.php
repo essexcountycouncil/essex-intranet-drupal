@@ -8,14 +8,14 @@ use Drupal\Core\Session\AccountProxyInterface;
 class RestrictedContent implements RestrictedContentInterface {
 
   public const PARENT_FIELDS = [
-    'field_newsroom',
+    'localgov_newsroom',
     'localgov_guides_parent',
     'localgov_services_parent',
     'localgov_step_parent',
     'localgov_subsites_parent',
   ];
 
-  public const RESTRICTED_CONTENT_FIELD = 'field_restricted_content';
+  public const RESTRICTED_CONTENT_FIELD = 'localgov_restricted_content';
 
   /**
    * @param \Drupal\Core\Session\AccountProxyInterface $currentUser
@@ -43,7 +43,7 @@ class RestrictedContent implements RestrictedContentInterface {
         }
       }
       if (isset($parent_field)) {
-        if ($parent = $entity->$parent_field->entity) {
+        if ($parent = $entity->{$parent_field}->entity) {
           return $this->isRestricted($parent);
         }
       }

@@ -37,7 +37,6 @@ module:
   ecc_content_moderation: 0
   ecc_cookie_compliance: 0
   ecc_menu: 0
-  ecc_restricted_content: 0
   editor: 0
   entity: 0
   entity_browser: 0
@@ -117,6 +116,7 @@ module:
   localgov_paragraphs: 0
   localgov_paragraphs_layout: 0
   localgov_paragraphs_views: 0
+  localgov_restricted_content: 0
   localgov_review_date: 0
   localgov_roles: 0
   localgov_search: 0

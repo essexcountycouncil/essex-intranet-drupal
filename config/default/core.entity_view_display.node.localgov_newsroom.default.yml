@@ -5,8 +5,8 @@ dependencies:
   config:
     - field.field.node.localgov_newsroom.field_content_owner
     - field.field.node.localgov_newsroom.field_content_sme
-    - field.field.node.localgov_newsroom.field_restricted_content
     - field.field.node.localgov_newsroom.localgov_newsroom_featured
+    - field.field.node.localgov_newsroom.localgov_restricted_content
     - node.type.localgov_newsroom
   module:
     - user
@@ -23,7 +23,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_content_owner:
     type: entity_reference_label
@@ -31,7 +31,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_content_sme:
     type: entity_reference_label
@@ -39,37 +39,27 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
-    region: content
-  field_restricted_content:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
     weight: 7
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   localgov_news_facets:
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   localgov_news_search:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   localgov_newsroom_all_view:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   localgov_newsroom_featured:
     type: entity_reference_entity_view
@@ -78,8 +68,9 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   entitygroupfield: true
+  localgov_restricted_content: true
   search_api_excerpt: true
