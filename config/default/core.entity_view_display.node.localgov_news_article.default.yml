@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.localgov_news_article.field_content_owner
     - field.field.node.localgov_news_article.field_content_sme
     - field.field.node.localgov_news_article.field_media_image
+    - field.field.node.localgov_news_article.field_restricted_content
     - field.field.node.localgov_news_article.localgov_news_categories
     - field.field.node.localgov_news_article.localgov_news_date
     - field.field.node.localgov_news_article.localgov_news_related
@@ -55,6 +56,16 @@ content:
       link: true
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_restricted_content:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
     region: content
   links:
     settings: {  }

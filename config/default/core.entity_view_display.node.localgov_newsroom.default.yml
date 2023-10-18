@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.localgov_newsroom.field_content_owner
     - field.field.node.localgov_newsroom.field_content_sme
+    - field.field.node.localgov_newsroom.field_restricted_content
     - field.field.node.localgov_newsroom.localgov_newsroom_featured
     - node.type.localgov_newsroom
   module:
@@ -39,6 +40,16 @@ content:
       link: true
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_restricted_content:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
     region: content
   links:
     settings: {  }

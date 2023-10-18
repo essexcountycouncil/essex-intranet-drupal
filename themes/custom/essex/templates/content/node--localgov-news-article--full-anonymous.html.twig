@@ -2,6 +2,9 @@
 /**
  * @file
  *
+ * Copied from localgov_base. It could be simplified if required, as many
+ * fields are hidden in the View Display.
+ *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
  *   Only method names starting with "get", "has", or "is" and a few common
@@ -113,6 +116,15 @@
             <h2 class="news-article__related-title">{{ 'Related news'|t }}</h2>
             {{ content.localgov_news_related }}
           {% endif %}
+
+          <!--cludooff: index-->
+          <div>
+              <p>{{ restricted_content_message }}</p>
+              <div>
+                <a href="/user/login?destination={{ path('<current>') }}">{{ 'Sign in'|t }}</a>
+              </div>
+          </div>
+          <!--cludoon: index-->
 
         </div>
       </div>
