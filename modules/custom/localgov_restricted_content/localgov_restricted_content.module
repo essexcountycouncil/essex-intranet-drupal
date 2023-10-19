@@ -9,14 +9,17 @@
  * Implements hook_entity_view_mode_alter().
  */
 function localgov_restricted_content_entity_view_mode_alter(&$view_mode, $entity, $context) {
-  if (\Drupal::service('localgov_restricted_content.restricted_content')->isRestricted($entity)) {
-    $view_mode = match ($view_mode) {
-      'card' => 'card_anonymous',
-      'full' => 'full_anonymous',
-      'search_index' => 'search_index_anonymous',
-      'search_result' => 'search_result_anonymous',
-      default => 'teaser_anonymous'
-    };
+  if (\Drupal::currentUser()->isAnonymous()) {
+    if (\Drupal::service('localgov_restricted_content.restricted_content')
+      ->isRestricted($entity)) {
+      $view_mode = match ($view_mode) {
+        'card' => 'card_anonymous',
+        'full' => 'full_anonymous',
+        'search_index' => 'search_index_anonymous',
+        'search_result' => 'search_result_anonymous',
+        default => 'teaser_anonymous'
+      };
+    }
   }
 }
 
@@ -25,5 +28,24 @@ function localgov_restricted_content_entity_view_mode_alter(&$view_mode, $entity
  */
 function localgov_restricted_content_preprocess_node(&$variables) {
   $variables['restricted_content_message'] = t('This page is restricted, please sign in to see the full page.');
+}
 
+/**
+ * Implements hook_form_alter().
+ */
+function localgov_restricted_content_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  //kint($form_state);
+  /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+  /** @var \Drupal\node\NodeForm $callback_object */
+  $callback_object = $form_state->getBuildInfo()['callback_object'];
+  if (!($callback_object instanceof \Drupal\node\NodeForm)) {
+    return;
+  }
+  $entity = $callback_object->getEntity();
+  if (\Drupal::service('localgov_restricted_content.restricted_content')->isAncestorRestricted($entity)) {
+    $form['localgov_restricted_content']['#suffix'] = t('<div class="form-item__label option">This is disabled because the page\'s parent is restricted.</div>');
+    $form['localgov_restricted_content']['#disabled'] = TRUE;
+    $form['localgov_restricted_content']['widget']['value']['#default_value'] = TRUE;
+   // kint($form);
+  }
 }
