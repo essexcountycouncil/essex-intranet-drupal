@@ -62,6 +62,7 @@
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
+        "drupal/devel": "^5.1",
         "drupal/entitygroupfield": "1.0.0-alpha2",
         "drupal/eu_cookie_compliance": "^1.24",
         "drupal/eu_cookie_compliance_gtm": "^2.1",
