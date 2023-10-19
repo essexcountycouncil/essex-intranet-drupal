@@ -3,8 +3,10 @@
 namespace Drupal\localgov_restricted_content;
 
 use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\Core\Session\AccountProxyInterface;
 
+/**
+ * The localgov_restricted_content.restricted_content service.
+ */
 class RestrictedContent implements RestrictedContentInterface {
 
   public const PARENT_FIELDS = [
@@ -16,13 +18,6 @@ class RestrictedContent implements RestrictedContentInterface {
   ];
 
   public const RESTRICTED_CONTENT_FIELD = 'localgov_restricted_content';
-
-  /**
-   * @param \Drupal\Core\Session\AccountProxyInterface $currentUser
-   *   Current user.
-   */
-  public function __construct(protected AccountProxyInterface $currentUser) {
-  }
 
   /**
    * {@inheritdoc}

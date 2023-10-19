@@ -1,4 +1,3 @@
 services:
   localgov_restricted_content.restricted_content:
     class: Drupal\localgov_restricted_content\RestrictedContent
-    arguments: ['@current_user']
