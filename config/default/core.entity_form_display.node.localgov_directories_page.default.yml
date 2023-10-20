@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.localgov_directories_page.localgov_directory_phone
     - field.field.node.localgov_directories_page.localgov_directory_title_sort
     - field.field.node.localgov_directories_page.localgov_directory_website
+    - field.field.node.localgov_directories_page.localgov_restricted_content
     - node.type.localgov_directories_page
     - workflows.workflow.localgov_editorial
   module:
@@ -99,6 +100,22 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+    group_privacy:
+      children:
+        - localgov_restricted_content
+      label: Privacy
+      region: content
+      parent_name: ''
+      weight: -1
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+        weight: 0
 _core:
   default_config_hash: '-w6k3C9eelLq_KWDTlcv11Qg0-X1A_lUom4OwcKIHr8'
 id: node.localgov_directories_page.default
@@ -124,7 +141,7 @@ content:
     third_party_settings: {  }
   field_content_owner:
     type: entity_reference_autocomplete
-    weight: 51
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -134,7 +151,7 @@ content:
     third_party_settings: {  }
   field_content_sme:
     type: entity_reference_autocomplete
-    weight: 52
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS
@@ -214,6 +231,13 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+  localgov_restricted_content:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   localgov_review_date:
     type: review_date
     weight: 0
@@ -238,6 +262,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 9
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
@@ -272,7 +301,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.localgov_directory.localgov_directory_channel_types
     - field.field.node.localgov_directory.localgov_directory_facets_enable
     - field.field.node.localgov_directory.localgov_proximity_search_cfg
+    - field.field.node.localgov_directory.localgov_restricted_content
     - field.field.node.localgov_directory.localgov_services_parent
     - node.type.localgov_directory
   module:
@@ -61,6 +62,7 @@ hidden:
   localgov_directory_view: true
   localgov_directory_view_with_search: true
   localgov_proximity_search_cfg: true
+  localgov_restricted_content: true
   restricted_content_sign_in: true
   restricted_content_sign_in_with_message: true
   search_api_excerpt: true

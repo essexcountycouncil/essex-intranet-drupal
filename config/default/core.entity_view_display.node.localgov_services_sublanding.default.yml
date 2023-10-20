@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.localgov_services_sublanding.body
     - field.field.node.localgov_services_sublanding.field_content_owner
     - field.field.node.localgov_services_sublanding.field_content_sme
+    - field.field.node.localgov_services_sublanding.localgov_restricted_content
     - field.field.node.localgov_services_sublanding.localgov_services_parent
     - field.field.node.localgov_services_sublanding.localgov_topics
     - node.type.localgov_services_sublanding
@@ -34,6 +35,16 @@ content:
       link: true
     third_party_settings: {  }
     weight: 2
+    region: content
+  localgov_restricted_content:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
     region: content
   localgov_topics:
     type: entity_reference_revisions_entity_view

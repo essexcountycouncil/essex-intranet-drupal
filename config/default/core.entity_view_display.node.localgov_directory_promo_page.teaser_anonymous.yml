@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.localgov_directory_promo_page.localgov_directory_title_sort
     - field.field.node.localgov_directory_promo_page.localgov_directory_website
     - field.field.node.localgov_directory_promo_page.localgov_paragraph_content
+    - field.field.node.localgov_directory_promo_page.localgov_restricted_content
     - node.type.localgov_directory_promo_page
   module:
     - field_group
@@ -116,5 +117,6 @@ hidden:
   localgov_directory_title_sort: true
   localgov_directory_website: true
   localgov_paragraph_content: true
+  localgov_restricted_content: true
   restricted_content_sign_in_with_message: true
   search_api_excerpt: true

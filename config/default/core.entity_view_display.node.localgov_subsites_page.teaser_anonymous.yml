@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser_anonymous
     - field.field.node.localgov_subsites_page.field_content_owner
     - field.field.node.localgov_subsites_page.field_content_sme
+    - field.field.node.localgov_subsites_page.localgov_restricted_content
     - field.field.node.localgov_subsites_page.localgov_subsites_banner
     - field.field.node.localgov_subsites_page.localgov_subsites_content
     - field.field.node.localgov_subsites_page.localgov_subsites_parent
@@ -32,6 +33,7 @@ hidden:
   field_content_owner: true
   field_content_sme: true
   links: true
+  localgov_restricted_content: true
   localgov_subsites_banner: true
   localgov_subsites_content: true
   localgov_subsites_parent: true

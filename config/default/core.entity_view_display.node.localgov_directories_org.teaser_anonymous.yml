@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.localgov_directories_org.localgov_directory_phone
     - field.field.node.localgov_directories_org.localgov_directory_website
     - field.field.node.localgov_directories_org.localgov_location
+    - field.field.node.localgov_directories_org.localgov_restricted_content
     - node.type.localgov_directories_org
   module:
     - field_group
@@ -76,5 +77,6 @@ hidden:
   localgov_directory_search: true
   localgov_directory_website: true
   localgov_location: true
+  localgov_restricted_content: true
   restricted_content_sign_in_with_message: true
   search_api_excerpt: true

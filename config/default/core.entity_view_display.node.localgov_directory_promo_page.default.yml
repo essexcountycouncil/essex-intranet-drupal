@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.localgov_directory_promo_page.localgov_directory_title_sort
     - field.field.node.localgov_directory_promo_page.localgov_directory_website
     - field.field.node.localgov_directory_promo_page.localgov_paragraph_content
+    - field.field.node.localgov_directory_promo_page.localgov_restricted_content
     - node.type.localgov_directory_promo_page
   module:
     - address
@@ -223,6 +224,16 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 4
+    region: content
+  localgov_restricted_content:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 13
     region: content
 hidden:
   entitygroupfield: true

@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.localgov_event.localgov_event_price
     - field.field.node.localgov_event.localgov_event_provider
     - field.field.node.localgov_event.localgov_event_venue
+    - field.field.node.localgov_event.localgov_restricted_content
     - node.type.localgov_event
   module:
     - date_recur
@@ -79,6 +80,7 @@ hidden:
   localgov_event_price: true
   localgov_event_provider: true
   localgov_event_venue: true
+  localgov_restricted_content: true
   restricted_content_sign_in: true
   restricted_content_sign_in_with_message: true
   search_api_excerpt: true

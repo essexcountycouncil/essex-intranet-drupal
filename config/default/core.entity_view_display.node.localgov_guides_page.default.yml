@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.localgov_guides_page.localgov_guides_parent
     - field.field.node.localgov_guides_page.localgov_guides_section_title
     - field.field.node.localgov_guides_page.localgov_page_components
+    - field.field.node.localgov_guides_page.localgov_restricted_content
     - node.type.localgov_guides_page
   module:
     - text
@@ -62,6 +63,16 @@ content:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  localgov_restricted_content:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
     region: content
 hidden:
   entitygroupfield: true

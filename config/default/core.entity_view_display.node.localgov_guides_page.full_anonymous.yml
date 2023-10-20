@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.localgov_guides_page.localgov_guides_parent
     - field.field.node.localgov_guides_page.localgov_guides_section_title
     - field.field.node.localgov_guides_page.localgov_page_components
+    - field.field.node.localgov_guides_page.localgov_restricted_content
     - node.type.localgov_guides_page
   module:
     - user
@@ -37,5 +38,6 @@ hidden:
   localgov_guides_parent: true
   localgov_guides_section_title: true
   localgov_page_components: true
+  localgov_restricted_content: true
   restricted_content_sign_in: true
   search_api_excerpt: true

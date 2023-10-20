@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.localgov_step_by_step_page.body
     - field.field.node.localgov_step_by_step_page.field_content_owner
     - field.field.node.localgov_step_by_step_page.field_content_sme
+    - field.field.node.localgov_step_by_step_page.localgov_restricted_content
     - field.field.node.localgov_step_by_step_page.localgov_step_parent
     - field.field.node.localgov_step_by_step_page.localgov_step_section_title
     - field.field.node.localgov_step_by_step_page.localgov_step_summary
@@ -52,6 +53,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  localgov_restricted_content:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
     region: content
 hidden:
   entitygroupfield: true

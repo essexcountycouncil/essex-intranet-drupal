@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.localgov_guides_overview.localgov_guides_list_format
     - field.field.node.localgov_guides_overview.localgov_guides_pages
     - field.field.node.localgov_guides_overview.localgov_guides_section_title
+    - field.field.node.localgov_guides_overview.localgov_restricted_content
     - field.field.node.localgov_guides_overview.localgov_services_parent
     - field.field.node.localgov_guides_overview.localgov_topic_classified
     - node.type.localgov_guides_overview
@@ -31,7 +32,7 @@ third_party_settings:
       label: 'Content Ownership'
       region: content
       parent_name: ''
-      weight: 18
+      weight: 19
       format_type: fieldset
       format_settings:
         classes: ''
@@ -39,6 +40,22 @@ third_party_settings:
         id: ''
         description: ''
         required_fields: true
+    group_privacy:
+      children:
+        - localgov_restricted_content
+      label: Privacy
+      region: content
+      parent_name: ''
+      weight: -1
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+        weight: 0
 _core:
   default_config_hash: IkWgfbT6C9JrfSG1IGw-3Lqj9UniICWLGFhfgBKdCcw
 id: node.localgov_guides_overview.default
@@ -48,7 +65,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 13
+    weight: 14
     region: content
     settings:
       rows: 9
@@ -84,7 +101,7 @@ content:
     third_party_settings: {  }
   field_non_publishable_notes:
     type: text_textarea
-    weight: 17
+    weight: 18
     region: content
     settings:
       rows: 5
@@ -106,7 +123,7 @@ content:
     third_party_settings: {  }
   localgov_guides_pages:
     type: localgov_entity_reference_labels
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -117,6 +134,13 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  localgov_restricted_content:
+    type: boolean_checkbox
+    weight: 21
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   localgov_review_date:
     type: review_date
@@ -136,7 +160,7 @@ content:
     third_party_settings: {  }
   localgov_topic_classified:
     type: entity_reference_autocomplete
-    weight: 15
+    weight: 16
     region: content
     settings:
       match_operator: CONTAINS
@@ -146,7 +170,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 16
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -164,13 +188,13 @@ content:
       display_label: true
     third_party_settings: {  }
   simple_sitemap:
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 12
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -201,7 +225,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }

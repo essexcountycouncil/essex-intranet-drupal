@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.localgov_directories_venue.localgov_directory_title_sort
     - field.field.node.localgov_directories_venue.localgov_directory_website
     - field.field.node.localgov_directories_venue.localgov_location
+    - field.field.node.localgov_directories_venue.localgov_restricted_content
     - node.type.localgov_directories_venue
   module:
     - field_group
@@ -87,5 +88,6 @@ hidden:
   localgov_directory_title_sort: true
   localgov_directory_website: true
   localgov_location: true
+  localgov_restricted_content: true
   restricted_content_sign_in: true
   search_api_excerpt: true
