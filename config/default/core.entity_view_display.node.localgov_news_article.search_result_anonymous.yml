@@ -31,11 +31,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  restricted_content_sign_in_with_message:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
   body: true
   content_moderation_control: true
@@ -49,4 +44,5 @@ hidden:
   localgov_news_related: true
   localgov_newsroom: true
   localgov_restricted_content: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

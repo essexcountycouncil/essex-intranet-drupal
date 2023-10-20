@@ -67,4 +67,6 @@ hidden:
   field_content_sme: true
   links: true
   localgov_subsites_banner: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

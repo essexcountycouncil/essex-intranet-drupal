@@ -165,4 +165,6 @@ hidden:
   localgov_common_tasks: true
   localgov_contact_us_online: true
   localgov_other_team_contacts: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

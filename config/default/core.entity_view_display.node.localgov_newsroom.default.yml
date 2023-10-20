@@ -73,4 +73,6 @@ content:
 hidden:
   entitygroupfield: true
   localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

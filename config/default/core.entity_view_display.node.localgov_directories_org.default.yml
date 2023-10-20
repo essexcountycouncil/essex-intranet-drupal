@@ -25,15 +25,13 @@ third_party_settings:
   field_group:
     group_enquiries:
       children:
-        - localgov_directory_name
-        - localgov_directory_job_title
         - localgov_directory_phone
         - localgov_directory_email
         - localgov_directory_website
       label: Enquiries
       parent_name: ''
       region: content
-      weight: 4
+      weight: 5
       format_type: fieldset
       format_settings:
         classes: ''
@@ -42,12 +40,11 @@ third_party_settings:
     group_organisation:
       children:
         - localgov_location
-        - localgov_directory_opening_times
         - localgov_directory_notes
       label: Venue
       parent_name: ''
       region: content
-      weight: 3
+      weight: 4
       format_type: fieldset
       format_settings:
         classes: ''
@@ -65,12 +62,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_content_owner:
     type: entity_reference_label
@@ -78,7 +75,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 6
     region: content
   field_content_sme:
     type: entity_reference_label
@@ -86,7 +83,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 11
+    weight: 7
     region: content
   localgov_directory_email:
     type: basic_string
@@ -101,7 +98,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   localgov_directory_notes:
     type: text_default
@@ -121,7 +118,7 @@ content:
   localgov_directory_search:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 1
     region: content
   localgov_directory_website:
     type: link
@@ -149,4 +146,6 @@ hidden:
   links: true
   localgov_directory_channels: true
   localgov_directory_facets_select: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

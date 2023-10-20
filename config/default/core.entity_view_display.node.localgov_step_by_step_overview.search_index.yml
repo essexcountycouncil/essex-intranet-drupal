@@ -70,4 +70,6 @@ hidden:
   field_content_owner: true
   field_content_sme: true
   links: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

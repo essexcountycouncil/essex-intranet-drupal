@@ -26,12 +26,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_content_owner:
     type: entity_reference_label
@@ -39,7 +39,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_content_sme:
     type: entity_reference_label
@@ -47,17 +47,17 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   localgov_directory_map:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   localgov_directory_view:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
 hidden:
   entitygroupfield: true
@@ -68,4 +68,6 @@ hidden:
   localgov_directory_view_with_search: true
   localgov_proximity_search_cfg: true
   localgov_services_parent: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

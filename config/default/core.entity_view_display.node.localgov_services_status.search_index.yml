@@ -55,4 +55,6 @@ hidden:
   localgov_service_status_on_landi: true
   localgov_service_status_on_list: true
   localgov_service_status_visibile: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

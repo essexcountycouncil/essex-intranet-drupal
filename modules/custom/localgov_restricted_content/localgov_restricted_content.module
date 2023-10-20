@@ -59,7 +59,8 @@ function localgov_restricted_content_form_node_form_alter(&$form, FormStateInter
  */
 function localgov_restricted_content_entity_extra_field_info() {
   $return = [];
-  foreach (['localgov_news_article'] as $bundle) {
+  $bundle_info = \Drupal::service('entity_type.bundle.info')->getBundleInfo('node');
+  foreach ($bundle_info as $bundle => $bundle_info) {
     $return['node'][$bundle]['display']['restricted_content_sign_in'] = [
       'label' => t('Sign in link'),
       'description' => t('Display sign in link at the bottom'),
@@ -77,8 +78,13 @@ function localgov_restricted_content_entity_extra_field_info() {
 
 /**
  * Implements hook_entity_view().
+ *
+ * Display sign-in message and/or link for anonymous users.
  */
 function localgov_restricted_content_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if (\Drupal::currentUser()->isAuthenticated()) {
+    return;
+  }
   $content = $display->get('content');
   if (isset($content['restricted_content_sign_in_with_message'])) {
     $build['sign_in'] = [

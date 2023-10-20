@@ -1,0 +1,91 @@
+uuid: 8c49b6ae-98c3-44d9-96ec-3d72761dd694
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index_anonymous
+    - field.field.node.localgov_directories_venue.body
+    - field.field.node.localgov_directories_venue.field_content_owner
+    - field.field.node.localgov_directories_venue.field_content_sme
+    - field.field.node.localgov_directories_venue.localgov_directory_channels
+    - field.field.node.localgov_directories_venue.localgov_directory_email
+    - field.field.node.localgov_directories_venue.localgov_directory_facets_select
+    - field.field.node.localgov_directories_venue.localgov_directory_files
+    - field.field.node.localgov_directories_venue.localgov_directory_job_title
+    - field.field.node.localgov_directories_venue.localgov_directory_name
+    - field.field.node.localgov_directories_venue.localgov_directory_notes
+    - field.field.node.localgov_directories_venue.localgov_directory_opening_times
+    - field.field.node.localgov_directories_venue.localgov_directory_phone
+    - field.field.node.localgov_directories_venue.localgov_directory_title_sort
+    - field.field.node.localgov_directories_venue.localgov_directory_website
+    - field.field.node.localgov_directories_venue.localgov_location
+    - node.type.localgov_directories_venue
+  module:
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_enquiries:
+      children:
+        - localgov_directory_name
+        - localgov_directory_job_title
+        - localgov_directory_phone
+        - localgov_directory_email
+        - localgov_directory_website
+      label: Enquiries
+      parent_name: ''
+      region: hidden
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        id: ''
+        description: ''
+    group_venue:
+      children:
+        - localgov_location
+        - localgov_directory_opening_times
+        - localgov_directory_notes
+      label: Venue
+      parent_name: ''
+      region: hidden
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        id: ''
+        description: ''
+_core:
+  default_config_hash: QSk3UiE5Jz66Zf3hqjzQg5MVD3USfMDnTeSU1W1KWmk
+id: node.localgov_directories_venue.search_index_anonymous
+targetEntityType: node
+bundle: localgov_directories_venue
+mode: search_index_anonymous
+content:
+  restricted_content_sign_in:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  entitygroupfield: true
+  field_content_owner: true
+  field_content_sme: true
+  links: true
+  localgov_directory_channels: true
+  localgov_directory_email: true
+  localgov_directory_facets_select: true
+  localgov_directory_files: true
+  localgov_directory_job_title: true
+  localgov_directory_name: true
+  localgov_directory_notes: true
+  localgov_directory_opening_times: true
+  localgov_directory_phone: true
+  localgov_directory_search: true
+  localgov_directory_title_sort: true
+  localgov_directory_website: true
+  localgov_location: true
+  restricted_content_sign_in_with_message: true
+  search_api_excerpt: true

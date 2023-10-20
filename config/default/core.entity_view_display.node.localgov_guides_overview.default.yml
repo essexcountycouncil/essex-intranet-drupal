@@ -66,4 +66,6 @@ hidden:
   localgov_guides_section_title: true
   localgov_services_parent: true
   localgov_topic_classified: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

@@ -34,12 +34,12 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
 hidden:
   entitygroupfield: true
@@ -57,4 +57,6 @@ hidden:
   localgov_directory_search: true
   localgov_directory_title_sort: true
   localgov_directory_website: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

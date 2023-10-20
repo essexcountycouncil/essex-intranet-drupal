@@ -1,0 +1,42 @@
+uuid: bc2d06a9-0f80-4fcb-ab89-cbdb9020e2de
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full_anonymous
+    - field.field.node.localgov_subsites_overview.field_content_owner
+    - field.field.node.localgov_subsites_overview.field_content_sme
+    - field.field.node.localgov_subsites_overview.localgov_subsites_banner
+    - field.field.node.localgov_subsites_overview.localgov_subsites_content
+    - field.field.node.localgov_subsites_overview.localgov_subsites_hide_menu
+    - field.field.node.localgov_subsites_overview.localgov_subsites_summary
+    - field.field.node.localgov_subsites_overview.localgov_subsites_theme
+    - node.type.localgov_subsites_overview
+  module:
+    - user
+_core:
+  default_config_hash: Yv1Fqu3ujR5VZCsncrWGDZzY9E0cKh9pXqJt-bsPYmY
+id: node.localgov_subsites_overview.full_anonymous
+targetEntityType: node
+bundle: localgov_subsites_overview
+mode: full_anonymous
+content:
+  restricted_content_sign_in_with_message:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  content_moderation_control: true
+  entitygroupfield: true
+  field_content_owner: true
+  field_content_sme: true
+  links: true
+  localgov_subsites_banner: true
+  localgov_subsites_content: true
+  localgov_subsites_hide_menu: true
+  localgov_subsites_pages: true
+  localgov_subsites_summary: true
+  localgov_subsites_theme: true
+  restricted_content_sign_in: true
+  search_api_excerpt: true

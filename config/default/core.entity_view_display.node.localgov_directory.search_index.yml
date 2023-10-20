@@ -27,12 +27,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   localgov_directory_facets_enable:
     type: entity_reference_label
@@ -40,7 +40,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   localgov_services_parent:
     type: entity_reference_label
@@ -48,7 +48,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   entitygroupfield: true
@@ -61,4 +61,6 @@ hidden:
   localgov_directory_view: true
   localgov_directory_view_with_search: true
   localgov_proximity_search_cfg: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

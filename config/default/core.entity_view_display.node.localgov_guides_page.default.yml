@@ -68,4 +68,6 @@ hidden:
   field_non_publishable_notes: true
   localgov_guides_parent: true
   localgov_guides_section_title: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

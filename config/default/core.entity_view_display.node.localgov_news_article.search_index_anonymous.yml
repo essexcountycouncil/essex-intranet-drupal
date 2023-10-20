@@ -25,7 +25,12 @@ id: node.localgov_news_article.search_index_anonymous
 targetEntityType: node
 bundle: localgov_news_article
 mode: search_index_anonymous
-content: {  }
+content:
+  restricted_content_sign_in:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   body: true
   content_moderation_control: true
@@ -39,6 +44,5 @@ hidden:
   localgov_news_related: true
   localgov_newsroom: true
   localgov_restricted_content: true
-  restricted_content_sign_in: true
   restricted_content_sign_in_with_message: true
   search_api_excerpt: true
