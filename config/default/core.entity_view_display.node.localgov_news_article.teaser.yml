@@ -8,11 +8,11 @@ dependencies:
     - field.field.node.localgov_news_article.field_content_owner
     - field.field.node.localgov_news_article.field_content_sme
     - field.field.node.localgov_news_article.field_media_image
-    - field.field.node.localgov_news_article.localgov_restricted_content
     - field.field.node.localgov_news_article.localgov_news_categories
     - field.field.node.localgov_news_article.localgov_news_date
     - field.field.node.localgov_news_article.localgov_news_related
     - field.field.node.localgov_news_article.localgov_newsroom
+    - field.field.node.localgov_news_article.localgov_restricted_content
     - node.type.localgov_news_article
   module:
     - datetime
@@ -34,12 +34,12 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_media_image:
     type: entity_reference_entity_view
@@ -48,7 +48,7 @@ content:
       view_mode: localgov_newsroom_teaser
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   localgov_news_date:
     type: datetime_custom
@@ -57,7 +57,7 @@ content:
       timezone_override: ''
       date_format: 'j F Y'
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   entitygroupfield: true
@@ -68,4 +68,6 @@ hidden:
   localgov_news_related: true
   localgov_newsroom: true
   localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

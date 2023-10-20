@@ -110,21 +110,14 @@
 
         <div{{ content_attributes.addClass('news-article__content node__content') }}>
 
-          {{ content|without('localgov_news_date', 'localgov_news_categories', 'localgov_news_related') }}
+          {{ content|without('localgov_news_date', 'localgov_news_categories', 'localgov_news_related', 'sign_in') }}
 
           {% if node.localgov_news_related.value %}
             <h2 class="news-article__related-title">{{ 'Related news'|t }}</h2>
             {{ content.localgov_news_related }}
           {% endif %}
 
-          <!--cludooff: index-->
-          <div>
-              <p>{{ restricted_content_message }}</p>
-              <div>
-                <a href="/user/login?destination={{ path('<current>') }}">{{ 'Sign in'|t }}</a>
-              </div>
-          </div>
-          <!--cludoon: index-->
+          {{ elements.sign_in }}
 
         </div>
       </div>

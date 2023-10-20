@@ -118,7 +118,9 @@
       We render the full content variable here, so any new fields added
       are visible.
     #}
-    {{ content|without('field_media_image', 'localgov_event_image') }}
+    {{ content|without('field_media_image', 'localgov_event_image', 'sign_in') }}
+
+    {{ elements.sign_in }}
   </div>
 
 </article>

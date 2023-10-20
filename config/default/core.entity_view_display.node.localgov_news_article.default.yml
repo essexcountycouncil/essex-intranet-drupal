@@ -30,9 +30,10 @@ bundle: localgov_news_article
 mode: default
 content:
   body:
-    type: text_default
+    type: text_summary_or_trimmed
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 600
     third_party_settings: {  }
     weight: 4
     region: content
@@ -93,4 +94,6 @@ hidden:
   field_media_image: true
   localgov_newsroom: true
   localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true
