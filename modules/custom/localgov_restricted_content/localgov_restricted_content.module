@@ -2,23 +2,29 @@
 
 /**
  * @file
- * Essex Restricted Content hooks.
+ * Localgov Restricted Content hooks.
  */
 
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeForm;
 
 /**
  * Implements hook_entity_view_mode_alter().
  */
 function localgov_restricted_content_entity_view_mode_alter(&$view_mode, $entity, $context) {
-  if (\Drupal::currentUser()->isAnonymous()) {
-    if (\Drupal::service('localgov_restricted_content.restricted_content')
-      ->isRestricted($entity)) {
-      $view_mode = match ($view_mode) {
-        'full' => 'full_anonymous',
-        'teaser' => 'teaser_anonymous',
-        default => $view_mode
-      };
+  if (
+    $entity->getEntityTypeId() === 'node' and
+    \Drupal::currentUser()->isAnonymous() and
+    \Drupal::service('localgov_restricted_content.restricted_content')
+      ->isRestricted($entity)
+  ) {
+    // Check the anonymous view display mode exists before using it.
+    $entity_view_display = \Drupal::entityTypeManager()->getStorage('entity_view_display');
+    $anonymous_view_mode =  $view_mode . '_anonymous';
+    if ($entity_view_display->load('node.' . $entity->bundle() . '.' . $anonymous_view_mode)) {
+      $view_mode = $anonymous_view_mode;
     }
   }
 }
@@ -26,10 +32,11 @@ function localgov_restricted_content_entity_view_mode_alter(&$view_mode, $entity
 /**
  * Implements hook_form_alter().
  */
-function localgov_restricted_content_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function localgov_restricted_content_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   /** @var \Drupal\node\NodeForm $node_form */
   $node_form = $form_state->getBuildInfo()['callback_object'];
+
   if (!($node_form instanceof NodeForm)) {
     return;
   }
@@ -37,7 +44,10 @@ function localgov_restricted_content_form_alter(&$form, \Drupal\Core\Form\FormSt
   /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
   $entity = $node_form->getEntity();
 
-  if (\Drupal::service('localgov_restricted_content.restricted_content')->isAncestorRestricted($entity)) {
+  /** @var \Drupal\localgov_restricted_content\RestrictedContentInterface $restricted_content */
+  $restricted_content = \Drupal::service('localgov_restricted_content.restricted_content');
+
+  if ($restricted_content->isAncestorRestricted($entity)) {
     $form['localgov_restricted_content']['#suffix'] = t('<div class="form-item__label option">This is disabled because the page\'s parent is restricted.</div>');
     $form['localgov_restricted_content']['#disabled'] = TRUE;
     $form['localgov_restricted_content']['widget']['value']['#default_value'] = TRUE;
@@ -68,7 +78,7 @@ function localgov_restricted_content_entity_extra_field_info() {
 /**
  * Implements hook_entity_view().
  */
-function localgov_restricted_content_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+function localgov_restricted_content_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
   $content = $display->get('content');
   if (isset($content['restricted_content_sign_in_with_message'])) {
     $build['sign_in'] = [
