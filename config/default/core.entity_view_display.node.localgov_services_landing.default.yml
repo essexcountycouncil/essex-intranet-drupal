@@ -142,16 +142,6 @@ content:
     third_party_settings: {  }
     weight: 11
     region: content
-  localgov_restricted_content:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 15
-    region: content
   localgov_services_parent:
     type: entity_reference_label
     label: above
@@ -176,6 +166,7 @@ hidden:
   localgov_common_tasks: true
   localgov_contact_us_online: true
   localgov_other_team_contacts: true
+  localgov_restricted_content: true
   restricted_content_sign_in: true
   restricted_content_sign_in_with_message: true
   search_api_excerpt: true

@@ -142,21 +142,12 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  localgov_restricted_content:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 10
-    region: content
 hidden:
   entitygroupfield: true
   links: true
   localgov_directory_channels: true
   localgov_directory_facets_select: true
+  localgov_restricted_content: true
   restricted_content_sign_in: true
   restricted_content_sign_in_with_message: true
   search_api_excerpt: true

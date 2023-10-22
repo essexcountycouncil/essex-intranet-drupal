@@ -55,18 +55,9 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  localgov_restricted_content:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 4
-    region: content
 hidden:
   entitygroupfield: true
+  localgov_restricted_content: true
   localgov_services_parent: true
   localgov_step_by_step_pages: true
   localgov_step_description: true

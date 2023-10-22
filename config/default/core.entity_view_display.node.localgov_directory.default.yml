@@ -60,16 +60,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  localgov_restricted_content:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 6
-    region: content
 hidden:
   entitygroupfield: true
   links: true
@@ -78,6 +68,7 @@ hidden:
   localgov_directory_facets_enable: true
   localgov_directory_view_with_search: true
   localgov_proximity_search_cfg: true
+  localgov_restricted_content: true
   localgov_services_parent: true
   restricted_content_sign_in: true
   restricted_content_sign_in_with_message: true

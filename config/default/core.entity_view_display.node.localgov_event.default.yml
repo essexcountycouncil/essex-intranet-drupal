@@ -120,22 +120,13 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
-  localgov_restricted_content:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 10
-    region: content
 hidden:
   entitygroupfield: true
   links: true
   localgov_event_categories: true
   localgov_event_locality: true
   localgov_event_price: true
+  localgov_restricted_content: true
   restricted_content_sign_in: true
   restricted_content_sign_in_with_message: true
   search_api_excerpt: true
