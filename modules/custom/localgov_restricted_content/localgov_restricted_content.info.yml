@@ -1,5 +1,5 @@
-name: "Essex Restricted Content"
+name: "LocalGov Restricted Content"
 type: module
-description: "Essex Restricted Content"
+description: "Restricted access to content"
 core_version_requirement: ^9 || ^10
 package: Custom
