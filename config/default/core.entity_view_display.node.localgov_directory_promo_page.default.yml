@@ -19,9 +19,11 @@ dependencies:
     - field.field.node.localgov_directory_promo_page.localgov_directory_title_sort
     - field.field.node.localgov_directory_promo_page.localgov_directory_website
     - field.field.node.localgov_directory_promo_page.localgov_paragraph_content
+    - field.field.node.localgov_directory_promo_page.localgov_restricted_content
     - node.type.localgov_directory_promo_page
   module:
     - address
+    - entity_reference_revisions
     - field_formatter_class
     - field_group
     - layout_paragraphs
@@ -37,7 +39,7 @@ third_party_settings:
       label: Banner
       parent_name: ''
       region: content
-      weight: 0
+      weight: 1
       format_type: html_element
       format_settings:
         classes: full__banner
@@ -57,7 +59,7 @@ third_party_settings:
       label: 'Page Top'
       parent_name: ''
       region: content
-      weight: 1
+      weight: 2
       format_type: html_element
       format_settings:
         classes: full__page-top
@@ -81,7 +83,7 @@ third_party_settings:
       label: Enquiries
       parent_name: ''
       region: content
-      weight: 6
+      weight: 7
       format_type: fieldset
       format_settings:
         classes: ''
@@ -100,12 +102,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_content_owner:
     type: entity_reference_label
@@ -113,7 +115,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 13
+    weight: 8
     region: content
   field_content_sme:
     type: entity_reference_label
@@ -121,12 +123,12 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 14
+    weight: 9
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   localgov_directory_address:
     type: address_default
@@ -136,11 +138,11 @@ content:
     weight: 12
     region: content
   localgov_directory_banner:
-    type: entity_reference_entity_view
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: responsive_banner
-      link: false
+      link: ''
     third_party_settings:
       field_formatter_class:
         class: ''
@@ -169,7 +171,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   localgov_directory_job_title:
     type: string
@@ -221,11 +223,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
 hidden:
   entitygroupfield: true
   localgov_directory_channels: true
   localgov_directory_search: true
   localgov_directory_title_sort: true
+  localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

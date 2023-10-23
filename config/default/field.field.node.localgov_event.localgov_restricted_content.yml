@@ -1,0 +1,23 @@
+uuid: 38ae629c-c4f5-4541-8da2-c979e8e955dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.localgov_restricted_content
+    - node.type.localgov_event
+id: node.localgov_event.localgov_restricted_content
+field_name: localgov_restricted_content
+entity_type: node
+bundle: localgov_event
+label: 'Restricted content'
+description: 'Set this flag if only authenticated users should see the full content of this page and its children.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

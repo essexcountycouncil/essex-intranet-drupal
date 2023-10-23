@@ -1,0 +1,10 @@
+uuid: 75c459e9-4c5b-47b3-8037-7761bd279792
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.search_index_anonymous
+label: 'Search index for anonymous users'
+targetEntityType: node
+cache: true

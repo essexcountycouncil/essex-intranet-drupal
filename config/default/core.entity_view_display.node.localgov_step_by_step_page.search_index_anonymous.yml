@@ -1,0 +1,41 @@
+uuid: 0fc51d30-bc9a-4ab8-a3b9-844668559664
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index_anonymous
+    - field.field.node.localgov_step_by_step_page.body
+    - field.field.node.localgov_step_by_step_page.field_content_owner
+    - field.field.node.localgov_step_by_step_page.field_content_sme
+    - field.field.node.localgov_step_by_step_page.localgov_restricted_content
+    - field.field.node.localgov_step_by_step_page.localgov_step_parent
+    - field.field.node.localgov_step_by_step_page.localgov_step_section_title
+    - field.field.node.localgov_step_by_step_page.localgov_step_summary
+    - node.type.localgov_step_by_step_page
+  module:
+    - user
+_core:
+  default_config_hash: 5NEtCD_T7-t7XNuSi73t_-iKT14S1ok9c6SQYjb0twU
+id: node.localgov_step_by_step_page.search_index_anonymous
+targetEntityType: node
+bundle: localgov_step_by_step_page
+mode: search_index_anonymous
+content:
+  restricted_content_sign_in:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  entitygroupfield: true
+  field_content_owner: true
+  field_content_sme: true
+  links: true
+  localgov_restricted_content: true
+  localgov_step_parent: true
+  localgov_step_section_title: true
+  localgov_step_summary: true
+  restricted_content_sign_in_with_message: true
+  search_api_excerpt: true

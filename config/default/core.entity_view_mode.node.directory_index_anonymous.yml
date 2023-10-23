@@ -1,0 +1,10 @@
+uuid: 3548f5f3-de88-4a64-9313-1c88f3dffd39
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.directory_index_anonymous
+label: 'Directory search index for anonymous users'
+targetEntityType: node
+cache: true
