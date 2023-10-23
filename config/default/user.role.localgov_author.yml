@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - localgov_alert_banner.localgov_alert_banner_type.localgov_alert_banner
     - media.type.document
     - media.type.image
     - media.type.remote_video
@@ -31,6 +32,7 @@ dependencies:
     - content_ownership
     - entity_browser
     - entity_hierarchy
+    - geocoder
     - localgov_alert_banner
     - localgov_directories
     - localgov_geo
@@ -58,8 +60,10 @@ is_admin: null
 permissions:
   - 'access cludo search content'
   - 'access content overview'
+  - 'access geocoder api endpoints'
   - 'access in-place editing'
   - 'access localgov alert banner listing page'
+  - 'access localgov_geo_library entity browser pages'
   - 'access media overview'
   - 'access page_components entity browser pages'
   - 'access paragraphs_library_items entity browser pages'
@@ -110,6 +114,7 @@ permissions:
   - 'delete own localgov_subsites_overview content'
   - 'edit any document media'
   - 'edit any image media'
+  - 'edit any localgov_event content'
   - 'edit any remote_video media'
   - 'edit own document media'
   - 'edit own image media'

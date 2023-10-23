@@ -10,12 +10,14 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor: 0
+  ckeditor5: 0
   ckeditor_div_manager: 0
   cludo_search: 0
   condition_field: 0
   config: 0
   config_filter: 0
   config_ignore: 0
+  contact: 0
   content_moderation: 0
   content_ownership: 0
   contextual: 0
@@ -32,6 +34,7 @@ module:
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
   ecc_cludo_search: 0
+  ecc_content_moderation: 0
   ecc_cookie_compliance: 0
   ecc_menu: 0
   editor: 0
@@ -46,6 +49,7 @@ module:
   entitygroupfield: 0
   eu_cookie_compliance_gtm: 0
   facets: 0
+  fathom_analytics: 0
   field: 0
   field_formatter_class: 0
   field_group: 0
@@ -62,6 +66,8 @@ module:
   geofield_map: 0
   geolocation: 0
   geolocation_google_maps: 0
+  gin_login: 0
+  gin_toolbar: 0
   gnode: 0
   google_tag: 0
   group: 0
@@ -100,6 +106,7 @@ module:
   localgov_geo: 0
   localgov_geo_address: 0
   localgov_geo_area: 0
+  localgov_geo_update: 0
   localgov_guides: 0
   localgov_homepage_paragraphs: 0
   localgov_media: 0
@@ -134,6 +141,7 @@ module:
   mysql: 0
   node: 0
   office_hours: 0
+  oidc_auto_login: 0
   openid_connect: 0
   openid_connect_azure_b2c: 0
   options: 0
@@ -149,6 +157,8 @@ module:
   redirect_404: 0
   responsive_image: 0
   responsive_preview: 0
+  rest: 0
+  restui: 0
   role_delegation: 0
   scheduled_transitions: 0
   schema_article: 0
@@ -159,7 +169,9 @@ module:
   search_api_location: 0
   search_api_location_geocoder: 0
   search_api_location_views: 0
+  serialization: 0
   simple_sitemap: 0
+  smtp: 0
   sophron: 0
   system: 0
   tablefield: 0

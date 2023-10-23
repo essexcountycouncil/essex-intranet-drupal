@@ -39,7 +39,7 @@ third_party_settings:
       label: Content
       region: content
       parent_name: group_tabs
-      weight: 7
+      weight: 14
       format_type: tab
       format_settings:
         classes: ''
@@ -53,7 +53,7 @@ third_party_settings:
       label: 'Task buttons'
       region: content
       parent_name: group_tabs
-      weight: 8
+      weight: 15
       format_type: tab
       format_settings:
         classes: ''
@@ -70,7 +70,7 @@ third_party_settings:
       label: 'Related content'
       region: content
       parent_name: group_tabs
-      weight: 9
+      weight: 16
       format_type: tab
       format_settings:
         classes: ''
@@ -100,7 +100,7 @@ third_party_settings:
       label: 'Content Ownership'
       region: hidden
       parent_name: group_tabs
-      weight: 10
+      weight: 17
       format_type: tab
       format_settings:
         classes: ''
@@ -118,13 +118,13 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 9
+    weight: 12
     region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
-      show_summary: false
+      show_summary: true
     third_party_settings: {  }
   created:
     type: datetime_timestamp
@@ -134,7 +134,7 @@ content:
     third_party_settings: {  }
   field_content_owner:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -144,7 +144,7 @@ content:
     third_party_settings: {  }
   field_content_sme:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -154,7 +154,7 @@ content:
     third_party_settings: {  }
   field_non_publishable_notes:
     type: text_textarea
-    weight: 11
+    weight: 14
     region: content
     settings:
       rows: 5
@@ -162,7 +162,7 @@ content:
     third_party_settings: {  }
   localgov_common_tasks:
     type: link_with_type
-    weight: 11
+    weight: 14
     region: content
     settings:
       placeholder_url: ''
@@ -170,21 +170,21 @@ content:
     third_party_settings: {  }
   localgov_hide_related_topics:
     type: boolean_checkbox
-    weight: 7
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   localgov_override_related_links:
     type: boolean_checkbox
-    weight: 9
+    weight: 14
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   localgov_page_components:
     type: entity_browser_entity_reference
-    weight: 10
+    weight: 13
     region: content
     settings:
       entity_browser: page_components
@@ -198,7 +198,7 @@ content:
     third_party_settings: {  }
   localgov_related_links:
     type: link_attributes
-    weight: 10
+    weight: 15
     region: content
     settings:
       placeholder_url: ''
@@ -219,7 +219,7 @@ content:
     third_party_settings: {  }
   localgov_services_parent:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -229,7 +229,7 @@ content:
     third_party_settings: {  }
   localgov_topic_classified:
     type: entity_reference_autocomplete_tags
-    weight: 8
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS
@@ -239,7 +239,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -255,6 +255,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
@@ -272,7 +277,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 8
+    weight: 11
     region: content
     settings:
       size: 60

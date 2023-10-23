@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - oidc_auto_login
+    - serialization
+    - user
+id: oidc_auto_login_allowed
+plugin_id: oidc_auto_login_allowed
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie

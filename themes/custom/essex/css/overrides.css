@@ -213,7 +213,7 @@ input[type="submit"],
 }
 
 .banner--primary .field--name-localgov-title {
-  font-weight: --heading-2-font-weight;
+  font-weight: var(--heading-2-font-weight);
 }
 
 .service-landing-page__contact {
@@ -341,6 +341,10 @@ nav.lgd-prev-next ul.lgd-prev-next__list li {
 }
 
 @media only screen and (min-width: 768px) {
+  .menu--main>.menu-item:last-child {
+    margin-right: -0.25rem;
+  }
+
   .menu--main>.menu-item a {
     padding: var(--spacing-smallest);
     display: inline-block;
@@ -474,6 +478,19 @@ nav.lgd-prev-next ul.lgd-prev-next__list li {
 @media screen and (min-width: 890px) {
   .media-with-text--default .media-with-text__media img {
     max-height: none;
+  }
+}
+
+@media screen and (min-width: 1008px) {
+  .media-with-text--media-left .media-with-text__inner,
+  .media-with-text--media-right .media-with-text__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .media-with-text--media-left .media-with-text__body,
+  .media-with-text--media-right .media-with-text__body {
+    min-width: 50%;
   }
 }
 
@@ -649,6 +666,7 @@ nav.navigation--quick-actions li a {
   border-radius: var(--border-radius);
   position: relative;
   border: 0.18em solid var(--color-black);
+  display: block;
 }
 
 nav.navigation--quick-actions li a:hover {
@@ -807,7 +825,7 @@ nav.navigation--quick-actions li a:after {
   text-indent: -999rem;
   direction: ltr;
   min-width: 3.5rem;
-  padding: var(--spacing-small);
+  padding: var(--spacing);
 }
 
 .cludo-search-block-search-form .form-submit:hover {
@@ -828,7 +846,7 @@ body.path-csearch .cludo-search-search-form input.form-text {
 }
 
 #cludo-search-results {
-  width: 768px;
+  max-width: 768px;
 }
 
 #cludo-search-results ul .search-results-item h2 {
@@ -844,6 +862,18 @@ body.path-csearch .cludo-search-search-form input.form-text {
 
 #cludo-search-results .search-results-item a:hover h2 {
   text-decoration-thickness: max(3px, 0.225rem, 0.12em);
+}
+
+@media only screen and (min-width: 768px) {
+  #cludo-search-results ul.search_page_list li,
+  #cludo-search-results .search-result-count,
+  #cludo-search-results ul .search-results-item > p {
+    font-size: 1.125rem /* 18 px */
+  }
+
+  #cludo-search-results ul .search-results-item h2 {
+    font-size: 1.565rem; /* 25px */
+  }
 }
 
 body.path-csearch #edit-prompt {
@@ -1144,6 +1174,16 @@ tbody tr {
   padding: var(--spacing) 0;
 }
 
+@media only screen and (min-width: 752px) {
+  .view-localgov-events-listing .views-col {
+    margin-right: var(--spacing-large);
+  }
+
+  .view-localgov-events-listing .views-col.col-3 {
+    margin-right: 0;
+  }
+}
+
 .view-localgov-events-listing .calendar {
   padding: var(--spacing-small);
   background: #DCD9D9;
@@ -1304,6 +1344,8 @@ div:has(.featured-teaser),
   height: 100%;
 }
 
+
+
 .featured-news__card article,
 .news-card article {
   background-color: #e8e8e8;
@@ -1345,13 +1387,29 @@ div:has(.featured-teaser),
   font-size: 1.25rem;
 }
 
+@media (max-width: 640px) {
+  .paragraph--type--newsroom-component .field--name-field-news-cards>.field__item+.field__item {
+    margin-top: var(--spacing-largest);
+  }
+}
+
+
+@media (min-width: 641px) {
+  @supports (subgrid) {
+    .paragraph--type--newsroom-component {
+      display: grid;
+      grid-template-columns: subgrid;
+    }
+  }
+}
+
 .featured-news__card,
 .news-card>.field__item {
   margin-top: 0;
 }
 
 .featured-news__card:first-of-type {
-  margin-bottom: var(--spacing-largest)
+  margin-bottom: var(--spacing-largest);
 }
 
 .featured-news__card article .card-content,
@@ -1396,7 +1454,7 @@ div:has(.featured-teaser),
   justify-content: space-between;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .news-card article {
     background: none;
   }
@@ -1531,4 +1589,32 @@ footer .menu--social-media .linkedin:focus {
 footer .block-localgov-powered-by-block,
 footer .lgd-footer__footer a {
   color: var(--color-white);
+}
+
+/* Contact Component */
+
+.paragraph--type--localgov-contact {
+  margin: 1em 0;
+  padding: 0.2em 0 0.2em 2em;
+  border-left: 8px solid var(--color-grey-light);
+}
+
+.paragraph--type--localgov-contact .field {
+  margin: 0.35em 0;
+}
+
+.paragraph--type--localgov-contact .field--name-localgov-contact-heading {
+  font-size: var(--font-size-h3);
+  font-weight: var(--heading-3-font-weight);
+  line-height: var(--heading-3-line-height);
+  margin-bottom: 1em;
+}
+
+.paragraph--type--localgov-contact .field:not(.field--type-address):not(.field--type-office-hours) .field__label,
+.paragraph--type--localgov-contact .field:not(.field--type-address):not(.field--type-office-hours) .field__item {
+  display: inline-block;
+}
+
+.lgd-region--content .paragraph--type--localgov-contact a {
+  word-break: break-word;
 }

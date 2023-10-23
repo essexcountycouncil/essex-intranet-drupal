@@ -594,7 +594,7 @@ display:
           exposed: true
           expose:
             operator_id: localgov_event_locality_target_id_op
-            label: Neighbourhood
+            label: Location
             description: ''
             use_operator: false
             operator: localgov_event_locality_target_id_op
@@ -1088,6 +1088,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
+      title: ''
       fields:
         localgov_event_date_value_1:
           id: localgov_event_date_value_1
@@ -1418,6 +1419,7 @@ display:
           separator: ''
           hide_empty: false
       defaults:
+        title: false
         pager: false
         use_more: false
         use_more_always: false

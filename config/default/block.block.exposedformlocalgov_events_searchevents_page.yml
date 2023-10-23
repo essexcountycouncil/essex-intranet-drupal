@@ -1,0 +1,28 @@
+uuid: 12642d3d-02c1-4b1e-807d-4838ddf3ebc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.localgov_events_search
+  module:
+    - system
+    - views
+  theme:
+    - essex
+id: exposedformlocalgov_events_searchevents_page
+theme: essex
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:localgov_events_search-events_page'
+settings:
+  id: 'views_exposed_filter_block:localgov_events_search-events_page'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/events\r\n/events/search\r\n"
