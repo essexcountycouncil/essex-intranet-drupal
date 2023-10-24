@@ -26,7 +26,3 @@ if (getenv('OPENID_CONNECT_PARAMS') == true) {
     $config['openid_connect.client.' . $client]['settings']['client_secret'] = $value['settings']['client_secret'];
   }
 }
-
-$settings['container_yamls'][] = $app_root . '/' . $site_path . '/../development.services.yml';
-
-$config['config_split.config_split.ddev']['status'] = TRUE;

@@ -53,6 +53,7 @@
         "ckeditor/div": "4.10.1",
         "composer/installers": "^1.10",
         "cweagans/composer-patches": "^1.6",
+        "drupal/autologout": "^1.4",
         "drupal/autosave_form": "^1.4",
         "drupal/block_classes": "^1.0",
         "drupal/ckeditor_div_manager": "^2.0",
@@ -186,7 +187,17 @@
                     "path": "assets/composer/settings.lando.php",
                     "overwrite": false
                 },
-                "[web-root]/sites/development.services.yml": "assets/composer/development.services.yml"
+                "[web-root]/sites/default/settings.ddev-custom.php": {
+                    "mode": "replace",
+                    "path": "assets/composer/settings.ddev-custom.php",
+                    "overwrite": true
+                },
+                "[web-root]/sites/development.services.yml": "assets/composer/development.services.yml",
+                "[web-root]/sites/default/services.yml": {
+                    "mode": "replace",
+                    "path": "assets/composer/services.yml",
+                    "overwrite": true
+              }
             }
         },
         "installer-paths": {
