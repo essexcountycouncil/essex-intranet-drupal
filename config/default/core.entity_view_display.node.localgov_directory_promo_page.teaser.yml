@@ -20,11 +20,11 @@ dependencies:
     - field.field.node.localgov_directory_promo_page.localgov_directory_title_sort
     - field.field.node.localgov_directory_promo_page.localgov_directory_website
     - field.field.node.localgov_directory_promo_page.localgov_paragraph_content
-    - image.style.square_large
+    - field.field.node.localgov_directory_promo_page.localgov_restricted_content
     - node.type.localgov_directory_promo_page
   module:
+    - entity_reference_revisions
     - field_formatter_class
-    - media
     - text
     - user
 _core:
@@ -40,25 +40,23 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   localgov_directory_banner:
-    type: media_thumbnail
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: square_large
-      image_loading:
-        attribute: lazy
+      view_mode: default
+      link: ''
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 0
+    weight: 1
     region: content
 hidden:
   entitygroupfield: true
@@ -78,4 +76,7 @@ hidden:
   localgov_directory_title_sort: true
   localgov_directory_website: true
   localgov_paragraph_content: true
+  localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

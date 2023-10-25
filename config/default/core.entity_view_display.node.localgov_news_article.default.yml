@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.localgov_news_article.localgov_news_date
     - field.field.node.localgov_news_article.localgov_news_related
     - field.field.node.localgov_news_article.localgov_newsroom
+    - field.field.node.localgov_news_article.localgov_restricted_content
     - node.type.localgov_news_article
   module:
     - datetime
@@ -29,16 +30,17 @@ bundle: localgov_news_article
 mode: default
 content:
   body:
-    type: text_default
+    type: text_summary_or_trimmed
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 600
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_content_owner:
     type: entity_reference_label
@@ -46,7 +48,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_content_sme:
     type: entity_reference_label
@@ -54,12 +56,12 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   localgov_news_categories:
     type: entity_reference_facet_link
@@ -67,7 +69,7 @@ content:
     settings:
       facet: localgov_news_category
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   localgov_news_date:
     type: datetime_custom
@@ -76,7 +78,7 @@ content:
       timezone_override: ''
       date_format: 'j F Y'
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   localgov_news_related:
     type: entity_reference_entity_view
@@ -85,10 +87,13 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
 hidden:
   entitygroupfield: true
   field_media_image: true
   localgov_newsroom: true
+  localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

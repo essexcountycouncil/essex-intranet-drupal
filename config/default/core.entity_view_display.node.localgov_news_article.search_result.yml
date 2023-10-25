@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.localgov_news_article.localgov_news_date
     - field.field.node.localgov_news_article.localgov_news_related
     - field.field.node.localgov_news_article.localgov_newsroom
+    - field.field.node.localgov_news_article.localgov_restricted_content
     - node.type.localgov_news_article
   module:
     - text
@@ -31,12 +32,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
 hidden:
   entitygroupfield: true
@@ -48,4 +49,7 @@ hidden:
   localgov_news_date: true
   localgov_news_related: true
   localgov_newsroom: true
+  localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

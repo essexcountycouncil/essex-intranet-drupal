@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.localgov_services_page.localgov_override_related_links
     - field.field.node.localgov_services_page.localgov_page_components
     - field.field.node.localgov_services_page.localgov_related_links
+    - field.field.node.localgov_services_page.localgov_restricted_content
     - field.field.node.localgov_services_page.localgov_services_parent
     - field.field.node.localgov_services_page.localgov_topic_classified
     - node.type.localgov_services_page
@@ -48,6 +49,9 @@ hidden:
   localgov_override_related_links: true
   localgov_page_components: true
   localgov_related_links: true
+  localgov_restricted_content: true
   localgov_services_parent: true
   localgov_topic_classified: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

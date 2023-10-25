@@ -1,0 +1,10 @@
+uuid: 8c0114dd-29d0-4bbb-82ac-d1308d9c5c86
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.full_anonymous
+label: 'Full for anonymous users'
+targetEntityType: node
+cache: true

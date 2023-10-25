@@ -1,9 +1,0 @@
-name: "Essex Cludo Search"
-type: module
-description: "Essex specific cludo search behavior"
-core_version_requirement: ^9 || ^10
-package: Custom
-dependencies:
-  - drupal:cludo_search
-
-

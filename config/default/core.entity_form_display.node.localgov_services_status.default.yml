@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.localgov_services_status.body
     - field.field.node.localgov_services_status.field_content_owner
     - field.field.node.localgov_services_status.field_content_sme
+    - field.field.node.localgov_services_status.localgov_restricted_content
     - field.field.node.localgov_services_status.localgov_service_status
     - field.field.node.localgov_services_status.localgov_service_status_on_landi
     - field.field.node.localgov_services_status.localgov_service_status_on_list
@@ -16,9 +17,28 @@ dependencies:
   module:
     - condition_field
     - content_moderation
+    - field_group
     - localgov_review_date
     - path
     - text
+third_party_settings:
+  field_group:
+    group_privacy:
+      children:
+        - localgov_restricted_content
+      label: Privacy
+      region: content
+      parent_name: ''
+      weight: -1
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+        weight: 0
 _core:
   default_config_hash: 8jhpmsAnC-rpRtqY6qd--F-k1MCc_EcMjs4uDZiOtP4
 id: node.localgov_services_status.default
@@ -44,7 +64,7 @@ content:
     third_party_settings: {  }
   field_content_owner:
     type: entity_reference_autocomplete
-    weight: 26
+    weight: 17
     region: content
     settings:
       match_operator: CONTAINS
@@ -54,7 +74,7 @@ content:
     third_party_settings: {  }
   field_content_sme:
     type: entity_reference_autocomplete
-    weight: 27
+    weight: 18
     region: content
     settings:
       match_operator: CONTAINS
@@ -62,9 +82,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  localgov_restricted_content:
+    type: boolean_checkbox
+    weight: 20
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   localgov_review_date:
     type: review_date
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -76,14 +103,14 @@ content:
     third_party_settings: {  }
   localgov_service_status_on_landi:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   localgov_service_status_on_list:
     type: boolean_checkbox
-    weight: 9
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -95,52 +122,56 @@ content:
     settings: {  }
     third_party_settings: {  }
   localgov_services_parent:
-    type: options_select
-    weight: 3
+    type: entity_reference_autocomplete
+    weight: 0
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 14
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 10
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   simple_sitemap:
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 13
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 11
+    weight: 13
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 2
     region: content
     settings:
       size: 60
@@ -148,7 +179,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -157,7 +188,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }

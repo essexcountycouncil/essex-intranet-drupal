@@ -7,5 +7,8 @@ ignored_config_entities:
   - system.menu.devel
   - devel.toolbar.settings
   - devel.settings
+  - oidc_auto_login.settings
+  - 'simple_sitemap.settings:base_url'
+  - system.menu.devel
   - 'webform.webform.*'
   - 'webform.webform_options.*'
