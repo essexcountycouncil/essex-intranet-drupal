@@ -10,6 +10,7 @@ stackable: false
 storage: folder
 folder: ../config/envs/ddev
 module:
+  dblog: 0
   devel: 0
 theme: {  }
 complete_list: {  }
