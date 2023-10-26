@@ -1,0 +1,17 @@
+/* Added for https://nomensa.atlassian.net/browse/ECCI-355 */
+
+.layout--twocol {
+  display: block;
+}
+
+@media screen and (min-width: 1025px) {
+  .layout--twocol {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.layout--twocol > .layout__region > .paragraph--type--localgov-media-with-text:last-child {
+  /* from https://essex-intranet.ddev.site/themes/contrib/localgov_base/css/base/variables.css?s34rq6 */
+  margin-top: var(--spacing);
+}
