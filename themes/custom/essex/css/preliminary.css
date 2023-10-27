@@ -11,7 +11,67 @@
   }
 }
 
+.layout--twocol > .layout__region > .paragraph--type--localgov-media-with-text {
+  margin: var(--spacing-larger) 0 0;
+}
+
 .layout--twocol > .layout__region > .paragraph--type--localgov-media-with-text:last-child {
-  /* from https://essex-intranet.ddev.site/themes/contrib/localgov_base/css/base/variables.css?s34rq6 */
   margin-top: var(--spacing);
+}
+
+@media screen and (min-width: 1025px) {
+  .layout--twocol > .layout__region > .paragraph--type--localgov-media-with-text:last-child {
+    margin-top: var(--spacing-largest);
+  }
+}
+
+/* Added for https://nomensa.atlassian.net/browse/ECCI-471 */
+.field--name-localgov-subsites-content > .field__item:first-child {
+  margin-top: 0px;
+}
+
+.field--name-localgov-subsites-content > .field__item:first-child .layout__region--first {
+  margin-top: 0px;
+}
+
+.field--name-localgov-subsites-content > .field__item:first-child .layout__region--first > .paragraph--type--localgov-text > .field--name-localgov-text {
+  padding-top: 0px;
+}
+
+.featured-news__card:first-of-type, .news-card article {
+  margin-bottom: var(--spacing);
+}
+
+.featured-news__card article {
+  margin-bottom: 0px;
+}
+
+.paragraph--type--page-section .layout--twocol > .layout__region--second {
+  padding-left: 0px;
+}
+
+@media screen and (min-width: 1025px) {
+  .field--name-localgov-subsites-content > .field__item:first-child {
+    margin: var(--spacing-largest) clamp(var(--spacing-smallest), 2.5vw, var(--spacing-largest))
+  }
+
+  .field--name-localgov-subsites-content > .field__item:first-child .layout__region--first {
+    margin: var(--spacing-larger) 0;
+  }
+
+  .field--name-localgov-subsites-content > .field__item:first-child .layout__region--first > .paragraph--type--localgov-text > .field--name-localgov-text {
+    padding-top: clamp(0.75rem, 2vw, var(--spacing));
+  }
+
+  .featured-news__card article, .news-card article {
+    margin-bottom: var(--spacing-large);
+  }
+
+  .featured-news__card:first-of-type {
+    margin-bottom: var(--spacing-largest);
+  }
+
+  .paragraph--type--page-section .layout--twocol > .layout__region--second {
+    padding-left: calc(var(--spacing-largest) / 2);
+  }
 }
