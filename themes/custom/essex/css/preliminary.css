@@ -83,3 +83,25 @@
     padding-left: calc(var(--spacing-largest) / 2);
   }
 }
+
+/* Added for https://nomensa.atlassian.net/browse/ECCI-472 */
+.ecc-restricted-content {
+  width: 100%;
+  border: 2px solid black;
+  margin: calc(var(--spacing) * 2) 0;
+  padding: 1.25rem;
+}
+
+.ecc-restricted-content a.button {
+  display: block;
+}
+
+.ecc-restricted-content a.button:not(:focus) {
+  background: black;
+}
+
+@media screen and (min-width: 768px) {
+  .ecc-restricted-content {
+    padding: calc(var(--spacing) * 2.25) calc(var(--spacing) * 5);
+  }
+}
