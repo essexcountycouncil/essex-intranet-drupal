@@ -15,7 +15,13 @@ settings:
   allowed_values:
     -
       value: default
-      label: Default
+      label: Red
+    -
+      value: blue
+      label: Blue
+    -
+      value: black
+      label: Black
   allowed_values_function: ''
 module: options
 locked: false
