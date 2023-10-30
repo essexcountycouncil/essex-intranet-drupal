@@ -20,6 +20,11 @@ fonts:
     theme:
       css/fonts.css: {}
 
+news:
+  css:
+    theme:
+      css/news.css: {}
+
 gin:
   css:
     theme:
