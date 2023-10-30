@@ -25,6 +25,11 @@ gin:
     theme:
       css/gin.css: {}
 
+preliminary:
+  css:
+    theme:
+      css/preliminary.css: {}
+
 # sample-library
 #   css:
 #     theme:
