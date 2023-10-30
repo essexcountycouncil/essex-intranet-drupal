@@ -85,17 +85,16 @@
 }
 
 /* Added for https://nomensa.atlassian.net/browse/ECCI-472 */
-.ecc-restricted-content {
-  width: 100%;
-  border: 2px solid black;
-  margin: calc(var(--spacing) * 2) 0;
-  padding: 1.25rem;
-}
-
 .ecc-restricted-content a.button {
   display: flex;
   align-items: center;
+  color: white;
   font-weight: 400;
+  font-size: calc(var(--spacing) * 1.25);
+}
+
+.ecc-restricted-content a.button:focus {
+  color: black;
 }
 
 .ecc-restricted-content a.button > svg {
@@ -108,8 +107,15 @@
   background: black;
 }
 
+.ecc-restricted-content__container {
+  width: 100%;
+  border: 2px solid black;
+  margin: calc(var(--spacing) * 2) 0;
+  padding: 1.25rem;
+}
+
 @media screen and (min-width: 1025px) {
-  .ecc-restricted-content {
+  .ecc-restricted-content__container {
     padding: calc(var(--spacing) * 2.25) calc(var(--spacing) * 5);
   }
 }
