@@ -1,0 +1,10 @@
+uuid: 39e56c47-4aec-422c-9584-ba2eecfb39d0
+langcode: en
+status: true
+dependencies: {  }
+id: news_1_4
+label: 'News 1+4'
+icon_uuid: null
+icon_default: null
+description: 'One featured news item and four secondary news items'
+behavior_plugins: {  }
