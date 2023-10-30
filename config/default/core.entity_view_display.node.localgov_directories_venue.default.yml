@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.localgov_directories_venue.localgov_directory_title_sort
     - field.field.node.localgov_directories_venue.localgov_directory_website
     - field.field.node.localgov_directories_venue.localgov_location
+    - field.field.node.localgov_directories_venue.localgov_restricted_content
     - node.type.localgov_directories_venue
   module:
     - field_group
@@ -37,7 +38,7 @@ third_party_settings:
       label: Enquiries
       parent_name: ''
       region: content
-      weight: 3
+      weight: 4
       format_type: fieldset
       format_settings:
         classes: ''
@@ -51,7 +52,7 @@ third_party_settings:
       label: Venue
       parent_name: ''
       region: content
-      weight: 2
+      weight: 3
       format_type: fieldset
       format_settings:
         classes: ''
@@ -69,12 +70,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_content_owner:
     type: entity_reference_label
@@ -82,7 +83,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 5
     region: content
   field_content_sme:
     type: entity_reference_label
@@ -90,7 +91,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 11
+    weight: 6
     region: content
   localgov_directory_email:
     type: basic_string
@@ -105,7 +106,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   localgov_directory_job_title:
     type: string
@@ -173,4 +174,7 @@ hidden:
   localgov_directory_facets_select: true
   localgov_directory_search: true
   localgov_directory_title_sort: true
+  localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

@@ -1,0 +1,23 @@
+uuid: 193b10d4-bed9-4cd9-9f1e-faca33a8e202
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.localgov_restricted_content
+    - node.type.localgov_news_article
+id: node.localgov_news_article.localgov_restricted_content
+field_name: localgov_restricted_content
+entity_type: node
+bundle: localgov_news_article
+label: 'Restricted content'
+description: 'Set this flag if only authenticated users should see the full content of this news article.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Private
+  off_label: Public
+field_type: boolean

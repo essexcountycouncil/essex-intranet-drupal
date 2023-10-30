@@ -4,7 +4,9 @@ module:
   address: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
+  autologout: 0
   automated_cron: 0
+  autosave_form: 0
   block: 0
   block_classes: 0
   block_content: 0
@@ -17,6 +19,7 @@ module:
   config: 0
   config_filter: 0
   config_ignore: 0
+  config_split: 0
   contact: 0
   content_moderation: 0
   content_ownership: 0
@@ -28,7 +31,6 @@ module:
   datetime: 0
   datetime_range: 0
   dbal: 0
-  dblog: 0
   default_content: 0
   diff: 0
   dynamic_entity_reference: 0
@@ -47,7 +49,6 @@ module:
   entity_reference_revisions: 0
   entity_usage: 0
   entitygroupfield: 0
-  eu_cookie_compliance_gtm: 0
   facets: 0
   fathom_analytics: 0
   field: 0
@@ -116,6 +117,7 @@ module:
   localgov_paragraphs: 0
   localgov_paragraphs_layout: 0
   localgov_paragraphs_views: 0
+  localgov_restricted_content: 0
   localgov_review_date: 0
   localgov_roles: 0
   localgov_search: 0
@@ -180,6 +182,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  ultimate_cron: 0
   update: 0
   user: 0
   variationcache: 0

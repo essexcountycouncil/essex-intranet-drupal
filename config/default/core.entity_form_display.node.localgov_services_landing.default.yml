@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.localgov_services_landing.localgov_other_team_contacts
     - field.field.node.localgov_services_landing.localgov_phone
     - field.field.node.localgov_services_landing.localgov_popular_topics
+    - field.field.node.localgov_services_landing.localgov_restricted_content
     - field.field.node.localgov_services_landing.localgov_services_parent
     - field.field.node.localgov_services_landing.localgov_twitter
     - node.type.localgov_services_landing
@@ -91,7 +92,7 @@ third_party_settings:
       label: tabs
       region: content
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: tabs
       format_settings:
         classes: ''
@@ -177,6 +178,22 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+    group_privacy:
+      children:
+        - localgov_restricted_content
+      label: Privacy
+      region: content
+      parent_name: ''
+      weight: -1
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+        weight: 0
 _core:
   default_config_hash: XXqqzWUP3BrQbXNAyprVCMevVpSqPGLoD-mQh1xTeBI
 id: node.localgov_services_landing.default
@@ -196,7 +213,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -336,6 +353,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  localgov_restricted_content:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   localgov_review_date:
     type: review_date
     weight: 1
@@ -373,13 +397,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -391,14 +415,14 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 7
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -413,7 +437,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -422,7 +446,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.localgov_services_landing.localgov_other_team_contacts
     - field.field.node.localgov_services_landing.localgov_phone
     - field.field.node.localgov_services_landing.localgov_popular_topics
+    - field.field.node.localgov_services_landing.localgov_restricted_content
     - field.field.node.localgov_services_landing.localgov_services_parent
     - field.field.node.localgov_services_landing.localgov_twitter
     - node.type.localgov_services_landing
@@ -134,6 +135,16 @@ content:
     third_party_settings: {  }
     weight: 8
     region: content
+  restricted_content_sign_in:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  restricted_content_sign_in_with_message:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: content
 hidden:
   content_moderation_control: true
   entitygroupfield: true
@@ -144,5 +155,6 @@ hidden:
   localgov_common_tasks: true
   localgov_contact_us_online: true
   localgov_other_team_contacts: true
+  localgov_restricted_content: true
   localgov_services_parent: true
   search_api_excerpt: true

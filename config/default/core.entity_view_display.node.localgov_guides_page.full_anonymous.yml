@@ -1,0 +1,43 @@
+uuid: e64733ce-2b84-440c-b150-5a0de548bd5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full_anonymous
+    - field.field.node.localgov_guides_page.body
+    - field.field.node.localgov_guides_page.field_content_owner
+    - field.field.node.localgov_guides_page.field_content_sme
+    - field.field.node.localgov_guides_page.field_non_publishable_notes
+    - field.field.node.localgov_guides_page.localgov_guides_parent
+    - field.field.node.localgov_guides_page.localgov_guides_section_title
+    - field.field.node.localgov_guides_page.localgov_page_components
+    - field.field.node.localgov_guides_page.localgov_restricted_content
+    - node.type.localgov_guides_page
+  module:
+    - user
+_core:
+  default_config_hash: _jFk9AKHettBbvoWdwTfQ7IaOGSgh-yXRMqKWGindEQ
+id: node.localgov_guides_page.full_anonymous
+targetEntityType: node
+bundle: localgov_guides_page
+mode: full_anonymous
+content:
+  restricted_content_sign_in_with_message:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  entitygroupfield: true
+  field_content_owner: true
+  field_content_sme: true
+  field_non_publishable_notes: true
+  links: true
+  localgov_guides_parent: true
+  localgov_guides_section_title: true
+  localgov_page_components: true
+  localgov_restricted_content: true
+  restricted_content_sign_in: true
+  search_api_excerpt: true

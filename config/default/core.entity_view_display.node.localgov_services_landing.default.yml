@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.localgov_services_landing.localgov_other_team_contacts
     - field.field.node.localgov_services_landing.localgov_phone
     - field.field.node.localgov_services_landing.localgov_popular_topics
+    - field.field.node.localgov_services_landing.localgov_restricted_content
     - field.field.node.localgov_services_landing.localgov_services_parent
     - field.field.node.localgov_services_landing.localgov_twitter
     - node.type.localgov_services_landing
@@ -165,4 +166,7 @@ hidden:
   localgov_common_tasks: true
   localgov_contact_us_online: true
   localgov_other_team_contacts: true
+  localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

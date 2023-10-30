@@ -1,0 +1,10 @@
+uuid: f2103a93-fff1-400a-a5a8-2fc04cb232c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.message_anonymous
+label: 'Message for anonymous users'
+targetEntityType: node
+cache: true

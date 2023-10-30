@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.localgov_event.localgov_event_price
     - field.field.node.localgov_event.localgov_event_provider
     - field.field.node.localgov_event.localgov_event_venue
+    - field.field.node.localgov_event.localgov_restricted_content
     - node.type.localgov_event
   module:
     - date_recur
@@ -36,12 +37,12 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   localgov_event_date:
     type: date_recur_basic_formatter
@@ -56,7 +57,7 @@ content:
       same_end_date_format_type: localgov_event_date_hour
       interpreter: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   localgov_event_image:
     type: entity_reference_entity_view
@@ -65,7 +66,7 @@ content:
       view_mode: localgov_event_thumbnail
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   entitygroupfield: true
@@ -79,4 +80,7 @@ hidden:
   localgov_event_price: true
   localgov_event_provider: true
   localgov_event_venue: true
+  localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true
