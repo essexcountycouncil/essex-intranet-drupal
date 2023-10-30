@@ -93,14 +93,22 @@
 }
 
 .ecc-restricted-content a.button {
-  display: block;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+}
+
+.ecc-restricted-content a.button > svg {
+  width: 21px;
+  height: 25px;
+  margin-right: var(--spacing);
 }
 
 .ecc-restricted-content a.button:not(:focus) {
   background: black;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1025px) {
   .ecc-restricted-content {
     padding: calc(var(--spacing) * 2.25) calc(var(--spacing) * 5);
   }
