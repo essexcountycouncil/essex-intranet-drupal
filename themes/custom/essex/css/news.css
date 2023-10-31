@@ -257,3 +257,34 @@ div:has(.featured-teaser),
         right: 10px;
     }
 }
+
+
+/* News 1+4 component */
+
+@media screen and (min-width: 768px) {
+    .paragraph--type--news-1-4 {
+        display: flex;
+        gap: var(--spacing);
+    }
+
+    .paragraph--type--news-1-4 .featured-news__card {
+        flex: 0 0 50%;
+    }
+
+    .paragraph--type--news-1-4 .featured-news__card:first-of-type {
+        margin-bottom: 0;
+    }
+
+    .paragraph--type--news-1-4 .featured-news__card article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .paragraph--type--news-1-4 .featured-news__card .card-image img {
+        position: static;
+    }
+
+    .paragraph--type--news-1-4 .featured-news__card .card-content {
+        height: 100%;
+    }
+}
