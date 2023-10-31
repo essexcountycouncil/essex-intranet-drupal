@@ -23,6 +23,10 @@
   .layout--twocol > .layout__region > .paragraph--type--localgov-media-with-text:last-child {
     margin-top: var(--spacing-largest);
   }
+
+  .layout--twocol > .layout__region > .paragraph--type--localgov-media-with-text {
+    margin-top: 0px;
+  }
 }
 
 .featured-news__card article,
