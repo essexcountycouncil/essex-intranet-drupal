@@ -25,6 +25,50 @@
   }
 }
 
+.featured-news__card article,
+.news-card article {
+  background-color: transparent;
+}
+
+@media (min-width: 641px) {
+  .news-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    grid-gap: 1em;
+    margin: 0;
+  }
+
+  .news-card article .card-image,
+  .news-card article .card-content {
+    grid-column: 1 / span 3;
+  }
+
+  .featured-news__card .card-image {
+    grid-column: 1 / span 2;
+  }
+
+  .featured-news__card article .card-content {
+    grid-column: 3 / span 2;
+    min-height: 240px;
+  }
+
+  .featured-news__card article .card-content {
+    padding: 1.25rem 1rem;
+  }
+
+  .featured-news__card article {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .featured-news__card article .card-content {
+    grid-column: 3 / span 2;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 /* Added for https://nomensa.atlassian.net/browse/ECCI-471 */
 .field--name-localgov-subsites-content > .field__item:first-child {
   margin-top: 0px;
@@ -38,7 +82,8 @@
   padding-top: 0px;
 }
 
-.featured-news__card:first-of-type, .news-card article {
+.featured-news__card:first-of-type,
+.news-card article {
   margin-bottom: var(--spacing);
 }
 
@@ -67,7 +112,8 @@
     padding-top: clamp(0.75rem, 2vw, var(--spacing));
   }
 
-  .featured-news__card article, .news-card article {
+  .featured-news__card article,
+  .news-card article {
     margin-bottom: var(--spacing-large);
   }
 
