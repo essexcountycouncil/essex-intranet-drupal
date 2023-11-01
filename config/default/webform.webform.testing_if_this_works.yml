@@ -1,71 +1,18 @@
-uuid: 674aa2f3-d9fc-4216-9383-612a7a6bd87a
+uuid: f9aae8e2-63c5-42e0-87e1-65128f4981aa
 langcode: en
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 1
+uid: 6
 template: false
 archive: false
-id: feedback_form
-title: 'Feedback Form'
-description: "For providing feedback to content\r\n<div id=\"extension-host\">&nbsp;</div>"
+id: testing_if_this_works
+title: 'Testing if this works'
+description: ''
 category: ''
-elements: |-
-  feedback:
-    '#type': webform_wizard_page
-    '#title': Feedback
-    reference:
-      '#type': hidden
-      '#title': Reference
-      '#prepopulate': true
-    content_display:
-      '#type': view
-      '#display_on': view
-      '#name': content_feedback
-      '#display_id': embed_feedback_reference
-      '#arguments':
-        - '[webform_submission:values:reference]'
-    how_would_you_rate_our_website:
-      '#type': radios
-      '#title': 'How would you rate our website'
-      '#options':
-        good: Good
-        poor: Poor
-    what_did_you_like_most_about_the_page_:
-      '#type': radios
-      '#title': 'What did you like most about the page?'
-      '#options':
-        found_quickly: 'I found it quickly'
-        correct_information: 'It had the right information'
-        easy_understand: 'The information was easy to understand'
-        other: 'Another reason'
-      '#states':
-        visible:
-          ':input[name="how_would_you_rate_our_website"]':
-            value: good
-    what_did_you_dislike_most_about_the_page_:
-      '#type': radios
-      '#title': 'What did you dislike most about the page?'
-      '#options':
-        hard_find: 'It was hard to find'
-        wrong_information: 'It doesn''t have the information I need'
-        hard_understand: 'It was hard to understand'
-        other: 'Another reason'
-      '#states':
-        visible:
-          ':input[name="how_would_you_rate_our_website"]':
-            value: poor
-    give_us_more_detailed_feedback:
-      '#type': textarea
-      '#title': 'Give us more detailed feedback'
-      '#description': |-
-        Please do not enter any personal information in this space
-        <div id="extension-host">&nbsp;</div>
-    do_you_love_this_website_so_much_:
-      '#type': checkbox
-      '#title': 'Do you love this website so much?'
+elements: null
 css: ''
 javascript: ''
 settings:
@@ -153,6 +100,8 @@ settings:
   wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -168,10 +117,10 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: inline
+  confirmation_type: page
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: "&nbsp;\r\n<div id=\"coplmfnphahpcknbchcehdikbdieognn\">&nbsp;</div>"
+  confirmation_message: ''
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''

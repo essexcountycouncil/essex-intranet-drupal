@@ -119,3 +119,39 @@
     padding: calc(var(--spacing) * 2.25) calc(var(--spacing) * 5);
   }
 }
+
+/* Added for  */
+
+
+.ecc-events-listing-block-view article {
+  flex: 0 1 100%;
+}
+
+.ecc-events-listing-block-view article > .card-content {
+  padding: 0px;
+}
+
+.ecc-events-listing-block-view article time {
+  display: block;
+  margin-bottom: var(--spacing);
+  color: #6F6F6F;
+  font-size: 0.75rem;
+}
+
+.view-localgov-events-listing .event-info h3 a,
+.view-localgov-events-listing .more-link a {
+  color: var(--color-link);
+}
+
+.newsroom-teaser--has-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 640px) {
+  .ecc-events-listing-block-view article {
+    flex: 0 1 31%;
+  }
+}
