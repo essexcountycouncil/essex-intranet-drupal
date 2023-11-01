@@ -74,7 +74,7 @@
   set classes = [
   'node',
   'newsroom-teaser',
-  'newsroom-teaser--has-image',
+  content.localgov_event_image ? 'newsroom-teaser--has-image',
   'node--type-' ~ node.bundle|clean_class,
   node.isPromoted() ? 'node--promoted',
   node.isSticky() ? 'node--sticky',
