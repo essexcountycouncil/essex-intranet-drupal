@@ -181,12 +181,13 @@
 }
 
 /* Added for https://nomensa.atlassian.net/browse/ECCI-474 */
-.ecc-events-listing-block-view article {
+.ecc-events-listing-block-view .view-content .ecc-event-listing-wrapper {
   flex: 0 1 100%;
+  height: auto;
 }
 
 .ecc-events-listing-block-view article > .card-content {
-  padding: 0px;
+  padding: 0px var(--spacing);
 }
 
 .ecc-events-listing-block-view article time {
@@ -209,7 +210,7 @@
 }
 
 @media screen and (min-width: 640px) {
-  .ecc-events-listing-block-view article {
+  .ecc-events-listing-block-view .view-content .ecc-event-listing-wrapper {
     flex: 0 1 31%;
   }
 }

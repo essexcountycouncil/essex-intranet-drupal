@@ -22,6 +22,7 @@ dependencies:
     - node.type.localgov_event
   module:
     - date_recur
+    - field_formatter_class
     - text
     - user
 _core:
@@ -36,7 +37,9 @@ content:
     label: hidden
     settings:
       trim_length: 600
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 3
     region: content
   content_moderation_control:

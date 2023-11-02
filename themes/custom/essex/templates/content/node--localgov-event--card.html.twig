@@ -83,26 +83,28 @@
 ]
 %}
 
-<article{{ attributes.addClass(classes).removeAttribute('role') }}>
+<div class="ecc-event-listing-wrapper">
+  <article{{ attributes.addClass(classes).removeAttribute('role') }}>
 
-  <div class="card-image">
-    {{ content.localgov_event_image }}
-  </div>
-
-  <div class="card-content">
-    {{ title_prefix }}
-    {% if label and not page %}
-      <h3{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h3>
-    {% endif %}
-    {{ title_suffix }}
-
-    {{ content.localgov_event_date }}
-
-    <div{{ content_attributes.addClass('node__content') }}>
-      {{ content|without('localgov_event_image', 'localgov_event_call_to_action', 'localgov_event_date') }}
+    <div class="card-image">
+      {{ content.localgov_event_image }}
     </div>
-  </div>
 
-</article>
+    <div class="card-content">
+      {{ title_prefix }}
+      {% if label and not page %}
+        <h3{{ title_attributes }}>
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h3>
+      {% endif %}
+      {{ title_suffix }}
+
+      {{ content.localgov_event_date }}
+
+      <div{{ content_attributes.addClass('node__content') }}>
+        {{ content|without('localgov_event_image', 'localgov_event_call_to_action', 'localgov_event_date') }}
+      </div>
+    </div>
+
+  </article>
+</div>
