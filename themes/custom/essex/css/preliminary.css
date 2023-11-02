@@ -73,6 +73,16 @@
   }
 }
 
+
+/* Added for https://nomensa.atlassian.net/browse/ECCI-418 */
+
+@media screen and (max-width: 640px) {
+  .layout--threecol-33-34-33 {
+    display: block;
+  }
+}
+
+
 /* Added for https://nomensa.atlassian.net/browse/ECCI-471 */
 .field--name-localgov-subsites-content > .field__item:first-child {
   margin-top: 0px;
