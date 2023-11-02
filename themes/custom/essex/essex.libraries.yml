@@ -20,6 +20,11 @@ fonts:
     theme:
       css/fonts.css: {}
 
+news:
+  css:
+    theme:
+      css/news.css: {}
+
 gin:
   css:
     theme:
@@ -29,6 +34,10 @@ preliminary:
   css:
     theme:
       css/preliminary.css: {}
+
+custom-scripts:
+  js:
+    js/clickable-teaser.js: {}
 
 # sample-library
 #   css:
