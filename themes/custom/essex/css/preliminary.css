@@ -184,5 +184,4 @@
 .ecc-restricted-content__container .content {
   font-size: calc(var(--spacing) * 1.875);
   font-family: var(--font-heading-3);
-  font-weight: var(--heading-3-font-weight);
 }
