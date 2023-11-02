@@ -120,9 +120,7 @@
   }
 }
 
-/* Added for  */
-
-
+/* Added for https://nomensa.atlassian.net/browse/ECCI-474 */
 .ecc-events-listing-block-view article {
   flex: 0 1 100%;
 }
