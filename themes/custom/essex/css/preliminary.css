@@ -150,7 +150,8 @@
   align-items: center;
   color: white;
   font-weight: 400;
-  font-size: calc(var(--spacing) * 1.25);
+  font-size: calc(var(--spacing));
+  margin-bottom: var(--spacing);
 }
 
 .ecc-restricted-content a.button:focus {
@@ -158,9 +159,23 @@
 }
 
 .ecc-restricted-content a.button > svg {
-  width: 21px;
-  height: 25px;
-  margin-right: var(--spacing);
+  width: 17px;
+  height: 21px;
+  margin-right: calc(var(--spacing) / 2);
+}
+
+/* Small change added for https://nomensa.atlassian.net/browse/ECCI-420 */
+@media screen and (min-width: 640px) {
+  .ecc-restricted-content a.button {
+    font-size: calc(var(--spacing) * 1.25);
+    margin-bottom: 0px;
+  }
+
+  .ecc-restricted-content a.button > svg {
+    width: 21px;
+    height: 25px;
+    margin-right: var(--spacing);
+  }
 }
 
 .ecc-restricted-content a.button:not(:focus) {
