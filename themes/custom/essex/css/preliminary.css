@@ -150,8 +150,7 @@
   align-items: center;
   color: white;
   font-weight: 400;
-  font-size: calc(var(--spacing));
-  margin-bottom: var(--spacing);
+  font-size: calc(var(--spacing) * 1.3125);
 }
 
 .ecc-restricted-content a.button:focus {
@@ -193,4 +192,10 @@
   .ecc-restricted-content__container {
     padding: calc(var(--spacing) * 2.25) calc(var(--spacing) * 5);
   }
+}
+
+/* Added for https://nomensa.atlassian.net/browse/ECCI-421 */
+.ecc-restricted-content__container .content {
+  font-size: calc(var(--spacing) * 1.875);
+  font-family: var(--font-heading-3);
 }
