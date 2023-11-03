@@ -99,7 +99,9 @@
       {% endif %}
       {{ title_suffix }}
 
-      {{ content.localgov_event_date }}
+      <time datetime="{{ node.localgov_event_date.value }}" class="news-article__metadata-item news-article__metadata-item--date">
+        {{ content.localgov_event_date }}
+      </time>
 
       <div{{ content_attributes.addClass('node__content') }}>
         {{ content|without('localgov_event_image', 'localgov_event_call_to_action', 'localgov_event_date') }}
