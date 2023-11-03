@@ -1,6 +1,8 @@
 <div>
-    <p>{{ 'This page is restricted, please sign in to see the full page.'|t }}</p>
-    <div>
-        <a href="/user/login?destination={{ path('<current>') }}">{{ 'Sign in'|t }}</a>
-    </div>
+  <p>{{ 'This page is restricted, please sign in to see the full page.'|t }}</p>
+  <div>
+    <a href="/user/login?destination={{ destination ?? path('<current>') }}">
+      {{ 'Sign in'|t }}
+    </a>
+  </div>
 </div>
