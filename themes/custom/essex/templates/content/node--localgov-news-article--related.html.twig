@@ -1,9 +1,7 @@
 {#
 /**
  * @file
- *
- * Copied from localgov_base. It could be simplified if required, as many
- * fields are hidden in the View Display.
+ * Theme override to display a node.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -17,7 +15,7 @@
  *   Calling other methods, such as node.delete(), will result in an exception.
  *   See \Drupal\node\Entity\Node for a full list of public properties and
  *   methods for the node object.
- * - label: The title of the node.
+ * - label: (optional) The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -25,8 +23,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: Themed creation date field.
- * - author_name: Themed author name field.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -66,64 +64,41 @@
  *   is an administrator.
  *
  * @see template_preprocess_node()
+ *
+ * @todo Remove the id attribute (or make it a class), because if that gets
+ *   rendered twice on a page this is invalid CSS for example: two lists
+ *   in different view modes.
  */
 #}
-
 {%
   set classes = [
-  'news-article',
-  'node',
-  'node--type-' ~ node.bundle|clean_class,
-  node.isPromoted() ? 'node--promoted',
-  node.isSticky() ? 'node--sticky',
-  not node.isPublished() ? 'node--unpublished',
-  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-]
+    'ecc-related-news-item',
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
 %}
 
-{% if not localgov_base_remove_css %}
-  {{ attach_library('localgov_base/news') }}
-{% endif %}
+<article{{ attributes.addClass(classes).removeAttribute('role') }}>
 
-<article{{ attributes.addClass(classes) }}>
-  <div class="lgd-container padding-horizontal">
-    <div class="lgd-row">
-      <div class="lgd-row__two-thirds">
-        <div class="news-article__metadata">
-          <time datetime="{{ node.localgov_news_date.value }}" class="news-article__metadata-item news-article__metadata-item--date">
-            {{ content.localgov_news_date.0['#markup'] }}
-          </time>
-          {% if node.localgov_news_categories.value %}
-            <ul class="news-article__metadata-item news-article__metadata-item--categories" aria-label="{{ 'Article categories'|t }}">
-              {% for key,value in node.localgov_news_categories.value %}
-                <li class="news-article__category">
-                  {{ content.localgov_news_categories[key] }}
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </div>
+  {{ content.field_media_image }}
 
-        <h1{{ title_attributes.addClass('news-article__title') }}>
-          {{ label }}
-        </h1>
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ title_prefix }}
+    {% if label and not page %}
+      <h3{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h3>
+    {% endif %}
+    {{ title_suffix }}
 
-        <div{{ content_attributes.addClass('news-article__content node__content') }}>
+    {{ content.localgov_news_date }}
 
-          {{ content|without('localgov_news_date', 'localgov_news_categories', 'localgov_news_related', 'sign_in') }}
+    {{ content|without('localgov_news_date', 'field_media_image') }}
 
-          {% if view_mode is not same as('full_anonymous') %}
-            {% if node.localgov_news_related.value %}
-              <h2 class="news-article__related-title">{{ 'Related news'|t }}</h2>
-              {{ content.localgov_news_related }}
-            {% endif %}
-          {% endif %}
-
-          {{ elements.sign_in }}
-
-        </div>
-      </div>
-    </div>
   </div>
 
 </article>
