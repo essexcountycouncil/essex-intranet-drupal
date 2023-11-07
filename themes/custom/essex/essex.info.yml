@@ -11,7 +11,9 @@ libraries-extend:
     - essex/variables
     - essex/overrides
     - essex/fonts
+    - essex/news
     - essex/preliminary
+    - essex/custom-scripts
     # - essex/other-library-to-load-on-every-page
     # - essex/other-library-to-load-on-every-page
   # Add libraries here that extend specific libraries.

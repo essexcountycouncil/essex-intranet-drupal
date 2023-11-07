@@ -112,11 +112,9 @@
 
           {{ content|without('localgov_news_date', 'localgov_news_categories', 'localgov_news_related', 'sign_in') }}
 
-          {% if view_mode is not same as('full_anonymous') %}
-            {% if node.localgov_news_related.value %}
-              <h2 class="news-article__related-title">{{ 'Related news'|t }}</h2>
-              {{ content.localgov_news_related }}
-            {% endif %}
+          {% if node.localgov_news_related.value %}
+            <h2 class="news-article__related-title">{{ 'Related news'|t }}</h2>
+            {{ content.localgov_news_related }}
           {% endif %}
 
           {{ elements.sign_in }}

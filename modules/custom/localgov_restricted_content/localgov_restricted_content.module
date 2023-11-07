@@ -59,15 +59,15 @@ function localgov_restricted_content_form_node_form_alter(&$form, FormStateInter
 function localgov_restricted_content_entity_extra_field_info() {
   $return = [];
   $bundle_info = \Drupal::service('entity_type.bundle.info')->getBundleInfo('node');
-  foreach ($bundle_info as $bundle => $bundle_info) {
+  foreach ($bundle_info as $bundle => $bundle_info_item) {
     $return['node'][$bundle]['display']['restricted_content_sign_in'] = [
-      'label' => t('Sign in link'),
-      'description' => t('Display sign in link at the bottom'),
+      'label' => t('Sign in link for listings'),
+      'description' => t('Display sign in link on teasers, cards, etc.'),
       'visible' => TRUE,
     ];
     $return['node'][$bundle]['display']['restricted_content_sign_in_with_message'] = [
-      'label' => t('Sign in link with message'),
-      'description' => t('Display sign in link with message at the bottom'),
+      'label' => t('Sign in link for pages'),
+      'description' => t('Display sign in link with message on a restricted content page.'),
       'visible' => TRUE,
     ];
   }
@@ -93,6 +93,7 @@ function localgov_restricted_content_entity_view(array &$build, EntityInterface 
   elseif (isset($content['restricted_content_sign_in'])) {
     $build['sign_in'] = [
       '#theme' => 'localgov_restricted_content_sign_in',
+      '#destination' => $entity->toUrl(),
     ];
   }
 }
@@ -104,9 +105,15 @@ function localgov_restricted_content_theme($existing, $type, $theme, $path) {
   return [
     'localgov_restricted_content_sign_in' => [
       'render element' => 'elements',
+      'variables' => [
+        'destination' => NULL,
       ],
+    ],
     'localgov_restricted_content_sign_in_with_message' => [
       'render element' => 'elements',
+      'variables' => [
+        'destination' => NULL,
+      ],
     ],
   ];
 }
