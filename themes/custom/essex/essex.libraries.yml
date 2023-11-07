@@ -30,6 +30,11 @@ preliminary:
     theme:
       css/preliminary.css: {}
 
+curve:
+  css:
+    theme:
+      css/curve.css: { preprocess: false }
+
 # sample-library
 #   css:
 #     theme:

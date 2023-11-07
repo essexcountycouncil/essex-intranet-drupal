@@ -1,0 +1,39 @@
+uuid: e84acacf-909d-4b81-a256-a047cb8020e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.page_section.field_curve
+    - field.field.paragraph.page_section.localgov_width_of_section
+    - paragraphs.paragraphs_type.page_section
+  module:
+    - field_formatter_class
+    - options
+id: paragraph.page_section.default
+targetEntityType: paragraph
+bundle: page_section
+mode: default
+content:
+  field_curve:
+    type: boolean
+    label: hidden
+    settings:
+      format: on-off
+      format_custom_false: 'Off'
+      format_custom_true: 'On'
+    third_party_settings:
+      field_formatter_class:
+        class: hidden
+    weight: 1
+    region: content
+  localgov_width_of_section:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: hidden
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
