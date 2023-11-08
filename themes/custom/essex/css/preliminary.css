@@ -360,3 +360,10 @@
   word-wrap: break-word;
 }
 /* End */
+
+/* Added for https://nomensa.atlassian.net/browse/ECCI-489 */
+.ecc-pager .pager__items li.is-active {
+  font-weight: 600;
+}
+
+/* End */
