@@ -1,5 +1,4 @@
 /* Added for https://nomensa.atlassian.net/browse/ECCI-355 */
-
 .layout--twocol {
   display: block;
 }
@@ -72,16 +71,15 @@
     flex-direction: column;
   }
 }
-
+/* End */
 
 /* Added for https://nomensa.atlassian.net/browse/ECCI-418 */
-
 @media screen and (max-width: 640px) {
   .layout--threecol-33-34-33 {
     display: block;
   }
 }
-
+/* End */
 
 /* Added for https://nomensa.atlassian.net/browse/ECCI-471 */
 .field--name-localgov-subsites-content > .field__item:first-child {
@@ -144,6 +142,8 @@
   }
 }
 
+/* End */
+
 /* Added for https://nomensa.atlassian.net/browse/ECCI-472 */
 .ecc-restricted-content a.button {
   display: flex;
@@ -162,6 +162,8 @@
   height: 21px;
   margin-right: calc(var(--spacing) / 2);
 }
+
+/* End */
 
 /* Small change added for https://nomensa.atlassian.net/browse/ECCI-420 */
 @media screen and (min-width: 640px) {
@@ -194,11 +196,104 @@
   }
 }
 
+/* End */
+
+/* Added for https://nomensa.atlassian.net/browse/ECCI-480 */
+.ecc-related-news-container .field__item {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+
+.ecc-related-news-container article {
+  display: block;
+}
+
+.ecc-related-news-container article img {
+  aspect-ratio: 383 / 241;
+  object-fit: cover;
+  width: 100%;
+}
+
+.ecc-related-news-item {
+  margin-bottom: calc(var(--spacing) * 2.063);
+  border-bottom: 1px solid #C7C7C7;
+}
+
+.ecc-related-news-item .ecc-restricted-content {
+  margin-bottom: var(--vertical-rhythm-spacing);
+}
+
+@media screen and (min-width: 960px) {
+  .ecc-related-news-container article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    height: 100%;
+  }
+
+  .ecc-related-news-container article > .node__content {
+    grid-column: 2 / span 2;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ecc-related-news-item {
+    padding-bottom: calc(var(--spacing) * 3.125);
+  }
+}
+
+/* End */
+
 /* Added for https://nomensa.atlassian.net/browse/ECCI-421 */
 .ecc-restricted-content__container .content {
   font-size: calc(var(--spacing) * 1.875);
   font-family: var(--font-heading-3);
 }
+/* end */
+
+/* Added for border bottom hotfix - overriding styles in news.css from line 43 to line 52 */
+.newsroom-teaser,
+.featured-news__card article,
+.news-card article {
+  border: none;
+}
+
+.newsroom-teaser,
+.newsroom-teaser > .newsroom-teaser__content,
+.featured-news__card article > .card-content,
+.news-card article > .card-content {
+  position: relative;
+}
+
+.featured-news__card article > .card-content:before,
+.news-card article > .card-content:before,
+.newsroom-teaser:before,
+.newsroom-teaser > .newsroom-teaser__content .newsroom-teaser__summary:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-accent)
+}
+
+.newsroom-teaser:before {
+  display: none;
+}
+
+@media screen and (min-width: 640px) {
+  .newsroom-teaser:before {
+    display: block;
+  }
+
+  .newsroom-teaser > .newsroom-teaser__content .newsroom-teaser__summary:before {
+    display: none;
+  }
+}
+/* End */
 
 /* Added for https://nomensa.atlassian.net/browse/ECCI-481 */
 .newsroom-teaser,
@@ -206,5 +301,4 @@
 .news-card article {
   word-wrap: break-word;
 }
-
-/* End of https://nomensa.atlassian.net/browse/ECCI-481 */
+/* End */
