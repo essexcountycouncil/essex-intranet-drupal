@@ -59,7 +59,9 @@ function localgov_restricted_content_form_node_form_alter(&$form, FormStateInter
   // form.
   if (RESTRICTED_CONTENT_FORM_FLAG) {
     switch ($form_id) {
+      case 'node_localgov_news_article_form':
       case 'node_localgov_news_article_edit_form':
+      case 'node_localgov_newsroom_form':
       case 'node_localgov_newsroom_edit_form':
         break;
 
