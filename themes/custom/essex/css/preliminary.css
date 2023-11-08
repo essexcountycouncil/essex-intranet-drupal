@@ -199,3 +199,12 @@
   font-size: calc(var(--spacing) * 1.875);
   font-family: var(--font-heading-3);
 }
+
+/* Added for https://nomensa.atlassian.net/browse/ECCI-481 */
+.newsroom-teaser,
+.featured-news__card article,
+.news-card article {
+  word-wrap: break-word;
+}
+
+/* End of https://nomensa.atlassian.net/browse/ECCI-481 */
