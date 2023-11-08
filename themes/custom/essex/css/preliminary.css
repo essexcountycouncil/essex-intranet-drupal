@@ -145,12 +145,21 @@
 /* End */
 
 /* Added for https://nomensa.atlassian.net/browse/ECCI-472 */
+.ecc-restricted-content {
+  margin-bottom: var(--spacing);
+}
+
+.news-article__content .ecc-restricted-content {
+  margin-bottom: 0px;
+}
+
 .ecc-restricted-content a.button {
   display: flex;
   align-items: center;
   color: white;
   font-weight: 400;
   font-size: calc(var(--spacing) * 1.3125);
+  padding: calc(var(--spacing) / 4) calc(var(--spacing) * 1.125);
 }
 
 .ecc-restricted-content a.button:focus {
@@ -167,15 +176,17 @@
 
 /* Small change added for https://nomensa.atlassian.net/browse/ECCI-420 */
 @media screen and (min-width: 640px) {
+  .ecc-restricted-content {
+    margin-bottom: 0px;
+  }
+
   .ecc-restricted-content a.button {
     font-size: calc(var(--spacing) * 1.25);
     margin-bottom: 0px;
   }
 
   .ecc-restricted-content a.button > svg {
-    width: 21px;
-    height: 25px;
-    margin-right: var(--spacing);
+    margin-right: calc(var(--spacing) * 0.75);
   }
 }
 
@@ -293,6 +304,53 @@
     display: none;
   }
 }
+/* End */
+
+/* Added for https://nomensa.atlassian.net/browse/ECCI-472 */
+.featured-news__card .node--view-mode-card-anonymous .card-content .node__content,
+.news-card .node--view-mode-card-anonymous .card-content .node__content {
+  justify-content: end;
+}
+
+.featured-news__card .card-content h3,
+.news-card .card-content h3 {
+  font-size: calc(var(--spacing) * 1.563);
+  margin-bottom: 0px;
+}
+
+.featured-news__card article .card-content,
+.news-card article .card-content {
+  position: relative;
+  font-size: calc(var(--spacing) * 1.125);
+}
+
+.news-card .field--type-datetime,
+.featured-news__card .field--type-datetime {
+  font-size: calc(var(--spacing) * 1.125);
+  margin-top: calc(var(--spacing) * 0.75);
+  margin-bottom: var(--spacing);
+}
+
+.featured-news__card .field--type-datetime,
+.news-card .field--type-datetime {
+  position: relative;
+  text-align: left;
+  bottom: auto;
+  right: auto;
+}
+
+.featured-news__card article .card-content,
+.news-card article .card-content {
+  padding: calc(var(--spacing) * 1.25);
+}
+
+@media screen and (min-width: 768px) {
+  .featured-news__card .field--type-datetime,
+  .news-card .field--type-datetime {
+    position: relative;
+  }
+}
+
 /* End */
 
 /* Added for https://nomensa.atlassian.net/browse/ECCI-481 */
