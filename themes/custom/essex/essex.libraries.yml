@@ -35,6 +35,11 @@ preliminary:
     theme:
       css/preliminary.css: {}
 
+curve:
+  css:
+    theme:
+      css/curve.css: { preprocess: false }
+
 custom-scripts:
   js:
     js/clickable-teaser.js: {}
