@@ -63,9 +63,11 @@ elements: |-
       '#description': |-
         Please do not enter any personal information in this space
         <div id="extension-host">&nbsp;</div>
-    do_you_love_this_website_so_much_:
-      '#type': checkbox
-      '#title': 'Do you love this website so much?'
+  have_you_liked_our_new_intranet_site_:
+    '#type': textfield
+    '#title': 'Have you liked our new Intranet site? '
+    '#description': 'Please give your feed back&nbsp;'
+    '#required': true
 css: ''
 javascript: ''
 settings:
