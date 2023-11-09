@@ -367,3 +367,17 @@
 }
 
 /* End */
+
+/* Added for https://nomensa.atlassian.net/browse/ECCI-417 */
+.featured-news__card .node--view-mode-card-anonymous .card-content .node__content {
+  height: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph--type--news-1-4 .featured-news__card .card-content {
+    height: 100%;
+    min-height: auto;
+  }
+}
+
+/* End */
