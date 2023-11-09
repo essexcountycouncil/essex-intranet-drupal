@@ -1,25 +1,26 @@
 (function ($, Drupal, drupalSettings) {
 
     'use strict';
-  
+
     Drupal.behaviors.mybehavior = {
       attach: function (context, settings) {
-        const newsroomTeasers = document.querySelectorAll('.newsroom-teaser, .news-card article, .featured-news__card');
+        const elements = ['.newsroom-teaser', '.news-card article', '.featured-news__card']
+        const newsroomTeasers = context.querySelectorAll(elements.toString());
+
+        if (!newsroomTeasers.length > 0) return
 
         newsroomTeasers.forEach(function(teaser) {
-            teaser.addEventListener('click', function() {
-                const linkHref = $(this).find('h3 a').attr('href');
+            let link = $(teaser).find('h3 a')
+            const loginRedirect = $(teaser).find('.ecc-restricted-content').find('a').attr('href');
 
-                if (linkHref !== '') {
-                    window.location = linkHref;
-                    return false;
-                } else {
-                    return false;
-                }
+            // replace links on card titles IF it is restricted
+            loginRedirect && link.attr('href', loginRedirect)
+
+            teaser.addEventListener('click', function() {
+                window.location = link.attr('href');
             });
         });
       }
     };
-  
+
   })(jQuery, Drupal, drupalSettings);
-  
