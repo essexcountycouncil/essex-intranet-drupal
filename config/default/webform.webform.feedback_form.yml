@@ -63,9 +63,6 @@ elements: |-
       '#description': |-
         Please do not enter any personal information in this space
         <div id="extension-host">&nbsp;</div>
-    do_you_love_this_website_so_much_:
-      '#type': checkbox
-      '#title': 'Do you love this website so much?'
 css: ''
 javascript: ''
 settings:
