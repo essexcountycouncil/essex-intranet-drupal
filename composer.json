@@ -193,7 +193,12 @@
                     "mode": "replace",
                     "path": "assets/composer/services.yml",
                     "overwrite": true
-              }
+                },
+                "[web-root]/robots.txt": {
+                    "mode": "replace",
+                    "path": "assets/composer/robots.txt",
+                    "overwrite": true
+                }
             }
         },
         "installer-paths": {
