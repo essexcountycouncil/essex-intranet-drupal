@@ -1,0 +1,10 @@
+uuid: 71d8c103-3258-4c33-bfde-f025a5c15870
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.related_anonymous
+label: 'Related anonymous'
+targetEntityType: node
+cache: true

@@ -63,11 +63,6 @@ elements: |-
       '#description': |-
         Please do not enter any personal information in this space
         <div id="extension-host">&nbsp;</div>
-  have_you_liked_our_new_intranet_site_:
-    '#type': textfield
-    '#title': 'Have you liked our new Intranet site? '
-    '#description': 'Please give your feed back&nbsp;'
-    '#required': true
 css: ''
 javascript: ''
 settings:

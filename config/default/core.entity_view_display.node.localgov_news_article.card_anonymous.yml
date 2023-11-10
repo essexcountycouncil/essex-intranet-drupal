@@ -44,7 +44,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      date_format: j/m/Y
+      date_format: 'j F Y'
     third_party_settings:
       field_formatter_class:
         class: ''

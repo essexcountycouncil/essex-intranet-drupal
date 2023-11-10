@@ -1,0 +1,26 @@
+uuid: 00f80985-a644-4b67-adf9-681ddbd36d08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.localgov_page_components
+    - node.type.localgov_newsroom
+id: node.localgov_newsroom.localgov_page_components
+field_name: localgov_page_components
+entity_type: node
+bundle: localgov_newsroom
+label: 'Page components'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraphs_library_item'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference
