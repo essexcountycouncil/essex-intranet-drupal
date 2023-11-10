@@ -35,7 +35,7 @@ class RestrictedContent implements RestrictedContentInterface {
           if ($parent->{$this::RESTRICTED_CONTENT_FIELD}->value) {
             return TRUE;
           }
-          if ($entity->id() == $parent->id()) {
+          if ($entity->id() === $parent->id()) {
             // There's no guarantee that the entity isn't its own grandparent, but
             // abort in the simple case that it's its own parent.
             // TODO: A more complex check is needed for the non-trivial case.
