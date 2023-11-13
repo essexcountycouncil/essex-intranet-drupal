@@ -45,3 +45,27 @@ div:has(.lgd-page-section--curve) .media-with-text__body {
 div:has(.lgd-page-section--curve) .media-with-text__body h2 {
     line-height: 1;
 }
+
+div:has(.lgd-page-section--curve) .media-with-text__media {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+
+.media-with-text--circle img {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    max-height: 300px;
+}
+
+@media screen and (min-width: 768px) {
+    .media-with-text--circle img {
+        max-height: 479px;
+    }
+
+    div:has(.lgd-page-section--curve) .media-with-text__media {
+        justify-content: center;
+    }
+}
