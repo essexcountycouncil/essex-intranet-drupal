@@ -21,7 +21,7 @@
 }
 
 .lgd-page-section--curve {
-    background: #c3d3e5;
+    background: var(--color-grey);
     padding-bottom: 6rem;
     padding-top: var(--spacing-larger);
     position: relative;
@@ -39,6 +39,7 @@
 
 div:has(.lgd-page-section--curve) .media-with-text__body {
     padding-top: 0;
+    background: var(--color-grey);
 }
 
 div:has(.lgd-page-section--curve) .media-with-text__body h2 {
