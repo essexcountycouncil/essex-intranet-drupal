@@ -11,7 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeForm;
 
 // To enable identify whether the "Restricted content" flag is available.
-const RESTRICTED_CONTENT_FORM_FLAG = TRUE;
+const RESTRICTED_CONTENT_FORM_FLAG = FALSE;
 
 /**
  * Implements hook_entity_view_mode_alter().
