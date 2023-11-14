@@ -297,3 +297,7 @@ div:has(.featured-teaser),
         height: 100%;
     }
 }
+
+a>i {
+    margin-left: 0.2rem;
+}
