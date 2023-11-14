@@ -10,20 +10,20 @@
   }
 }
 
-.layout--twocol > .layout__region > .paragraph--type--localgov-media-with-text {
+.layout--twocol>.layout__region>.paragraph--type--localgov-media-with-text {
   margin: var(--spacing-larger) 0 0;
 }
 
-.layout--twocol > .layout__region > .paragraph--type--localgov-media-with-text:last-child {
+.layout--twocol>.layout__region>.paragraph--type--localgov-media-with-text:last-child {
   margin-top: var(--spacing);
 }
 
 @media screen and (min-width: 1025px) {
-  .layout--twocol > .layout__region > .paragraph--type--localgov-media-with-text:last-child {
+  .layout--twocol>.layout__region>.paragraph--type--localgov-media-with-text:last-child {
     margin-top: var(--spacing-largest);
   }
 
-  .layout--twocol > .layout__region > .paragraph--type--localgov-media-with-text {
+  .layout--twocol>.layout__region>.paragraph--type--localgov-media-with-text {
     margin-top: 0px;
   }
 }
@@ -40,6 +40,7 @@
     grid-auto-rows: 1fr;
     grid-gap: 1em;
     margin: 0;
+    width: 50%;
   }
 
   .news-card article .card-image,
@@ -71,6 +72,7 @@
     flex-direction: column;
   }
 }
+
 /* End */
 
 /* Added for https://nomensa.atlassian.net/browse/ECCI-418 */
@@ -79,18 +81,19 @@
     display: block;
   }
 }
+
 /* End */
 
 /* Added for https://nomensa.atlassian.net/browse/ECCI-471 */
-.field--name-localgov-subsites-content > .field__item:first-child {
+.field--name-localgov-subsites-content>.field__item:first-child {
   margin-top: 0px;
 }
 
-.field--name-localgov-subsites-content > .field__item:first-child .layout__region--first {
+.field--name-localgov-subsites-content>.field__item:first-child .layout__region--first {
   margin-top: 0px;
 }
 
-.field--name-localgov-subsites-content > .field__item:first-child .layout__region--first > .paragraph--type--localgov-text > .field--name-localgov-text {
+.field--name-localgov-subsites-content>.field__item:first-child .layout__region--first>.paragraph--type--localgov-text>.field--name-localgov-text {
   padding-top: 0px;
 }
 
@@ -103,24 +106,24 @@
   margin-bottom: 0px;
 }
 
-.field--name-localgov-subsites-content > .field__item:first-child .paragraph--type--page-section .layout--twocol > .layout__region--first {
+.field--name-localgov-subsites-content>.field__item:first-child .paragraph--type--page-section .layout--twocol>.layout__region--first {
   padding-right: 0px;
 }
 
-.field--name-localgov-subsites-content > .field__item:first-child .paragraph--type--page-section .layout--twocol > .layout__region--second {
+.field--name-localgov-subsites-content>.field__item:first-child .paragraph--type--page-section .layout--twocol>.layout__region--second {
   padding-left: 0px;
 }
 
 @media screen and (min-width: 1025px) {
-  .field--name-localgov-subsites-content > .field__item:first-child {
-    margin: var(--spacing-largest) clamp(var(--spacing-smallest), 2.5vw, var(--spacing-largest))
+  .field--name-localgov-subsites-content>.field__item:first-child {
+    margin: 0 clamp(var(--spacing-smallest), 2.5vw, var(--spacing-largest))
   }
 
-  .field--name-localgov-subsites-content > .field__item:first-child .layout__region--first {
+  .field--name-localgov-subsites-content>.field__item:first-child .layout__region--first {
     margin: var(--spacing-larger) 0;
   }
 
-  .field--name-localgov-subsites-content > .field__item:first-child .layout__region--first > .paragraph--type--localgov-text > .field--name-localgov-text {
+  .field--name-localgov-subsites-content>.field__item:first-child .layout__region--first>.paragraph--type--localgov-text>.field--name-localgov-text {
     padding-top: clamp(0.75rem, 2vw, var(--spacing));
   }
 
@@ -133,11 +136,11 @@
     margin-bottom: var(--spacing-largest);
   }
 
-  .field--name-localgov-subsites-content > .field__item:first-child .paragraph--type--page-section .layout--twocol > .layout__region--first {
+  .field--name-localgov-subsites-content>.field__item:first-child .paragraph--type--page-section .layout--twocol>.layout__region--first {
     padding-right: calc(var(--spacing-largest) / 2);
   }
 
-  .field--name-localgov-subsites-content > .field__item:first-child .paragraph--type--page-section .layout--twocol > .layout__region--second {
+  .field--name-localgov-subsites-content>.field__item:first-child .paragraph--type--page-section .layout--twocol>.layout__region--second {
     padding-left: calc(var(--spacing-largest) / 2);
   }
 }
@@ -166,7 +169,7 @@
   color: black;
 }
 
-.ecc-restricted-content a.button > svg {
+.ecc-restricted-content a.button>svg {
   width: 17px;
   height: 21px;
   margin-right: calc(var(--spacing) / 2);
@@ -185,7 +188,7 @@
     margin-bottom: 0px;
   }
 
-  .ecc-restricted-content a.button > svg {
+  .ecc-restricted-content a.button>svg {
     margin-right: calc(var(--spacing) * 0.75);
   }
 }
@@ -243,7 +246,7 @@
     height: 100%;
   }
 
-  .ecc-related-news-container article > .node__content {
+  .ecc-related-news-container article>.node__content {
     grid-column: 2 / span 2;
     padding: 0.5rem 1rem;
     display: flex;
@@ -262,6 +265,7 @@
   font-size: calc(var(--spacing) * 1.875);
   font-family: var(--font-heading-3);
 }
+
 /* end */
 
 /* Added for border bottom hotfix - overriding styles in news.css from line 43 to line 52 */
@@ -272,16 +276,16 @@
 }
 
 .newsroom-teaser,
-.newsroom-teaser > .newsroom-teaser__content,
-.featured-news__card article > .card-content,
-.news-card article > .card-content {
+.newsroom-teaser>.newsroom-teaser__content,
+.featured-news__card article>.card-content,
+.news-card article>.card-content {
   position: relative;
 }
 
-.featured-news__card article > .card-content:before,
-.news-card article > .card-content:before,
+.featured-news__card article>.card-content:before,
+.news-card article>.card-content:before,
 .newsroom-teaser:before,
-.newsroom-teaser > .newsroom-teaser__content .newsroom-teaser__summary:before {
+.newsroom-teaser>.newsroom-teaser__content .newsroom-teaser__summary:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -300,10 +304,11 @@
     display: block;
   }
 
-  .newsroom-teaser > .newsroom-teaser__content .newsroom-teaser__summary:before {
+  .newsroom-teaser>.newsroom-teaser__content .newsroom-teaser__summary:before {
     display: none;
   }
 }
+
 /* End */
 
 /* Added for https://nomensa.atlassian.net/browse/ECCI-472 */
@@ -345,6 +350,7 @@
 }
 
 @media screen and (min-width: 768px) {
+
   .featured-news__card .field--type-datetime,
   .news-card .field--type-datetime {
     position: relative;
@@ -359,6 +365,7 @@
 .news-card article {
   word-wrap: break-word;
 }
+
 /* End */
 
 /* Added for https://nomensa.atlassian.net/browse/ECCI-489 */
