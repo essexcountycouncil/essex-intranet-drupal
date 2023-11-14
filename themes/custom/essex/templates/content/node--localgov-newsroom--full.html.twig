@@ -73,14 +73,14 @@
 
 {%
   set classes = [
-    'newsroom',
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  ]
+  'newsroom',
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+]
 %}
 
 {% if not localgov_base_remove_css %}
@@ -110,15 +110,10 @@
         'localgov_page_components', 'field_content_owner', 'field_content_sme') }}
 
       {#
-        Render the search, facets, etc here, followed by the news items
+      Render the search, facets, etc here, followed by the news items
       #}
       <div class="lgd-row">
-        <aside class="lgd-row__one-third">
-          <div class="newsroom__sidebar">
-            {{ content.localgov_news_search }}
-            {{ content.localgov_news_facets }}
-          </div>
-        </aside>
+        {# Remove facets from display #}
         <div class="lgd-row__two-thirds">
           {{ content.localgov_newsroom_all_view }}
         </div>
@@ -128,7 +123,7 @@
         Render the page components followed by the owner and SME fields
       #}
       {% if content.localgov_page_components %}
-        <div>
+        <div class="lgd-row__two-thirds">
           {{ content.localgov_page_components }}
         </div>
       {% endif %}
