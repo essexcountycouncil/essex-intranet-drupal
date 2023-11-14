@@ -36,11 +36,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -114,6 +109,7 @@ content:
     weight: 10
     region: content
 hidden:
+  content_moderation_control: true
   entitygroupfield: true
   field_content_owner: true
   field_content_sme: true
