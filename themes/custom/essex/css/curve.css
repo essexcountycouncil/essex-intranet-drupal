@@ -45,6 +45,10 @@ div:has(.lgd-page-section--curve) .media-with-text__body {
     font-weight: 700;
 }
 
+div:has(.lgd-page-section--curve) .media-with-text__body a {
+    color: var(--color-link-dark)
+}
+
 div:has(.lgd-page-section--curve) .media-with-text__body h2 {
     line-height: 1;
 }
