@@ -448,10 +448,6 @@ nav.lgd-prev-next ul.lgd-prev-next__list li {
   padding: 1.75rem;
 }
 
-.media-with-text__body {
-  padding: 1.75rem;
-}
-
 .media-with-text--default .media-with-text__body {
   background-color: #c3d3e5;
 }

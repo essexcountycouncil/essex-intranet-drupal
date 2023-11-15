@@ -21,8 +21,9 @@
 }
 
 .lgd-page-section--curve {
-    background: #c3d3e5;
+    background: var(--color-grey);
     padding-bottom: 6rem;
+    padding-top: var(--spacing-larger);
     position: relative;
     margin-bottom: var(--spacing-large);
 }
@@ -34,4 +35,37 @@
 .field__item:has(.lgd-page-section--full-width),
 .field__item:has(.lgd-page-section--full-width-contained-content) {
     margin: 0;
+}
+
+div:has(.lgd-page-section--curve) .media-with-text__body {
+    padding-top: 0;
+    background: var(--color-grey);
+}
+
+div:has(.lgd-page-section--curve) .media-with-text__body h2 {
+    line-height: 1;
+}
+
+div:has(.lgd-page-section--curve) .media-with-text__media {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+
+.media-with-text--circle img {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    max-height: 300px;
+}
+
+@media screen and (min-width: 768px) {
+    .media-with-text--circle img {
+        max-height: 479px;
+    }
+
+    div:has(.lgd-page-section--curve) .media-with-text__media {
+        justify-content: center;
+    }
 }
