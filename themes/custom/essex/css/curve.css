@@ -23,7 +23,7 @@
 .lgd-page-section--curve {
     background: var(--color-grey);
     padding-bottom: 6rem;
-    padding-top: var(--spacing-larger);
+    padding-top: clamp(2rem, 5vw, 5rem);
     position: relative;
     margin-bottom: var(--spacing-large);
 }
@@ -40,6 +40,9 @@
 div:has(.lgd-page-section--curve) .media-with-text__body {
     padding-top: 0;
     background: var(--color-grey);
+    padding-right: clamp(5.5rem, 5vw, 10rem);
+    line-height: 1.5;
+    font-weight: 700;
 }
 
 div:has(.lgd-page-section--curve) .media-with-text__body h2 {
@@ -49,7 +52,7 @@ div:has(.lgd-page-section--curve) .media-with-text__body h2 {
 div:has(.lgd-page-section--curve) .media-with-text__media {
     display: flex;
     justify-content: left;
-    align-items: center;
+    align-items: top;
 
 }
 
