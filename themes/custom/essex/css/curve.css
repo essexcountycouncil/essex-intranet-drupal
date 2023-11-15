@@ -23,6 +23,7 @@
 .lgd-page-section--curve {
     background: #c3d3e5;
     padding-bottom: 6rem;
+    padding-top: var(--spacing-larger);
     position: relative;
     margin-bottom: var(--spacing-large);
 }
@@ -34,4 +35,12 @@
 .field__item:has(.lgd-page-section--full-width),
 .field__item:has(.lgd-page-section--full-width-contained-content) {
     margin: 0;
+}
+
+div:has(.lgd-page-section--curve) .media-with-text__body {
+    padding-top: 0;
+}
+
+div:has(.lgd-page-section--curve) .media-with-text__body h2 {
+    line-height: 1;
 }
