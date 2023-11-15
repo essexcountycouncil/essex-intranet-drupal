@@ -37,10 +37,10 @@
     margin: 0;
 }
 
-div:has(.lgd-page-section--curve) .media-with-text__body {
+div.lgd-page-section--curve>.media-with-text__body {
     padding-top: 0;
 }
 
-div:has(.lgd-page-section--curve) .media-with-text__body h2 {
+.lgd-page-section--curve .media-with-text__body h2 {
     line-height: 1;
 }
