@@ -4,11 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.featured_large
+    - field.field.paragraph.localgov_newsroom_teaser.field_date_only
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_image
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_link
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_summary
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_title
     - paragraphs.paragraphs_type.localgov_newsroom_teaser
+  module:
+    - datetime
 _core:
   default_config_hash: nXkV-Sqvj9NKB7zc8hN1YArlx0iNdRwcM4fZbuWa-DY
 id: paragraph.localgov_newsroom_teaser.featured_large
@@ -16,6 +19,15 @@ targetEntityType: paragraph
 bundle: localgov_newsroom_teaser
 mode: featured_large
 content:
+  field_date_only:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 3
+    region: content
   localgov_newsroom_teaser_image:
     type: entity_reference_entity_view
     label: hidden
