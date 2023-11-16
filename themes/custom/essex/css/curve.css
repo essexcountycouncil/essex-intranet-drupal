@@ -50,7 +50,7 @@ div.lgd-page-section--curve .media-with-text__body .field--name-localgov-text p 
     font-size: clamp(1.5625rem, 1.3rem + 1.2vw, 2.1875rem);
 }
 
-div:has(.lgd-page-section--curve) .media-with-text__body a {
+div.lgd-page-section--curve .media-with-text__body a {
     color: var(--color-link-dark);
     font-size: clamp(1.5625rem, 1.3rem + 1.2vw, 2.1875rem);
 }
