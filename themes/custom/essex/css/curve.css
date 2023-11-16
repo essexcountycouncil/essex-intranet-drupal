@@ -47,7 +47,7 @@ div.lgd-page-section--curve .media-with-text__body {
 div.lgd-page-section--curve .media-with-text__body .field--name-localgov-text p {
     line-height: 1.25715;
     font-weight: 500;
-    font-size: clamp(1.5625rem, 2rem + 0.75vw, 2.1875rem);
+    font-size: clamp(1.5625rem, 1.3rem + 1.2vw, 2.1875rem);
 }
 
 div:has(.lgd-page-section--curve) .media-with-text__body a {
