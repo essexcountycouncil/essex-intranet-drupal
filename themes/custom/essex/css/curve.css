@@ -37,7 +37,7 @@
     margin: 0;
 }
 
-div.lgd-page-section--curve>.media-with-text__body {
+div.lgd-page-section--curve .media-with-text__body {
     padding-top: 0;
     background: var(--color-grey);
     padding-right: clamp(5.5rem, 5vw, 10rem);

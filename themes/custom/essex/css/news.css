@@ -188,7 +188,8 @@ div:has(.featured-teaser),
 }
 
 .featured-news__card article .card-content p,
-.news-card article .card-content p {
+.news-card article .card-content p,
+.field--name-localgov-text p {
     --font-size: clamp(1rem, 0.85rem + 0.5vw, 1.125rem);
     --line-height: 1.5;
     font-size: var(--font-size);
@@ -312,8 +313,4 @@ div:has(.featured-teaser),
 
 a>i {
     margin-left: 0.2rem;
-}
-
-.field--name-field-media-image {
-    margin-bottom: var(--spacing-large)
 }
