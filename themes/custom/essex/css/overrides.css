@@ -1439,10 +1439,3 @@ footer .lgd-footer__footer a {
 .lgd-region--content .paragraph--type--localgov-contact a {
   word-break: break-word;
 }
-
-p {
-  --font-size: clamp(1rem, 0.85rem + 0.5vw, 1.125rem);
-  --line-height: 1.5;
-  font-size: var(--font-size);
-  line-height: var(--line-height);
-}
