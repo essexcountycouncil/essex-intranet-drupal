@@ -388,3 +388,40 @@
 }
 
 /* End */
+
+/* Added for ECCI-418 */
+.newsroom-teaser__content time > div {
+  padding: 0 var(--spacing);
+  margin-top: calc(var(--spacing) * 0.5);
+  margin-bottom: calc(var(--spacing) * 0.5);
+}
+
+.newsroom-teaser__content h3 {
+  margin-bottom: calc(var(--spacing) * 0.5);
+}
+
+.newsroom-teaser__content h3 > a {
+  color: var(--color-black);
+}
+
+.newsroom-teaser__content {
+  padding-bottom: calc(var(--spacing) * 0.5);
+  margin-top: calc(var(--spacing) * 0.5);
+}
+
+@media screen and (min-width: 640px) {
+  .newsroom-teaser__content time > div {
+    margin-top: calc(var(--spacing) * 0.75);
+    margin-bottom: var(--spacing);
+  }
+
+  .newsroom-teaser__content {
+    margin-top: var(--vertical-rhythm-spacing);
+  }
+
+  .newsroom-teaser__content h3 {
+    margin-bottom: var(--vertical-rhythm-spacing);
+  }
+}
+
+/* End */
