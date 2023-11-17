@@ -174,14 +174,6 @@ div:has(.featured-teaser),
     }
 }
 
-/* .featured-news__card,
-.news-card>.field__item {
-    margin-top: 0;
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-template-rows: subgrid;
-} */
-
 .featured-news__card article .card-content,
 .news-card article .card-content {
     grid-column: 2 / span 2;
