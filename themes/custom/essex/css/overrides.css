@@ -1439,3 +1439,7 @@ footer .lgd-footer__footer a {
 .lgd-region--content .paragraph--type--localgov-contact a {
   word-break: break-word;
 }
+
+.field__item:has(h1) {
+  padding-bottom: var(--spacing);
+}

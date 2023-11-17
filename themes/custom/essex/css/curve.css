@@ -58,6 +58,7 @@ div.lgd-page-section--curve .media-with-text__body a {
 .lgd-page-section--curve .media-with-text__body h2 {
     line-height: 1;
     font-size: clamp(2.1875rem, 2rem + 0.75vw, 2.5rem);
+    margin-top: var(--spacing);
 }
 
 div:has(.lgd-page-section--curve) .media-with-text__media {
