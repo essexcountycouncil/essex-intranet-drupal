@@ -10,7 +10,7 @@ dependencies:
 id: eucookiesettingsblock
 theme: essex
 region: content_top
-weight: -7
+weight: -11
 provider: null
 plugin: cookie_settings_block
 settings:
