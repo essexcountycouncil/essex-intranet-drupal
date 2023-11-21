@@ -96,8 +96,10 @@
     {% endif %}
     {{ title_suffix }}
 
+    <time>{{ content.localgov_news_date }}</time>
+
     <div{{ content_attributes.addClass('node__content') }}>
-      {{ content|without('field_media_image') }}
+      {{ content|without('field_media_image', 'localgov_news_date') }}
     </div>
   </div>
 

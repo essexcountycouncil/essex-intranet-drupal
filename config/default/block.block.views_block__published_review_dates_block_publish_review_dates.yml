@@ -37,8 +37,6 @@ visibility:
       localgov_directory_promo_page: localgov_directory_promo_page
       localgov_guides_overview: localgov_guides_overview
       localgov_guides_page: localgov_guides_page
-      localgov_news_article: localgov_news_article
       localgov_services_page: localgov_services_page
       localgov_services_status: localgov_services_status
       localgov_step_by_step_overview: localgov_step_by_step_overview
-      localgov_subsites_overview: localgov_subsites_overview

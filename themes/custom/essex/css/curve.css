@@ -1,0 +1,86 @@
+/* CURVE */
+
+#curvedsvg {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.curve-bottom {
+    min-width: 100%;
+    background: #ffffff;
+    clip-path: inset(3rem);
+    -webkit-clip-path: url(#my-clip-path);
+    clip-path: url(#my-clip-path);
+    padding-bottom: 6rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 3px solid white;
+}
+
+.lgd-page-section--curve {
+    background: var(--color-grey);
+    padding-bottom: 6rem;
+    padding-top: clamp(2rem, 5vw, 5rem);
+    position: relative;
+    margin-bottom: var(--spacing-large);
+}
+
+.lgd-page-section--curve .layout .layout__region {
+    margin: 0;
+}
+
+.field__item:has(.lgd-page-section--full-width),
+.field__item:has(.lgd-page-section--full-width-contained-content) {
+    margin: 0;
+}
+
+div.lgd-page-section--curve .media-with-text__body {
+    padding-top: 0;
+    background: var(--color-grey);
+    padding-right: clamp(5.5rem, 5vw, 10rem);
+
+}
+
+div.lgd-page-section--curve .media-with-text__body .field--name-localgov-text p {
+    line-height: 1.25715;
+    font-weight: 500;
+    font-size: clamp(1.5625rem, 1.3rem + 1.2vw, 2.1875rem);
+}
+
+div.lgd-page-section--curve .media-with-text__body a {
+    color: var(--color-link-dark);
+    font-size: clamp(1.5625rem, 1.3rem + 1.2vw, 2.1875rem);
+}
+
+.lgd-page-section--curve .media-with-text__body h2 {
+    line-height: 1;
+    font-size: clamp(2.1875rem, 2rem + 0.75vw, 2.5rem);
+    margin-top: var(--spacing);
+}
+
+div:has(.lgd-page-section--curve) .media-with-text__media {
+    display: flex;
+    justify-content: left;
+    align-items: top;
+
+}
+
+.media-with-text--circle img {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    max-height: 300px;
+}
+
+@media screen and (min-width: 768px) {
+    .media-with-text--circle img {
+        max-height: 479px;
+    }
+
+    div:has(.lgd-page-section--curve) .media-with-text__media {
+        justify-content: center;
+    }
+}

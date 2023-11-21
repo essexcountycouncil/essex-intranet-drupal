@@ -3,8 +3,9 @@ _core:
 langcode: en
 settings:
   default_status: open
+  default_page: true
   default_page_base_path: /form
-  default_ajax: true
+  default_ajax: false
   default_ajax_progress_type: fullscreen
   default_ajax_effect: none
   default_ajax_speed: 500
@@ -66,14 +67,33 @@ settings:
   default_previous_submission_message: 'You have already submitted this webform. <a href="#">View your previous submission</a>.'
   default_previous_submissions_message: 'You have already submitted this webform. <a href="#">View your previous submissions</a>.'
   default_autofill_message: 'This submission has been autofilled with your previous submission.'
-  form_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
+  form_classes: |
+    container-inline clearfix
+    form--inline clearfix
+    messages messages--error
+    messages messages--warning
+    messages messages--status
   button_classes: ''
-  preview_classes: "messages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
-  confirmation_classes: "messages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
-  confirmation_back_classes: "button\r\n"
+  preview_classes: |
+    messages messages--error
+    messages messages--warning
+    messages messages--status
+  confirmation_classes: |
+    messages messages--error
+    messages messages--warning
+    messages messages--status
+  confirmation_back_classes: |
+    button
   default_share: false
   default_share_node: false
   default_share_theme_name: ''
+  webform_bulk_form: true
+  webform_bulk_form_actions:
+    - webform_archive_action
+    - webform_close_action
+    - webform_delete_action
+    - webform_open_action
+    - webform_unarchive_action
   dialog: false
   dialog_options:
     narrow:
@@ -89,15 +109,35 @@ assets:
   css: ''
   javascript: ''
 form:
+  limit: 50
   filter_category: ''
   filter_state: ''
 element:
   machine_name_pattern: a-z0-9_
   empty_message: '{Empty}'
   allowed_tags: admin
-  wrapper_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
-  classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
-  horizontal_rule_classes: "webform-horizontal-rule--solid\r\nwebform-horizontal-rule--dashed\r\nwebform-horizontal-rule--dotted\r\nwebform-horizontal-rule--gradient\r\nwebform-horizontal-rule--thin\r\nwebform-horizontal-rule--medium\r\nwebform-horizontal-rule--thick\r\nwebform-horizontal-rule--flaired\r\nwebform-horizontal-rule--glyph\r\n"
+  wrapper_classes: |
+    container-inline clearfix
+    form--inline clearfix
+    messages messages--error
+    messages messages--warning
+    messages messages--status
+  classes: |
+    container-inline clearfix
+    form--inline clearfix
+    messages messages--error
+    messages messages--warning
+    messages messages--status
+  horizontal_rule_classes: |
+    webform-horizontal-rule--solid
+    webform-horizontal-rule--dashed
+    webform-horizontal-rule--dotted
+    webform-horizontal-rule--gradient
+    webform-horizontal-rule--thin
+    webform-horizontal-rule--medium
+    webform-horizontal-rule--thick
+    webform-horizontal-rule--flaired
+    webform-horizontal-rule--glyph
   default_description_display: ''
   default_more_title: More
   default_section_title_tag: h2

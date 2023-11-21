@@ -17,6 +17,7 @@ dependencies:
   module:
     - datetime
     - entity_reference_facet_link
+    - field_formatter_class
     - text
     - user
   enforced:
@@ -30,38 +31,27 @@ bundle: localgov_news_article
 mode: default
 content:
   body:
-    type: text_summary_or_trimmed
+    type: text_default
     label: hidden
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
     weight: 4
     region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_content_owner:
-    type: entity_reference_label
-    label: above
+  field_media_image:
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_content_sme:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
+      view_mode: responsive_3x2
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   localgov_news_categories:
     type: entity_reference_facet_link
@@ -84,13 +74,18 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: related
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 5
     region: content
 hidden:
+  content_moderation_control: true
   entitygroupfield: true
+  field_content_owner: true
+  field_content_sme: true
   field_media_image: true
   localgov_newsroom: true
   localgov_restricted_content: true

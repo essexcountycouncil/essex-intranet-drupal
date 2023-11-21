@@ -28,11 +28,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_content_owner:
     type: entity_reference_label
     label: above
@@ -55,6 +50,7 @@ content:
     weight: 1
     region: content
 hidden:
+  content_moderation_control: true
   entitygroupfield: true
   localgov_restricted_content: true
   localgov_step_parent: true

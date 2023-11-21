@@ -1,0 +1,21 @@
+uuid: dd8f5636-b874-472b-b646-4d9ba0765448
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_curve
+    - paragraphs.paragraphs_type.page_section
+id: paragraph.page_section.field_curve
+field_name: field_curve
+entity_type: paragraph
+bundle: page_section
+label: Curve
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

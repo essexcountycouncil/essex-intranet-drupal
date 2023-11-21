@@ -11,12 +11,15 @@ libraries-extend:
     - essex/variables
     - essex/overrides
     - essex/fonts
+    - essex/news
     - essex/preliminary
+    - essex/curve
+    - essex/custom-scripts
     # - essex/other-library-to-load-on-every-page
     # - essex/other-library-to-load-on-every-page
   # Add libraries here that extend specific libraries.
   # localgov_base/sample-library:
-    # - essex/sample-library
+  # - essex/sample-library
 
 regions:
   tabs: "Tabs"
