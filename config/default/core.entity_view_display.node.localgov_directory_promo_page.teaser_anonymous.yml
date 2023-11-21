@@ -1,0 +1,122 @@
+uuid: addd5bad-6677-4e43-9902-8b39678de08b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_anonymous
+    - field.field.node.localgov_directory_promo_page.body
+    - field.field.node.localgov_directory_promo_page.field_content_owner
+    - field.field.node.localgov_directory_promo_page.field_content_sme
+    - field.field.node.localgov_directory_promo_page.localgov_directory_address
+    - field.field.node.localgov_directory_promo_page.localgov_directory_banner
+    - field.field.node.localgov_directory_promo_page.localgov_directory_channels
+    - field.field.node.localgov_directory_promo_page.localgov_directory_email
+    - field.field.node.localgov_directory_promo_page.localgov_directory_facets_select
+    - field.field.node.localgov_directory_promo_page.localgov_directory_files
+    - field.field.node.localgov_directory_promo_page.localgov_directory_job_title
+    - field.field.node.localgov_directory_promo_page.localgov_directory_name
+    - field.field.node.localgov_directory_promo_page.localgov_directory_phone
+    - field.field.node.localgov_directory_promo_page.localgov_directory_standfirst
+    - field.field.node.localgov_directory_promo_page.localgov_directory_title_sort
+    - field.field.node.localgov_directory_promo_page.localgov_directory_website
+    - field.field.node.localgov_directory_promo_page.localgov_paragraph_content
+    - field.field.node.localgov_directory_promo_page.localgov_restricted_content
+    - node.type.localgov_directory_promo_page
+  module:
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_banner:
+      children:
+        - localgov_directory_banner
+      label: Banner
+      parent_name: ''
+      region: hidden
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: full__banner
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_page_top:
+      children:
+        - localgov_directory_standfirst
+        - localgov_directory_facets_select
+      label: 'Page Top'
+      parent_name: ''
+      region: hidden
+      weight: 3
+      format_type: html_element
+      format_settings:
+        classes: full__page-top
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_enquiries:
+      children:
+        - localgov_directory_name
+        - localgov_directory_job_title
+        - localgov_directory_phone
+        - localgov_directory_email
+        - localgov_directory_website
+        - localgov_directory_address
+      label: Enquiries
+      parent_name: ''
+      region: hidden
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+_core:
+  default_config_hash: 5TE_cweeLorxIo2K7VhmP1uA10pJg6xXg1IcCmhhMbg
+id: node.localgov_directory_promo_page.teaser_anonymous
+targetEntityType: node
+bundle: localgov_directory_promo_page
+mode: teaser_anonymous
+content:
+  restricted_content_sign_in:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  entitygroupfield: true
+  field_content_owner: true
+  field_content_sme: true
+  links: true
+  localgov_directory_address: true
+  localgov_directory_banner: true
+  localgov_directory_channels: true
+  localgov_directory_email: true
+  localgov_directory_facets_select: true
+  localgov_directory_files: true
+  localgov_directory_job_title: true
+  localgov_directory_name: true
+  localgov_directory_phone: true
+  localgov_directory_search: true
+  localgov_directory_standfirst: true
+  localgov_directory_title_sort: true
+  localgov_directory_website: true
+  localgov_paragraph_content: true
+  localgov_restricted_content: true
+  restricted_content_sign_in_with_message: true
+  search_api_excerpt: true

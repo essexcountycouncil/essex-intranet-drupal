@@ -1,0 +1,10 @@
+uuid: 4591ddb4-b364-4d37-9116-47613325576f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.card_anonymous
+label: 'Card for anonymous users'
+targetEntityType: node
+cache: true

@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.localgov_guides_page.localgov_guides_parent
     - field.field.node.localgov_guides_page.localgov_guides_section_title
     - field.field.node.localgov_guides_page.localgov_page_components
+    - field.field.node.localgov_guides_page.localgov_restricted_content
     - node.type.localgov_guides_page
   module:
     - text
@@ -27,12 +28,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
-    region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
+    weight: 1
     region: content
   localgov_guides_parent:
     type: entity_reference_label
@@ -40,7 +36,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   localgov_guides_section_title:
     type: string
@@ -48,13 +44,17 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
+  content_moderation_control: true
   entitygroupfield: true
   field_content_owner: true
   field_content_sme: true
   field_non_publishable_notes: true
   links: true
   localgov_page_components: true
+  localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

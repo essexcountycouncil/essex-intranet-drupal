@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.localgov_step_by_step_page.body
     - field.field.node.localgov_step_by_step_page.field_content_owner
     - field.field.node.localgov_step_by_step_page.field_content_sme
+    - field.field.node.localgov_step_by_step_page.localgov_restricted_content
     - field.field.node.localgov_step_by_step_page.localgov_step_parent
     - field.field.node.localgov_step_by_step_page.localgov_step_section_title
     - field.field.node.localgov_step_by_step_page.localgov_step_summary
@@ -25,12 +26,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
-    region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
+    weight: 2
     region: content
   field_content_owner:
     type: entity_reference_label
@@ -38,7 +34,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_content_sme:
     type: entity_reference_label
@@ -46,16 +42,20 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
+  content_moderation_control: true
   entitygroupfield: true
+  localgov_restricted_content: true
   localgov_step_parent: true
   localgov_step_section_title: true
   localgov_step_summary: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

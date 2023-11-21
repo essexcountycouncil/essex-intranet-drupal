@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.localgov_directories_venue.localgov_directory_title_sort
     - field.field.node.localgov_directories_venue.localgov_directory_website
     - field.field.node.localgov_directories_venue.localgov_location
+    - field.field.node.localgov_directories_venue.localgov_restricted_content
     - node.type.localgov_directories_venue
   module:
     - link
@@ -37,11 +38,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
-    region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
     region: content
   links:
     settings: {  }
@@ -139,9 +135,13 @@ content:
     weight: 12
     region: content
 hidden:
+  content_moderation_control: true
   entitygroupfield: true
   field_content_owner: true
   field_content_sme: true
   localgov_directory_search: true
   localgov_directory_title_sort: true
+  localgov_restricted_content: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true

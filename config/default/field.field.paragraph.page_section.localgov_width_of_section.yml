@@ -1,0 +1,21 @@
+uuid: 1789b825-3d5a-4d87-be36-c8b026130b64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.localgov_width_of_section
+    - paragraphs.paragraphs_type.page_section
+  module:
+    - options
+id: paragraph.page_section.localgov_width_of_section
+field_name: localgov_width_of_section
+entity_type: paragraph
+bundle: page_section
+label: 'Width of Section'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

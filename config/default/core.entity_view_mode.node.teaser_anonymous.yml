@@ -1,0 +1,10 @@
+uuid: ccef6eda-bf9f-4b8b-8ba7-740cf48db6d8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_anonymous
+label: 'Teaser for anonymous users'
+targetEntityType: node
+cache: true

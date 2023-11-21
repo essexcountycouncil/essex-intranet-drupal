@@ -1,0 +1,17 @@
+uuid: fe17d1bc-defc-4d46-a57e-b47d454b5b5a
+langcode: en
+status: false
+dependencies: {  }
+id: ddev
+label: DDEV
+description: ''
+weight: 0
+stackable: false
+storage: folder
+folder: ../config/envs/ddev
+module:
+  dblog: 0
+  devel: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }

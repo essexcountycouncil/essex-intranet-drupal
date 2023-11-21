@@ -1,0 +1,21 @@
+uuid: 476b9a06-b789-415f-8104-842d41dbf735
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.localgov_page_section.localgov_width_of_section
+    - paragraphs.paragraphs_type.localgov_page_section
+id: paragraph.localgov_page_section.default
+targetEntityType: paragraph
+bundle: localgov_page_section
+mode: default
+content:
+  layout_paragraphs_fields:
+    weight: -200
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  localgov_width_of_section: true
+  status: true

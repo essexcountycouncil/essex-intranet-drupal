@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.localgov_services_sublanding.body
     - field.field.node.localgov_services_sublanding.field_content_owner
     - field.field.node.localgov_services_sublanding.field_content_sme
+    - field.field.node.localgov_services_sublanding.localgov_restricted_content
     - field.field.node.localgov_services_sublanding.localgov_services_parent
     - field.field.node.localgov_services_sublanding.localgov_topics
     - node.type.localgov_services_sublanding
@@ -22,9 +23,9 @@ third_party_settings:
     group_tabs:
       children:
         - group_topics
-        - group_content_ownership
         - group_service
         - group_description
+        - group_content_ownership
       label: tabs
       region: content
       parent_name: ''
@@ -93,6 +94,22 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+    group_privacy:
+      children:
+        - localgov_restricted_content
+      label: Privacy
+      region: content
+      parent_name: ''
+      weight: -1
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+        weight: 0
 _core:
   default_config_hash: qgi7Ji5DkUSjOgN-tHtizxxz2sY5ynYpwTxYgHu-xUc
 id: node.localgov_services_sublanding.default
@@ -136,6 +153,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  localgov_restricted_content:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   localgov_review_date:
     type: review_date
     weight: 1
@@ -177,7 +201,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -195,7 +219,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 9
     region: content
     settings:
       display_label: true
@@ -226,7 +250,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }

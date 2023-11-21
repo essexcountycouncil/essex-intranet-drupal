@@ -20,6 +20,7 @@ settings:
             - Format
             - Styles
             - CreateDiv
+            - DrupalFontAwesome
         -
           name: Edit
           items:
@@ -54,7 +55,7 @@ settings:
             - Table
   plugins:
     stylescombo:
-      styles: "mark|Highlightly\r\na.external-link|External link\r\na.pdf-link|PDF link\r\na.button.button-start.col-sm-6.mt-3|Start button\r\np.alert.alert-info|Alert info\r\np.inset|Inset text\r\ndiv.alert.alert-info|Container - Alert info\r\nb|Semi-bold"
+      styles: "mark|Highlightly\r\na.external-link|External link\r\na.pdf-link|PDF link\r\na.button.button-start.col-sm-6.mt-3|Start button\r\np.alert.alert-info|Alert info\r\np.inset|Inset text\r\ndiv.alert.alert-info|Container - Alert info\r\nb|Semi-bold\r\ndiv.inset|Inset  text"
     drupallink:
       linkit_enabled: true
       linkit_profile: default

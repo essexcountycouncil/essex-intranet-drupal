@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.search_result
     - field.field.node.localgov_subsites_page.field_content_owner
     - field.field.node.localgov_subsites_page.field_content_sme
+    - field.field.node.localgov_subsites_page.localgov_restricted_content
     - field.field.node.localgov_subsites_page.localgov_subsites_banner
     - field.field.node.localgov_subsites_page.localgov_subsites_content
     - field.field.node.localgov_subsites_page.localgov_subsites_parent
@@ -21,11 +22,6 @@ targetEntityType: node
 bundle: localgov_subsites_page
 mode: search_result
 content:
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
-    region: content
   localgov_subsites_summary:
     type: basic_string
     label: hidden
@@ -34,12 +30,16 @@ content:
     weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   entitygroupfield: true
   field_content_owner: true
   field_content_sme: true
   links: true
+  localgov_restricted_content: true
   localgov_subsites_banner: true
   localgov_subsites_content: true
   localgov_subsites_parent: true
   localgov_subsites_topic: true
+  restricted_content_sign_in: true
+  restricted_content_sign_in_with_message: true
   search_api_excerpt: true
