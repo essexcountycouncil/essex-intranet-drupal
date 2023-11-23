@@ -10,7 +10,7 @@ field_name: field_content_sme
 entity_type: node
 bundle: localgov_guides_overview
 label: 'Content SME'
-description: 'For assigning a ''Subject matter expert'''
+description: "For assigning a 'Subject matter expert'"
 required: false
 translatable: false
 default_value: {  }

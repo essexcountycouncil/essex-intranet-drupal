@@ -38,7 +38,6 @@ dependencies:
     - paragraphs_library
     - path
     - preview_link
-    - quickedit
     - redirect
     - responsive_preview
     - scheduled_transitions
