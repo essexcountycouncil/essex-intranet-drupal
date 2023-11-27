@@ -33,10 +33,9 @@ dependencies:
     - entity_browser
     - entity_hierarchy
     - entity_usage
-    - geocoder
+    - geo_entity
     - localgov_alert_banner
     - localgov_directories
-    - localgov_geo
     - media
     - node
     - paragraphs
@@ -61,7 +60,6 @@ permissions:
   - 'access cludo search content'
   - 'access content overview'
   - 'access entity usage statistics'
-  - 'access in-place editing'
   - 'access localgov alert banner listing page'
   - 'access localgov_geo_library entity browser pages'
   - 'access media overview'

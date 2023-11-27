@@ -13,7 +13,6 @@ settings:
     items:
       - heading
       - style
-      - DivManager
       - '|'
       - undo
       - redo
@@ -26,6 +25,7 @@ settings:
       - blockQuote
       - drupalInsertImage
       - drupalMedia
+      - icon
       - '|'
       - sourceEditing
       - '|'
@@ -44,6 +44,22 @@ settings:
         - heading4
         - heading5
         - heading6
+    ckeditor5_icons_icon:
+      fa_version: '6'
+      fa_styles:
+        - solid
+        - regular
+        - brands
+      custom_metadata: false
+      async_metadata: true
+      recommended_enabled: false
+      recommended_icons:
+        - drupal
+        - plus
+        - font-awesome
+        - equals
+        - heart
+        - chevron-right
     ckeditor5_imageResize:
       allow_resize: true
     ckeditor5_list:
@@ -57,7 +73,6 @@ settings:
         - '<dd>'
         - '<mark>'
         - '<b>'
-        - '<i class="fa-solid fa-chevron-right fa-lg">'
         - '<div class="alert-danger alert-primary alert-success callout callout-primary callout-success callout-danger callout-teal callout-carbon callout-yellow">'
         - '<blockquote cite>'
         - '<ol type>'

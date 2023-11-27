@@ -34,11 +34,11 @@ dependencies:
     - entity_browser
     - entity_hierarchy
     - entity_usage
+    - geo_entity
     - geocoder
     - group
     - localgov_alert_banner
     - localgov_directories
-    - localgov_geo
     - media
     - menu_admin_per_menu
     - node
@@ -69,7 +69,6 @@ permissions:
   - 'access geo overview'
   - 'access geocoder api endpoints'
   - 'access group overview'
-  - 'access in-place editing'
   - 'access localgov alert banner listing page'
   - 'access localgov_geo_library entity browser pages'
   - 'access media overview'

@@ -12,8 +12,8 @@ dependencies:
     - eu_cookie_compliance
     - filter
     - fontawesome
+    - geo_entity
     - localgov_alert_banner
-    - localgov_geo
     - media
     - rest
     - search_api_autocomplete

@@ -17,6 +17,6 @@ permissions:
   - 'access toolbar'
   - 'administer eu cookie compliance categories'
   - 'administer eu cookie compliance popup'
-  - 'administer google tag manager'
+  - 'administer google_tag_container'
   - 'administer meta tags'
   - 'view the administration theme'

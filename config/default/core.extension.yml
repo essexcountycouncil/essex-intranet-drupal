@@ -12,7 +12,7 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
-  ckeditor_div_manager: 0
+  ckeditor5_icons: 0
   cludo_search: 0
   condition_field: 0
   config: 0
