@@ -272,7 +272,6 @@
             "chmod 444 web/sites/default/default.*.yml",
             "chmod 444 web/sites/default/*.services.yml"
         ],
-        "checker-security": "bin/drush pm:security",
         "checker-php-compatibility": "vendor/bin/phpcs --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ruleset.xml --runtime-set testVersion 7.2 src",
         "checker-drupal": "vendor/bin/drupal-check -ad src",
         "checker-drupal-3rd": "vendor/bin/drupal-check -ad web/themes web/modules",
@@ -287,7 +286,7 @@
         "phpcbf": "bin/phpcbf --standard=Drupal,DrupalPractice --ignore=*.js web/modules/custom",
         "tests-required": [
             "composer validate",
-            "composer checker-security"
+            "composer audit"
         ]
     }
 }
