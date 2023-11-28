@@ -11,9 +11,8 @@ module:
   block_classes: 0
   block_content: 0
   breakpoint: 0
-  ckeditor: 0
   ckeditor5: 0
-  ckeditor_div_manager: 0
+  ckeditor5_icons: 0
   cludo_search: 0
   condition_field: 0
   config: 0
@@ -60,6 +59,9 @@ module:
   filter: 0
   flexible_permissions: 0
   fontawesome: 0
+  geo_entity: 0
+  geo_entity_address: 0
+  geo_entity_area: 0
   geocoder: 0
   geocoder_field: 0
   geocoder_geofield: 0
@@ -154,7 +156,6 @@ module:
   permissions_filter: 0
   preview_link: 0
   published_corrected_date: 0
-  quickedit: 0
   redirect: 0
   redirect_404: 0
   responsive_image: 0
@@ -200,7 +201,6 @@ module:
   eu_cookie_compliance: 1001
 theme:
   claro: 0
-  stable: 0
   stable9: 0
   gin: 0
   localgov_base: 0
