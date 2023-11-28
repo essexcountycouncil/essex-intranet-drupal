@@ -12,7 +12,7 @@ settings:
   client_secret: placeholder
   iss_allowed_domains: ''
   tenant: placeholder
-  flow: B2C_1_signup_signin
+  flow: B2C_1_nomensa_login
   scopes:
     - openid
     - email
