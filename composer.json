@@ -157,6 +157,9 @@
                 "Issue #3380665: Defer attribute should be boolean": "https://git.drupalcode.org/project/fathom_analytics/-/merge_requests/2.diff",
                 "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-06-15/fathom_analytics.3.0.0.rector.patch"
             },
+            "drupal/geo_entity": {
+                "Drupal 10 install error": "patches/geo_entity.patch"
+            },
             "drupal/group": {
                 "Apply some custom functionality for Essex when adding members to Groups ECCI-287/ECCI-286": "patches/essex-group-membership.patch"
             },
