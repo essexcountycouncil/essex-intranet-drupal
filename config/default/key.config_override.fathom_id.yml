@@ -1,0 +1,14 @@
+uuid: dee9f413-6edb-437d-8088-362203a80909
+langcode: en
+status: true
+dependencies:
+  config:
+    - fathom_analytics.settings
+    - key.key.fathom_id
+id: fathom_id
+label: 'Fathom id'
+config_type: system.simple
+config_prefix: ''
+config_name: fathom_analytics.settings
+config_item: site_id
+key_id: fathom_id
