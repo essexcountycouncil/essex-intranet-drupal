@@ -1,0 +1,13 @@
+diff --git a/src/Entity/GeoEntity.php b/src/Entity/GeoEntity.php
+index 10fb3fc..8fb2592 100644
+--- a/src/Entity/GeoEntity.php
++++ b/src/Entity/GeoEntity.php
+@@ -144,7 +144,7 @@ class GeoEntity extends RevisionableContentEntityBase implements GeoEntityInterf
+    * {@inheritdoc}
+    */
+   public function presave(EntityStorageInterface $storage) {
+-    $token_template = $this->get('bundle')->entity->labelToken();
++    $token_template = $this->get('bundle')?->entity?->labelToken();
+     if (!empty($token_template)) {
+       $token_service = \Drupal::token();
+       $label_html = $token_service->replace($token_template, ['geo_entity' => $this]);
