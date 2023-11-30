@@ -172,6 +172,7 @@ deploy-to-dev:
                 periodSeconds: 3
       EOF
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-dev --yaml revision.yml --subscription "Essex County Council (intranet)"
+    - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-dev --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
   rules:
     - if: '$CI_COMMIT_BRANCH == "develop"'
       when: manual
@@ -271,6 +272,7 @@ deploy-to-preprod:
       EOF
     - echo "Creating new revision of Container App"
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-pre --yaml revision.yml --subscription "Essex County Council (intranet)"
+    - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-pre --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^release\//'
       when: manual
@@ -368,6 +370,7 @@ deploy-to-prod:
                 periodSeconds: 3
       EOF
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"
+    - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-prod --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^release\//'
       when: manual

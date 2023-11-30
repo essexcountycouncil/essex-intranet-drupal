@@ -1,7 +1,6 @@
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 ignored_config_entities:
-  - fathom_analytics.settings
   - 'system.site:page'
   - 'cludo_search.settings:engineId'
   - system.menu.devel
@@ -11,5 +10,5 @@ ignored_config_entities:
   - 'simple_sitemap.settings:base_url'
   - system.menu.devel
   - 'webform.webform.*'
-  - '~webform.webform.feedback_form'
+  - ~webform.webform.feedback_form
   - 'webform.webform_options.*'
