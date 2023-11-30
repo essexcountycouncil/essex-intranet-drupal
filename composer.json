@@ -72,6 +72,7 @@
         "drupal/group": "^3",
         "drupal/health_check_url": "^3.2",
         "drupal/imagemagick": "^3.4",
+        "drupal/key": "^1.17",
         "drupal/leaflet": "^10.2",
         "drupal/menu_admin_per_menu": "^1.5",
         "drupal/menu_item_limit": "^2",
