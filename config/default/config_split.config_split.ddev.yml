@@ -7,11 +7,14 @@ label: DDEV
 description: ''
 weight: 0
 stackable: false
+no_patching: false
 storage: folder
 folder: ../config/envs/ddev
 module:
+  config_inspector: 0
   dblog: 0
   devel: 0
+  upgrade_status: 0
 theme: {  }
 complete_list: {  }
 partial_list: {  }

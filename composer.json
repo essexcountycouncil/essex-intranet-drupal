@@ -52,30 +52,36 @@
         "drupal/autologout": "^1.4",
         "drupal/autosave_form": "^1.4",
         "drupal/block_classes": "^1.0",
-        "drupal/ckeditor_div_manager": "^2.0",
+        "drupal/ckeditor5_icons": "^1.0@RC",
+        "drupal/ckeditor_div_manager": "^3",
         "drupal/cludo_search": "^1.0@beta",
         "drupal/config_ignore": "^2.4",
-        "drupal/config_split": "^2.0@RC",
-        "drupal/core-composer-scaffold": "^9.1",
-        "drupal/core-project-message": "^9.1",
-        "drupal/core-recommended": "^9.1",
+        "drupal/config_split": "^2",
+        "drupal/core-composer-scaffold": "^10",
+        "drupal/core-project-message": "^10",
+        "drupal/core-recommended": "^10.1",
         "drupal/devel": "^5.1",
-        "drupal/entitygroupfield": "1.0.0-alpha2",
+        "drupal/dynamic_entity_reference": "^3.1",
+        "drupal/entitygroupfield": "^2",
         "drupal/eu_cookie_compliance": "^1.24",
         "drupal/eu_cookie_compliance_gtm": "^2.1",
         "drupal/fathom_analytics": "^3.0",
+        "drupal/geocoder": "^4",
+        "drupal/geofield_map": "^3",
         "drupal/gin": "^3.0@RC",
-        "drupal/group": "3.2.0 as 1.5",
-        "drupal/health_check_url": "^3.1",
+        "drupal/group": "^3",
+        "drupal/health_check_url": "^3.2",
         "drupal/imagemagick": "^3.4",
         "drupal/key": "^1.17",
         "drupal/leaflet": "^10.2",
         "drupal/menu_admin_per_menu": "^1.5",
-        "drupal/menu_item_limit": "^2.0",
+        "drupal/menu_item_limit": "^2",
         "drupal/monolog": "^2.2",
         "drupal/office_hours": "^1.11",
-        "drupal/openid_connect_azure_b2c": "^1.0@beta",
+        "drupal/openid_connect": "^3",
+        "drupal/openid_connect_azure_b2c": "1.0.1-beta1",
         "drupal/permissions_filter": "^1.3",
+        "drupal/preview_link": "^2",
         "drupal/published_corrected_date": "^2.0",
         "drupal/restui": "^1.21",
         "drupal/simple_sitemap": "^4.1",
@@ -83,22 +89,30 @@
         "drupal/smtp": "^1.2",
         "drupal/stage_file_proxy": "^2.0",
         "drupal/ultimate_cron": "^2.0@alpha",
+        "drupal/upgrade_status": "^4.0",
+        "drupal/webform": "^6.2",
+        "drush/drush": "^12",
         "essexcountycouncil/content_ownership": "dev-main",
         "essexcountycouncil/ecc_cludo_search": "^1.0",
         "essexcountycouncil/ecc_content_moderation": "^1.0",
         "essexcountycouncil/ecc_cookie_compliance": "^1.0",
         "essexcountycouncil/ecc_menu": "^1.0",
-        "localgovdrupal/localgov": "^2.0",
+        "localgovdrupal/localgov": "^3",
         "localgovdrupal/localgov_base": "^1.4",
         "localgovdrupal/localgov_eu_cookie_compliance": " 1.x-dev",
-        "localgovdrupal/localgov_forms": "1.x-dev"
+        "localgovdrupal/localgov_forms": "1.x-dev",
+        "localgovdrupal/localgov_geo": "^2",
+        "mglaman/composer-drupal-lenient": "^1.0"
     },
     "require-dev": {
         "brianium/paratest": "^6.0",
         "drupal/coder": "^8.3",
-        "drupal/config_inspector": "^1.3",
+        "drupal/config_inspector": "^2",
+        "drupal/core-dev": "^10",
         "kint-php/kint": "^5.0",
+        "mglaman/drupal-check": "^1.4",
         "mglaman/phpstan-drupal": "^1.0",
+        "palantirnet/drupal-rector": "^0.18.1",
         "phpspec/prophecy-phpunit": "^2",
         "phpstan/phpstan": "^1.0",
         "phpstan/phpstan-deprecation-rules": "^1.0",
@@ -119,7 +133,9 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "mglaman/composer-drupal-lenient": true,
+            "phpstan/extension-installer": true
         }
     },
     "autoload": {
@@ -132,21 +148,18 @@
         "patches": {
             "drupal/cludo_search": {
                 "Change title of search page.": "patches/cludo_search-page-tweaks.patch",
-                "Remove cludo supplied search page template.": "patches/cludo_remove_default_template"
+                "Remove cludo supplied search page template.": "patches/cludo_remove_default_template",
+                "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-07-18/cludo_search.1.0-beta2.rector.patch"
             },
             "drupal/core": {
-                "Allow an install hook in profiles installing from configuration. See https://www.drupal.org/project/drupal/issues/2982052": "https://www.drupal.org/files/issues/2022-05-19/2982052-80.patch",
                 "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch"
             },
-            "drupal/entitygroupfield": {
-                "Breaks on fresh install": "patches/entitygroupfield-install.patch",
-                "\"Drupal\\group\\Entity\\GroupContent\" unexpected error": "https://www.drupal.org/files/issues/2022-10-14/issue-3315323-3.patch",
-                "Support for Groups v3": "patches/entitygroupfield-groupv3-2.patch",
-                "Broken dropbutton in Groups field when used with Claro": "https://www.drupal.org/files/issues/2022-04-04/entitygroupfield-matching-expected-dropbutton-markup-3183134-6.patch",
-                "Alter permissions check to use different wording": "patches/entitygroupfield-permissions.patch"
-            },
             "drupal/fathom_analytics": {
-                "Issue #3380665: Defer attribute should be boolean": "https://git.drupalcode.org/project/fathom_analytics/-/merge_requests/2.diff"
+                "Issue #3380665: Defer attribute should be boolean": "https://git.drupalcode.org/project/fathom_analytics/-/merge_requests/2.diff",
+                "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-06-15/fathom_analytics.3.0.0.rector.patch"
+            },
+            "drupal/geo_entity": {
+                "Drupal 10 install error": "patches/geo_entity.patch"
             },
             "drupal/group": {
                 "Apply some custom functionality for Essex when adding members to Groups ECCI-287/ECCI-286": "patches/essex-group-membership.patch"
@@ -224,6 +237,12 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "drupal-lenient": {
+            "allowed-list": [
+                "drupal/cludo_search",
+                "drupal/fathom_analytics"
+            ]
         }
     },
     "scripts": {
@@ -257,7 +276,6 @@
             "chmod 444 web/sites/default/default.*.yml",
             "chmod 444 web/sites/default/*.services.yml"
         ],
-        "checker-security": "bin/drush pm:security",
         "checker-php-compatibility": "vendor/bin/phpcs --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ruleset.xml --runtime-set testVersion 7.2 src",
         "checker-drupal": "vendor/bin/drupal-check -ad src",
         "checker-drupal-3rd": "vendor/bin/drupal-check -ad web/themes web/modules",
@@ -272,7 +290,7 @@
         "phpcbf": "bin/phpcbf --standard=Drupal,DrupalPractice --ignore=*.js web/modules/custom",
         "tests-required": [
             "composer validate",
-            "composer checker-security"
+            "composer audit"
         ]
     }
 }
