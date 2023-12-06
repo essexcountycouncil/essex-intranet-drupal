@@ -1440,6 +1440,6 @@ footer .lgd-footer__footer a {
   word-break: break-word;
 }
 
-.field__item:has(h1) {
-  padding-bottom: var(--spacing);
+.field__item:has(h1)+.field__item:has(h2) {
+  margin-top: 0;
 }
