@@ -87,7 +87,7 @@
         "drupal/simple_sitemap": "^4.1",
         "drupal/single_content_sync": "^1.4",
         "drupal/smtp": "^1.2",
-        "drupal/stage_file_proxy": "^2.0",
+        "drupal/stage_file_proxy": "^2.1",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/upgrade_status": "^4.0",
         "drupal/webform": "^6.2",
@@ -163,6 +163,9 @@
             },
             "drupal/group": {
                 "Apply some custom functionality for Essex when adding members to Groups ECCI-287/ECCI-286": "patches/essex-group-membership.patch"
+            },
+            "drupal/openid_connect": {
+                "Truncate username if it is greater than 60 characters": "https://www.drupal.org/files/issues/2021-12-08/data_too_long_for_column_name-%203252021-8.patch"
             },
             "localgovdrupal/localgov_paragraphs": {
                 "Added missing field which has been introduced recently.": "patches/missing_field.patch"
