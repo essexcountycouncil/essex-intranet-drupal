@@ -1,0 +1,21 @@
+uuid: fa658ab7-cd74-4e14-8f51-41419164443c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date_only
+    - paragraphs.paragraphs_type.localgov_newsroom_teaser
+  module:
+    - datetime
+id: paragraph.localgov_newsroom_teaser.field_date_only
+field_name: field_date_only
+entity_type: paragraph
+bundle: localgov_newsroom_teaser
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

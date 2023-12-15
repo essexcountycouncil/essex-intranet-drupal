@@ -3,11 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.localgov_newsroom_teaser.field_date_only
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_image
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_link
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_summary
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_title
     - paragraphs.paragraphs_type.localgov_newsroom_teaser
+  module:
+    - datetime
+    - field_formatter_class
 _core:
   default_config_hash: JWMXCfcvciNghaL9syW-pm28NU86T8kivbNklyRHeIM
 id: paragraph.localgov_newsroom_teaser.default
@@ -15,6 +19,17 @@ targetEntityType: paragraph
 bundle: localgov_newsroom_teaser
 mode: default
 content:
+  field_date_only:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'j F Y'
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
   localgov_newsroom_teaser_image:
     type: entity_reference_entity_view
     label: hidden

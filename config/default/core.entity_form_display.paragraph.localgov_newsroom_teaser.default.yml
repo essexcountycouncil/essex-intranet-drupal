@@ -3,12 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.localgov_newsroom_teaser.field_date_only
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_image
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_link
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_summary
     - field.field.paragraph.localgov_newsroom_teaser.localgov_newsroom_teaser_title
     - paragraphs.paragraphs_type.localgov_newsroom_teaser
   module:
+    - datetime
     - link
     - media_library
 _core:
@@ -18,6 +20,12 @@ targetEntityType: paragraph
 bundle: localgov_newsroom_teaser
 mode: default
 content:
+  field_date_only:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   localgov_newsroom_teaser_image:
     type: media_library_widget
     weight: 3

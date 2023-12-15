@@ -1,0 +1,20 @@
+uuid: 4c432364-f27f-41d0-bfaa-e8fc7b992dd7
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - paragraphs
+id: paragraph.field_date_only
+field_name: field_date_only
+entity_type: paragraph
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
