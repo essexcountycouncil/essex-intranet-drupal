@@ -345,9 +345,10 @@ div:has(.featured-teaser),
         aspect-ratio: 41 / 30;
     }
 
-    .news-article__related-title {
-        margin-top: var(--spacing-mega);
-    }
+}
+
+.field__item+.news-article__related-title {
+    margin-top: var(--spacing-mega);
 }
 
 .paragraph--type--news-1-4 .card-image img {
