@@ -10,5 +10,5 @@ ignored_config_entities:
   - 'simple_sitemap.settings:base_url'
   - system.menu.devel
   - 'webform.webform.*'
-  - '~webform.webform.feedback_form'
+  - ~webform.webform.feedback_form
   - 'webform.webform_options.*'

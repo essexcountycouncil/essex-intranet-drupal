@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.localgov_newsroom_teaser
   module:
     - datetime
+    - field_formatter_class
 _core:
   default_config_hash: JWMXCfcvciNghaL9syW-pm28NU86T8kivbNklyRHeIM
 id: paragraph.localgov_newsroom_teaser.default
@@ -19,12 +20,14 @@ bundle: localgov_newsroom_teaser
 mode: default
 content:
   field_date_only:
-    type: datetime_default
-    label: above
+    type: datetime_custom
+    label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
+      date_format: 'j F Y'
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 3
     region: content
   localgov_newsroom_teaser_image:
