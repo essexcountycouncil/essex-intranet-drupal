@@ -62,7 +62,6 @@ class OidcAutoLoginController extends ControllerBase {
   public function login() {
     if ($this->currentUser()->isAnonymous()) {
       // Avoid early rendering errors.
-      /** @var \Drupal\Core\Cache\CacheableDependencyInterface $result */
       $response = $this->renderer->executeInRenderContext($this->context, function () {
         return $this->getAutoLoginResponse();
       });
@@ -115,6 +114,7 @@ class OidcAutoLoginController extends ControllerBase {
     try {
       $client_id = $this->config('oidc_auto_login.settings')
         ->get('client');
+      /** @var \Drupal\openid_connect\OpenIDConnectClientEntityInterface[] $clients */
       $clients = $this->entityTypeManager()
         ->getStorage('openid_connect_client')
         ->loadByProperties([

@@ -1,2 +1,5 @@
+User-agent: Cludo
+Disallow:
+
 User-agent: *
 Disallow: /

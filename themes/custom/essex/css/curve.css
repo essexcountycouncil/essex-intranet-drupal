@@ -37,20 +37,28 @@
     margin: 0;
 }
 
-div:has(.lgd-page-section--curve) .media-with-text__body {
+div.lgd-page-section--curve .media-with-text__body {
     padding-top: 0;
     background: var(--color-grey);
     padding-right: clamp(5.5rem, 5vw, 10rem);
-    line-height: 1.5;
-    font-weight: 700;
+
 }
 
-div:has(.lgd-page-section--curve) .media-with-text__body a {
-    color: var(--color-link-dark)
+div.lgd-page-section--curve .media-with-text__body .field--name-localgov-text p {
+    line-height: 1.25715;
+    font-weight: 500;
+    font-size: clamp(1.5625rem, 1.3rem + 1.2vw, 2.1875rem);
 }
 
-div:has(.lgd-page-section--curve) .media-with-text__body h2 {
+div.lgd-page-section--curve .media-with-text__body a {
+    color: var(--color-link-dark);
+    font-size: clamp(1.5625rem, 1.3rem + 1.2vw, 2.1875rem);
+}
+
+.lgd-page-section--curve .media-with-text__body h2 {
     line-height: 1;
+    font-size: clamp(2.1875rem, 2rem + 0.75vw, 2.5rem);
+    margin-top: var(--spacing);
 }
 
 div:has(.lgd-page-section--curve) .media-with-text__media {
