@@ -30,6 +30,10 @@
             "url":  "https://github.com/essexcountycouncil/ecc_cludo_search"
         },
         {
+            "type": "github",
+            "url":  "https://github.com/essexcountycouncil/ecc_theme"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "ckeditor/div",
