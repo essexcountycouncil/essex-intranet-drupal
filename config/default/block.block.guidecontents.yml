@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_classes
     - localgov_guides
+    - localgov_restricted_content
     - node
   theme:
     - essex
@@ -27,3 +29,10 @@ visibility:
     bundles:
       localgov_guides_overview: localgov_guides_overview
       localgov_guides_page: localgov_guides_page
+  restricted_content:
+    id: restricted_content
+    enabled: 1
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+      user: '@user.current_user_context:current_user'
