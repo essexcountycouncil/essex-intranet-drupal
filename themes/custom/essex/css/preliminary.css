@@ -119,10 +119,6 @@
     margin: 0 clamp(var(--spacing-smallest), 2.5vw, var(--spacing-largest))
   }
 
-  .field--name-localgov-subsites-content>.field__item:first-child .layout__region--first {
-    margin: var(--spacing-larger) 0;
-  }
-
   .field--name-localgov-subsites-content>.field__item:first-child .layout__region--first>.paragraph--type--localgov-text>.field--name-localgov-text {
     padding-top: clamp(0.75rem, 2vw, var(--spacing));
   }
@@ -428,4 +424,8 @@
 /* MWT */
 .layout--onecol .paragraph--type--localgov-media-with-text+.paragraph--type--localgov-media-with-text {
   margin-top: var(--spacing-largest);
+}
+
+main>.lgd-region.lgd-region--content.region.region-content {
+  padding-top: var(--spacing-large);
 }
