@@ -1,0 +1,106 @@
+uuid: b4bb375e-b88a-47ea-bc17-5867901ec6f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.localgov_newsroom_teaser2.field_news_card
+    - paragraphs.paragraphs_type.localgov_newsroom_teaser2
+  module:
+    - dynamic_entity_reference
+    - field_formatter_class
+id: paragraph.localgov_newsroom_teaser2.default
+targetEntityType: paragraph
+bundle: localgov_newsroom_teaser2
+mode: default
+content:
+  field_news_card:
+    type: dynamic_entity_reference_entity_view
+    label: hidden
+    settings:
+      node:
+        view_mode: card
+      localgov_alert_banner:
+        view_mode: default
+        link: false
+      group_config_wrapper:
+        view_mode: default
+        link: false
+      content_owner_sme:
+        view_mode: default
+        link: false
+      contact_message:
+        view_mode: default
+        link: false
+      block_content:
+        view_mode: default
+        link: false
+      content_moderation_state:
+        view_mode: default
+        link: false
+      crop:
+        view_mode: default
+        link: false
+      menu_link_content:
+        view_mode: default
+        link: false
+      localgov_directories_facets:
+        view_mode: default
+        link: false
+      file:
+        view_mode: default
+        link: false
+      geo_entity:
+        view_mode: default
+        link: false
+      localgov_geo:
+        view_mode: default
+        link: false
+      group:
+        view_mode: default
+        link: false
+      group_relationship:
+        view_mode: default
+        link: false
+      media:
+        view_mode: default
+        link: false
+      paragraphs_library_item:
+        view_mode: default
+        link: false
+      paragraph:
+        view_mode: default
+        link: false
+      preview_link:
+        view_mode: default
+        link: false
+      redirect:
+        view_mode: default
+        link: false
+      review_date:
+        view_mode: default
+        link: false
+      search_api_task:
+        view_mode: default
+        link: false
+      taxonomy_term:
+        view_mode: default
+        link: false
+      path_alias:
+        view_mode: default
+        link: false
+      user:
+        view_mode: default
+        link: false
+      webform_submission:
+        view_mode: default
+        link: false
+      scheduled_transition:
+        view_mode: default
+        link: false
+    third_party_settings:
+      field_formatter_class:
+        class: news-card
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

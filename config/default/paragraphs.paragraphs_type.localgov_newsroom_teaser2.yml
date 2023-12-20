@@ -1,0 +1,10 @@
+uuid: 4f781c6d-0779-4c80-be0b-437ea66e2037
+langcode: en
+status: true
+dependencies: {  }
+id: localgov_newsroom_teaser2
+label: 'Newsroom teaser (new)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
