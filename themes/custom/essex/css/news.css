@@ -370,7 +370,15 @@ div:has(.featured-teaser),
     object-fit: cover;
 }
 
-
+.paragraph--type--localgov-newsroom-teaser2 {
+  height: 100%;
+  .news-card {
+    height: 100%;
+  }
+  article {
+    min-width: 0;
+  }
+}
 
 p:has(a+i) {
     display: flex;
