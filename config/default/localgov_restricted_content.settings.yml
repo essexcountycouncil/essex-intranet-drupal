@@ -1,0 +1,4 @@
+restricted_content_types:
+  - localgov_directory
+  - localgov_news_article
+  - localgov_newsroom

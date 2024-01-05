@@ -10,7 +10,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeForm;
 
-// To enable identify whether the "Restricted content" flag is available.
+// To enable/disable the "Restricted content" flag.
 const RESTRICTED_CONTENT_FORM_FLAG = FALSE;
 
 /**
