@@ -38,7 +38,7 @@ class RestrictedContent implements RestrictedContentInterface {
           if ($entity->id() === $parent->id()) {
             // There's no guarantee that the entity isn't its own grandparent,
             // but abort in the simple case that it's its own parent.
-            // TODO: A more complex check is needed for the non-trivial case.
+            // @todo A more complex check is needed for the non-trivial case.
             return TRUE;
           }
           return $this->isAncestorRestricted($parent);

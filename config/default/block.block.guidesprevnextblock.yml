@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_classes
     - localgov_guides
+    - localgov_restricted_content
   theme:
     - essex
 id: guidesprevnextblock
@@ -17,4 +19,12 @@ settings:
   label: 'Guides prev next block'
   label_display: '0'
   provider: localgov_guides
-visibility: {  }
+  show_title: false
+visibility:
+  restricted_content:
+    id: restricted_content
+    enabled: 1
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+      user: '@user.current_user_context:current_user'

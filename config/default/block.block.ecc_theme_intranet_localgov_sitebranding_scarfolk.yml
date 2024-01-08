@@ -1,0 +1,25 @@
+uuid: 0dbcb5d2-9892-4dad-98ea-b85e191ea028
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ecc_theme_intranet
+_core:
+  default_config_hash: WOE_zR7p0ezLQ1hycQH7E2EYgfUDEQuzmCF9fxR6-ZI
+id: ecc_theme_intranet_localgov_sitebranding_scarfolk
+theme: ecc_theme_intranet
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

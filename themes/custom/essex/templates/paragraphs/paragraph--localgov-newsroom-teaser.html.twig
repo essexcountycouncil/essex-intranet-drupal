@@ -66,11 +66,15 @@
             </h3>
         {% endif %}
 
+        {% if content.field_date_only %}
+          <time>{{ content.field_date_only }}</time>
+        {% endif %}
+
         {% if paragraph.localgov_newsroom_teaser_summary.value %}
             <div class="newsroom-teaser__summary">
-            {{ content.localgov_newsroom_teaser_summary }}
+              {{ content.localgov_newsroom_teaser_summary }}
             </div>
         {% endif %}
-    <div>
+    </div>
 
 </article>

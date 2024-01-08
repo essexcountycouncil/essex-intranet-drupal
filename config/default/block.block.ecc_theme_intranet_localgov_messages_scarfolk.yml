@@ -1,0 +1,22 @@
+uuid: dac63f3b-b9d1-4f6b-a11e-985c844f7b9d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ecc_theme_intranet
+_core:
+  default_config_hash: XqdhRTIfjgkSTBL-WtfsStngpA1B7I9_ajAh3cVOk5s
+id: ecc_theme_intranet_localgov_messages_scarfolk
+theme: ecc_theme_intranet
+region: messages
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

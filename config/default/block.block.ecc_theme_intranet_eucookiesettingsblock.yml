@@ -1,0 +1,25 @@
+uuid: 46ceae36-20b2-47ab-bafe-7a5297ccd658
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_eu_cookie_compliance
+    - system
+  theme:
+    - ecc_theme_intranet
+id: ecc_theme_intranet_eucookiesettingsblock
+theme: ecc_theme_intranet
+region: content_top
+weight: -11
+provider: null
+plugin: cookie_settings_block
+settings:
+  id: cookie_settings_block
+  label: 'EU Cookie settings block'
+  label_display: '0'
+  provider: localgov_eu_cookie_compliance
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /cookies

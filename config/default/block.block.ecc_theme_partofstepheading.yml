@@ -1,0 +1,36 @@
+uuid: 335a8811-cd38-4c2a-9e24-434afc77f783
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_restricted_content
+    - localgov_step_by_step
+    - node
+  theme:
+    - ecc_theme
+id: ecc_theme_partofstepheading
+theme: ecc_theme
+region: content_top
+weight: -10
+provider: null
+plugin: step_part_of_block
+settings:
+  id: step_part_of_block
+  label: 'Part of step heading'
+  label_display: '0'
+  provider: localgov_step_by_step
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      localgov_step_by_step_page: localgov_step_by_step_page
+  restricted_content:
+    id: restricted_content
+    enabled: 1
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+      user: '@user.current_user_context:current_user'
