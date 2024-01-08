@@ -390,9 +390,6 @@ nav.lgd-prev-next ul.lgd-prev-next__list li {
 }
 
 /* RESPONSIVENESS */
-.views-col:nth-child(2) {
-  padding: 0 2rem;
-}
 
 .lgd-page-section {
   padding-right: var(--spacing-padding-horizontal);
@@ -586,8 +583,6 @@ h1:after,
 
 .path-frontpage .banner h1 {
   --font-size-h1: clamp(1.5rem, 2.5vw, 2.562rem);
-  width: fit-content;
-  -moz-width: fit-content;
   padding: calc(var(--spacing) - 0.5px) var(--spacing-large);
 }
 

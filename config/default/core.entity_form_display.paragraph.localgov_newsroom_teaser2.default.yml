@@ -1,0 +1,27 @@
+uuid: 51193e7e-4e54-4115-acd6-6e7eb1286a71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.localgov_newsroom_teaser2.field_news_card
+    - paragraphs.paragraphs_type.localgov_newsroom_teaser2
+  module:
+    - dynamic_entity_reference
+id: paragraph.localgov_newsroom_teaser2.default
+targetEntityType: paragraph
+bundle: localgov_newsroom_teaser2
+mode: default
+content:
+  field_news_card:
+    type: dynamic_entity_reference_default
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

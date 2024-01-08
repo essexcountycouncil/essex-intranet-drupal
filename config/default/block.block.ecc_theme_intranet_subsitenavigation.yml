@@ -1,0 +1,38 @@
+uuid: 34711f0e-8a9f-4aae-87ba-04c5776f5adb
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_restricted_content
+    - localgov_subsites
+    - node
+  theme:
+    - ecc_theme_intranet
+id: ecc_theme_intranet_subsitenavigation
+theme: ecc_theme_intranet
+region: sidebar_second
+weight: 0
+provider: null
+plugin: localgov_subsite_navigation
+settings:
+  id: localgov_subsite_navigation
+  label: 'Subsite navigation'
+  label_display: '0'
+  provider: localgov_subsites
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      localgov_subsites_overview: localgov_subsites_overview
+  restricted_content:
+    id: restricted_content
+    enabled: 1
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+      user: '@user.current_user_context:current_user'

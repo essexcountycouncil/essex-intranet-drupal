@@ -5,6 +5,8 @@ dependencies:
   config:
     - views.view.localgov_step_by_step_navigation
   module:
+    - block_classes
+    - localgov_restricted_content
     - views
   theme:
     - essex
@@ -23,4 +25,11 @@ settings:
     nid: '@node.node_route_context:node'
   views_label: ''
   items_per_page: none
-visibility: {  }
+visibility:
+  restricted_content:
+    id: restricted_content
+    enabled: 1
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+      user: '@user.current_user_context:current_user'

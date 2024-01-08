@@ -1,0 +1,39 @@
+uuid: dc46da13-f662-488d-999a-95cc9f90b032
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_restricted_content
+    - localgov_subsites
+    - node
+  theme:
+    - ecc_theme
+id: ecc_theme_subsitebanner
+theme: ecc_theme
+region: hero
+weight: -10
+provider: null
+plugin: localgov_subsite_banner
+settings:
+  id: localgov_subsite_banner
+  label: 'Subsite banner'
+  label_display: '0'
+  provider: localgov_subsites
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      localgov_subsites_overview: localgov_subsites_overview
+  restricted_content:
+    id: restricted_content
+    pages: ''
+    negate: 0
+    enabled: 1
+    context_mapping:
+      node: '@node.node_route_context:node'
+      user: '@user.current_user_context:current_user'

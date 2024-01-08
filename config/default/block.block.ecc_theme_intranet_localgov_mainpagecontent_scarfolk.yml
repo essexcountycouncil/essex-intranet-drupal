@@ -1,0 +1,22 @@
+uuid: 0b323de3-6b04-4f2a-903e-4aa4f84519db
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ecc_theme_intranet
+_core:
+  default_config_hash: xjT-PMJ_X0d1hz-hW2RTS2HI58Nv1lAvwxx7MPSs9-4
+id: ecc_theme_intranet_localgov_mainpagecontent_scarfolk
+theme: ecc_theme_intranet
+region: content
+weight: -14
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }
