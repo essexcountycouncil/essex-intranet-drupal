@@ -2,22 +2,12 @@
 
 namespace Drupal\localgov_restricted_content\Form;
 
-use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\ConfigFormBase;
-use Drupal\Core\Path\PathValidatorInterface;
-use Drupal\Core\Site\Settings;
-use Drupal\Core\Url;
-use Drupal\Component\Utility\UrlHelper;
-use Drupal\Core\Routing\RequestContext;
-use Drupal\eu_cookie_compliance\Plugin\ConsentStorageManager;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Extension\ModuleHandlerInterface;
-use Drupal\user\RoleStorageInterface;
-use Drupal\Core\Cache\Cache;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides settings for eu_cookie_compliance module.
@@ -25,6 +15,44 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 class RestrictedContentConfigForm extends ConfigFormBase {
 
   use StringTranslationTrait;
+
+  /**
+   * Constructs a \Drupal\system\ConfigFormBase object.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The factory for configuration objects.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   Entity type manager.
+   */
+  public function __construct(
+    ConfigFactoryInterface $config_factory,
+    protected EntityTypeManagerInterface $entityTypeManager
+  ) {
+    parent::__construct($config_factory);
+    $this->setEntityTypeManager($this->entityTypeManager);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    $instance = parent::create($container);
+    $instance->entityTypeManager = $container->get('entity_type.manager');
+    return $instance;
+  }
+
+  /**
+   * Sets the entity type manager for this form.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   *   Entity type manager.
+   *
+   * @return $this
+   */
+  public function setEntityTypeManager(EntityTypeManagerInterface $entityTypeManager) {
+    $this->entityTypeManager = $entityTypeManager;
+    return $this;
+  }
 
   /**
    * {@inheritdoc}
@@ -49,8 +77,7 @@ class RestrictedContentConfigForm extends ConfigFormBase {
     $config = $this->config('localgov_restricted_content.settings');
 
     $restricted_content_types = $config->get('restricted_content_types') ?? [];
-    $entityTypeManager = \Drupal::service('entity_type.manager');
-    $contentTypes = $entityTypeManager->getStorage('node_type')->loadMultiple();
+    $contentTypes = $this->entityTypeManager->getStorage('node_type')->loadMultiple();
 
     $form['content_types'] = [
       '#tree' => TRUE,
