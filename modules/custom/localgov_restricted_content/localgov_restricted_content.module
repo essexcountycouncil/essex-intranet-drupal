@@ -44,6 +44,7 @@ function localgov_restricted_content_form_node_form_alter(&$form, FormStateInter
   /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
   $entity = $node_form->getEntity();
 
+  // Only display restricted content checkbox for selected content types.
   $form['localgov_restricted_content']['#access'] = FALSE;
   $config = \Drupal::config('localgov_restricted_content.settings');
   foreach ($config->get('restricted_content_types') as $content_type) {
