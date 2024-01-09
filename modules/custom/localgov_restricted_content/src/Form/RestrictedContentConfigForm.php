@@ -2,8 +2,6 @@
 
 namespace Drupal\localgov_restricted_content\Form;
 
-use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -17,20 +15,11 @@ class RestrictedContentConfigForm extends ConfigFormBase {
   use StringTranslationTrait;
 
   /**
-   * Constructor.
+   * Entity type manager.
    *
-   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
-   *   The factory for configuration objects.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
-   *   Entity type manager.
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
-  public function __construct(
-    ConfigFactoryInterface $config_factory,
-    protected EntityTypeManagerInterface $entityTypeManager
-  ) {
-    parent::__construct($config_factory);
-    $this->setEntityTypeManager($this->entityTypeManager);
-  }
+  protected $entityTypeManager;
 
   /**
    * {@inheritdoc}
@@ -39,19 +28,6 @@ class RestrictedContentConfigForm extends ConfigFormBase {
     $instance = parent::create($container);
     $instance->entityTypeManager = $container->get('entity_type.manager');
     return $instance;
-  }
-
-  /**
-   * Sets the entity type manager for this form.
-   *
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
-   *   *   Entity type manager.
-   *
-   * @return $this
-   */
-  public function setEntityTypeManager(EntityTypeManagerInterface $entityTypeManager) {
-    $this->entityTypeManager = $entityTypeManager;
-    return $this;
   }
 
   /**
