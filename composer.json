@@ -73,6 +73,7 @@
         "drupal/geocoder": "^4",
         "drupal/geofield_map": "^3",
         "drupal/gin": "^3.0@RC",
+        "drupal/google_tag": "^1.6.0",
         "drupal/group": "^3",
         "drupal/health_check_url": "^3.2",
         "drupal/imagemagick": "^3.4",

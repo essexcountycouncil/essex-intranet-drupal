@@ -119,10 +119,6 @@
     margin: 0 clamp(var(--spacing-smallest), 2.5vw, var(--spacing-largest))
   }
 
-  .field--name-localgov-subsites-content>.field__item:first-child .layout__region--first {
-    margin: var(--spacing-larger) 0;
-  }
-
   .field--name-localgov-subsites-content>.field__item:first-child .layout__region--first>.paragraph--type--localgov-text>.field--name-localgov-text {
     padding-top: clamp(0.75rem, 2vw, var(--spacing));
   }
@@ -390,7 +386,7 @@
 /* End */
 
 /* Added for ECCI-418 */
-.newsroom-teaser__content time > div {
+.newsroom-teaser__content time>div {
   padding: 0 var(--spacing);
   margin-top: calc(var(--spacing) * 0.5);
   margin-bottom: calc(var(--spacing) * 0.5);
@@ -400,7 +396,7 @@
   margin-bottom: calc(var(--spacing) * 0.5);
 }
 
-.newsroom-teaser__content h3 > a {
+.newsroom-teaser__content h3>a {
   color: var(--color-black);
 }
 
@@ -410,7 +406,7 @@
 }
 
 @media screen and (min-width: 640px) {
-  .newsroom-teaser__content time > div {
+  .newsroom-teaser__content time>div {
     margin-top: calc(var(--spacing) * 0.75);
     margin-bottom: var(--spacing);
   }
@@ -425,3 +421,11 @@
 }
 
 /* End */
+/* MWT */
+.layout--onecol .paragraph--type--localgov-media-with-text+.paragraph--type--localgov-media-with-text {
+  margin-top: var(--spacing-largest);
+}
+
+main>.lgd-region.lgd-region--content.region.region-content {
+  padding-top: var(--spacing-large);
+}

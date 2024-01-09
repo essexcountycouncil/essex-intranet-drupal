@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_classes
+    - localgov_restricted_content
     - localgov_step_by_step
     - node
   theme:
@@ -26,3 +28,10 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       localgov_step_by_step_page: localgov_step_by_step_page
+  restricted_content:
+    id: restricted_content
+    enabled: 1
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+      user: '@user.current_user_context:current_user'
