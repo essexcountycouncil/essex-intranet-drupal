@@ -1,3 +1,12 @@
 services:
   localgov_restricted_content.restricted_content:
     class: Drupal\localgov_restricted_content\RestrictedContent
+
+  # Alter page header.
+  localgov_restricted_content.event_page_header:
+    class: Drupal\localgov_restricted_content\EventSubscriber\PageHeaderSubscriber
+    arguments:
+      - '@current_user'
+      - '@localgov_restricted_content.restricted_content'
+    tags:
+      - { name: 'event_subscriber' }
