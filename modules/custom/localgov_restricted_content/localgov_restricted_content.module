@@ -10,9 +10,6 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeForm;
 
-// To enable identify whether the "Restricted content" flag is available.
-const RESTRICTED_CONTENT_FORM_FLAG = FALSE;
-
 /**
  * Implements hook_entity_view_mode_alter().
  */
@@ -47,28 +44,25 @@ function localgov_restricted_content_form_node_form_alter(&$form, FormStateInter
   /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
   $entity = $node_form->getEntity();
 
-  /** @var \Drupal\localgov_restricted_content\RestrictedContentInterface $restricted_content */
-  $restricted_content = \Drupal::service('localgov_restricted_content.restricted_content');
+  // Only display restricted content checkbox for selected content types.
+  $form['localgov_restricted_content']['#access'] = FALSE;
+  $config = \Drupal::config('localgov_restricted_content.settings');
+  foreach ($config->get('restricted_content_types') as $content_type) {
+    if (in_array($form_id, [
+      'node_' . $content_type . '_form',
+      'node_' . $content_type . '_edit_form',
+    ])) {
+      $form['localgov_restricted_content']['#access'] = TRUE;
 
-  if ($restricted_content->isAncestorRestricted($entity)) {
-    $form['localgov_restricted_content']['#suffix'] = t('<div class="form-item__label option">This is disabled because the page\'s parent is restricted.</div>');
-    $form['localgov_restricted_content']['#disabled'] = TRUE;
-  }
+      /** @var \Drupal\localgov_restricted_content\RestrictedContentInterface $restricted_content */
+      $restricted_content = \Drupal::service('localgov_restricted_content.restricted_content');
 
-  // Determine whether to hide the Restricted content portion of the node edit
-  // form.
-  if (RESTRICTED_CONTENT_FORM_FLAG) {
-    switch ($form_id) {
-      case 'node_localgov_news_article_form':
-      case 'node_localgov_news_article_edit_form':
-      case 'node_localgov_newsroom_form':
-      case 'node_localgov_newsroom_edit_form':
-        break;
-
-      default:
+      if ($restricted_content->isAncestorRestricted($entity)) {
+        $form['localgov_restricted_content']['#suffix'] = t('<div class="form-item__label option">This is disabled because the page\'s parent is restricted.</div>');
         $form['localgov_restricted_content']['#disabled'] = TRUE;
-        break;
+      }
 
+      break;
     }
   }
 }
