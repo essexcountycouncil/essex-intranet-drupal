@@ -54,8 +54,30 @@ RUN apt-get update \
 
 RUN update-alternatives --set php /usr/bin/php8.1
 
+#RUN git clone https://github.com/Imagick/imagick.git --depth 1 /tmp/imagick
+    #&& \
+#    cd /tmp/imagick && \
+#    git fetch origin pull/641/head:fix-unterminated-preprocessor-conditions && \
+#    git switch fix-unterminated-preprocessor-conditions
+
+#RUN cd /tmp/imagick && \
+#    phpize && \
+#    ./configure && \
+#    make && \
+#    make install
+
+#ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+
+#RUN chmod +x /usr/local/bin/install-php-extensions && \
+#    install-php-extensions imagick
+
 RUN pecl channel-update pecl.php.net \
     && pecl download imagick \
+    && ls \
+    #&& tar xzf imagick-3.7.0.tgz \
+    #&& patch mypatch.diff imagick/Imagick.stub.php \
+    #&& tar czf imagick-3.7.0-patch01.tgz imagick package.xml \
+    #&& pecl install ./imagick-3.7.0.tgz
     && pecl install imagick memcached
 
 # Download and install Composer
