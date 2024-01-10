@@ -2,6 +2,7 @@
 
 namespace Drupal\localgov_restricted_content;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
 
 /**
@@ -20,6 +21,15 @@ class RestrictedContent implements RestrictedContentInterface {
   public const RESTRICTED_CONTENT_FIELD = 'localgov_restricted_content';
 
   /**
+   * Constructor.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   *   Config factory.
+   */
+  public function __construct(protected ConfigFactoryInterface $configFactory) {
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function isAncestorRestricted(ContentEntityInterface $entity): bool {
@@ -30,8 +40,9 @@ class RestrictedContent implements RestrictedContentInterface {
       }
     }
     if (isset($parent_field)) {
+      /** @var \Drupal\Core\Entity\ContentEntityInterface $parent $parent */
       if ($parent = $entity->{$parent_field}->entity) {
-        if ($parent->hasField($this::RESTRICTED_CONTENT_FIELD)) {
+        if ($this->isEntityRestrictable($parent)) {
           if ($parent->{$this::RESTRICTED_CONTENT_FIELD}->value) {
             return TRUE;
           }
@@ -52,13 +63,34 @@ class RestrictedContent implements RestrictedContentInterface {
    * {@inheritdoc}
    */
   public function isRestricted(ContentEntityInterface $entity): bool {
-    if ($entity->hasField($this::RESTRICTED_CONTENT_FIELD)) {
+    if ($this->isEntityRestrictable($entity)) {
       if ($entity->{$this::RESTRICTED_CONTENT_FIELD}->value) {
         return TRUE;
       }
       return $this->isAncestorRestricted($entity);
     }
     return FALSE;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isEntityRestrictable(ContentEntityInterface $entity): bool {
+    if ($entity->getEntityTypeId() !== 'node') {
+      return FALSE;
+    }
+
+    $restricted_content_types = &drupal_static(__FUNCTION__);
+    if (!isset($restricted_content_types)) {
+      $config = $this->configFactory->get('localgov_restricted_content');
+      $restricted_content_types = $config->get('restricted_content_types') ?? [];
+    }
+
+    if (!in_array($entity->bundle(), $restricted_content_types)) {
+      return FALSE;
+    }
+
+    return $entity->hasField($this::RESTRICTED_CONTENT_FIELD);
   }
 
 }
