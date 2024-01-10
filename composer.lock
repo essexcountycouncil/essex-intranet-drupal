@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5768bcd79f7b99782749b84bbba632a",
+    "content-hash": "5f2bb672e80b9d0407b6fab8cfc6e6ae",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8887,34 +8887,6 @@
                 "issues": "https://github.com/essexcountycouncil/ecc_menu/issues"
             },
             "time": "2023-10-04T08:59:52+00:00"
-        },
-        {
-            "name": "essexcountycouncil/ecc_theme",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/essexcountycouncil/ecc_theme.git",
-                "reference": "e1078977ad5042d1b67c3a65d1e2e9203a1279d8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/essexcountycouncil/ecc_theme/zipball/e1078977ad5042d1b67c3a65d1e2e9203a1279d8",
-                "reference": "e1078977ad5042d1b67c3a65d1e2e9203a1279d8",
-                "shasum": ""
-            },
-            "type": "drupal-theme",
-            "authors": [
-                {
-                    "name": "ageorge",
-                    "email": "ageorge@nomensa.com"
-                }
-            ],
-            "description": "Consolidated Essex County Council Drupal theme",
-            "support": {
-                "source": "https://github.com/essexcountycouncil/ecc_theme/tree/1.0.1",
-                "issues": "https://github.com/essexcountycouncil/ecc_theme/issues"
-            },
-            "time": "2023-11-02T10:35:07+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -19193,6 +19165,7 @@
                 "joyqi/hyper-down": "<=2.4.27",
                 "jsdecena/laracom": "<2.0.9",
                 "jsmitty12/phpwhois": "<5.1",
+                "juzaweb/cms": "<=3.4",
                 "kazist/phpwhois": "<=4.2.6",
                 "kelvinmo/simplexrd": "<3.1.1",
                 "kevinpapst/kimai2": "<1.16.7",
