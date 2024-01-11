@@ -76,7 +76,7 @@ class RestrictedContent implements RestrictedContentInterface {
    * Check if entity is restrictable.
    *
    * 1. Entity is a node.
-   * 2. Content type is on the list of restricted content types.
+   * 2. Content type is in the list of restricted content types.
    * 3. Entity has the restricted content field.
    *
    * @param \Drupal\Core\Entity\ContentEntityInterface $entity
@@ -92,7 +92,7 @@ class RestrictedContent implements RestrictedContentInterface {
 
     $restricted_content_types = &drupal_static(__FUNCTION__);
     if (!isset($restricted_content_types)) {
-      $config = $this->configFactory->get('localgov_restricted_content');
+      $config = $this->configFactory->get('localgov_restricted_content.settings');
       $restricted_content_types = $config->get('restricted_content_types') ?? [];
     }
 
