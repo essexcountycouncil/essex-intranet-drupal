@@ -73,7 +73,17 @@ class RestrictedContent implements RestrictedContentInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Check if entity is restrictable.
+   *
+   * 1. Entity is a node.
+   * 2. Content type is on the list of restricted content types.
+   * 3. Entity has the restricted content field.
+   *
+   * @param \Drupal\Core\Entity\ContentEntityInterface $entity
+   *   Entity.
+   *
+   * @return bool
+   *   TRUE if entity is restrictable.
    */
   public function isEntityRestrictable(ContentEntityInterface $entity): bool {
     if ($entity->getEntityTypeId() !== 'node') {
