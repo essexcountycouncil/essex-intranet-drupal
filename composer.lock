@@ -10166,16 +10166,16 @@
         },
         {
             "name": "localgovdrupal/localgov_base",
-            "version": "1.4.17",
+            "version": "1.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/localgovdrupal/localgov_base.git",
-                "reference": "e8b8c66a98b2b7015d8bed4ec38e84cbf9c6be1c"
+                "reference": "c1c1d29eea65a56ac9819d09d032804c546fe5dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/localgovdrupal/localgov_base/zipball/e8b8c66a98b2b7015d8bed4ec38e84cbf9c6be1c",
-                "reference": "e8b8c66a98b2b7015d8bed4ec38e84cbf9c6be1c",
+                "url": "https://api.github.com/repos/localgovdrupal/localgov_base/zipball/c1c1d29eea65a56ac9819d09d032804c546fe5dc",
+                "reference": "c1c1d29eea65a56ac9819d09d032804c546fe5dc",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -10187,9 +10187,9 @@
             "homepage": "https://github.com/localgovdrupal/localgov_base",
             "support": {
                 "issues": "https://github.com/localgovdrupal/localgov_base/issues",
-                "source": "https://github.com/localgovdrupal/localgov_base/tree/1.4.17"
+                "source": "https://github.com/localgovdrupal/localgov_base/tree/1.4.18"
             },
-            "time": "2023-11-20T14:57:55+00:00"
+            "time": "2023-11-27T14:41:17+00:00"
         },
         {
             "name": "localgovdrupal/localgov_core",
@@ -10674,7 +10674,7 @@
             "homepage": "https://github.com/localgovdrupal/localgov_os_places_geocoder_provider",
             "support": {
                 "issues": "https://github.com/localgovdrupal/localgov_os_places_geocoder_provider/issues",
-                "source": "https://github.com/localgovdrupal/localgov_os_places_geocoder_provider/tree/release-1.x"
+                "source": "https://github.com/localgovdrupal/localgov_os_places_geocoder_provider/tree/1.x"
             },
             "time": "2021-11-29T14:25:00+00:00"
         },
@@ -17106,6 +17106,10 @@
                     "homepage": "https://www.drupal.org/user/172527"
                 },
                 {
+                    "name": "borisson_",
+                    "homepage": "https://www.drupal.org/user/2393360"
+                },
+                {
                     "name": "Gábor Hojtsy",
                     "homepage": "https://www.drupal.org/user/4166"
                 },
@@ -19189,6 +19193,7 @@
                 "joyqi/hyper-down": "<=2.4.27",
                 "jsdecena/laracom": "<2.0.9",
                 "jsmitty12/phpwhois": "<5.1",
+                "juzaweb/cms": "<=3.4",
                 "kazist/phpwhois": "<=4.2.6",
                 "kelvinmo/simplexrd": "<3.1.1",
                 "kevinpapst/kimai2": "<1.16.7",

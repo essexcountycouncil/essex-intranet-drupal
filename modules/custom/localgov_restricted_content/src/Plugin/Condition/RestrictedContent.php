@@ -85,6 +85,8 @@ class RestrictedContent extends ConditionPluginBase implements ContainerFactoryP
 
   /**
    * {@inheritdoc}
+   *
+   * Return FALSE if the user is anonymous and the node is restricted.
    */
   public function evaluate() {
     if (!$this->isEnabled()) {

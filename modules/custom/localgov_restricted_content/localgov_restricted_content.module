@@ -10,9 +10,6 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeForm;
 
-// To enable/disable the "Restricted content" flag.
-const RESTRICTED_CONTENT_FORM_FLAG = TRUE;
-
 /**
  * Implements hook_entity_view_mode_alter().
  */
@@ -47,28 +44,25 @@ function localgov_restricted_content_form_node_form_alter(&$form, FormStateInter
   /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
   $entity = $node_form->getEntity();
 
-  /** @var \Drupal\localgov_restricted_content\RestrictedContentInterface $restricted_content */
-  $restricted_content = \Drupal::service('localgov_restricted_content.restricted_content');
+  // Only display restricted content checkbox for selected content types.
+  $form['localgov_restricted_content']['#access'] = FALSE;
+  $config = \Drupal::config('localgov_restricted_content.settings');
+  foreach ($config->get('restricted_content_types') as $content_type) {
+    if (in_array($form_id, [
+      'node_' . $content_type . '_form',
+      'node_' . $content_type . '_edit_form',
+    ])) {
+      $form['localgov_restricted_content']['#access'] = TRUE;
 
-  if ($restricted_content->isAncestorRestricted($entity)) {
-    $form['localgov_restricted_content']['#suffix'] = t('<div class="form-item__label option">This is disabled because the page\'s parent is restricted.</div>');
-    $form['localgov_restricted_content']['#disabled'] = TRUE;
-  }
+      /** @var \Drupal\localgov_restricted_content\RestrictedContentInterface $restricted_content */
+      $restricted_content = \Drupal::service('localgov_restricted_content.restricted_content');
 
-  // Determine whether to hide the Restricted content portion of the node edit
-  // form.
-  if (RESTRICTED_CONTENT_FORM_FLAG) {
-    switch ($form_id) {
-      case 'node_localgov_news_article_form':
-      case 'node_localgov_news_article_edit_form':
-      case 'node_localgov_newsroom_form':
-      case 'node_localgov_newsroom_edit_form':
-        break;
-
-      default:
+      if ($restricted_content->isAncestorRestricted($entity)) {
+        $form['localgov_restricted_content']['#suffix'] = t('<div class="form-item__label option">This is disabled because the page\'s parent is restricted.</div>');
         $form['localgov_restricted_content']['#disabled'] = TRUE;
-        break;
+      }
 
+      break;
     }
   }
 }
@@ -78,14 +72,14 @@ function localgov_restricted_content_form_node_form_alter(&$form, FormStateInter
  */
 function localgov_restricted_content_entity_extra_field_info() {
   $return = [];
-  $bundle_info = \Drupal::service('entity_type.bundle.info')->getBundleInfo('node');
-  foreach ($bundle_info as $bundle => $bundle_info_item) {
-    $return['node'][$bundle]['display']['restricted_content_sign_in'] = [
+  $config = \Drupal::config('localgov_restricted_content.settings');
+  foreach ($config->get('restricted_content_types') as $content_type) {
+    $return['node'][$content_type]['display']['restricted_content_sign_in'] = [
       'label' => t('Sign in link for listings'),
       'description' => t('Display sign in link on teasers, cards, etc.'),
       'visible' => TRUE,
     ];
-    $return['node'][$bundle]['display']['restricted_content_sign_in_with_message'] = [
+    $return['node'][$content_type]['display']['restricted_content_sign_in_with_message'] = [
       'label' => t('Sign in link for pages'),
       'description' => t('Display sign in link with message on a restricted content page.'),
       'visible' => TRUE,
