@@ -10674,7 +10674,7 @@
             "homepage": "https://github.com/localgovdrupal/localgov_os_places_geocoder_provider",
             "support": {
                 "issues": "https://github.com/localgovdrupal/localgov_os_places_geocoder_provider/issues",
-                "source": "https://github.com/localgovdrupal/localgov_os_places_geocoder_provider/tree/release-1.x"
+                "source": "https://github.com/localgovdrupal/localgov_os_places_geocoder_provider/tree/1.x"
             },
             "time": "2021-11-29T14:25:00+00:00"
         },
@@ -17106,6 +17106,10 @@
                     "homepage": "https://www.drupal.org/user/172527"
                 },
                 {
+                    "name": "borisson_",
+                    "homepage": "https://www.drupal.org/user/2393360"
+                },
+                {
                     "name": "Gábor Hojtsy",
                     "homepage": "https://www.drupal.org/user/4166"
                 },
@@ -19189,6 +19193,7 @@
                 "joyqi/hyper-down": "<=2.4.27",
                 "jsdecena/laracom": "<2.0.9",
                 "jsmitty12/phpwhois": "<5.1",
+                "juzaweb/cms": "<=3.4",
                 "kazist/phpwhois": "<=4.2.6",
                 "kelvinmo/simplexrd": "<3.1.1",
                 "kevinpapst/kimai2": "<1.16.7",
