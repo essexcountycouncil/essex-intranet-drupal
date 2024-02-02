@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
  * Provides settings for localgov_restricted_content module.
  */
 class RestrictedContentConfigForm extends ConfigFormBase {
