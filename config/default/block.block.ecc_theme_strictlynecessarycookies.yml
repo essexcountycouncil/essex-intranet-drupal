@@ -1,0 +1,27 @@
+uuid: 2df122c4-024f-449a-b4b2-c250d6744b5b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ecc_theme
+id: ecc_theme_strictlynecessarycookies
+theme: ecc_theme
+region: content_top
+weight: -12
+provider: null
+plugin: 'block_content:d4068b55-5c08-478f-a7fc-80aadc493632'
+settings:
+  id: 'block_content:d4068b55-5c08-478f-a7fc-80aadc493632'
+  label: 'Strictly Necessary Cookies'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /cookies

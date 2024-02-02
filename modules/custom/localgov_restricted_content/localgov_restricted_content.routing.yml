@@ -1,8 +1,8 @@
-ram_webform.config_form:
+localgov_restricted_content.config_form:
   path: '/admin/config/content/restricted-content'
   defaults:
     _form: '\Drupal\localgov_restricted_content\Form\RestrictedContentConfigForm'
-    _title: 'Restricted Content configuration'
+    _title: 'Restricted Content settings'
   requirements:
     _permission: 'administer localgov restricted content'
   options:

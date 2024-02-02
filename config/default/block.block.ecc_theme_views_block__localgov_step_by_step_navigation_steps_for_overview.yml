@@ -1,0 +1,42 @@
+uuid: 7b0c3ade-666f-4ade-b9ef-89a00d8c775a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.localgov_step_by_step_navigation
+  module:
+    - localgov_restricted_content
+    - node
+    - views
+  theme:
+    - ecc_theme
+id: ecc_theme_views_block__localgov_step_by_step_navigation_steps_for_overview
+theme: ecc_theme
+region: content_bottom
+weight: -11
+provider: null
+plugin: 'views_block:localgov_step_by_step_navigation-steps_for_overview'
+settings:
+  id: 'views_block:localgov_step_by_step_navigation-steps_for_overview'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping:
+    nid: '@node.node_route_context:node'
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      localgov_step_by_step_overview: localgov_step_by_step_overview
+  restricted_content:
+    id: restricted_content
+    enabled: 1
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+      user: '@user.current_user_context:current_user'

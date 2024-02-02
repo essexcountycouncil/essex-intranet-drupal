@@ -8,7 +8,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides settings for eu_cookie_compliance module.
+ * Provides settings for localgov_restricted_content module.
  */
 class RestrictedContentConfigForm extends ConfigFormBase {
 
@@ -53,7 +53,8 @@ class RestrictedContentConfigForm extends ConfigFormBase {
     $config = $this->config('localgov_restricted_content.settings');
 
     $restricted_content_types = $config->get('restricted_content_types') ?? [];
-    $contentTypes = $this->entityTypeManager->getStorage('node_type')->loadMultiple();
+    $content_types = $this->entityTypeManager->getStorage('node_type')->loadMultiple();
+    asort($content_types);
 
     $form['content_types'] = [
       '#tree' => TRUE,
@@ -61,11 +62,11 @@ class RestrictedContentConfigForm extends ConfigFormBase {
       '#title' => $this->t('Content types'),
     ];
 
-    foreach ($contentTypes as $contentType) {
-      $form['content_types'][$contentType->id()] = [
+    foreach ($content_types as $content_type) {
+      $form['content_types'][$content_type->id()] = [
         '#type' => 'checkbox',
-        '#title' => $contentType->label(),
-        '#default_value' => in_array($contentType->id(), $restricted_content_types),
+        '#title' => $content_type->label(),
+        '#default_value' => in_array($content_type->id(), $restricted_content_types),
       ];
     }
     return parent::buildForm($form, $form_state);

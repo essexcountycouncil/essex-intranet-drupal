@@ -1,3 +1,19 @@
 restricted_content_types:
+  - localgov_directories_org
+  - localgov_directories_page
+  - localgov_directories_venue
+  - localgov_directory
+  - localgov_directory_promo_page
+  - localgov_event
+  - localgov_guides_overview
+  - localgov_guides_page
   - localgov_news_article
   - localgov_newsroom
+  - localgov_services_landing
+  - localgov_services_page
+  - localgov_services_status
+  - localgov_services_sublanding
+  - localgov_step_by_step_overview
+  - localgov_step_by_step_page
+  - localgov_subsites_overview
+  - localgov_subsites_page
