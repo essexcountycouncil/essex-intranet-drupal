@@ -3,6 +3,7 @@ stages:
   - build
   - development
   - development-postdeploy
+  - build-test
   - development-test
   - preproduction
   - preproduction-postdeploy
@@ -47,6 +48,24 @@ build-and-push-images:
   rules:
     - if: '$CI_COMMIT_BRANCH == "develop"'
     - when: manual
+
+# The cache strategy for the build job.
+.cache_strategy_push:
+  cache:
+    paths:
+      - vendor
+      - web/core
+      - web/libraries
+      - web/modules/contrib
+      - web/profiles/contrib
+      - web/themes/contrib
+      - drush/Commands
+
+# The cache strategy for the test jobs.
+.cache_strategy_pull:
+  extends: .cache_strategy_push
+  cache:
+    policy: pull
 
 generate-sbom:
   stage: build
@@ -194,27 +213,9 @@ drush-deploy-dev:
     - when: manual
 
 
-# The cache strategy for the build job.
-.cache_strategy_push:
-  cache:
-    paths:
-      - vendor
-      - web/core
-      - web/libraries
-      - web/modules/contrib
-      - web/profiles/contrib
-      - web/themes/contrib
-      - drush/Commands
-
-# The cache strategy for the test jobs.
-.cache_strategy_pull:
-  extends: .cache_strategy_push
-  cache:
-    policy: pull
-
 drupalci:build:
   extends: .cache_strategy_push
-  stage: Test
+  stage: build-test
   image: polynya/drupal-ci
   script:
     - robo job:build
@@ -223,11 +224,11 @@ drupalci:build:
     paths:
       - ./*
 
-# The template for BDD-CI tests.
+# The template for CI tests.
 .drupalci_test_template:
   extends: .cache_strategy_pull
   image: polynya/drupal-ci
-  stage: Test
+  stage: build-test
   services:
     - name: mariadb:latest
       alias: db
@@ -252,7 +253,7 @@ backstopjs_reference:
   artifacts:
     when: always
     paths:
-      - backstop_data/html_report
+      - tests/backstop/backstop_data/html_report
   allow_failure: true
 
 backstopjs_test:
@@ -262,12 +263,14 @@ backstopjs_test:
   image:
     name: backstopjs/backstopjs:latest
     entrypoint: [""]
+  variables:
+    BACKSTOP_BASE_URL: https://dev.essex-intranet.nomensa.xyz/
   script:
     - backstop --config=tests/backstop/backstop.config.js test
   artifacts:
     when: always
     paths:
-      - backstop_data/html_report
+      - tests/backstop/backstop_data/html_report
   allow_failure: true
 
 ## Job to run Cypress on Dev.
