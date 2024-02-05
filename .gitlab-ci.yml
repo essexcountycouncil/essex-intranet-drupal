@@ -176,9 +176,7 @@ deploy-to-dev:
     - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-dev --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
   rules:
     - if: '$CI_COMMIT_BRANCH == "develop"'
-      when: manual
-    - if: '$CI_COMMIT_BRANCH =~ /^release\//'
-      when: manual
+    - when: manual
 
 drush-deploy-dev:
   image: mcr.microsoft.com/azure-cli
@@ -247,6 +245,7 @@ drupalci:build:
 
 backstopjs_reference:
   stage: development-test
+  needs: ["deploy-to-dev"]
   image:
     name: backstopjs/backstopjs:latest
     entrypoint: [""]
@@ -276,6 +275,7 @@ backstopjs_test:
 ## Job to run Cypress on Dev.
 dev-bdd:
   stage: development-test
+  needs: ["deploy-to-dev", "drupalci:build"]
   extends: .drupalci_test_template
   image: polynya/drupal-ci
   script:
@@ -285,11 +285,7 @@ dev-bdd:
       - ./tests/reports
   rules:
     - if: '$CI_COMMIT_BRANCH == "develop"'
-      when: manual
-    - if: '$CI_COMMIT_BRANCH =~ /^release\//'
-      when: manual
-    - if: '$CI_COMMIT_BRANCH == "ci-cd-tests"'
-      when: manual
+    - when: manual
 
 dev-backstop:
   stage: development-test
@@ -380,8 +376,7 @@ deploy-to-preprod:
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-pre --yaml revision.yml --subscription "Essex County Council (intranet)"
     - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-pre --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
   rules:
-    - if: '$CI_COMMIT_BRANCH =~ /^release\//'
-      when: manual
+    - when: manual
 
 drush-deploy-preprod:
   image: mcr.microsoft.com/azure-cli
@@ -395,8 +390,7 @@ drush-deploy-preprod:
   script:
     - timeout 1200 socat EXEC:'az containerapp exec --command /drupal/deploy.sh --name intranet --container drupal --resource-group rg-ecc-intranet-uks-pre',pty,setsid,ctty STDIO,ignoreeof
   rules:
-    - if: '$CI_COMMIT_BRANCH =~ /^release\//'
-      when: manual
+    - when: manual
 
 deploy-to-prod:
   image: mcr.microsoft.com/azure-cli
@@ -478,6 +472,8 @@ deploy-to-prod:
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"
     - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-prod --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
   rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: manual
     - if: '$CI_COMMIT_BRANCH =~ /^release\//'
       when: manual
 
