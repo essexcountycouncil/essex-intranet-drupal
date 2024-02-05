@@ -293,8 +293,8 @@ dev-bdd:
       when: manual
 
 dev-backstop:
-  stage: development-postdeploy
-  needs: [ "drush-deploy-dev", "drupalci:build" ]
+  stage: development-test
+  needs: [ "deploy-to-dev", "drupalci:build" ]
   extends: .drupalci_test_template
   image: polynya/drupal-ci
   script:
