@@ -244,7 +244,7 @@ drupalci:build:
 
 backstopjs_test:
   stage: development-test
-  needs: [ "deploy-to-dev", "backstopjs_reference" ]
+  needs: [ "deploy-to-dev" ]
   image:
     name: backstopjs/backstopjs:latest
     entrypoint: [""]
