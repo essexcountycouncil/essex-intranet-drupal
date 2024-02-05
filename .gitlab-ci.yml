@@ -212,7 +212,6 @@ drush-deploy-dev:
     - if: '$CI_COMMIT_BRANCH == "develop"'
     - when: manual
 
-
 drupalci:build:
   extends: .cache_strategy_push
   stage: build-test
@@ -252,13 +251,14 @@ backstopjs_test:
     BACKSTOP_BASE_URL: https://dev.essex-intranet.nomensa.xyz
     BACKSTOP_REFERENCE_URL: https://intranet.essex.gov.uk
   script:
-    - env
     - backstop --config=tests/backstop/backstop.config.js reference
     - backstop --config=tests/backstop/backstop.config.js test
   artifacts:
     when: always
     paths:
-      - ./tests/
+      - ./tests/backstop/backstop_data
+    reports:
+      junit: ./tests/backstop/backstop_data/ci_report/*.xml
   allow_failure: true
 
 ## Job to run Cypress on Dev.
@@ -273,6 +273,7 @@ dev-bdd:
   artifacts:
     paths:
       - ./tests/reports
+      - ./tests/backstop/backstop_data
   allow_failure: true
 
 dev-backstop:
