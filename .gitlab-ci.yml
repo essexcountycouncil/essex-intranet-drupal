@@ -272,9 +272,6 @@ dev-bdd:
   artifacts:
     paths:
       - ./tests/reports
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "develop"'
-    - when: manual
 
 dev-backstop:
   stage: development-test
