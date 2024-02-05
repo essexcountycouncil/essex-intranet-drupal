@@ -44,9 +44,9 @@ build-and-push-images:
     - docker push ${DOCKER_REGISTRY}/intranet-nginx-drupal
     - docker push ${DOCKER_REGISTRY}/intranet-drupal-fpm${tag}
     - docker push ${DOCKER_REGISTRY}/intranet-drupal-fpm
-  only:
-    - develop
-    - /^release\//
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+    - when: manual
 
 generate-sbom:
   stage: build
@@ -191,9 +191,7 @@ drush-deploy-dev:
     - timeout 1200 socat EXEC:'az containerapp exec --command /drupal/deploy.sh --name intranet --container drupal --resource-group rg-ecc-intranet-uks-dev',pty,setsid,ctty STDIO,ignoreeof
   rules:
     - if: '$CI_COMMIT_BRANCH == "develop"'
-      when: manual
-    - if: '$CI_COMMIT_BRANCH =~ /^release\//'
-      when: manual
+    - when: manual
 
 
 # The cache strategy for the build job.
