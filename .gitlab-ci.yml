@@ -252,6 +252,7 @@ backstopjs_test:
     BACKSTOP_BASE_URL: https://dev.essex-intranet.nomensa.xyz
     BACKSTOP_REFERENCE_URL: https://intranet.essex.gov.uk
   script:
+    - env
     - backstop --config=tests/backstop/backstop.config.js reference
     - backstop --config=tests/backstop/backstop.config.js test
   artifacts:
