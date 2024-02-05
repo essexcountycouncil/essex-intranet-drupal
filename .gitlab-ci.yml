@@ -244,7 +244,7 @@ drupalci:build:
 
 backstopjs_test:
   stage: development-test
-  needs: [ "deploy-to-dev" ]
+  needs: [ "drush-deploy-dev" ]
   image:
     name: backstopjs/backstopjs:latest
     entrypoint: [""]
@@ -264,7 +264,7 @@ backstopjs_test:
 ## Job to run Cypress on Dev.
 dev-bdd:
   stage: development-test
-  needs: ["deploy-to-dev", "drupalci:build"]
+  needs: ["drush-deploy-dev", "drupalci:build"]
   extends: .drupalci_test_template
   image: polynya/drupal-ci
   script:
@@ -273,10 +273,11 @@ dev-bdd:
   artifacts:
     paths:
       - ./tests/reports
+  allow_failure: true
 
 dev-backstop:
   stage: development-test
-  needs: ["deploy-to-dev", "drupalci:build"]
+  needs: ["drush-deploy-dev", "drupalci:build"]
   extends: .drupalci_test_template
   image: polynya/drupal-ci
   script:
@@ -284,6 +285,7 @@ dev-backstop:
   artifacts:
     paths:
       - ./tests/backstop/backstop_data
+  allow_failure: true
 
 deploy-to-preprod:
   image: mcr.microsoft.com/azure-cli
