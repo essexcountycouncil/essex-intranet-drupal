@@ -22,7 +22,7 @@ module.exports = {
       "label": "homepage",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "url": `${process.env.BACKSTOP_BASE_URL}/`,
-      "referenceUrl": "https://preprod.essex-intranet.nomensa.xyz/",
+      "referenceUrl": `${process.env.BACKSTOP_REFERENCE_URL}/`,
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
@@ -40,25 +40,19 @@ module.exports = {
     {
       "label": "guide_overview",
       "url": `${process.env.BACKSTOP_BASE_URL}/our-council`,
-      "referenceUrl": "https://intranet.essex.gov.uk/our-council",
+      "referenceUrl": `${process.env.BACKSTOP_REFERENCE_URL}/our-council`,
       "removeSelectors": [".eu-cookie-compliance-banner", ".localgov-alert-banner"],
     },
     {
       "label": "feedback_form",
       "url": `${process.env.BACKSTOP_BASE_URL}/form/feedback-form`,
-      "referenceUrl": "https://intranet.essex.gov.uk/form/feedback-form",
-      "removeSelectors": [".eu-cookie-compliance-banner", ".localgov-alert-banner"],
-    },
-    {
-      "label": "feedback_form",
-      "url": `${process.env.BACKSTOP_BASE_URL}/form/feedback-form`,
-      "referenceUrl": "https://intranet.essex.gov.uk/form/feedback-form",
+      "referenceUrl": `${process.env.BACKSTOP_REFERENCE_URL}/form/feedback-form`,
       "removeSelectors": [".eu-cookie-compliance-banner", ".localgov-alert-banner"],
     },
     {
       "label": "page_404",
       "url": `${process.env.BACKSTOP_BASE_URL}/dfghj`,
-      "referenceUrl": "https://intranet.essex.gov.uk/dfghj",
+      "referenceUrl": `${process.env.BACKSTOP_REFERENCE_URL}/dfghj`,
       "removeSelectors": [".eu-cookie-compliance-banner", ".localgov-alert-banner"],
     }
   ],

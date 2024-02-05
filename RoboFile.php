@@ -288,7 +288,7 @@ class RoboFile extends \Robo\Tasks {
       'dev' => 'npx cypress run --config-file "tests/cypress/cypress.config.dev.js" --browser chrome',
     };
     if ($command) {
-      $tasks[] = $this->taskExec('npm install cypress@12 --save-dev');
+      $tasks[] = $this->taskExec('npm install cypress@12 cypress-image-diff-js --save-dev');
       $tasks[] = $this->taskExec($command);
     }
     return $tasks;

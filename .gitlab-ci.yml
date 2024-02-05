@@ -258,13 +258,13 @@ backstopjs_reference:
 
 backstopjs_test:
   stage: development-test
-  dependencies:
-    - backstopjs_reference
+  needs: [ "deploy-to-dev", "backstopjs_reference" ]
   image:
     name: backstopjs/backstopjs:latest
     entrypoint: [""]
   variables:
-    BACKSTOP_BASE_URL: https://dev.essex-intranet.nomensa.xyz/
+    BACKSTOP_BASE_URL: https://dev.essex-intranet.nomensa.xyz
+    BACKSTOP_REFERENCE_URL: https://intranet.essex.gov.uk
   script:
     - backstop --config=tests/backstop/backstop.config.js test
   artifacts:
@@ -281,6 +281,7 @@ dev-bdd:
   image: polynya/drupal-ci
   script:
     - bin/robo job:cypress-tests-dev
+    - bin/robo job:backstop-tests-dev
   artifacts:
     paths:
       - ./tests/reports
@@ -290,6 +291,7 @@ dev-bdd:
 
 dev-backstop:
   stage: development-test
+  needs: ["deploy-to-dev", "drupalci:build"]
   extends: .drupalci_test_template
   image: polynya/drupal-ci
   script:
