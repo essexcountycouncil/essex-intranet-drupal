@@ -38,3 +38,9 @@ certs/
 
 # Ignore config which may contain secrets
 .ddev/.env
+
+node_modules
+tests/cypress/videos/*.mp4
+tests/reports/*.xml
+tests/backstop/backstop_data
+tests/backstop/package-lock.json

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Description: Run Cypress using Ddev config with headless Chrome.
+##
+## Usage: cypress-snapshot
+## Example: "ddev cypress-snapshot"
+
+cypress run --env type=base --config-file "cypress.config.ddev-snapshot.js"

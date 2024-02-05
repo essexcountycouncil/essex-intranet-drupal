@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Description: Run Cypress using DDEv config with headless Chrome.
+##
+## Usage: cypress-chrome [arguments]
+## Example: "ddev cypress-chrome"
+
+cypress run --env type=actual --config-file "cypress.config.ddev.js" --browser chrome "$@"

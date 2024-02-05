@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Description: Run Backstop reference.
+##
+## Usage: backstop-reference
+## Example: "ddev backstop-reference"
+
+backstop --config=tests/backstop/backstop.config.js reference

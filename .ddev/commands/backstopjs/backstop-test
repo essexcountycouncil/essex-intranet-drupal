@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Description: Run Backstop test.
+##
+## Usage: backstop-test
+## Example: "ddev backstop-test"
+
+backstop --config=tests/backstop/backstop.config.js test

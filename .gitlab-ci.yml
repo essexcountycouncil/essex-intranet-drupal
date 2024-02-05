@@ -3,6 +3,7 @@ stages:
   - build
   - development
   - development-postdeploy
+  - development-test
   - preproduction
   - preproduction-postdeploy
   - production
@@ -195,6 +196,112 @@ drush-deploy-dev:
       when: manual
     - if: '$CI_COMMIT_BRANCH =~ /^release\//'
       when: manual
+
+
+# The cache strategy for the build job.
+.cache_strategy_push:
+  cache:
+    paths:
+      - vendor
+      - web/core
+      - web/libraries
+      - web/modules/contrib
+      - web/profiles/contrib
+      - web/themes/contrib
+      - drush/Commands
+
+# The cache strategy for the test jobs.
+.cache_strategy_pull:
+  extends: .cache_strategy_push
+  cache:
+    policy: pull
+
+drupalci:build:
+  extends: .cache_strategy_push
+  stage: Test
+  image: polynya/drupal-ci
+  script:
+    - robo job:build
+  artifacts:
+    untracked: true
+    paths:
+      - ./*
+
+# The template for BDD-CI tests.
+.drupalci_test_template:
+  extends: .cache_strategy_pull
+  image: polynya/drupal-ci
+  stage: Test
+  services:
+    - name: mariadb:latest
+      alias: db
+  variables:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: drupal
+  script:
+    - mysql --version
+    - sleep 10
+    - echo "SHOW tables;"| mysql -u root -p"$MYSQL_ROOT_PASSWORD" -h db "${MYSQL_DATABASE}"
+  dependencies:
+    - drupalci:build
+
+backstopjs_reference:
+  stage: development-test
+  image:
+    name: backstopjs/backstopjs:latest
+    entrypoint: [""]
+  needs: ["deploy-to-dev"]
+  script:
+    - backstop --config=tests/backstop/backstop.config.js reference
+  artifacts:
+    when: always
+    paths:
+      - backstop_data/html_report
+  allow_failure: true
+
+backstopjs_test:
+  stage: development-test
+  dependencies:
+    - backstopjs_reference
+  image:
+    name: backstopjs/backstopjs:latest
+    entrypoint: [""]
+  script:
+    - backstop --config=tests/backstop/backstop.config.js test
+  artifacts:
+    when: always
+    paths:
+      - backstop_data/html_report
+  allow_failure: true
+
+## Job to run Cypress on Dev.
+dev-bdd:
+  stage: development-test
+  extends: .drupalci_test_template
+  image: polynya/drupal-ci
+  script:
+    - bin/robo job:cypress-tests-dev
+  artifacts:
+    paths:
+      - ./tests/reports
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+      when: manual
+    - if: '$CI_COMMIT_BRANCH =~ /^release\//'
+      when: manual
+    - if: '$CI_COMMIT_BRANCH == "ci-cd-tests"'
+      when: manual
+
+dev-backstop:
+  stage: development-postdeploy
+  needs: [ "drush-deploy-dev", "drupalci:build" ]
+  extends: .drupalci_test_template
+  image: polynya/drupal-ci
+  script:
+    - bin/robo job:backstop-tests-dev
+  artifacts:
+    paths:
+      - ./tests/backstop/backstop_data
 
 deploy-to-preprod:
   image: mcr.microsoft.com/azure-cli

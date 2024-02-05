@@ -1,0 +1,31 @@
+#ddev-generated
+services:
+  backstopjs:
+    image: backstopjs/backstopjs:latest
+    container_name: ddev-${DDEV_SITENAME}-backstopjs
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: ${DDEV_APPROOT}
+    user: "${DDEV_UID}:${DDEV_GID}"
+    networks: [default, ddev_default]
+
+    tty: true
+
+    environment:
+      - BACKSTOP_BASE_URL=${DDEV_PRIMARY_URL}
+      - DISPLAY
+
+    volumes:
+      # Mount the project root to BackstopJS's project point
+      - "${DDEV_APPROOT}:/tests/backstop"
+      # Mount DDEV to allow commands
+      - ".:/mnt/ddev_config"
+      # Allow X11 forwarding
+      - /tmp/.X11-unix:/tmp/.X11-unix
+
+    external_links:
+      # Resolve links via DDEV router
+      - "ddev-router:${DDEV_HOSTNAME}"
+
+    entrypoint: /bin/bash
+    working_dir: /tests/backstop
