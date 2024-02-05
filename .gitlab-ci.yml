@@ -242,20 +242,6 @@ drupalci:build:
   dependencies:
     - drupalci:build
 
-backstopjs_reference:
-  stage: development-test
-  needs: ["deploy-to-dev"]
-  image:
-    name: backstopjs/backstopjs:latest
-    entrypoint: [""]
-  script:
-    - backstop --config=tests/backstop/backstop.config.js reference
-  artifacts:
-    when: always
-    paths:
-      - tests/backstop/backstop_data/html_report
-  allow_failure: true
-
 backstopjs_test:
   stage: development-test
   needs: [ "deploy-to-dev", "backstopjs_reference" ]
@@ -266,11 +252,12 @@ backstopjs_test:
     BACKSTOP_BASE_URL: https://dev.essex-intranet.nomensa.xyz
     BACKSTOP_REFERENCE_URL: https://intranet.essex.gov.uk
   script:
+    - backstop --config=tests/backstop/backstop.config.js reference
     - backstop --config=tests/backstop/backstop.config.js test
   artifacts:
     when: always
     paths:
-      - tests/backstop/backstop_data/html_report
+      - ./tests/
   allow_failure: true
 
 ## Job to run Cypress on Dev.
