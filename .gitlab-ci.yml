@@ -250,7 +250,6 @@ backstopjs_reference:
   image:
     name: backstopjs/backstopjs:latest
     entrypoint: [""]
-  needs: ["deploy-to-dev"]
   script:
     - backstop --config=tests/backstop/backstop.config.js reference
   artifacts:
@@ -294,7 +293,6 @@ dev-bdd:
 
 dev-backstop:
   stage: development-test
-  needs: [ "deploy-to-dev", "drupalci:build" ]
   extends: .drupalci_test_template
   image: polynya/drupal-ci
   script:
