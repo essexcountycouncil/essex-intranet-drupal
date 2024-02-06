@@ -288,6 +288,16 @@ dev-backstop:
       - ./tests/backstop/backstop_data
   allow_failure: true
 
+pages:
+  stage: development-test
+  dependencies:
+    - backstopjs_test
+  script:
+    - mv ./tests/backstop/backstop_data public
+  artifacts:
+    paths:
+      - public
+
 deploy-to-preprod:
   image: mcr.microsoft.com/azure-cli
   stage: preproduction
