@@ -89,6 +89,7 @@
         "drupal/preview_link": "^2",
         "drupal/published_corrected_date": "^2.0",
         "drupal/restui": "^1.21",
+        "drupal/scheduled_transitions": "^2.4",
         "drupal/simple_sitemap": "^4.1",
         "drupal/single_content_sync": "^1.4",
         "drupal/smtp": "^1.2",
@@ -173,6 +174,9 @@
             "drupal/openid_connect": {
                 "Truncate username if it is greater than 60 characters": "https://www.drupal.org/files/issues/2021-12-08/data_too_long_for_column_name-%203252021-8.patch"
             },
+            "localgovdrupal/localgov": {
+                "Replace hook_install to fix site-install --existing-config.": "patches/localgov.patch"
+            },
             "localgovdrupal/localgov_paragraphs": {
                 "Added missing field which has been introduced recently.": "patches/missing_field.patch"
             },
@@ -184,6 +188,9 @@
             },
             "localgovdrupal/localgov_subsites": {
                 "Show page heading block for subsites pages": "patches/localgov_subsites.patch"
+            },
+            "localgovdrupal/localgov_workflows": {
+                "Fix for drush site-install": "patches/localgov_workflows.patch"
             }
         },
         "drupal-scaffold": {

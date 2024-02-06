@@ -19,6 +19,75 @@ Test:Required:
     - composer install && composer tests-required
   allow_failure: false
 
+
+# The cache strategy for the build job.
+.cache_strategy_push:
+  cache:
+    paths:
+      - vendor
+      - web/core
+      - web/libraries
+      - web/modules/contrib
+      - web/profiles/contrib
+      - web/themes/contrib
+      - drush/Commands
+      - tests
+
+# The cache strategy for the test jobs.
+.cache_strategy_pull:
+  extends: .cache_strategy_push
+  cache:
+    policy: pull
+
+drupalci:build:
+  extends: .cache_strategy_push
+  stage: Test
+  image: polynya/drupal-ci
+  script:
+    - robo job:build
+  artifacts:
+    untracked: true
+    paths:
+      - ./*
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+    - when: manual
+
+# The template for CI tests.
+.drupalci_test_template:
+  extends: .cache_strategy_pull
+  image: polynya/drupal-ci
+  stage: Test
+  services:
+    - name: mariadb:latest
+      alias: db
+  variables:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: drupal
+  script:
+    - mysql --version
+    - sleep 10
+    - echo "SHOW tables;"| mysql -u root -p"$MYSQL_ROOT_PASSWORD" -h db "${MYSQL_DATABASE}"
+  dependencies:
+    - drupalci:build
+
+## Job to run Cypress on Drupal-CI.
+drupalci-bdd:
+  stage: Test
+  extends: .drupalci_test_template
+  image: polynya/drupal-ci
+  needs:
+    - job: drupalci:build
+  script:
+    - bin/robo job:serve-drupal-install
+    - bin/robo job:create-node
+    - bin/robo job:cypress-tests-drupal-ci
+  allow_failure: true
+  artifacts:
+    paths:
+      - tests/reports
+      - tests/cypress
+
 build-and-push-images:
   stage: build
   image: docker:20.10.16
@@ -48,24 +117,6 @@ build-and-push-images:
   rules:
     - if: '$CI_COMMIT_BRANCH == "develop"'
     - when: manual
-
-# The cache strategy for the build job.
-.cache_strategy_push:
-  cache:
-    paths:
-      - vendor
-      - web/core
-      - web/libraries
-      - web/modules/contrib
-      - web/profiles/contrib
-      - web/themes/contrib
-      - drush/Commands
-
-# The cache strategy for the test jobs.
-.cache_strategy_pull:
-  extends: .cache_strategy_push
-  cache:
-    policy: pull
 
 generate-sbom:
   stage: build
@@ -212,34 +263,6 @@ drush-deploy-dev:
     - if: '$CI_COMMIT_BRANCH == "develop"'
     - when: manual
 
-drupalci:build:
-  extends: .cache_strategy_push
-  stage: build-test
-  image: polynya/drupal-ci
-  script:
-    - robo job:build
-  artifacts:
-    untracked: true
-    paths:
-      - ./*
-
-# The template for CI tests.
-.drupalci_test_template:
-  extends: .cache_strategy_pull
-  image: polynya/drupal-ci
-  stage: build-test
-  services:
-    - name: mariadb:latest
-      alias: db
-  variables:
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_DATABASE: drupal
-  script:
-    - mysql --version
-    - sleep 10
-    - echo "SHOW tables;"| mysql -u root -p"$MYSQL_ROOT_PASSWORD" -h db "${MYSQL_DATABASE}"
-  dependencies:
-    - drupalci:build
 
 backstopjs_test:
   stage: development-test
@@ -273,18 +296,6 @@ dev-bdd:
   artifacts:
     paths:
       - ./tests/reports
-      - ./tests/backstop/backstop_data
-  allow_failure: true
-
-dev-backstop:
-  stage: development-test
-  needs: ["drush-deploy-dev", "drupalci:build"]
-  extends: .drupalci_test_template
-  image: polynya/drupal-ci
-  script:
-    - bin/robo job:backstop-tests-dev
-  artifacts:
-    paths:
       - ./tests/backstop/backstop_data
   allow_failure: true
 

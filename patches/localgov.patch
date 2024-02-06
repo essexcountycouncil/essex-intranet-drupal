@@ -1,0 +1,36 @@
+diff --git a/localgov.install b/localgov.install
+index ee39b74..fd1cf0e 100644
+--- a/localgov.install
++++ b/localgov.install
+@@ -8,13 +8,28 @@
+ use Drupal\user\Entity\User;
+ 
+ /**
+- * Implements hook_install().
++ * Implements hook_install_tasks().
+  *
+  * Perform actions to set up the site for this profile.
++ */
++function localgov_install_tasks(&$install_state) {
++  $tasks = [
++    'localgov_user_1' => [
++      'display_name' => t('Assign user 1 the "administrator" role.'),
++      'type' => 'normal',
++    ]
++  ];
++
++  return $tasks;
++}
++
++
++/**
++ * Callback function to install default profile content.
+  *
+- * @see system_install()
++ * @see localgov_install_tasks()
+  */
+-function localgov_install() {
++function localgov_user_1() {
+ 
+   // Assign user 1 the "administrator" role.
+   $user = User::load(1);
