@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_classes
     - localgov_guides
     - localgov_restricted_content
     - node
@@ -17,7 +18,7 @@ plugin: localgov_guides_contents
 settings:
   id: localgov_guides_contents
   label: 'Guide contents'
-  label_display: visible
+  label_display: '0'
   provider: localgov_guides
 visibility:
   'entity_bundle:node':
