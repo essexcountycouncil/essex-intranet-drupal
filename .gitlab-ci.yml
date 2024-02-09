@@ -14,7 +14,6 @@ Test:Required:
   before_script:
     - ''
   script:
-    - rm vendor/composer/installed.php vendor/composer/InstalledVersions.php
     - composer self-update
     - composer install && composer tests-required
   allow_failure: false
