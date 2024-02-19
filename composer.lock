@@ -8890,16 +8890,16 @@
         },
         {
             "name": "essexcountycouncil/ecc_theme",
-            "version": "1.0.19",
+            "version": "1.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/essexcountycouncil/ecc_theme.git",
-                "reference": "32742e5b83cd6ef22c7aa2e362d404269fb5ed31"
+                "reference": "a4133cfbf6523f63d8429ac85fe3bd3bb4b5187a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/essexcountycouncil/ecc_theme/zipball/32742e5b83cd6ef22c7aa2e362d404269fb5ed31",
-                "reference": "32742e5b83cd6ef22c7aa2e362d404269fb5ed31",
+                "url": "https://api.github.com/repos/essexcountycouncil/ecc_theme/zipball/a4133cfbf6523f63d8429ac85fe3bd3bb4b5187a",
+                "reference": "a4133cfbf6523f63d8429ac85fe3bd3bb4b5187a",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -8911,10 +8911,10 @@
             ],
             "description": "Consolidated Essex County Council Drupal theme",
             "support": {
-                "source": "https://github.com/essexcountycouncil/ecc_theme/tree/1.0.19",
+                "source": "https://github.com/essexcountycouncil/ecc_theme/tree/1.0.21",
                 "issues": "https://github.com/essexcountycouncil/ecc_theme/issues"
             },
-            "time": "2024-02-16T16:51:11+00:00"
+            "time": "2024-02-19T15:06:52+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
