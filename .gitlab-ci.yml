@@ -295,7 +295,8 @@ drush-deploy-preprod:
 deploy-to-prod:
   image: mcr.microsoft.com/azure-cli
   stage: production
-  needs: ["deploy-to-preprod"]
+  needs:
+    - job: build-and-push-images
   environment:
     name: production
     url: https://intranet.essex.gov.uk/
