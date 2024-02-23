@@ -1,11 +1,11 @@
-uuid: 2972aee4-adcd-4aa2-b0b4-2e218f1cbcde
+uuid: 3421993c-c3fd-4301-ab1d-c7115c8843a4
 langcode: en
 status: true
 dependencies:
   module:
     - openid_connect_windows_aad
-id: nomensa
-label: Nomensa
+id: nomensa_aad
+label: 'Nomensa Windows AAD'
 plugin: windows_aad
 settings:
   client_id: 0e2053f9-5425-4068-88a0-c9ba93d4c886
@@ -23,12 +23,7 @@ settings:
   userinfo_update_email: false
   hide_email_address_warning: false
   subject_key: sub
-  iss_allowed_domains: ''
-  tenant: ''
-  flow: B2C_1_nomensa_login
-  scopes:
-    - openid
-    - email
-    - profile
   end_session_endpoint: ''
+  iss_allowed_domains: ''
   front_channel_logout_url: ''
+  tenant: ''
