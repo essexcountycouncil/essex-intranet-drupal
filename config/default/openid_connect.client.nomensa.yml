@@ -24,7 +24,7 @@ settings:
   hide_email_address_warning: false
   subject_key: sub
   iss_allowed_domains: ''
-  tenant: ''
+  tenant: essexgovukb2cdev
   flow: B2C_1_nomensa_login
   scopes:
     - openid
