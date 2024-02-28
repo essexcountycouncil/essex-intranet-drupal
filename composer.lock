@@ -21677,6 +21677,7 @@
     "drupal/ckeditor5_icons": 5,
     "drupal/cludo_search": 10,
     "drupal/gin": 5,
+    "drupal/openid_connect_windows_aad": 10,
     "drupal/ultimate_cron": 15,
     "localgovdrupal/localgov_eu_cookie_compliance": 20,
     "localgovdrupal/localgov_forms": 20,
