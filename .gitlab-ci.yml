@@ -14,7 +14,6 @@ Test:Required:
   before_script:
     - ''
   script:
-    - composer self-update
     - composer install && composer tests-required
   allow_failure: false
 
@@ -229,7 +228,7 @@ deploy-to-preprod:
                   metadata:
                     concurrentRequests: 40
           containers:
-            - image: acreccukspre.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG}
+            - image: acreccukspre.azurecr.io/intranet-nginx-drupal$tag
               name: nginx
               resources:
                 cpu: 0.25
@@ -247,7 +246,7 @@ deploy-to-preprod:
                   port: 80
                 initialDelaySeconds: 5
                 periodSeconds: 3
-            - image: acreccukspre.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG}
+            - image: acreccukspre.azurecr.io/intranet-drupal-fpm$tag
               name: drupal
               resources:
                 cpu: 0.75
