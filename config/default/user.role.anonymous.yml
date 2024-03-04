@@ -4,14 +4,12 @@ status: true
 dependencies:
   config:
     - localgov_alert_banner.localgov_alert_banner_type.localgov_alert_banner
-    - rest.resource.oidc_auto_login_allowed
   module:
     - cludo_search
     - eu_cookie_compliance
     - geo_entity
     - localgov_alert_banner
     - media
-    - rest
     - search_api_autocomplete
     - system
 _core:
@@ -24,7 +22,6 @@ permissions:
   - 'access cludo search content'
   - 'access content'
   - 'display eu cookie compliance popup'
-  - 'restful get oidc_auto_login_allowed'
   - 'use search_api_autocomplete for localgov_news_search'
   - 'view all localgov alert banner entities'
   - 'view geo'

@@ -67,41 +67,7 @@ class OidcAutoLoginController extends ControllerBase {
       });
       return $response;
     }
-    return new RedirectResponse('/user/auto-login/already-logged-in');
-  }
-
-  /**
-   * Route to close auto-login window after user has been logged in.
-   *
-   * @return array|\Symfony\Component\HttpFoundation\Response
-   *   A render array or a Response object.
-   */
-  public function loggedIn() {
-    return [
-      '#markup' => 'You have been logged in using your OpenID Connect account. This window can be closed.',
-      '#attached' => [
-        'library' => [
-          'oidc_auto_login/logged_in',
-        ],
-      ],
-    ];
-  }
-
-  /**
-   * Route to close auto-login window if user is already logged in.
-   *
-   * @return array|\Symfony\Component\HttpFoundation\Response
-   *   A render array or a Response object.
-   */
-  public function alreadyLoggedIn() {
-    return [
-      '#markup' => 'You are already logged in. This window can be closed.',
-      '#attached' => [
-        'library' => [
-          'oidc_auto_login/already_logged_in',
-        ],
-      ],
-    ];
+    return new RedirectResponse('/admin/content');
   }
 
   /**
@@ -126,14 +92,13 @@ class OidcAutoLoginController extends ControllerBase {
           $scopes = $this->claims->getScopes($plugin);
           $this->session->saveDestination();
           $this->session->saveOp('login');
-          return $plugin->authorize($scopes);
+          return $plugin->authorize($scopes, ['prompt' => 'none']);
         }
       }
     }
     catch (\Exception $e) {
     }
-    // Close the auto-login window.
-    return new RedirectResponse('/user/auto-login/already-logged-in');
+    return new RedirectResponse('/admin/content');
   }
 
 }
