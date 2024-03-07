@@ -1,0 +1,7 @@
+services:
+  oidc_auto_login.route_subscriber:
+    class: Drupal\oidc_auto_login\Routing\RouteSubscriber
+    arguments:
+      - '@config.factory'
+    tags:
+      - { name: event_subscriber }
