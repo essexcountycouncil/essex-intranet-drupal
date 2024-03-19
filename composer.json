@@ -30,6 +30,10 @@
             "url":  "https://github.com/essexcountycouncil/ecc_cludo_search"
         },
         {
+            "type": "github",
+            "url":  "https://github.com/essexcountycouncil/ecc_theme"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "ckeditor/div",
@@ -59,7 +63,7 @@
         "drupal/config_split": "^2",
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-project-message": "^10",
-        "drupal/core-recommended": "^10.1",
+        "drupal/core-recommended": "^10.1.8",
         "drupal/devel": "^5.1",
         "drupal/dynamic_entity_reference": "^3.1",
         "drupal/entitygroupfield": "^2",
@@ -98,6 +102,7 @@
         "essexcountycouncil/ecc_content_moderation": "^1.0",
         "essexcountycouncil/ecc_cookie_compliance": "^1.0",
         "essexcountycouncil/ecc_menu": "^1.0",
+        "essexcountycouncil/ecc_theme": "^1.0",
         "localgovdrupal/localgov": "^3",
         "localgovdrupal/localgov_base": "^1.4",
         "localgovdrupal/localgov_eu_cookie_compliance": " 1.x-dev",
@@ -294,7 +299,8 @@
         "phpcbf": "bin/phpcbf --standard=Drupal,DrupalPractice --ignore=*.js web/modules/custom",
         "tests-required": [
             "composer validate",
-            "composer audit"
+            "composer audit",
+            "composer phpcs"
         ]
     }
 }

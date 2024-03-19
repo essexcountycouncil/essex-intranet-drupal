@@ -1,0 +1,29 @@
+uuid: 43d27745-25c3-4bda-8732-5059322137c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_guides
+    - localgov_restricted_content
+  theme:
+    - ecc_theme_intranet
+id: ecc_theme_intranet_guidesprevnextblock
+theme: ecc_theme_intranet
+region: content_bottom
+weight: -13
+provider: null
+plugin: localgov_guides_prev_next_block
+settings:
+  id: localgov_guides_prev_next_block
+  label: 'Guides prev next block'
+  label_display: '0'
+  provider: localgov_guides
+  show_title: false
+visibility:
+  restricted_content:
+    id: restricted_content
+    enabled: 1
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+      user: '@user.current_user_context:current_user'

@@ -73,7 +73,7 @@ settings:
         - '<dd>'
         - '<mark>'
         - '<b>'
-        - '<div class="alert-danger alert-primary alert-success callout callout-primary callout-success callout-danger callout-teal callout-carbon callout-yellow">'
+        - '<div class="alert-danger alert-primary alert-success callout callout-primary callout-success callout-danger callout-teal callout-carbon callout-yellow inset inset-text">'
         - '<blockquote cite>'
         - '<ol type>'
         - '<h2 id>'
@@ -103,12 +103,6 @@ settings:
         -
           label: 'Inset text'
           element: '<p class="inset">'
-        -
-          label: 'Container - Alert info'
-          element: '<div class="alert alert-info">'
-        -
-          label: 'Inset  text'
-          element: '<div class="inset">'
     linkit_extension:
       linkit_enabled: true
       linkit_profile: default

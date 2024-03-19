@@ -40,7 +40,7 @@ class RestrictedContent implements RestrictedContentInterface {
       }
     }
     if (isset($parent_field)) {
-      /** @var \Drupal\Core\Entity\ContentEntityInterface $parent $parent */
+      /** @var \Drupal\Core\Entity\ContentEntityInterface $parent */
       if ($parent = $entity->{$parent_field}->entity) {
         if ($this->isEntityRestrictable($parent)) {
           if ($parent->{$this::RESTRICTED_CONTENT_FIELD}->value) {

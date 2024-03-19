@@ -1,0 +1,25 @@
+uuid: d64b0a46-9d54-4bf5-8152-45202969e63b
+langcode: en
+status: true
+dependencies:
+  module:
+    - cludo_search
+    - system
+  theme:
+    - ecc_theme_intranet
+id: ecc_theme_intranet_cludosearchblock_2
+theme: ecc_theme_intranet
+region: hero_content
+weight: -12
+provider: null
+plugin: cludo_search
+settings:
+  id: cludo_search
+  label: 'Cludo Search block'
+  label_display: '0'
+  provider: cludo_search
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

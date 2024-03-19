@@ -1,0 +1,25 @@
+uuid: 66b1a406-5eb4-4fea-a5d4-a3740347338e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.quick-actions
+  module:
+    - system
+  theme:
+    - ecc_theme
+id: ecc_theme_quick_actions
+theme: ecc_theme
+region: hero_content
+weight: -11
+provider: null
+plugin: 'system_menu_block:quick-actions'
+settings:
+  id: 'system_menu_block:quick-actions'
+  label: 'Quick Actions'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
