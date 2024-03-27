@@ -1,2 +1,5 @@
-# This robots.txt file is temporarily empty so that crawlers can discover the
-# 'X-Robots-tag: none' header on every page.
+User-agent: Cludo
+Disallow:
+
+User-agent: *
+Disallow: /
