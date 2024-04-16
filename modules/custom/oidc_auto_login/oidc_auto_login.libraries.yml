@@ -1,0 +1,5 @@
+login:
+  version: 1.0.1
+  js:
+    js/login.js: {}
+
