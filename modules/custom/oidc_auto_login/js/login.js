@@ -33,30 +33,27 @@ async function checkAllowed() {
 }
 
 /**
- * Load auto-login window if it is allowed.
+ * Attempts auto-login if it is allowed.
  * @returns {Promise<void>}
  */
 async function autoLogin() {
-  console.log('Auto login');
   const currentUrl = window.location.href;
-  // Do not run on the auto-login urls.
+  // Do not run on the auto-login url.
   if (currentUrl.includes(autoLoginUrlPattern)) {
     return;
   }
 
-  // Do not run if auto-login has failed before in this session.
-  if (getCookie('oidc-auto-login') === 'disabled') {
+  // Do not attempt auto-login more than once in this session.
+  if (getCookie('oidc-auto-login') === 'attempted') {
     return;
   }
+  document.cookie = "oidc-auto-login=attempted"
 
   if (!(await checkAllowed())) {
-    document.cookie = "oidc-auto-login=disabled"
     return;
   }
 
   const redirectUrl = autoLoginUrl + window.location.pathname;
-  console.log('Redirect to ' + redirectUrl);
-  document.cookie = "oidc-auto-login=disabled"
   window.location.replace(redirectUrl);
 }
 

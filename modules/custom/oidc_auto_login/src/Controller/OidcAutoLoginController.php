@@ -66,7 +66,6 @@ class OidcAutoLoginController extends ControllerBase {
         return $this->getAutoLoginResponse();
       });
       /** @var \Drupal\Core\Routing\TrustedRedirectResponse $response */
-      \Drupal::logger('mine')->debug($response->getContent());
       return $response;
     }
     return new RedirectResponse('/');
@@ -94,7 +93,7 @@ class OidcAutoLoginController extends ControllerBase {
           $scopes = $this->claims->getScopes($plugin);
           $this->session->saveDestination();
           $this->session->saveOp('login');
-          \Drupal::logger('mine')->debug('try to authorize');
+          // If authorisation fails then do not display login screen.
           return $plugin->authorize($scopes, ['prompt' => 'none']);
         }
       }
