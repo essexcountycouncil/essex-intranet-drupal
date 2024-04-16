@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "77097db8312eb0dde9374164a963b14d",
+  "content-hash": "3b442a94c7058d4b1c01f049c2ebe596",
   "packages": [
     {
       "name": "asm89/stack-cors",
@@ -8954,16 +8954,16 @@
     },
     {
       "name": "essexcountycouncil/ecc_theme",
-      "version": "1.0.27",
+      "version": "1.0.31",
       "source": {
         "type": "git",
         "url": "https://github.com/essexcountycouncil/ecc_theme.git",
-        "reference": "d9b3f6c586c0bd2061b1f9fce1f8d1e590d3977b"
+        "reference": "a8649c1456097e077e9795eb899a321d9904ba4f"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/essexcountycouncil/ecc_theme/zipball/d9b3f6c586c0bd2061b1f9fce1f8d1e590d3977b",
-        "reference": "d9b3f6c586c0bd2061b1f9fce1f8d1e590d3977b",
+        "url": "https://api.github.com/repos/essexcountycouncil/ecc_theme/zipball/a8649c1456097e077e9795eb899a321d9904ba4f",
+        "reference": "a8649c1456097e077e9795eb899a321d9904ba4f",
         "shasum": ""
       },
       "type": "drupal-theme",
@@ -8975,10 +8975,10 @@
       ],
       "description": "Consolidated Essex County Council Drupal theme",
       "support": {
-        "source": "https://github.com/essexcountycouncil/ecc_theme/tree/1.0.27",
+        "source": "https://github.com/essexcountycouncil/ecc_theme/tree/1.0.31",
         "issues": "https://github.com/essexcountycouncil/ecc_theme/issues"
       },
-      "time": "2024-03-04T11:42:51+00:00"
+      "time": "2024-03-20T14:47:40+00:00"
     },
     {
       "name": "ezyang/htmlpurifier",
@@ -10538,22 +10538,21 @@
     },
     {
       "name": "localgovdrupal/localgov_eu_cookie_compliance",
-      "version": "1.x-dev",
+      "version": "1.0.0",
       "source": {
         "type": "git",
         "url": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance.git",
-        "reference": "24bba7b48a1b9c9c0136a20f7e007c27a3d57920"
+        "reference": "e9cbcc2ea054db00cc8cc7949d570072cd295fbb"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/localgovdrupal/localgov_eu_cookie_compliance/zipball/24bba7b48a1b9c9c0136a20f7e007c27a3d57920",
-        "reference": "24bba7b48a1b9c9c0136a20f7e007c27a3d57920",
+        "url": "https://api.github.com/repos/localgovdrupal/localgov_eu_cookie_compliance/zipball/e9cbcc2ea054db00cc8cc7949d570072cd295fbb",
+        "reference": "e9cbcc2ea054db00cc8cc7949d570072cd295fbb",
         "shasum": ""
       },
       "require": {
         "drupal/eu_cookie_compliance": "^1.24.0"
       },
-      "default-branch": true,
       "type": "drupal-module",
       "notification-url": "https://packagist.org/downloads/",
       "license": [
@@ -10563,9 +10562,9 @@
       "homepage": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance",
       "support": {
         "issues": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance/issues",
-        "source": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance/tree/1.x"
+        "source": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance/tree/1.0.0"
       },
-      "time": "2023-05-15T13:24:43+00:00"
+      "time": "2024-03-12T12:51:10+00:00"
     },
     {
       "name": "localgovdrupal/localgov_events",
@@ -10620,16 +10619,16 @@
     },
     {
       "name": "localgovdrupal/localgov_forms",
-      "version": "1.x-dev",
+      "version": "1.0.0-beta4",
       "source": {
         "type": "git",
         "url": "https://github.com/localgovdrupal/localgov_forms.git",
-        "reference": "dd559a37acb5d85f06de2f22c0310ca8810c6de3"
+        "reference": "d0922c3ef22a7e2083c6e15fdc3a668f9f321297"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/localgovdrupal/localgov_forms/zipball/dd559a37acb5d85f06de2f22c0310ca8810c6de3",
-        "reference": "dd559a37acb5d85f06de2f22c0310ca8810c6de3",
+        "url": "https://api.github.com/repos/localgovdrupal/localgov_forms/zipball/d0922c3ef22a7e2083c6e15fdc3a668f9f321297",
+        "reference": "d0922c3ef22a7e2083c6e15fdc3a668f9f321297",
         "shasum": ""
       },
       "require": {
@@ -10640,7 +10639,6 @@
       "require-dev": {
         "geocoder-php/nominatim-provider": "^5.2"
       },
-      "default-branch": true,
       "type": "drupal-module",
       "notification-url": "https://packagist.org/downloads/",
       "license": [
@@ -10650,9 +10648,9 @@
       "homepage": "https://github.com/localgovdrupal/localgov_forms",
       "support": {
         "issues": "https://github.com/localgovdrupal/localgov_forms/issues",
-        "source": "https://github.com/localgovdrupal/localgov_forms/tree/1.x"
+        "source": "https://github.com/localgovdrupal/localgov_forms/tree/1.0.0-beta4"
       },
-      "time": "2023-09-23T11:41:48+00:00"
+      "time": "2023-12-11T14:47:01+00:00"
     },
     {
       "name": "localgovdrupal/localgov_geo",
@@ -21690,8 +21688,7 @@
     "drupal/gin": 5,
     "drupal/openid_connect_windows_aad": 10,
     "drupal/ultimate_cron": 15,
-    "localgovdrupal/localgov_eu_cookie_compliance": 20,
-    "localgovdrupal/localgov_forms": 20,
+    "localgovdrupal/localgov_forms": 10,
     "roave/security-advisories": 20
   },
   "prefer-stable": true,

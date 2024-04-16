@@ -1,6 +1,6 @@
 uuid: 1ed6e981-34f3-4961-8132-56959ef4a7f8
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
     - ecc_theme_intranet
