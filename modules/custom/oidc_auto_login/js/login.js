@@ -1,10 +1,8 @@
-const autoLoginUrl = "/user/auto-login?destination=/user/auto-login/logged-in";
+const autoLoginUrl = "/user/auto-login?destination=";
 
 const autoLoginUrlPattern = '/user/auto-login';
 
 const allowAutoLoginEndpoint = '/api/v1/oidc_auto_login_allowed';
-
-const autoLoginFeatures = "width=500,height=500,top=0,left=0,screenX=0,screenY=0,scrollbars=1,resizable=1,toolbar=0,menubar=0,statusbar=1";
 
 /**
  * Get a cookie.
@@ -35,34 +33,28 @@ async function checkAllowed() {
 }
 
 /**
- * Load auto-login window if it is allowed.
+ * Attempts auto-login if it is allowed.
  * @returns {Promise<void>}
  */
-async function loadAutoLoginWindow() {
+async function autoLogin() {
   const currentUrl = window.location.href;
-  // Do not run on the auto-login urls.
+  // Do not run on the auto-login url.
   if (currentUrl.includes(autoLoginUrlPattern)) {
     return;
   }
 
-  // Do not run if auto-login has failed before in this session.
-  if (getCookie('oidc-auto-login') === 'disabled') {
+  // Do not attempt auto-login more than once in this session.
+  if (getCookie('oidc-auto-login') === 'attempted') {
     return;
   }
+  document.cookie = "oidc-auto-login=attempted"
 
   if (!(await checkAllowed())) {
-    document.cookie = "oidc-auto-login=disabled"
     return;
   }
 
-  winAutoLoginWindow = window.open(autoLoginUrl, "Window", autoLoginFeatures)
-  if (winAutoLoginWindow) {
-    document.cookie = "oidc-auto-login=enabled"
-    winAutoLoginWindow.blur()
-  }
-  else {
-    document.cookie = "oidc-auto-login=disabled"
-  }
+  const redirectUrl = autoLoginUrl + window.location.pathname;
+  window.location.replace(redirectUrl);
 }
 
-loadAutoLoginWindow();
+autoLogin();

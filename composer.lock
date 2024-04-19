@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "66da50bc6a0a4625c935a121f7812f5f",
+  "content-hash": "3b442a94c7058d4b1c01f049c2ebe596",
   "packages": [
     {
       "name": "asm89/stack-cors",
@@ -6841,6 +6841,74 @@
       }
     },
     {
+      "name": "drupal/openid_connect_windows_aad",
+      "version": "2.0.0-beta7",
+      "source": {
+        "type": "git",
+        "url": "https://git.drupalcode.org/project/openid_connect_windows_aad.git",
+        "reference": "2.0.0-beta7"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://ftp.drupal.org/files/projects/openid_connect_windows_aad-2.0.0-beta7.zip",
+        "reference": "2.0.0-beta7",
+        "shasum": "fff769a63f20c2481dfcadfd1622032188007cf4"
+      },
+      "require": {
+        "drupal/core": "^9 || ^10",
+        "drupal/key": "^1.0",
+        "drupal/openid_connect": "^2.0 || ^3.0",
+        "lcobucci/jwt": "^4.2.1",
+        "php": ">=8.0.0"
+      },
+      "type": "drupal-module",
+      "extra": {
+        "drupal": {
+          "version": "2.0.0-beta7",
+          "datestamp": "1701908835",
+          "security-coverage": {
+            "status": "not-covered",
+            "message": "Beta releases are not covered by Drupal security advisories."
+          }
+        }
+      },
+      "notification-url": "https://packages.drupal.org/8/downloads",
+      "license": [
+        "GPL-2.0+"
+      ],
+      "authors": [
+        {
+          "name": "acrazyanimal",
+          "homepage": "https://www.drupal.org/user/696648"
+        },
+        {
+          "name": "ajayNimbolkar",
+          "homepage": "https://www.drupal.org/user/2876727"
+        },
+        {
+          "name": "fabianderijk",
+          "homepage": "https://www.drupal.org/user/278745"
+        },
+        {
+          "name": "tomvv",
+          "homepage": "https://www.drupal.org/user/2748021"
+        },
+        {
+          "name": "webflo",
+          "homepage": "https://www.drupal.org/user/254778"
+        }
+      ],
+      "description": "A CTools plugin that adds a Windows Azure AD client to OpenID Connect.",
+      "homepage": "https://www.drupal.org/project/openid_connect_windows_aad",
+      "keywords": [
+        "Drupal"
+      ],
+      "support": {
+        "source": "http://cgit.drupalcode.org/openid_connect_windows_aad",
+        "issues": "https://www.drupal.org/project/issues/openid_connect_windows_aad"
+      }
+    },
+    {
       "name": "drupal/paragraphs",
       "version": "1.16.0",
       "source": {
@@ -8840,26 +8908,26 @@
     },
     {
       "name": "essexcountycouncil/ecc_cookie_compliance",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "source": {
         "type": "git",
         "url": "https://github.com/essexcountycouncil/ecc_cookie_compliance.git",
-        "reference": "ab71fec5e854b5f7494c7739e2ad8e9f4a1d43d4"
+        "reference": "d95852802bf305214d56ea5088cec43b0651a9ba"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/essexcountycouncil/ecc_cookie_compliance/zipball/ab71fec5e854b5f7494c7739e2ad8e9f4a1d43d4",
-        "reference": "ab71fec5e854b5f7494c7739e2ad8e9f4a1d43d4",
+        "url": "https://api.github.com/repos/essexcountycouncil/ecc_cookie_compliance/zipball/d95852802bf305214d56ea5088cec43b0651a9ba",
+        "reference": "d95852802bf305214d56ea5088cec43b0651a9ba",
         "shasum": ""
       },
       "type": "drupal-module",
       "description": "Shared Drupal eu cookie compliance functionality for Essex County Council",
       "homepage": "https://github.com/essexcountycouncil/ecc_cookie_compliance",
       "support": {
-        "source": "https://github.com/essexcountycouncil/ecc_cookie_compliance/tree/1.0.1",
+        "source": "https://github.com/essexcountycouncil/ecc_cookie_compliance/tree/1.0.2",
         "issues": "https://github.com/essexcountycouncil/ecc_cookie_compliance/issues"
       },
-      "time": "2023-10-04T08:59:46+00:00"
+      "time": "2024-04-12T14:14:46+00:00"
     },
     {
       "name": "essexcountycouncil/ecc_menu",
@@ -9957,6 +10025,144 @@
       "time": "2021-09-02T16:50:53+00:00"
     },
     {
+      "name": "lcobucci/clock",
+      "version": "3.0.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/lcobucci/clock.git",
+        "reference": "039ef98c6b57b101d10bd11d8fdfda12cbd996dc"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/lcobucci/clock/zipball/039ef98c6b57b101d10bd11d8fdfda12cbd996dc",
+        "reference": "039ef98c6b57b101d10bd11d8fdfda12cbd996dc",
+        "shasum": ""
+      },
+      "require": {
+        "php": "~8.1.0 || ~8.2.0",
+        "psr/clock": "^1.0"
+      },
+      "provide": {
+        "psr/clock-implementation": "1.0"
+      },
+      "require-dev": {
+        "infection/infection": "^0.26",
+        "lcobucci/coding-standard": "^9.0",
+        "phpstan/extension-installer": "^1.2",
+        "phpstan/phpstan": "^1.9.4",
+        "phpstan/phpstan-deprecation-rules": "^1.1.1",
+        "phpstan/phpstan-phpunit": "^1.3.2",
+        "phpstan/phpstan-strict-rules": "^1.4.4",
+        "phpunit/phpunit": "^9.5.27"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Lcobucci\\Clock\\": "src"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Luís Cobucci",
+          "email": "lcobucci@gmail.com"
+        }
+      ],
+      "description": "Yet another clock abstraction",
+      "support": {
+        "issues": "https://github.com/lcobucci/clock/issues",
+        "source": "https://github.com/lcobucci/clock/tree/3.0.0"
+      },
+      "funding": [
+        {
+          "url": "https://github.com/lcobucci",
+          "type": "github"
+        },
+        {
+          "url": "https://www.patreon.com/lcobucci",
+          "type": "patreon"
+        }
+      ],
+      "time": "2022-12-19T15:00:24+00:00"
+    },
+    {
+      "name": "lcobucci/jwt",
+      "version": "4.3.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/lcobucci/jwt.git",
+        "reference": "4d7de2fe0d51a96418c0d04004986e410e87f6b4"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/lcobucci/jwt/zipball/4d7de2fe0d51a96418c0d04004986e410e87f6b4",
+        "reference": "4d7de2fe0d51a96418c0d04004986e410e87f6b4",
+        "shasum": ""
+      },
+      "require": {
+        "ext-hash": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-sodium": "*",
+        "lcobucci/clock": "^2.0 || ^3.0",
+        "php": "^7.4 || ^8.0"
+      },
+      "require-dev": {
+        "infection/infection": "^0.21",
+        "lcobucci/coding-standard": "^6.0",
+        "mikey179/vfsstream": "^1.6.7",
+        "phpbench/phpbench": "^1.2",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan": "^1.4",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpstan/phpstan-strict-rules": "^1.0",
+        "phpunit/php-invoker": "^3.1",
+        "phpunit/phpunit": "^9.5"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Lcobucci\\JWT\\": "src"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "BSD-3-Clause"
+      ],
+      "authors": [
+        {
+          "name": "Luís Cobucci",
+          "email": "lcobucci@gmail.com",
+          "role": "Developer"
+        }
+      ],
+      "description": "A simple library to work with JSON Web Token and JSON Web Signature",
+      "keywords": [
+        "JWS",
+        "jwt"
+      ],
+      "support": {
+        "issues": "https://github.com/lcobucci/jwt/issues",
+        "source": "https://github.com/lcobucci/jwt/tree/4.3.0"
+      },
+      "funding": [
+        {
+          "url": "https://github.com/lcobucci",
+          "type": "github"
+        },
+        {
+          "url": "https://www.patreon.com/lcobucci",
+          "type": "patreon"
+        }
+      ],
+      "time": "2023-01-02T13:28:00+00:00"
+    },
+    {
       "name": "league/container",
       "version": "4.2.0",
       "source": {
@@ -10332,16 +10538,16 @@
     },
     {
       "name": "localgovdrupal/localgov_eu_cookie_compliance",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "type": "git",
         "url": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance.git",
-        "reference": "e9cbcc2ea054db00cc8cc7949d570072cd295fbb"
+        "reference": "41bae9a185c312ec0c9b670806cb76c4ee40f35a"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/localgovdrupal/localgov_eu_cookie_compliance/zipball/e9cbcc2ea054db00cc8cc7949d570072cd295fbb",
-        "reference": "e9cbcc2ea054db00cc8cc7949d570072cd295fbb",
+        "url": "https://api.github.com/repos/localgovdrupal/localgov_eu_cookie_compliance/zipball/41bae9a185c312ec0c9b670806cb76c4ee40f35a",
+        "reference": "41bae9a185c312ec0c9b670806cb76c4ee40f35a",
         "shasum": ""
       },
       "require": {
@@ -10356,9 +10562,9 @@
       "homepage": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance",
       "support": {
         "issues": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance/issues",
-        "source": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance/tree/1.0.0"
+        "source": "https://github.com/localgovdrupal/localgov_eu_cookie_compliance/tree/1.0.1"
       },
-      "time": "2024-03-12T12:51:10+00:00"
+      "time": "2024-04-12T12:25:41+00:00"
     },
     {
       "name": "localgovdrupal/localgov_events",
@@ -12570,6 +12776,54 @@
         "source": "https://github.com/php-fig/cache/tree/3.0.0"
       },
       "time": "2021-02-03T23:26:27+00:00"
+    },
+    {
+      "name": "psr/clock",
+      "version": "1.0.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/php-fig/clock.git",
+        "reference": "e41a24703d4560fd0acb709162f73b8adfc3aa0d"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/php-fig/clock/zipball/e41a24703d4560fd0acb709162f73b8adfc3aa0d",
+        "reference": "e41a24703d4560fd0acb709162f73b8adfc3aa0d",
+        "shasum": ""
+      },
+      "require": {
+        "php": "^7.0 || ^8.0"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Psr\\Clock\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "PHP-FIG",
+          "homepage": "https://www.php-fig.org/"
+        }
+      ],
+      "description": "Common interface for reading the clock.",
+      "homepage": "https://github.com/php-fig/clock",
+      "keywords": [
+        "clock",
+        "now",
+        "psr",
+        "psr-20",
+        "time"
+      ],
+      "support": {
+        "issues": "https://github.com/php-fig/clock/issues",
+        "source": "https://github.com/php-fig/clock/tree/1.0.0"
+      },
+      "time": "2022-11-25T14:36:26+00:00"
     },
     {
       "name": "psr/container",
@@ -18924,7 +19178,7 @@
         "backpack/crud": "<3.4.9",
         "bacula-web/bacula-web": "<8.0.0.0-RC2-dev",
         "badaso/core": "<2.7",
-        "bagisto/bagisto": "<1.3.2",
+        "bagisto/bagisto": "<2.1",
         "barrelstrength/sprout-base-email": "<1.2.7",
         "barrelstrength/sprout-forms": "<3.9",
         "barryvdh/laravel-translation-manager": "<0.6.2",
@@ -18960,7 +19214,7 @@
         "chriskacerguis/codeigniter-restserver": "<=2.7.1",
         "civicrm/civicrm-core": ">=4.2,<4.2.9|>=4.3,<4.3.3",
         "ckeditor/ckeditor": "<4.24",
-        "cockpit-hq/cockpit": "<=2.6.3",
+        "cockpit-hq/cockpit": "<=2.6.3|==2.7",
         "codeception/codeception": "<3.1.3|>=4,<4.1.22",
         "codeigniter/framework": "<3.1.9",
         "codeigniter4/framework": "<=4.4.2",
@@ -19076,7 +19330,7 @@
         "gaoming13/wechat-php-sdk": "<=1.10.2",
         "genix/cms": "<=1.1.11",
         "getgrav/grav": "<1.7.44",
-        "getkirby/cms": "<3.5.8.3-dev|>=3.6,<3.6.6.3-dev|>=3.7,<3.7.5.2-dev|>=3.8,<3.8.4.1-dev|>=3.9,<3.9.6",
+        "getkirby/cms": "<4.1.1",
         "getkirby/kirby": "<=2.5.12",
         "getkirby/panel": "<2.5.14",
         "getkirby/starterkit": "<=3.7.0.2",
@@ -19243,7 +19497,7 @@
         "open-web-analytics/open-web-analytics": "<1.7.4",
         "opencart/opencart": "<=3.0.3.7|>=4,<4.0.2.3-dev",
         "openid/php-openid": "<2.3",
-        "openmage/magento-lts": "<20.2",
+        "openmage/magento-lts": "<20.5",
         "opensource-workshop/connect-cms": "<1.7.2|>=2,<2.3.2",
         "orchid/platform": ">=9,<9.4.4|>=14.0.0.0-alpha4,<14.5",
         "oro/calendar-bundle": ">=4.2,<=4.2.6|>=5,<=5.0.6|>=5.1,<5.1.1",
@@ -21432,6 +21686,7 @@
     "drupal/ckeditor5_icons": 5,
     "drupal/cludo_search": 10,
     "drupal/gin": 5,
+    "drupal/openid_connect_windows_aad": 10,
     "drupal/ultimate_cron": 15,
     "localgovdrupal/localgov_forms": 10,
     "roave/security-advisories": 20
