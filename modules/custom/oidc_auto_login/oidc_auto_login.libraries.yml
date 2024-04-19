@@ -1,5 +1,6 @@
 login:
   version: 1.0.1
+  header: true
   js:
     js/login.js: {}
 
