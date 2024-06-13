@@ -109,6 +109,7 @@
         "localgovdrupal/localgov_eu_cookie_compliance": "^1.0",
         "localgovdrupal/localgov_forms": "^1.0@beta",
         "localgovdrupal/localgov_geo": "^2",
+        "localgovdrupal/localgov_publications": "^1.0.0",
         "mglaman/composer-drupal-lenient": "^1.0"
     },
     "require-dev": {

@@ -1,5 +1,7 @@
-enabled: true
-client: nomensa
+_core:
+  default_config_hash: 0e6ehRzUiSqmn3UDZTPGqihtSWxeIvhwXy-VLg6i-fo
+enabled: false
+client: client
 header_required: false
-header_key: ''
-header_value: ''
+header_key: key
+header_value: value
