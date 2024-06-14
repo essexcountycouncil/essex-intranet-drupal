@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.publications
+    - filter.format.webform_default
     - filter.format.wysiwyg
     - localgov_alert_banner.localgov_alert_banner_type.localgov_alert_banner
     - rest.resource.oidc_auto_login_allowed
@@ -34,6 +36,8 @@ permissions:
   - 'restful get oidc_auto_login_allowed'
   - 'use search_api_autocomplete for localgov_directory_channel'
   - 'use search_api_autocomplete for localgov_news_search'
+  - 'use text format publications'
+  - 'use text format webform_default'
   - 'use text format wysiwyg'
   - 'view all localgov alert banner entities'
   - 'view content owner/sme entity'

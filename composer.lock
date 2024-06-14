@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "3b442a94c7058d4b1c01f049c2ebe596",
+  "content-hash": "d8052ca0d544f318cf7a7c8cd5614ab5",
   "packages": [
     {
       "name": "asm89/stack-cors",
@@ -2060,6 +2060,40 @@
       "time": "2023-02-08T14:53:49+00:00"
     },
     {
+      "name": "drupal-ckeditor-libraries-group/fakeobjects",
+      "version": "4.22.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/drupal-ckeditor-libraries-group/fakeobjects.git",
+        "reference": "a1de732aa3dbc63349f8b4653b1c7788c93ae25c"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/drupal-ckeditor-libraries-group/fakeobjects/zipball/a1de732aa3dbc63349f8b4653b1c7788c93ae25c",
+        "reference": "a1de732aa3dbc63349f8b4653b1c7788c93ae25c",
+        "shasum": ""
+      },
+      "type": "drupal-library",
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "GPL-2.0-or-later",
+        "LGPL-2.1-or-later",
+        "MPL-1.1"
+      ],
+      "description": "CKEditor 4 fakeobjects plugin",
+      "homepage": "https://ckeditor.com/cke4/addon/fakeobjects",
+      "keywords": [
+        "CKEditor",
+        "fakeobjects",
+        "plugin"
+      ],
+      "support": {
+        "issues": "https://github.com/ckeditor/ckeditor4/issues",
+        "source": "https://github.com/ckeditor/ckeditor4/tree/master/plugins/fakeobjects"
+      },
+      "time": "2023-02-08T14:53:49+00:00"
+    },
+    {
       "name": "drupal/address",
       "version": "1.12.0",
       "source": {
@@ -2203,6 +2237,66 @@
       "support": {
         "source": "https://git.drupalcode.org/project/admin_toolbar",
         "issues": "https://www.drupal.org/project/issues/admin_toolbar"
+      }
+    },
+    {
+      "name": "drupal/auto_heading_ids",
+      "version": "2.0.0-beta3",
+      "source": {
+        "type": "git",
+        "url": "https://git.drupalcode.org/project/auto_heading_ids.git",
+        "reference": "2.0.0-beta3"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://ftp.drupal.org/files/projects/auto_heading_ids-2.0.0-beta3.zip",
+        "reference": "2.0.0-beta3",
+        "shasum": "9751077cf706f27bc06b2a1de0ed00a420251e37"
+      },
+      "require": {
+        "drupal/core": "^8 || ^9 || ^10 || ^11"
+      },
+      "type": "drupal-module",
+      "extra": {
+        "drupal": {
+          "version": "2.0.0-beta3",
+          "datestamp": "1713363447",
+          "security-coverage": {
+            "status": "not-covered",
+            "message": "Project has not opted into security advisory coverage!"
+          }
+        }
+      },
+      "notification-url": "https://packages.drupal.org/8/downloads",
+      "license": [
+        "GPL-2.0+"
+      ],
+      "authors": [
+        {
+          "name": "bart88",
+          "homepage": "https://www.drupal.org/user/3198481"
+        },
+        {
+          "name": "caseyfw",
+          "homepage": "https://www.drupal.org/user/3150611"
+        },
+        {
+          "name": "pingers",
+          "homepage": "https://www.drupal.org/user/56282"
+        },
+        {
+          "name": "singularo",
+          "homepage": "https://www.drupal.org/user/143"
+        }
+      ],
+      "description": "This module provides a filter to automatically apply identifiers to headings in content.",
+      "homepage": "https://www.drupal.org/project/auto_heading_ids",
+      "keywords": [
+        "Drupal"
+      ],
+      "support": {
+        "source": "http://cgit.drupalcode.org/auto_heading_ids",
+        "issues": "https://www.drupal.org/project/issues/auto_heading_ids"
       }
     },
     {
@@ -2384,6 +2478,101 @@
       "support": {
         "source": "https://git.drupalcode.org/project/block_classes",
         "issues": "https://www.drupal.org/project/issues/block_classes"
+      }
+    },
+    {
+      "name": "drupal/ckeditor",
+      "version": "1.0.2",
+      "source": {
+        "type": "git",
+        "url": "https://git.drupalcode.org/project/ckeditor.git",
+        "reference": "1.0.2"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://ftp.drupal.org/files/projects/ckeditor-1.0.2.zip",
+        "reference": "1.0.2",
+        "shasum": "fec2ca9ad852a00c7b9584cb6040dc860364c481"
+      },
+      "require": {
+        "drupal/core": "^9.4 || ^10"
+      },
+      "require-dev": {
+        "drupal/classy": "*"
+      },
+      "type": "drupal-module",
+      "extra": {
+        "drupal": {
+          "version": "1.0.2",
+          "datestamp": "1695740655",
+          "security-coverage": {
+            "status": "covered",
+            "message": "Covered by Drupal's security advisory policy"
+          }
+        }
+      },
+      "notification-url": "https://packages.drupal.org/8/downloads",
+      "license": [
+        "GPL-2.0-or-later"
+      ],
+      "authors": [
+        {
+          "name": "dczepierga",
+          "homepage": "https://www.drupal.org/user/911466"
+        },
+        {
+          "name": "hass",
+          "homepage": "https://www.drupal.org/user/85918"
+        },
+        {
+          "name": "jcisio",
+          "homepage": "https://www.drupal.org/user/210762"
+        },
+        {
+          "name": "Jorrit",
+          "homepage": "https://www.drupal.org/user/161217"
+        },
+        {
+          "name": "lauriii",
+          "homepage": "https://www.drupal.org/user/1078742"
+        },
+        {
+          "name": "Magnus",
+          "homepage": "https://www.drupal.org/user/73919"
+        },
+        {
+          "name": "mkesicki",
+          "homepage": "https://www.drupal.org/user/922884"
+        },
+        {
+          "name": "nod_",
+          "homepage": "https://www.drupal.org/user/598310"
+        },
+        {
+          "name": "p.wiaderny",
+          "homepage": "https://www.drupal.org/user/2956619"
+        },
+        {
+          "name": "vokiel",
+          "homepage": "https://www.drupal.org/user/2793801"
+        },
+        {
+          "name": "Wim Leers",
+          "homepage": "https://www.drupal.org/user/99777"
+        },
+        {
+          "name": "wwalc",
+          "homepage": "https://www.drupal.org/user/184556"
+        },
+        {
+          "name": "xjm",
+          "homepage": "https://www.drupal.org/user/65776"
+        }
+      ],
+      "description": "WYSIWYG editing for rich text fields using CKEditor.",
+      "homepage": "https://www.drupal.org/project/ckeditor",
+      "support": {
+        "source": "https://git.drupalcode.org/project/ckeditor"
       }
     },
     {
@@ -4590,6 +4779,60 @@
       }
     },
     {
+      "name": "drupal/fakeobjects",
+      "version": "1.2.0",
+      "source": {
+        "type": "git",
+        "url": "https://git.drupalcode.org/project/fakeobjects.git",
+        "reference": "8.x-1.2"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://ftp.drupal.org/files/projects/fakeobjects-8.x-1.2.zip",
+        "reference": "8.x-1.2",
+        "shasum": "a49094752f972e7db51ef5ec7abade1a4eba48f5"
+      },
+      "require": {
+        "drupal/ckeditor": "*",
+        "drupal/core": "^8 || ^9 || ^10"
+      },
+      "type": "drupal-module",
+      "extra": {
+        "drupal": {
+          "version": "8.x-1.2",
+          "datestamp": "1674760765",
+          "security-coverage": {
+            "status": "covered",
+            "message": "Covered by Drupal's security advisory policy"
+          }
+        }
+      },
+      "notification-url": "https://packages.drupal.org/8/downloads",
+      "license": [
+        "GPL-2.0+"
+      ],
+      "authors": [
+        {
+          "name": "Kevin Quillen (kevinquillen)",
+          "homepage": "https://www.drupal.org/u/kevinquillen",
+          "role": "Maintainer"
+        },
+        {
+          "name": "kevinquillen",
+          "homepage": "https://www.drupal.org/user/317279"
+        }
+      ],
+      "description": "Adds the FakeObjects plugin to CKEditor. This plugin is a utility plugin that is required by certain user-facing CKEditor plugins.",
+      "homepage": "http://drupal.org/project/fakeobjects",
+      "keywords": [
+        "Drupal"
+      ],
+      "support": {
+        "source": "http://cgit.drupalcode.org/fakeobjects",
+        "issues": "http://drupal.org/project/issues/fakeobjects"
+      }
+    },
+    {
       "name": "drupal/fathom_analytics",
       "version": "3.0.0",
       "source": {
@@ -4919,6 +5162,83 @@
       "support": {
         "source": "https://git.drupalcode.org/project/fontawesome",
         "issues": "https://drupal.org/project/issues/fontawesome"
+      }
+    },
+    {
+      "name": "drupal/footnotes",
+      "version": "3.1.0",
+      "source": {
+        "type": "git",
+        "url": "https://git.drupalcode.org/project/footnotes.git",
+        "reference": "3.1.0"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://ftp.drupal.org/files/projects/footnotes-3.1.0.zip",
+        "reference": "3.1.0",
+        "shasum": "6cc51af0d8cd50628b5a7e9cc75255a657e2aa62"
+      },
+      "require": {
+        "drupal/core": ">=8.6",
+        "drupal/fakeobjects": "^1.0"
+      },
+      "require-dev": {
+        "drupal/fakeobjects": "*"
+      },
+      "type": "drupal-module",
+      "extra": {
+        "drupal": {
+          "version": "3.1.0",
+          "datestamp": "1691752661",
+          "security-coverage": {
+            "status": "covered",
+            "message": "Covered by Drupal's security advisory policy"
+          }
+        }
+      },
+      "notification-url": "https://packages.drupal.org/8/downloads",
+      "license": [
+        "GPL-2.0+"
+      ],
+      "authors": [
+        {
+          "name": "Andrii Aleksandrov (id.aleks)",
+          "homepage": "https://www.drupal.org/u/idaleks",
+          "role": "Maintainer"
+        },
+        {
+          "name": "Oleksandr Dekhteruk (pifagor)",
+          "homepage": "https://www.drupal.org/u/pifagor",
+          "role": "Maintainer"
+        },
+        {
+          "name": "Fernando Conceição (yukare)",
+          "homepage": "https://www.drupal.org/u/yukare",
+          "role": "Maintainer"
+        },
+        {
+          "name": "Henrik Ingo (hingo)",
+          "homepage": "https://www.drupal.org/u/hingo",
+          "role": "Maintainer"
+        },
+        {
+          "name": "scott_euser",
+          "homepage": "https://www.drupal.org/user/3267594"
+        },
+        {
+          "name": "smulvih2",
+          "homepage": "https://www.drupal.org/user/795442"
+        },
+        {
+          "name": "yukare",
+          "homepage": "https://www.drupal.org/user/889254"
+        }
+      ],
+      "description": "Add automatically numbered footnotes to your posts.",
+      "homepage": "https://drupal.org/project/footnotes",
+      "support": {
+        "source": "https://cgit.drupalcode.org/footnotes",
+        "issues": "https://drupal.org/project/issues/footnotes"
       }
     },
     {
@@ -10970,6 +11290,50 @@
         "source": "https://github.com/localgovdrupal/localgov_paragraphs/tree/2.3.3"
       },
       "time": "2023-11-08T16:16:23+00:00"
+    },
+    {
+      "name": "localgovdrupal/localgov_publications",
+      "version": "1.0.0-alpha5",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/localgovdrupal/localgov_publications.git",
+        "reference": "1fb7961b000e0e556d4fc26f11fe5be690c66209"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/localgovdrupal/localgov_publications/zipball/1fb7961b000e0e556d4fc26f11fe5be690c66209",
+        "reference": "1fb7961b000e0e556d4fc26f11fe5be690c66209",
+        "shasum": ""
+      },
+      "require": {
+        "drupal-ckeditor-libraries-group/fakeobjects": "^4.0",
+        "drupal/auto_heading_ids": "^2.0@beta",
+        "drupal/footnotes": "^3.0",
+        "localgovdrupal/localgov_core": ">=2.1.10",
+        "localgovdrupal/localgov_paragraphs": ">=2.3.2"
+      },
+      "require-dev": {
+        "drupal/coder": "*"
+      },
+      "type": "drupal-module",
+      "extra": {
+        "installer-paths": {
+          "web/libraries/{$name}": [
+            "type:drupal-library"
+          ]
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "GPL-2.0-or-later"
+      ],
+      "description": "HTML publications for the LocalGovDrupal distribution.",
+      "homepage": "https://github.com/localgovdrupal/localgov_publications",
+      "support": {
+        "issues": "https://github.com/localgovdrupal/localgov_publications/issues",
+        "source": "https://github.com/localgovdrupal/localgov_publications/tree/1.0.0-alpha5"
+      },
+      "time": "2024-01-15T16:52:53+00:00"
     },
     {
       "name": "localgovdrupal/localgov_scarfolk",
