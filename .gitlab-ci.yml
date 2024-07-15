@@ -132,9 +132,13 @@ deploy-to-dev:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
+              - mountPath: /drupal/data/default/private
+                volumeName: privsharevol
               env:
               - name: X_ROBOTS_TAG
                 value: noindex
+              - name: LIMITED_BETA_MODE
+                value: 0
               probes:
               - type: liveness
                 httpGet:
@@ -150,6 +154,8 @@ deploy-to-dev:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
+              - mountPath: /drupal/data/default/private
+                volumeName: privsharevol
               env:
               - name: MYSQL_HOST
                 value: mariadb-ecc-uks-dev.mariadb.database.azure.com
@@ -161,6 +167,14 @@ deploy-to-dev:
                 secretRef: mysql-password
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
+              - name: NOMENSA_AAD_CLIENT_SECRET
+                secretRef: nomensa-aad-client-secret
+              - name: CLIENT_AAD_CLIENT_SECRET
+                secretRef: client-aad-client-secret
+              - ENVIRONMENT:
+                value: dev
+              - name: FATHOM_ID
+                value: ''
               probes:
               - type: liveness
                 tcpSocket:
@@ -236,9 +250,13 @@ deploy-to-preprod:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
+              - mountPath: /drupal/data/default/private
+                volumeName: privsharevol
               env:
               - name: X_ROBOTS_TAG
                 value: noindex
+              - name: LIMITED_BETA_MODE
+                value: 0
               probes:
               - type: liveness
                 httpGet:
@@ -254,6 +272,8 @@ deploy-to-preprod:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
+              - mountPath: /drupal/data/default/private
+                volumeName: privsharevol
               env:
               - name: MYSQL_HOST
                 value: mariadb-ecc-uks-pre.mariadb.database.azure.com
@@ -265,6 +285,14 @@ deploy-to-preprod:
                 secretRef: mysql-password
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
+              - name: NOMENSA_AAD_CLIENT_SECRET
+                secretRef: nomensa-aad-client-secret
+              - name: CLIENT_AAD_CLIENT_SECRET
+                secretRef: client-aad-client-secret
+              - ENVIRONMENT:
+                value: pre
+              - name: FATHOM_ID
+                value: ''
               probes:
               - type: liveness
                 tcpSocket:
@@ -331,6 +359,8 @@ deploy-to-prod:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
+              - mountPath: /drupal/data/default/private
+                volumeName: privsharevol
               env:
               - name: X_ROBOTS_TAG
                 value: none
@@ -351,6 +381,8 @@ deploy-to-prod:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
+              - mountPath: /drupal/data/default/private
+                volumeName: privsharevol
               env:
               - name: MYSQL_HOST
                 value: mariadb-ecc-uks-prod.mariadb.database.azure.com
@@ -362,6 +394,14 @@ deploy-to-prod:
                 secretRef: mysql-password
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
+              - name: NOMENSA_AAD_CLIENT_SECRET
+                secretRef: nomensa-aad-client-secret
+              - name: CLIENT_AAD_CLIENT_SECRET
+                secretRef: client-aad-client-secret
+              - ENVIRONMENT:
+                value: prod
+              - name: FATHOM_ID
+                value: ''
               probes:
               - type: liveness
                 tcpSocket:
