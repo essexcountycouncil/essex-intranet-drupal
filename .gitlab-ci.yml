@@ -182,7 +182,7 @@ deploy-to-dev:
                 initialDelaySeconds: 5
                 periodSeconds: 3
       EOF
-    - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-dev --yaml revision.yml --subscription "Essex County Council (intranet)"
+    - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-dev --yaml revision.yml --subscription "Essex County Council (intranet)" --debug
     - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-dev --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
   rules:
     - if: '$CI_COMMIT_BRANCH == "develop"'
