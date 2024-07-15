@@ -132,8 +132,6 @@ deploy-to-dev:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
-              - mountPath: /drupal/data/default/private
-                volumeName: privsharevol
               env:
               - name: X_ROBOTS_TAG
                 value: noindex
@@ -248,8 +246,6 @@ deploy-to-preprod:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
-              - mountPath: /drupal/data/default/private
-                volumeName: privsharevol
               env:
               - name: X_ROBOTS_TAG
                 value: noindex
@@ -375,8 +371,6 @@ deploy-to-prod:
               volumeMounts:
               - mountPath: /drupal/web/sites/default/files
                 volumeName: filesharevol
-              - mountPath: /drupal/data/default/private
-                volumeName: privsharevol
               env:
               - name: MYSQL_HOST
                 value: mariadb-ecc-uks-prod.mariadb.database.azure.com
