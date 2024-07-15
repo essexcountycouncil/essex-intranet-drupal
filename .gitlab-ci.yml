@@ -171,7 +171,7 @@ deploy-to-dev:
                 secretRef: nomensa-aad-client-secret
               - name: CLIENT_AAD_CLIENT_SECRET
                 secretRef: client-aad-client-secret
-              - ENVIRONMENT:
+              - name: ENVIRONMENT:
                 value: dev
               - name: FATHOM_ID
                 value: ''
