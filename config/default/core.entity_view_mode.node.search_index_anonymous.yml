@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.search_index_anonymous
 label: 'Search index for anonymous users'
+description: ''
 targetEntityType: node
 cache: true
