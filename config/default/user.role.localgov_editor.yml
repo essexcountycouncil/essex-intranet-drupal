@@ -36,7 +36,6 @@ dependencies:
     - entity_usage
     - geo_entity
     - geocoder
-    - group
     - localgov_alert_banner
     - localgov_directories
     - media
@@ -68,7 +67,6 @@ permissions:
   - 'access entity usage statistics'
   - 'access geo overview'
   - 'access geocoder api endpoints'
-  - 'access group overview'
   - 'access localgov alert banner listing page'
   - 'access localgov_geo_library entity browser pages'
   - 'access media overview'
