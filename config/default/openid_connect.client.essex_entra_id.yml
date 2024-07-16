@@ -10,8 +10,8 @@ plugin: windows_aad
 settings:
   client_id: b3d4c041-33ba-4748-976f-b4dbc0ebf564
   client_secret: client_aad_key
-  authorization_endpoint_wa: ''
-  token_endpoint_wa: ''
+  authorization_endpoint_wa: 'https://login.microsoftonline.com/essex.gov.uk/oauth2/v2.0/authorize'
+  token_endpoint_wa: 'https://login.microsoftonline.com/essex.gov.uk/oauth2/v2.0/token'
   userinfo_endpoint_wa: ''
   map_ad_groups_to_roles: false
   group_mapping:
