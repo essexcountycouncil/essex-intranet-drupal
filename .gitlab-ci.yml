@@ -281,7 +281,7 @@ deploy-to-preprod:
                 secretRef: nomensa-aad-client-secret
               - name: CLIENT_AAD_CLIENT_SECRET
                 secretRef: client-aad-client-secret
-              - ENVIRONMENT:
+              - name: ENVIRONMENT
                 value: pre
               - name: FATHOM_ID
                 value: ''
@@ -294,7 +294,7 @@ deploy-to-preprod:
       EOF
     - echo "Creating new revision of Container App"
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-pre --yaml revision.yml --subscription "Essex County Council (intranet)"
-    - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-pre --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
+    - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-pre --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "FATHOM_ID=${FATHOM_ID}"
   rules:
     - when: manual
 
