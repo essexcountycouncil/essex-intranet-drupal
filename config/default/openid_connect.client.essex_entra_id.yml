@@ -1,0 +1,28 @@
+uuid: 92c823cb-e671-49ae-a80d-373b52daee94
+langcode: en
+status: true
+dependencies:
+  module:
+    - openid_connect_windows_aad
+id: essex_entra_id
+label: 'Essex Entra id'
+plugin: windows_aad
+settings:
+  client_id: b3d4c041-33ba-4748-976f-b4dbc0ebf564
+  client_secret: client_aad_key
+  authorization_endpoint_wa: ''
+  token_endpoint_wa: ''
+  userinfo_endpoint_wa: ''
+  map_ad_groups_to_roles: false
+  group_mapping:
+    method: 0
+    mappings: ''
+    strict: false
+  userinfo_graph_api_wa: 0
+  userinfo_graph_api_use_other_mails: false
+  userinfo_update_email: false
+  hide_email_address_warning: false
+  subject_key: sub
+  end_session_endpoint: ''
+  iss_allowed_domains: ''
+  front_channel_logout_url: ''
