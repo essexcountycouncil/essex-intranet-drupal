@@ -5,20 +5,6 @@ oidc_auto_login.login:
   requirements:
     _access: 'TRUE'
 
-oidc_auto_login.logged_in:
-  path: /user/auto-login/logged-in
-  defaults:
-    _controller: \Drupal\oidc_auto_login\Controller\OidcAutoLoginController::loggedIn
-  requirements:
-    _access: 'TRUE'
-
-oidc_auto_login.already_logged_in:
-  path: /user/auto-login/already-logged-in
-  defaults:
-    _controller: \Drupal\oidc_auto_login\Controller\OidcAutoLoginController::alreadyLoggedIn
-  requirements:
-    _access: 'TRUE'
-
 oidc_auto_login.settings:
   path: '/admin/config/people/openid-connect/oidc-auto-login'
   defaults:

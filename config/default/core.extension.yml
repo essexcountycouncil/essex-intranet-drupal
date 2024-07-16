@@ -145,6 +145,7 @@ module:
   oidc_auto_login: 0
   openid_connect: 0
   openid_connect_azure_b2c: 0
+  openid_connect_windows_aad: 0
   options: 0
   page_cache: 0
   paragraphs_library: 0
