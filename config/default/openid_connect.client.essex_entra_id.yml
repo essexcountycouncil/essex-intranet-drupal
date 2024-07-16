@@ -5,7 +5,7 @@ dependencies:
   module:
     - openid_connect_windows_aad
 id: essex_entra_id
-label: 'Essex Entra id'
+label: Essex
 plugin: windows_aad
 settings:
   client_id: b3d4c041-33ba-4748-976f-b4dbc0ebf564
@@ -26,3 +26,4 @@ settings:
   end_session_endpoint: ''
   iss_allowed_domains: ''
   front_channel_logout_url: ''
+  tenant: a8b4324f-155c-4215-a0f1-7ed8cc9a992f

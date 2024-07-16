@@ -1,6 +1,6 @@
 uuid: b56c66df-b6af-4984-9f5e-bf94432f4c28
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - openid_connect_azure_b2c
