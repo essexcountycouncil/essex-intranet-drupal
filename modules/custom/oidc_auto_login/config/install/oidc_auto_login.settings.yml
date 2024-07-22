@@ -3,3 +3,4 @@ client: client
 header_required: false
 header_key: key
 header_value: value
+cookie_max_age: 60

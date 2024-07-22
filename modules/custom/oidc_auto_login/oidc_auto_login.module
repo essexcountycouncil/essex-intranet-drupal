@@ -1,10 +1,23 @@
 <?php
 
+use Drupal\Core\Session\AccountInterface;
+
 /**
  * Implements hook_preprocess_HOOK().
  */
 function oidc_auto_login_preprocess_page(&$variables) {
   if (\Drupal::currentUser()->isAnonymous()) {
     $variables['#attached']['library'][] = 'oidc_auto_login/login';
+    $cookie_max_age = \Drupal::config('oidc_auto_login.settings')->get('cookie_max_age') ?? 300;
+    $variables['#attached']['drupalSettings']['oidc_auto_login']['cookieMaxAge'] = $cookie_max_age;
   }
+}
+
+/**
+ * Implements hook_user_logout().
+ */
+function oidc_auto_login_user_logout(AccountInterface $account) {
+  // Allow user to logout without being automatically logged in again.
+  $cookie_max_age = \Drupal::config('oidc_auto_login.settings')->get('cookie_max_age') ?? 300;
+  setcookie('oidc-auto-login', 'attempted', time() + $cookie_max_age);
 }
