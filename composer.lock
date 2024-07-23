@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "b4b615329bfb63e6eb3ceabbd0bdbd98",
+  "content-hash": "7f30fea3f3b5016e63a0896f5c5793db",
   "packages": [
     {
       "name": "asm89/stack-cors",
@@ -8915,26 +8915,26 @@
     },
     {
       "name": "essexcountycouncil/ecc_cookie_compliance",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "source": {
         "type": "git",
         "url": "https://github.com/essexcountycouncil/ecc_cookie_compliance.git",
-        "reference": "ab71fec5e854b5f7494c7739e2ad8e9f4a1d43d4"
+        "reference": "aede65462b7fe1bec5b5ffacebf0fdb0225c7154"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/essexcountycouncil/ecc_cookie_compliance/zipball/ab71fec5e854b5f7494c7739e2ad8e9f4a1d43d4",
-        "reference": "ab71fec5e854b5f7494c7739e2ad8e9f4a1d43d4",
+        "url": "https://api.github.com/repos/essexcountycouncil/ecc_cookie_compliance/zipball/aede65462b7fe1bec5b5ffacebf0fdb0225c7154",
+        "reference": "aede65462b7fe1bec5b5ffacebf0fdb0225c7154",
         "shasum": ""
       },
       "type": "drupal-module",
       "description": "Shared Drupal eu cookie compliance functionality for Essex County Council",
       "homepage": "https://github.com/essexcountycouncil/ecc_cookie_compliance",
       "support": {
-        "source": "https://github.com/essexcountycouncil/ecc_cookie_compliance/tree/1.0.1",
+        "source": "https://github.com/essexcountycouncil/ecc_cookie_compliance/tree/1.0.3",
         "issues": "https://github.com/essexcountycouncil/ecc_cookie_compliance/issues"
       },
-      "time": "2023-10-04T08:59:46+00:00"
+      "time": "2024-07-23T08:52:57+00:00"
     },
     {
       "name": "essexcountycouncil/ecc_menu",
@@ -8961,16 +8961,16 @@
     },
     {
       "name": "essexcountycouncil/ecc_theme",
-      "version": "1.0.31",
+      "version": "1.1.6",
       "source": {
         "type": "git",
         "url": "https://github.com/essexcountycouncil/ecc_theme.git",
-        "reference": "a8649c1456097e077e9795eb899a321d9904ba4f"
+        "reference": "7e7f7ec44f28ae7faae3d57dd799de193341a25b"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/essexcountycouncil/ecc_theme/zipball/a8649c1456097e077e9795eb899a321d9904ba4f",
-        "reference": "a8649c1456097e077e9795eb899a321d9904ba4f",
+        "url": "https://api.github.com/repos/essexcountycouncil/ecc_theme/zipball/7e7f7ec44f28ae7faae3d57dd799de193341a25b",
+        "reference": "7e7f7ec44f28ae7faae3d57dd799de193341a25b",
         "shasum": ""
       },
       "type": "drupal-theme",
@@ -8982,10 +8982,10 @@
       ],
       "description": "Consolidated Essex County Council Drupal theme",
       "support": {
-        "source": "https://github.com/essexcountycouncil/ecc_theme/tree/1.0.31",
+        "source": "https://github.com/essexcountycouncil/ecc_theme/tree/1.1.6",
         "issues": "https://github.com/essexcountycouncil/ecc_theme/issues"
       },
-      "time": "2024-03-20T14:47:40+00:00"
+      "time": "2024-07-23T08:52:39+00:00"
     },
     {
       "name": "ezyang/htmlpurifier",

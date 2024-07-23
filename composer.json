@@ -104,7 +104,7 @@
         "essexcountycouncil/ecc_content_moderation": "^1.0",
         "essexcountycouncil/ecc_cookie_compliance": "^1.0",
         "essexcountycouncil/ecc_menu": "^1.0",
-        "essexcountycouncil/ecc_theme": "^1.0",
+        "essexcountycouncil/ecc_theme": "^1.1",
         "localgovdrupal/localgov": "^3",
         "localgovdrupal/localgov_base": "^1.4",
         "localgovdrupal/localgov_eu_cookie_compliance": "^1.0",
@@ -160,6 +160,7 @@
                 "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-07-18/cludo_search.1.0-beta2.rector.patch"
             },
             "drupal/core": {
+                "Remove this patch after upgrading Localgov profile": "https://www.drupal.org/files/issues/2024-04-16/2845144-95.patch",
                 "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch"
             },
             "drupal/fathom_analytics": {
