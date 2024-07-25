@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - entity_browser
-    - localgov_geo
 _core:
   default_config_hash: g1a37HWGGozwIItYeuAmnmtmEMVzVBPrCynxXLzAB0o
 id: localgov_geo_library
@@ -141,6 +140,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: null
           id: 0

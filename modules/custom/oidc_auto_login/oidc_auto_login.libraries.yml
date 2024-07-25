@@ -1,14 +1,9 @@
 login:
-  version: VERSION
+  version: 1.0.2
+  header: true
   js:
     js/login.js: {}
-
-logged_in:
-  version: VERSION
-  js:
-    js/logged-in.js: {}
-
-already_logged_in:
-  version: VERSION
-  js:
-    js/already-logged-in.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

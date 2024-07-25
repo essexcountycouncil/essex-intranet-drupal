@@ -63,7 +63,7 @@
         "drupal/config_split": "^2",
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-project-message": "^10",
-        "drupal/core-recommended": "^10.1.8",
+        "drupal/core-recommended": "^10.3.1",
         "drupal/devel": "^5.1",
         "drupal/dynamic_entity_reference": "^3.1",
         "drupal/entitygroupfield": "^2",
@@ -73,6 +73,7 @@
         "drupal/geocoder": "^4",
         "drupal/geofield_map": "^3",
         "drupal/gin": "^3.0@RC",
+        "drupal/gin_toolbar": "^1.0@RC",
         "drupal/google_tag": "^1.6.0",
         "drupal/group": "^3",
         "drupal/health_check_url": "^3.2",
@@ -85,11 +86,12 @@
         "drupal/office_hours": "^1.11",
         "drupal/openid_connect": "^3",
         "drupal/openid_connect_azure_b2c": "1.0.1-beta1",
+        "drupal/openid_connect_windows_aad": "^2.0@beta",
         "drupal/permissions_filter": "^1.3",
         "drupal/preview_link": "^2",
         "drupal/published_corrected_date": "^2.0",
         "drupal/restui": "^1.21",
-        "drupal/scheduled_transitions": "^2.4",
+        "drupal/scheduled_transitions": "^2.5",
         "drupal/simple_sitemap": "^4.1",
         "drupal/single_content_sync": "^1.4",
         "drupal/smtp": "^1.2",
@@ -103,11 +105,11 @@
         "essexcountycouncil/ecc_content_moderation": "^1.0",
         "essexcountycouncil/ecc_cookie_compliance": "^1.0",
         "essexcountycouncil/ecc_menu": "^1.0",
-        "essexcountycouncil/ecc_theme": "^1.0",
+        "essexcountycouncil/ecc_theme": "^1.1",
         "localgovdrupal/localgov": "^3",
         "localgovdrupal/localgov_base": "^1.4",
-        "localgovdrupal/localgov_eu_cookie_compliance": " 1.x-dev",
-        "localgovdrupal/localgov_forms": "1.x-dev",
+        "localgovdrupal/localgov_eu_cookie_compliance": "^1.0",
+        "localgovdrupal/localgov_forms": "^1.0@beta",
         "localgovdrupal/localgov_geo": "^2",
         "mglaman/composer-drupal-lenient": "^1.0"
     },
@@ -159,6 +161,7 @@
                 "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-07-18/cludo_search.1.0-beta2.rector.patch"
             },
             "drupal/core": {
+                "Remove this patch after upgrading Localgov profile": "https://www.drupal.org/files/issues/2024-04-16/2845144-95.patch",
                 "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch"
             },
             "drupal/fathom_analytics": {
@@ -175,13 +178,14 @@
                 "Truncate username if it is greater than 60 characters": "https://www.drupal.org/files/issues/2021-12-08/data_too_long_for_column_name-%203252021-8.patch"
             },
             "localgovdrupal/localgov": {
-                "Replace hook_install to fix site-install --existing-config.": "patches/localgov.patch"
+              "Replace hook_install to fix site-install --existing-config.": "patches/localgov.patch"
+            },
+            "localgovdrupal/localgov_eu_cookie_compliance": {
+                "Improve spinner": "patches/localgov_cookie_compliance_save.patch",
+                "Pressing either radio button causes the hidden checkbox to be clicked": "https://patch-diff.githubusercontent.com/raw/localgovdrupal/localgov_eu_cookie_compliance/pull/22.diff"
             },
             "localgovdrupal/localgov_paragraphs": {
                 "Added missing field which has been introduced recently.": "patches/missing_field.patch"
-            },
-            "localgovdrupal/localgov_eu_cookie_compliance": {
-                "Improve spinner": "patches/localgov_cookie_compliance_save.patch"
             },
             "localgovdrupal/localgov_services": {
                 "New parent bundles for ServicesSelection": "patches/localgov_services.patch"

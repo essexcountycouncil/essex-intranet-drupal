@@ -5,6 +5,7 @@ dependencies:
   module:
     - eu_cookie_compliance
     - google_tag
+    - help
     - metatag
     - system
     - toolbar
@@ -14,9 +15,10 @@ weight: -7
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access help pages'
   - 'access toolbar'
   - 'administer eu cookie compliance categories'
   - 'administer eu cookie compliance popup'
-  - 'administer google_tag_container'
+  - 'administer google tag manager'
   - 'administer meta tags'
   - 'view the administration theme'

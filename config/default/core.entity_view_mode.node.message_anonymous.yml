@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.message_anonymous
 label: 'Message for anonymous users'
+description: ''
 targetEntityType: node
 cache: true

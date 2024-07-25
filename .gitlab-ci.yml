@@ -209,6 +209,8 @@ deploy-to-dev:
               env:
               - name: X_ROBOTS_TAG
                 value: noindex
+              - name: LIMITED_BETA_MODE
+                value: 0
               probes:
               - type: liveness
                 httpGet:
@@ -235,6 +237,14 @@ deploy-to-dev:
                 secretRef: mysql-password
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
+              - name: NOMENSA_AAD_CLIENT_SECRET
+                secretRef: nomensa-aad-client-secret
+              - name: CLIENT_AAD_CLIENT_SECRET
+                secretRef: client-aad-client-secret
+              - name: ENVIRONMENT
+                value: dev
+              - name: FATHOM_ID
+                value: ''
               probes:
               - type: liveness
                 tcpSocket:
@@ -242,7 +252,7 @@ deploy-to-dev:
                 initialDelaySeconds: 5
                 periodSeconds: 3
       EOF
-    - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-dev --yaml revision.yml --subscription "Essex County Council (intranet)"
+    - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-dev --yaml revision.yml --subscription "Essex County Council (intranet)" --debug
     - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-dev --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
   rules:
     - if: '$CI_COMMIT_BRANCH == "develop"'
@@ -262,7 +272,6 @@ drush-deploy-dev:
   rules:
     - if: '$CI_COMMIT_BRANCH == "develop"'
     - when: manual
-
 
 backstopjs_test:
   stage: development-test
@@ -321,11 +330,19 @@ deploy-to-preprod:
     - az extension add --name containerapp
     - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
   script:
+    - |
+      if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+        tag=""
+        echo "Running on default branch '$CI_DEFAULT_BRANCH': tag = 'latest'"
+      else
+        tag=":$CI_COMMIT_REF_SLUG"
+        echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
+      fi
     - echo "Importing image from Development  into Pre-Production"
-    - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --image intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
-    - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --image intranet-nginx-drupal:latest --subscription "Essex County Council (Common)"
-    - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --image intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
-    - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --image intranet-drupal-fpm:latest --subscription "Essex County Council (Common)"
+    - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-nginx-drupal$tag --image intranet-nginx-drupal$tag --subscription "Essex County Council (Common)"
+    - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-nginx-drupal$tag --image intranet-nginx-drupal:latest --subscription "Essex County Council (Common)"
+    - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-drupal-fpm$tag --image intranet-drupal-fpm$tag --subscription "Essex County Council (Common)"
+    - az acr import --force --name acreccukspre --source acreccuksdev.azurecr.io/intranet-drupal-fpm$tag --image intranet-drupal-fpm:latest --subscription "Essex County Council (Common)"
     - |
       cat > revision.yml <<EOF
       properties:
@@ -340,7 +357,7 @@ deploy-to-preprod:
                   metadata:
                     concurrentRequests: 40
           containers:
-            - image: acreccukspre.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG}
+            - image: acreccukspre.azurecr.io/intranet-nginx-drupal$tag
               name: nginx
               resources:
                 cpu: 0.25
@@ -351,6 +368,8 @@ deploy-to-preprod:
               env:
               - name: X_ROBOTS_TAG
                 value: noindex
+              - name: LIMITED_BETA_MODE
+                value: 0
               probes:
               - type: liveness
                 httpGet:
@@ -358,7 +377,7 @@ deploy-to-preprod:
                   port: 80
                 initialDelaySeconds: 5
                 periodSeconds: 3
-            - image: acreccukspre.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG}
+            - image: acreccukspre.azurecr.io/intranet-drupal-fpm$tag
               name: drupal
               resources:
                 cpu: 0.75
@@ -377,6 +396,14 @@ deploy-to-preprod:
                 secretRef: mysql-password
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
+              - name: NOMENSA_AAD_CLIENT_SECRET
+                secretRef: nomensa-aad-client-secret
+              - name: CLIENT_AAD_CLIENT_SECRET
+                secretRef: client-aad-client-secret
+              - name: ENVIRONMENT
+                value: pre
+              - name: FATHOM_ID
+                value: ''
               probes:
               - type: liveness
                 tcpSocket:
@@ -386,7 +413,7 @@ deploy-to-preprod:
       EOF
     - echo "Creating new revision of Container App"
     - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-pre --yaml revision.yml --subscription "Essex County Council (intranet)"
-    - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-pre --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
+    - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-pre --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "FATHOM_ID=${FATHOM_ID}"
   rules:
     - when: manual
 
@@ -474,6 +501,14 @@ deploy-to-prod:
                 secretRef: mysql-password
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
+              - name: NOMENSA_AAD_CLIENT_SECRET
+                secretRef: nomensa-aad-client-secret
+              - name: CLIENT_AAD_CLIENT_SECRET
+                secretRef: client-aad-client-secret
+              - ENVIRONMENT:
+                value: prod
+              - name: FATHOM_ID
+                value: ''
               probes:
               - type: liveness
                 tcpSocket:
@@ -501,5 +536,110 @@ drush-deploy-prod:
   script:
     - timeout 1200 socat EXEC:'az containerapp exec --command /drupal/deploy.sh --name intranet --container drupal --resource-group rg-ecc-intranet-uks-prod',pty,setsid,ctty STDIO,ignoreeof
   rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: manual
+    - if: '$CI_COMMIT_BRANCH =~ /^release\//'
+      when: manual
+
+deploy-straight-to-prod:
+  image: mcr.microsoft.com/azure-cli
+  stage: production
+  needs:
+    - job: build-and-push-images
+  environment:
+    name: production
+    url: https://intranet.essex.gov.uk/
+  before_script:
+    - az extension add --name containerapp
+    - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
+  script:
+    - echo "Importing image from Development into Production"
+    - az acr import --force --name acreccuksprod --source acreccuksdev.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --image intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
+    - az acr import --force --name acreccuksprod --source acreccuksdev.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG} --image intranet-nginx-drupal:latest --subscription "Essex County Council (Common)"
+    - az acr import --force --name acreccuksprod --source acreccuksdev.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --image intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --subscription "Essex County Council (Common)"
+    - az acr import --force --name acreccuksprod --source acreccuksdev.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG} --image intranet-drupal-fpm:latest --subscription "Essex County Council (Common)"
+    - echo "Creating new revision of Container App"
+    - |
+      cat > revision.yml <<EOF
+      properties:
+        template:
+          revisionSuffix: ${CI_PIPELINE_ID}
+          scale:
+            minReplicas: 1
+            maxReplicas: 3
+            rules:
+              - name: "http-rule"
+                http:
+                  metadata:
+                    concurrentRequests: 40
+          containers:
+            - image: acreccuksprod.azurecr.io/intranet-nginx-drupal:${CI_COMMIT_REF_SLUG}
+              name: nginx
+              resources:
+                cpu: 0.25
+                memory: 0.5Gi
+              volumeMounts:
+              - mountPath: /drupal/web/sites/default/files
+                volumeName: filesharevol
+              env:
+              - name: X_ROBOTS_TAG
+                value: none
+              - name: CANONICAL_HOST
+                value: intranet.essex.gov.uk
+              probes:
+              - type: liveness
+                httpGet:
+                  path: "/08b5d5dc-f2de-4c78-86a7-d3ea80037430"
+                  port: 80
+                initialDelaySeconds: 5
+                periodSeconds: 3
+            - image: acreccuksprod.azurecr.io/intranet-drupal-fpm:${CI_COMMIT_REF_SLUG}
+              name: drupal
+              resources:
+                cpu: 0.75
+                memory: 1.5Gi
+              volumeMounts:
+              - mountPath: /drupal/web/sites/default/files
+                volumeName: filesharevol
+              env:
+              - name: MYSQL_HOST
+                value: mariadb-ecc-uks-prod.mariadb.database.azure.com
+              - name: MYSQL_USER
+                value: mariadb-root
+              - name: MYSQL_DATABASE
+                value: drupal_intranet
+              - name: MYSQL_PASSWORD
+                secretRef: mysql-password
+              - name: OPENID_CONNECT_PARAMS
+                secretRef: openid-connect-params
+              probes:
+              - type: liveness
+                tcpSocket:
+                  port: 9000
+                initialDelaySeconds: 5
+                periodSeconds: 3
+      EOF
+    - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"
+    - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-prod --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: manual
+    - if: '$CI_COMMIT_BRANCH =~ /^release\//'
+      when: manual
+
+drush-deploy-straight-to-prod:
+  image: mcr.microsoft.com/azure-cli
+  stage: production-postdeploy
+  needs: ["deploy-straight-to-prod"]
+  before_script:
+    - apk add socat
+    - az extension add --name containerapp
+    - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
+    - az account set --subscription "Essex County Council (intranet)"
+  script:
+    - timeout 1200 socat EXEC:'az containerapp exec --command /drupal/deploy.sh --name intranet --container drupal --resource-group rg-ecc-intranet-uks-prod',pty,setsid,ctty STDIO,ignoreeof
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: manual
     - if: '$CI_COMMIT_BRANCH =~ /^release\//'
       when: manual

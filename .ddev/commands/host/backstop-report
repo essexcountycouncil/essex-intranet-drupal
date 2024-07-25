@@ -1,1 +1,9 @@
-#!/usr/bin/env bash&#10&#10## #ddev-generated&#10## Description: Run backstop&#10## Usage: backstop-host&#10## Example: ddev backstop-host&#10&#10&#10ddev backstop --config=tests/backstop/backstop.config.js test&#10backstop --config=tests/backstop/backstop.config.js openReport&#10
+#!/usr/bin/env bash
+
+## #ddev-generated
+## Description: Run backstop
+## Usage: backstop-host
+## Example: ddev backstop-host
+
+ddev backstop --config=tests/backstop/backstop.config.js test
+backstop --config=tests/backstop/backstop.config.js openReport
