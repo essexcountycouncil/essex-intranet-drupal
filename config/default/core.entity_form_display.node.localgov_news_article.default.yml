@@ -17,7 +17,6 @@ dependencies:
   module:
     - content_moderation
     - datetime
-    - entitygroupfield
     - field_group
     - localgov_review_date
     - media_library
@@ -140,16 +139,6 @@ content:
     weight: 5
     region: content
     settings: {  }
-    third_party_settings: {  }
-  entitygroupfield:
-    type: entitygroupfield_select_widget
-    weight: 13
-    region: content
-    settings:
-      help_text: ''
-      label: 'Group name'
-      multiple: true
-      required: false
     third_party_settings: {  }
   field_content_owner:
     type: entity_reference_autocomplete

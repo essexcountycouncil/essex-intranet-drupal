@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.teaser_anonymous
 label: 'Teaser for anonymous users'
+description: ''
 targetEntityType: node
 cache: true
