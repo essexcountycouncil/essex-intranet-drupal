@@ -35,6 +35,7 @@ settings:
       - bold
       - code
       - underline
+      - node
   plugins:
     ckeditor5_heading:
       enabled_headings:
