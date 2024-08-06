@@ -34,7 +34,7 @@ display:
           entity_type: node
           entity_field: corrected_date
           plugin_id: field
-          label: 'Last Published Date'
+          label: 'Last published date'
           exclude: false
           alter:
             alter_text: false
@@ -78,7 +78,7 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: medium
+            date_format: just_human_date
             custom_date_format: ''
             timezone: ''
             tooltip:
@@ -90,6 +90,7 @@ display:
               past_format: '@interval ago'
               granularity: 2
               refresh: 60
+              description: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -110,7 +111,7 @@ display:
           entity_type: review_date
           entity_field: review
           plugin_id: field
-          label: 'Next Review Date'
+          label: 'Next review date'
           exclude: false
           alter:
             alter_text: false
@@ -154,7 +155,7 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: medium
+            date_format: just_human_date
             custom_date_format: ''
             timezone: ''
             tooltip:
@@ -166,6 +167,7 @@ display:
               past_format: '@interval ago'
               granularity: 2
               refresh: 60
+              description: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -221,7 +223,6 @@ display:
           title: ''
           default_argument_type: node
           default_argument_options: {  }
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true

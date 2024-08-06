@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - cludo_search
-    - group
     - role_delegation
     - search_api
     - system
@@ -32,7 +31,6 @@ permissions:
   - 'assign localgov_editor role'
   - 'assign localgov_news_editor role'
   - 'assign localgov_user_manager role'
-  - 'create content_category group'
   - 'delete any webform submission'
   - 'view any webform submission'
   - 'view the administration theme'
