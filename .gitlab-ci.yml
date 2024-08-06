@@ -386,7 +386,7 @@ deploy-to-prod:
                 secretRef: nomensa-aad-client-secret
               - name: CLIENT_AAD_CLIENT_SECRET
                 secretRef: client-aad-client-secret
-              - ENVIRONMENT:
+              - name: ENVIRONMENT
                 value: prod
               - name: FATHOM_ID
                 value: ''
@@ -493,6 +493,14 @@ deploy-straight-to-prod:
                 secretRef: mysql-password
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
+              - name: NOMENSA_AAD_CLIENT_SECRET
+                secretRef: nomensa-aad-client-secret
+              - name: CLIENT_AAD_CLIENT_SECRET
+                secretRef: client-aad-client-secret
+              - name: ENVIRONMENT
+                value: prod
+              - name: FATHOM_ID
+                value: ''
               probes:
               - type: liveness
                 tcpSocket:
