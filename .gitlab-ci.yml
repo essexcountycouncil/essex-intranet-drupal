@@ -386,7 +386,7 @@ deploy-to-prod:
                 secretRef: nomensa-aad-client-secret
               - name: CLIENT_AAD_CLIENT_SECRET
                 secretRef: client-aad-client-secret
-              - ENVIRONMENT:
+              - name: ENVIRONMENT
                 value: prod
               - name: FATHOM_ID
                 value: ''
@@ -397,8 +397,8 @@ deploy-to-prod:
                 initialDelaySeconds: 5
                 periodSeconds: 3
       EOF
-    - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"
-    - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-prod --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
+    - az containerapp revision copy --name intranetrb --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"
+    - az containerapp update --name intranetrb --resource-group rg-ecc-intranet-uks-prod --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
       when: manual
@@ -415,7 +415,7 @@ drush-deploy-prod:
     - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
     - az account set --subscription "Essex County Council (intranet)"
   script:
-    - timeout 1200 socat EXEC:'az containerapp exec --command /drupal/deploy.sh --name intranet --container drupal --resource-group rg-ecc-intranet-uks-prod',pty,setsid,ctty STDIO,ignoreeof
+    - timeout 1200 socat EXEC:'az containerapp exec --command /drupal/deploy.sh --name intranetrb --container drupal --resource-group rg-ecc-intranet-uks-prod',pty,setsid,ctty STDIO,ignoreeof
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
       when: manual
@@ -493,6 +493,14 @@ deploy-straight-to-prod:
                 secretRef: mysql-password
               - name: OPENID_CONNECT_PARAMS
                 secretRef: openid-connect-params
+              - name: NOMENSA_AAD_CLIENT_SECRET
+                secretRef: nomensa-aad-client-secret
+              - name: CLIENT_AAD_CLIENT_SECRET
+                secretRef: client-aad-client-secret
+              - name: ENVIRONMENT
+                value: prod
+              - name: FATHOM_ID
+                value: ''
               probes:
               - type: liveness
                 tcpSocket:
@@ -500,8 +508,8 @@ deploy-straight-to-prod:
                 initialDelaySeconds: 5
                 periodSeconds: 3
       EOF
-    - az containerapp revision copy --name intranet --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"
-    - az containerapp update --name intranet --resource-group rg-ecc-intranet-uks-prod --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
+    - az containerapp revision copy --name intranetrb --resource-group rg-ecc-intranet-uks-prod --yaml revision.yml --subscription "Essex County Council (intranet)"
+    - az containerapp update --name intranetrb --resource-group rg-ecc-intranet-uks-prod --subscription "Essex County Council (intranet)" --container-name drupal --set-env-vars "ENVIRONMENT=${ENVIRONMENT}" "FATHOM_ID=${FATHOM_ID}"
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
       when: manual
@@ -518,7 +526,7 @@ drush-deploy-straight-to-prod:
     - az login --service-principal -u${ARM_CLIENT_ID} -p${ARM_CLIENT_SECRET} -t${ARM_TENANT_ID}
     - az account set --subscription "Essex County Council (intranet)"
   script:
-    - timeout 1200 socat EXEC:'az containerapp exec --command /drupal/deploy.sh --name intranet --container drupal --resource-group rg-ecc-intranet-uks-prod',pty,setsid,ctty STDIO,ignoreeof
+    - timeout 1200 socat EXEC:'az containerapp exec --command /drupal/deploy.sh --name intranetrb --container drupal --resource-group rg-ecc-intranet-uks-prod',pty,setsid,ctty STDIO,ignoreeof
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
       when: manual
