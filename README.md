@@ -31,7 +31,7 @@ Once again, DDEV has the details configured for NGINX for local development.
 ## Import images
 
 ```
-ddev drush en stage_file_proxy -y && ddev drush cset stage_file_proxy.settings origin '<https://beta.intranet.essex.gov.uk>' -y
+ddev drush en stage_file_proxy -y && ddev drush cset stage_file_proxy.settings origin '<https://intranet.essex.gov.uk>' -y
 ```
 
 ## Environment variables
