@@ -1,4 +1,4 @@
-# Essex County Council's Intranet Drupal project
+# Essex County Council's Intranet Drupal codebase.
 
 Built using the LocalGov Drupal distribution.
 
