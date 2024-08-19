@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.directory_index_anonymous
 label: 'Directory search index for anonymous users'
+description: ''
 targetEntityType: node
 cache: true

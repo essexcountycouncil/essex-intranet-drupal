@@ -1,0 +1,8 @@
+uuid: b9f6e7f8-0536-45d1-8d09-7bbf4491c558
+langcode: en
+status: true
+dependencies: {  }
+id: just_human_date
+label: 'Just Human Date'
+locked: false
+pattern: 'j F Y'

@@ -17,3 +17,6 @@ oidc_auto_login.settings:
     header_value:
       type: string
       label: "Expected header value"
+    cookie_max_age:
+      type: integer
+      label: "Cookie max age"
