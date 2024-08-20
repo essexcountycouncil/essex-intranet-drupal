@@ -30,7 +30,7 @@ jobs:
         run: |
           CI_COMMIT_BRANCH="$REF_NAME"
           ENV_SLUG=$(echo "${REF_NAME}" | sed -e 's:[^[:alpha:]|^[:digit:]]:-:g' | sed -e 's/\(.*\)/\L\1/')
-          NEW_DB_SUFFIX = "intranet_${ENV_SLUG}"
+          NEW_DB_SUFFIX="intranet_${ENV_SLUG}"
           tag=":$ENV_SLUG"
           az extension add --name containerapp --allow-preview true
           az containerapp job start -n intranet-dbclone -g rg-ecc-intranet-uks-dev --subscription "Essex County Council (Intranet)" --image "acreccuksdev.azurecr.io/dbclone" --env-vars "NEW_DB_SUFFIX=${NEW_DB_SUFFIX}" 'MYSQL_HOST=mariadb-ecc-uks-dev.mariadb.database.azure.com' 'MYSQL_USER=mariadb-root' 'MYSQL_DATABASE=drupal_intranet' 'MYSQL_PASSWORD=secretref:mysql-password' --container-name dbclonea --cpu 0.75 --memory 1.5
