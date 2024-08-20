@@ -35,7 +35,7 @@ jobs:
           az extension add --name containerapp --allow-preview true
           az containerapp job start -n intranet-dbclone -g rg-ecc-intranet-uks-dev --subscription "Essex County Council (Intranet)" --image "acreccuksdev.azurecr.io/dbclone" --env-vars "NEW_DB_SUFFIX=${NEW_DB_SUFFIX}" 'MYSQL_HOST=mariadb-ecc-uks-dev.mariadb.database.azure.com' 'MYSQL_USER=mariadb-root' 'MYSQL_DATABASE=drupal_intranet' 'MYSQL_PASSWORD=secretref:mysql-password' --container-name dbclonea --cpu 0.75 --memory 1.5
           echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
-          sleep 4m
+          sleep 4s
           jq -n --argjson revisions $(az containerapp revision list -n intranet -g rg-ecc-intranet-uks-dev --subscription "Essex County Council (Intranet)" | jq -c '[.[].name]') --argjson ingress $(az containerapp ingress show -n intranet -g rg-ecc-intranet-uks-dev --subscription "Essex County Council (Intranet)"  | jq -c ".traffic | [.[].revisionName]") '{"revisions": $revisions, "ingress": $ingress} | .revisions-.ingress | .[]' | tr -d '"' | while read revision
           do
             echo Deactivating "$revision"
@@ -81,8 +81,6 @@ jobs:
                   volumeMounts:
                   - mountPath: /drupal/web/sites/default/files
                     volumeName: filesharevol
-                  - mountPath: /drupal/data/default/private
-                    volumeName: privsharevol
                   env:
                   - name: MYSQL_HOST
                     value: mariadb-ecc-uks-dev.mariadb.database.azure.com
