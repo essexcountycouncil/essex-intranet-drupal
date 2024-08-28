@@ -69,7 +69,7 @@ jobs:
                   probes:
                   - type: liveness
                     httpGet:
-                      path: "/dd822309-ae33-4e29-addf-869b07453a06"
+                      path: "/08b5d5dc-f2de-4c78-86a7-d3ea80037430"
                       port: 80
                     initialDelaySeconds: 5
                     periodSeconds: 3
