@@ -29,6 +29,7 @@ dependencies:
     - workflows.workflow.localgov_editorial
   module:
     - cludo_search
+    - comment
     - content_moderation
     - content_ownership
     - entity_browser
@@ -95,6 +96,7 @@ permissions:
   - 'add scheduled transitions node localgov_step_by_step_page'
   - 'add scheduled transitions node localgov_subsites_overview'
   - 'add scheduled transitions node localgov_subsites_page'
+  - 'administer comments'
   - 'administer content owner/sme entity'
   - 'administer footer menu items'
   - 'administer paragraphs library'
