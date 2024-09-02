@@ -40,9 +40,7 @@ build-and-push-images:
     - docker build -t ${DOCKER_REGISTRY}/intranet-drupal-fpm -t ${DOCKER_REGISTRY}/intranet-drupal-fpm${tag} -t intranet-drupal-fpm -f Dockerfile-drupal .
     - docker build -t ${DOCKER_REGISTRY}/intranet-nginx-drupal -t ${DOCKER_REGISTRY}/intranet-nginx-drupal${tag} -t intranet-nginx-drupal -f Dockerfile-nginx .
     - docker push ${DOCKER_REGISTRY}/intranet-nginx-drupal${tag}
-    - docker push ${DOCKER_REGISTRY}/intranet-nginx-drupal
     - docker push ${DOCKER_REGISTRY}/intranet-drupal-fpm${tag}
-    - docker push ${DOCKER_REGISTRY}/intranet-drupal-fpm
 
 generate-sbom:
   stage: build
@@ -117,7 +115,7 @@ deploy-to-dev:
           revisionSuffix: ${CI_PIPELINE_ID}
           scale:
             minReplicas: 0
-            maxReplicas: 2
+            maxReplicas: 1
             rules:
               - name: "http-rule"
                 http:

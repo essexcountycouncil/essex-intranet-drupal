@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "628a1fefdb0292c2fe10579127372a65",
+  "content-hash": "c6fa4d77be3a7a13f24afd40927d7849",
   "packages": [
     {
       "name": "asm89/stack-cors",
@@ -3990,11 +3990,11 @@
       ],
       "authors": [
         {
-          "name": "Berdir",
+          "name": "berdir",
           "homepage": "https://www.drupal.org/user/214652"
         },
         {
-          "name": "Dave Reid",
+          "name": "dave reid",
           "homepage": "https://www.drupal.org/user/53892"
         },
         {
@@ -10969,21 +10969,21 @@
     },
     {
       "name": "localgovdrupal/localgov_paragraphs",
-      "version": "2.3.3",
+      "version": "2.4.6",
       "source": {
         "type": "git",
         "url": "https://github.com/localgovdrupal/localgov_paragraphs.git",
-        "reference": "29d2bee46db3ea83cf9a39610c37ffbc9c42c459"
+        "reference": "731d0aeae39604e1b263a1fcd4af03dd359ad6e2"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/localgovdrupal/localgov_paragraphs/zipball/29d2bee46db3ea83cf9a39610c37ffbc9c42c459",
-        "reference": "29d2bee46db3ea83cf9a39610c37ffbc9c42c459",
+        "url": "https://api.github.com/repos/localgovdrupal/localgov_paragraphs/zipball/731d0aeae39604e1b263a1fcd4af03dd359ad6e2",
+        "reference": "731d0aeae39604e1b263a1fcd4af03dd359ad6e2",
         "shasum": ""
       },
       "require": {
         "cweagans/composer-patches": "^1.6",
-        "drupal/address": "^1.8",
+        "drupal/address": "^1.8 || ^2.0",
         "drupal/crop": "^2.1",
         "drupal/entity_browser": "^2.5",
         "drupal/entity_usage": "^2.0@beta",
@@ -11010,8 +11010,8 @@
           "drupal/geolocation": {
             "Fix schema #3138668": "https://www.drupal.org/files/issues/2021-01-27/geolocation-google-maps-schema-update-3138668-5.patch"
           },
-          "drupal/viewsreference": {
-            "Fix schema #2957529": "https://www.drupal.org/files/issues/2022-07-06/viewsreference_schema-2957529-13.patch"
+          "drupal/tablefield": {
+            "Fix PHP8.2 deprecation in Drupal tablefield, see https://www.drupal.org/project/tablefield/issues/3397688.": "https://www.drupal.org/files/issues/2023-12-21/tablefield-php8.2-deprecated-creation-of-dynamic-properties-3397688-9.patch"
           }
         }
       },
@@ -11023,9 +11023,50 @@
       "homepage": "https://github.com/localgovdrupal/localgov_paragraphs",
       "support": {
         "issues": "https://github.com/localgovdrupal/localgov_paragraphs/issues",
-        "source": "https://github.com/localgovdrupal/localgov_paragraphs/tree/2.3.3"
+        "source": "https://github.com/localgovdrupal/localgov_paragraphs/tree/2.4.6"
       },
-      "time": "2023-11-08T16:16:23+00:00"
+      "time": "2024-07-09T12:09:21+00:00"
+    },
+    {
+      "name": "localgovdrupal/localgov_publications",
+      "version": "1.0.4",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/localgovdrupal/localgov_publications.git",
+        "reference": "8bc6683264e2510dd7ffeac2a3162b8c3d6d2e62"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/localgovdrupal/localgov_publications/zipball/8bc6683264e2510dd7ffeac2a3162b8c3d6d2e62",
+        "reference": "8bc6683264e2510dd7ffeac2a3162b8c3d6d2e62",
+        "shasum": ""
+      },
+      "require": {
+        "localgovdrupal/localgov_core": ">=2.1.10",
+        "localgovdrupal/localgov_paragraphs": ">=2.4.0"
+      },
+      "require-dev": {
+        "drupal/coder": "*"
+      },
+      "type": "drupal-module",
+      "extra": {
+        "installer-paths": {
+          "web/libraries/{$name}": [
+            "type:drupal-library"
+          ]
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "GPL-2.0-or-later"
+      ],
+      "description": "HTML publications for the LocalGovDrupal distribution.",
+      "homepage": "https://github.com/localgovdrupal/localgov_publications",
+      "support": {
+        "issues": "https://github.com/localgovdrupal/localgov_publications/issues",
+        "source": "https://github.com/localgovdrupal/localgov_publications/tree/1.0.4"
+      },
+      "time": "2024-07-23T12:28:11+00:00"
     },
     {
       "name": "localgovdrupal/localgov_scarfolk",
