@@ -40,9 +40,11 @@ module:
   ecc_cookie_compliance: 0
   ecc_menu: 0
   editor: 0
+  embed: 0
   entity: 0
   entity_browser: 0
   entity_browser_entity_form: 0
+  entity_embed: 0
   entity_hierarchy: 0
   entity_hierarchy_breadcrumb: 0
   entity_reference_facet_link: 0
@@ -155,6 +157,7 @@ module:
   path: 0
   path_alias: 0
   permissions_filter: 0
+  poll: 0
   preview_link: 0
   published_corrected_date: 0
   redirect: 0

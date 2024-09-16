@@ -35,6 +35,7 @@ settings:
       - bold
       - code
       - underline
+      - poll
   plugins:
     ckeditor5_heading:
       enabled_headings:
@@ -75,7 +76,7 @@ settings:
         - '<dd>'
         - '<mark>'
         - '<b>'
-        - '<div class="alert-danger alert-primary alert-success callout callout-primary callout-success callout-danger callout-teal callout-carbon callout-yellow inset inset-text">'
+        - '<div>'
         - '<blockquote cite>'
         - '<ol type>'
         - '<h2 id>'
@@ -83,11 +84,10 @@ settings:
         - '<h4 id>'
         - '<h5 id>'
         - '<h6 id>'
-        - '<ul type class="list-checked">'
+        - '<ul type>'
         - '<img data-entity-type data-entity-uuid data-caption>'
         - '<drupal-media data-caption title>'
-        - '<a hreflang title class="btn btn-start">'
-        - '<p class="alert-danger alert-primary alert-success callout callout-primary callout-success callout-danger callout-teal callout-carbon callout-yellow inset-text">'
+        - '<a hreflang title>'
     ckeditor5_style:
       styles:
         -
