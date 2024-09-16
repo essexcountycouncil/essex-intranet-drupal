@@ -32,6 +32,7 @@ dependencies:
   module:
     - book
     - cludo_search
+    - comment
     - content_moderation
     - content_ownership
     - entity_browser
@@ -100,6 +101,7 @@ permissions:
   - 'add scheduled transitions node localgov_subsites_overview'
   - 'add scheduled transitions node localgov_subsites_page'
   - 'administer book outlines'
+  - 'administer comments'
   - 'administer content owner/sme entity'
   - 'administer footer menu items'
   - 'administer paragraphs library'

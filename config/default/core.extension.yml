@@ -15,6 +15,7 @@ module:
   ckeditor5: 0
   ckeditor5_icons: 0
   cludo_search: 0
+  comment: 0
   condition_field: 0
   config: 0
   config_filter: 0
@@ -88,6 +89,7 @@ module:
   layout_paragraphs: 0
   leaflet: 0
   leaflet_views: 0
+  like_dislike: 0
   link: 0
   link_attributes: 0
   linkit: 0
