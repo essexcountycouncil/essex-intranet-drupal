@@ -1,0 +1,25 @@
+uuid: 661e155c-fa6e-4a9b-99d6-f24c99f1ed2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publish_with_parent
+    - node.type.localgov_guides_page
+_core:
+  default_config_hash: pAmTEZmzFNO4LAXl7HUNuZTmgVkh1rdinxT1D9zYnV4
+id: node.localgov_guides_page.field_publish_with_parent
+field_name: field_publish_with_parent
+entity_type: node
+bundle: localgov_guides_page
+label: 'Publish/unpublish with parent'
+description: 'Automatically publish/unpublish whenever the parent page is published/unpublished.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
