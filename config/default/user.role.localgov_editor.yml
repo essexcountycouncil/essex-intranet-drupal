@@ -27,6 +27,7 @@ dependencies:
     - node.type.localgov_step_by_step_page
     - node.type.localgov_subsites_overview
     - node.type.localgov_subsites_page
+    - taxonomy.vocabulary.media_category
     - workflows.workflow.localgov_alert_banners
     - workflows.workflow.localgov_editorial
   module:
@@ -137,6 +138,7 @@ permissions:
   - 'create new books'
   - 'create paragraph library item'
   - 'create remote_video media'
+  - 'create terms in media_category'
   - 'create url aliases'
   - 'create webform'
   - 'delete any document media'
@@ -222,6 +224,7 @@ permissions:
   - 'edit own remote_video media'
   - 'edit own webform'
   - 'edit paragraph library item'
+  - 'edit terms in media_category'
   - 'generate preview links'
   - 'manage localgov alert banner localgov_alert_banner entities'
   - 'reorder entity_hierarchy children'
