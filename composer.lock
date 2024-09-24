@@ -4796,17 +4796,17 @@
     },
     {
       "name": "drupal/fathom_analytics",
-      "version": "3.0.0",
+      "version": "3.0.2",
       "source": {
         "type": "git",
         "url": "https://git.drupalcode.org/project/fathom_analytics.git",
-        "reference": "3.0.0"
+        "reference": "3.0.2"
       },
       "dist": {
         "type": "zip",
-        "url": "https://ftp.drupal.org/files/projects/fathom_analytics-3.0.0.zip",
-        "reference": "3.0.0",
-        "shasum": "70d7cd1dc5d5f4bd3af777f69a3722e140271080"
+        "url": "https://ftp.drupal.org/files/projects/fathom_analytics-3.0.2.zip",
+        "reference": "3.0.2",
+        "shasum": "244db45d8e423dc5f11c5af1a91cd574d1766347"
       },
       "require": {
         "drupal/core": "^8 || ^9 || ^10"
@@ -4814,8 +4814,8 @@
       "type": "drupal-module",
       "extra": {
         "drupal": {
-          "version": "3.0.0",
-          "datestamp": "1600331089",
+          "version": "3.0.2",
+          "datestamp": "1706103685",
           "security-coverage": {
             "status": "covered",
             "message": "Covered by Drupal's security advisory policy"
@@ -8567,6 +8567,58 @@
       }
     },
     {
+      "name": "drupal/symfony_mailer",
+      "version": "1.5.0",
+      "source": {
+        "type": "git",
+        "url": "https://git.drupalcode.org/project/symfony_mailer.git",
+        "reference": "1.5.0"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://ftp.drupal.org/files/projects/symfony_mailer-1.5.0.zip",
+        "reference": "1.5.0",
+        "shasum": "dbec446b7112ac2e50580ceda9e80ea806498047"
+      },
+      "require": {
+        "drupal/core": "^10.3 || ^11",
+        "html2text/html2text": "^4.0.1",
+        "symfony/mailer": "^6.0 || ^7.0",
+        "tijsverkoyen/css-to-inline-styles": "^2.2"
+      },
+      "type": "drupal-module",
+      "extra": {
+        "drupal": {
+          "version": "1.5.0",
+          "datestamp": "1723739690",
+          "security-coverage": {
+            "status": "covered",
+            "message": "Covered by Drupal's security advisory policy"
+          }
+        },
+        "drush": {
+          "services": {
+            "drush.services.yml": "^11"
+          }
+        }
+      },
+      "notification-url": "https://packages.drupal.org/8/downloads",
+      "license": [
+        "GPL-2.0-or-later"
+      ],
+      "authors": [
+        {
+          "name": "adamps",
+          "homepage": "https://www.drupal.org/user/2650563"
+        }
+      ],
+      "description": "Symfony Mailer",
+      "homepage": "https://www.drupal.org/project/symfony_mailer",
+      "support": {
+        "source": "https://git.drupalcode.org/project/symfony_mailer"
+      }
+    },
+    {
       "name": "drupal/tablefield",
       "version": "2.4.0",
       "source": {
@@ -10250,6 +10302,44 @@
       "time": "2024-07-18T09:59:12+00:00"
     },
     {
+      "name": "html2text/html2text",
+      "version": "4.3.2",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/mtibben/html2text.git",
+        "reference": "3b443cbe302b52eb5806a21a9dbd79524203970a"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/mtibben/html2text/zipball/3b443cbe302b52eb5806a21a9dbd79524203970a",
+        "reference": "3b443cbe302b52eb5806a21a9dbd79524203970a",
+        "shasum": ""
+      },
+      "require-dev": {
+        "phpunit/phpunit": "~4|^9.0"
+      },
+      "suggest": {
+        "ext-mbstring": "For best performance",
+        "symfony/polyfill-mbstring": "If you can't install ext-mbstring"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Html2Text\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "GPL-2.0-or-later"
+      ],
+      "description": "Converts HTML to formatted plain text",
+      "support": {
+        "issues": "https://github.com/mtibben/html2text/issues",
+        "source": "https://github.com/mtibben/html2text/tree/4.3.2"
+      },
+      "time": "2024-08-20T02:43:29+00:00"
+    },
+    {
       "name": "itamair/geophp",
       "version": "1.5",
       "source": {
@@ -11696,22 +11786,23 @@
     },
     {
       "name": "localgovdrupal/localgov_workflows",
-      "version": "1.2.1",
+      "version": "1.3.5",
       "source": {
         "type": "git",
         "url": "https://github.com/localgovdrupal/localgov_workflows.git",
-        "reference": "101410cd5ef1ae624ad32a76b0982f8a1362091c"
+        "reference": "d8587a8089e4b98709716e2a4f87b4a12e799778"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/localgovdrupal/localgov_workflows/zipball/101410cd5ef1ae624ad32a76b0982f8a1362091c",
-        "reference": "101410cd5ef1ae624ad32a76b0982f8a1362091c",
+        "url": "https://api.github.com/repos/localgovdrupal/localgov_workflows/zipball/d8587a8089e4b98709716e2a4f87b4a12e799778",
+        "reference": "d8587a8089e4b98709716e2a4f87b4a12e799778",
         "shasum": ""
       },
       "require": {
         "drupal/diff": "^1.0",
         "drupal/responsive_preview": "^2.0",
         "drupal/scheduled_transitions": "^2.1",
+        "drupal/symfony_mailer": "^1.4",
         "localgovdrupal/localgov_core": "^2.12"
       },
       "type": "drupal-module",
@@ -11723,9 +11814,9 @@
       "homepage": "https://github.com/localgovdrupal/localgov_workflows",
       "support": {
         "issues": "https://github.com/localgovdrupal/localgov_workflows/issues",
-        "source": "https://github.com/localgovdrupal/localgov_workflows/tree/1.2.1"
+        "source": "https://github.com/localgovdrupal/localgov_workflows/tree/1.3.5"
       },
-      "time": "2023-10-02T14:08:33+00:00"
+      "time": "2024-08-23T15:00:52+00:00"
     },
     {
       "name": "masterminds/html5",
@@ -13979,6 +14070,71 @@
         }
       ],
       "time": "2024-08-15T22:48:29+00:00"
+    },
+    {
+      "name": "symfony/css-selector",
+      "version": "v6.4.8",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/css-selector.git",
+        "reference": "4b61b02fe15db48e3687ce1c45ea385d1780fe08"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/css-selector/zipball/4b61b02fe15db48e3687ce1c45ea385d1780fe08",
+        "reference": "4b61b02fe15db48e3687ce1c45ea385d1780fe08",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.1"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Symfony\\Component\\CssSelector\\": ""
+        },
+        "exclude-from-classmap": [
+          "/Tests/"
+        ]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Fabien Potencier",
+          "email": "fabien@symfony.com"
+        },
+        {
+          "name": "Jean-François Simon",
+          "email": "jeanfrancois.simon@sensiolabs.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Converts CSS selectors to XPath expressions",
+      "homepage": "https://symfony.com",
+      "support": {
+        "source": "https://github.com/symfony/css-selector/tree/v6.4.8"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-05-31T14:49:08+00:00"
     },
     {
       "name": "symfony/dependency-injection",
@@ -16527,6 +16683,59 @@
         }
       ],
       "time": "2024-08-12T09:55:28+00:00"
+    },
+    {
+      "name": "tijsverkoyen/css-to-inline-styles",
+      "version": "v2.2.7",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
+        "reference": "83ee6f38df0a63106a9e4536e3060458b74ccedb"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/83ee6f38df0a63106a9e4536e3060458b74ccedb",
+        "reference": "83ee6f38df0a63106a9e4536e3060458b74ccedb",
+        "shasum": ""
+      },
+      "require": {
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "php": "^5.5 || ^7.0 || ^8.0",
+        "symfony/css-selector": "^2.7 || ^3.0 || ^4.0 || ^5.0 || ^6.0 || ^7.0"
+      },
+      "require-dev": {
+        "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0 || ^7.5 || ^8.5.21 || ^9.5.10"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "2.2.x-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "TijsVerkoyen\\CssToInlineStyles\\": "src"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "BSD-3-Clause"
+      ],
+      "authors": [
+        {
+          "name": "Tijs Verkoyen",
+          "email": "css_to_inline_styles@verkoyen.eu",
+          "role": "Developer"
+        }
+      ],
+      "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
+      "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
+      "support": {
+        "issues": "https://github.com/tijsverkoyen/CssToInlineStyles/issues",
+        "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.2.7"
+      },
+      "time": "2023-12-08T13:03:43+00:00"
     },
     {
       "name": "twig/twig",
@@ -21770,71 +21979,6 @@
       "homepage": "https://symfony.com",
       "support": {
         "source": "https://github.com/symfony/browser-kit/tree/v6.4.8"
-      },
-      "funding": [
-        {
-          "url": "https://symfony.com/sponsor",
-          "type": "custom"
-        },
-        {
-          "url": "https://github.com/fabpot",
-          "type": "github"
-        },
-        {
-          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-          "type": "tidelift"
-        }
-      ],
-      "time": "2024-05-31T14:49:08+00:00"
-    },
-    {
-      "name": "symfony/css-selector",
-      "version": "v6.4.8",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/symfony/css-selector.git",
-        "reference": "4b61b02fe15db48e3687ce1c45ea385d1780fe08"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/symfony/css-selector/zipball/4b61b02fe15db48e3687ce1c45ea385d1780fe08",
-        "reference": "4b61b02fe15db48e3687ce1c45ea385d1780fe08",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=8.1"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-4": {
-          "Symfony\\Component\\CssSelector\\": ""
-        },
-        "exclude-from-classmap": [
-          "/Tests/"
-        ]
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
-        {
-          "name": "Fabien Potencier",
-          "email": "fabien@symfony.com"
-        },
-        {
-          "name": "Jean-François Simon",
-          "email": "jeanfrancois.simon@sensiolabs.com"
-        },
-        {
-          "name": "Symfony Community",
-          "homepage": "https://symfony.com/contributors"
-        }
-      ],
-      "description": "Converts CSS selectors to XPath expressions",
-      "homepage": "https://symfony.com",
-      "support": {
-        "source": "https://github.com/symfony/css-selector/tree/v6.4.8"
       },
       "funding": [
         {

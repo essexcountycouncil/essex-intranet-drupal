@@ -17,8 +17,6 @@ dependencies:
     - node.type.localgov_guides_page
     - node.type.localgov_news_article
     - node.type.localgov_newsroom
-    - node.type.localgov_publication_cover_page
-    - node.type.localgov_publication_page
     - node.type.localgov_services_landing
     - node.type.localgov_services_page
     - node.type.localgov_services_status
@@ -42,6 +40,8 @@ dependencies:
     - geocoder
     - localgov_alert_banner
     - localgov_directories
+    - localgov_publications
+    - localgov_workflows_notifications
     - media
     - menu_admin_per_menu
     - node
@@ -54,6 +54,7 @@ dependencies:
     - responsive_preview
     - scheduled_transitions
     - system
+    - taxonomy
     - toolbar
     - webform
   enforced:
@@ -104,6 +105,7 @@ permissions:
   - 'administer book outlines'
   - 'administer content owner/sme entity'
   - 'administer footer menu items'
+  - 'administer localgov_service_contact'
   - 'administer paragraphs library'
   - 'administer quick-actions menu items'
   - 'administer redirects'
@@ -126,6 +128,7 @@ permissions:
   - 'create localgov_newsroom content'
   - 'create localgov_publication_cover_page content'
   - 'create localgov_publication_page content'
+  - 'create localgov_service_contact'
   - 'create localgov_services_landing content'
   - 'create localgov_services_page content'
   - 'create localgov_services_status content'
@@ -161,6 +164,7 @@ permissions:
   - 'delete geo'
   - 'delete localgov_publication_cover_page revisions'
   - 'delete localgov_publication_page revisions'
+  - 'delete localgov_service_contact'
   - 'delete media'
   - 'delete own document media'
   - 'delete own image media'
@@ -199,6 +203,7 @@ permissions:
   - 'edit content owner/sme entity'
   - 'edit directory facets'
   - 'edit geo'
+  - 'edit localgov_service_contact'
   - 'edit own document media'
   - 'edit own image media'
   - 'edit own localgov_directories_org content'
@@ -304,6 +309,7 @@ permissions:
   - 'view localgov_newsroom revisions'
   - 'view localgov_publication_cover_page revisions'
   - 'view localgov_publication_page revisions'
+  - 'view localgov_service_contact'
   - 'view localgov_services_landing revisions'
   - 'view localgov_services_page revisions'
   - 'view localgov_services_status revisions'
