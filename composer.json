@@ -171,6 +171,9 @@
     "extra": {
         "enable-patching": true,
         "patches": {
+            "drupal/autosave_form": {
+                "Disable autosaving for layout builder pages": "https://www.drupal.org/files/issues/2024-09-09/3270955-5-layout_builder.patch"
+            },
             "drupal/cludo_search": {
                 "Change title of search page.": "patches/cludo_search-page-tweaks.patch",
                 "Remove cludo supplied search page template.": "patches/cludo_remove_default_template",
