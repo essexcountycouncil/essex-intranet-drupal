@@ -54,8 +54,8 @@ generate-sbom:
     - apk add bash curl --update-cache
     - curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
   script:
-    - docker pull ${DOCKER_REGISTRY}/portal-intranet-fpm${tag}
-    - syft docker:${DOCKER_REGISTRY}/portal-intranet-fpm${tag} -o json=dockerimage.sbom.json
+    - docker pull ${DOCKER_REGISTRY}/intranet-drupal-fpm${tag}
+    - syft docker:${DOCKER_REGISTRY}/intranet-drupal-fpm${tag} -o json=dockerimage.sbom.json
   only:
     - develop
     - /^release\//
