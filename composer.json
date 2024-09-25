@@ -137,7 +137,6 @@
         "phpspec/prophecy-phpunit": "^2",
         "phpstan/phpstan": "^1.0",
         "phpstan/phpstan-deprecation-rules": "^1.0",
-        "roave/security-advisories": "dev-latest",
         "squizlabs/php_codesniffer": "^3.6"
     },
     "conflict": {
@@ -157,6 +156,11 @@
             "php-http/discovery": true,
             "mglaman/composer-drupal-lenient": true,
             "phpstan/extension-installer": true
+        },
+        "audit": {
+             "ignore": {
+                 "GHSA-mg8j-w93w-xjgc": "Apache has been configured to block access to applicable paths"
+            }
         }
     },
     "autoload": {
@@ -173,11 +177,9 @@
                 "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-07-18/cludo_search.1.0-beta2.rector.patch"
             },
             "drupal/core": {
-                "Remove this patch after upgrading Localgov profile": "https://www.drupal.org/files/issues/2024-04-16/2845144-95.patch",
-                "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch"
+                "Remove this patch after upgrading Localgov profile": "https://www.drupal.org/files/issues/2024-04-16/2845144-95.patch"
             },
             "drupal/fathom_analytics": {
-                "Issue #3380665: Defer attribute should be boolean": "https://git.drupalcode.org/project/fathom_analytics/-/merge_requests/2.diff",
                 "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-06-15/fathom_analytics.3.0.0.rector.patch"
             },
             "drupal/geo_entity": {
@@ -185,6 +187,9 @@
             },
             "drupal/group": {
                 "Apply some custom functionality for Essex when adding members to Groups ECCI-287/ECCI-286": "patches/essex-group-membership.patch"
+            },
+            "drupal/honeypot": {
+                "honeypot clientside": "https://www.drupal.org/files/issues/2024-08-16/clientside_time_limit_2_1_4.patch"
             },
             "drupal/openid_connect": {
                 "Truncate username if it is greater than 60 characters": "https://www.drupal.org/files/issues/2021-12-08/data_too_long_for_column_name-%203252021-8.patch"
@@ -205,8 +210,9 @@
             "localgovdrupal/localgov_subsites": {
                 "Show page heading block for subsites pages": "patches/localgov_subsites.patch"
             },
-            "drupal/honeypot": {
-              "honeypot clientside": "https://www.drupal.org/files/issues/2024-08-16/clientside_time_limit_2_1_4.patch"
+            "localgovdrupal/localgov_workflows": {
+                "New Content by owner View": "https://patch-diff.githubusercontent.com/raw/localgovdrupal/localgov_workflows/pull/104.diff",
+                "Service contact delete form": "patches/localgov_workflows_delete_service_contact.patch"
             }
         },
         "drupal-scaffold": {
