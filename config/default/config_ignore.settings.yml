@@ -1,14 +1,15 @@
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
+mode: simple
 ignored_config_entities:
-  - 'system.site:page'
   - 'cludo_search.settings:engineId'
-  - system.menu.devel
-  - devel.toolbar.settings
   - devel.settings
+  - devel.toolbar.settings
   - oidc_auto_login.settings
   - 'simple_sitemap.settings:base_url'
   - system.menu.devel
+  - system.menu.devel
+  - 'system.site:page'
   - 'webform.webform.*'
-  - ~webform.webform.feedback_form
   - 'webform.webform_options.*'
+  - ~webform.webform.feedback_form
