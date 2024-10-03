@@ -5,8 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.full_anonymous
     - field.field.node.localgov_directories_venue.body
-    - field.field.node.localgov_directories_venue.field_content_owner
-    - field.field.node.localgov_directories_venue.field_content_sme
     - field.field.node.localgov_directories_venue.localgov_directory_channels
     - field.field.node.localgov_directories_venue.localgov_directory_email
     - field.field.node.localgov_directories_venue.localgov_directory_facets_select
@@ -72,8 +70,6 @@ hidden:
   body: true
   content_moderation_control: true
   entitygroupfield: true
-  field_content_owner: true
-  field_content_sme: true
   links: true
   localgov_directory_channels: true
   localgov_directory_email: true

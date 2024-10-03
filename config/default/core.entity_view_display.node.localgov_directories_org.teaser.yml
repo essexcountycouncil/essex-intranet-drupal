@@ -5,8 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.localgov_directories_org.body
-    - field.field.node.localgov_directories_org.field_content_owner
-    - field.field.node.localgov_directories_org.field_content_sme
     - field.field.node.localgov_directories_org.localgov_directory_channels
     - field.field.node.localgov_directories_org.localgov_directory_email
     - field.field.node.localgov_directories_org.localgov_directory_facets_select
@@ -38,8 +36,6 @@ content:
 hidden:
   content_moderation_control: true
   entitygroupfield: true
-  field_content_owner: true
-  field_content_sme: true
   links: true
   localgov_directory_channels: true
   localgov_directory_email: true

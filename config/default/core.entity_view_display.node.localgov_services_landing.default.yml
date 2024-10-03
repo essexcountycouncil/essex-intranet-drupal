@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.localgov_services_landing.body
-    - field.field.node.localgov_services_landing.field_content_owner
-    - field.field.node.localgov_services_landing.field_content_sme
     - field.field.node.localgov_services_landing.field_non_publishable_notes
     - field.field.node.localgov_services_landing.localgov_address
     - field.field.node.localgov_services_landing.localgov_address_first_line
@@ -42,22 +40,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_content_owner:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  field_content_sme:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 13
     region: content
   localgov_address:
     type: text_default

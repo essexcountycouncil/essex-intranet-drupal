@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.localgov_directory.body
-    - field.field.node.localgov_directory.field_content_owner
-    - field.field.node.localgov_directory.field_content_sme
     - field.field.node.localgov_directory.localgov_directory_channel_types
     - field.field.node.localgov_directory.localgov_directory_facets_enable
     - field.field.node.localgov_directory.localgov_proximity_search_cfg
@@ -60,26 +58,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content_owner:
-    type: entity_reference_autocomplete
-    weight: 17
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_content_sme:
-    type: entity_reference_autocomplete
-    weight: 18
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   localgov_directory_channel_types:
     type: options_buttons
     weight: 16
@@ -104,6 +82,16 @@ content:
     weight: 2
     region: content
     settings: {  }
+    third_party_settings: {  }
+  localgov_service_contacts:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   localgov_services_parent:
     type: entity_reference_autocomplete

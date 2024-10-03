@@ -6,8 +6,6 @@ dependencies:
     - core.date_format.localgov_event_date_full
     - core.date_format.localgov_event_date_hour
     - field.field.node.localgov_event.body
-    - field.field.node.localgov_event.field_content_owner
-    - field.field.node.localgov_event.field_content_sme
     - field.field.node.localgov_event.localgov_event_call_to_action
     - field.field.node.localgov_event.localgov_event_categories
     - field.field.node.localgov_event.localgov_event_date
@@ -37,22 +35,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 4
-    region: content
-  field_content_owner:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_content_sme:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 9
     region: content
   localgov_event_call_to_action:
     type: link

@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.localgov_step_by_step_page.body
-    - field.field.node.localgov_step_by_step_page.field_content_owner
-    - field.field.node.localgov_step_by_step_page.field_content_sme
     - field.field.node.localgov_step_by_step_page.localgov_restricted_content
     - field.field.node.localgov_step_by_step_page.localgov_step_parent
     - field.field.node.localgov_step_by_step_page.localgov_step_section_title
@@ -27,22 +25,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_content_owner:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_content_sme:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
     region: content
   links:
     settings: {  }
