@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.page_components
-    - field.field.node.localgov_newsroom.field_content_owner
-    - field.field.node.localgov_newsroom.field_content_sme
     - field.field.node.localgov_newsroom.localgov_newsroom_featured
     - field.field.node.localgov_newsroom.localgov_page_components
     - field.field.node.localgov_newsroom.localgov_restricted_content
@@ -51,26 +49,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content_owner:
-    type: entity_reference_autocomplete
-    weight: 14
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_content_sme:
-    type: entity_reference_autocomplete
-    weight: 15
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   localgov_newsroom_featured:
     type: entity_reference_autocomplete
     weight: 3
@@ -107,6 +85,16 @@ content:
     weight: 1
     region: content
     settings: {  }
+    third_party_settings: {  }
+  localgov_service_contacts:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default

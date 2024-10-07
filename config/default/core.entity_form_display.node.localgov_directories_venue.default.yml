@@ -5,8 +5,6 @@ dependencies:
   config:
     - entity_browser.browser.localgov_geo_library
     - field.field.node.localgov_directories_venue.body
-    - field.field.node.localgov_directories_venue.field_content_owner
-    - field.field.node.localgov_directories_venue.field_content_sme
     - field.field.node.localgov_directories_venue.localgov_directory_channels
     - field.field.node.localgov_directories_venue.localgov_directory_email
     - field.field.node.localgov_directories_venue.localgov_directory_facets_select
@@ -155,26 +153,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content_owner:
-    type: entity_reference_autocomplete
-    weight: 11
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_content_sme:
-    type: entity_reference_autocomplete
-    weight: 12
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   localgov_directory_channels:
     type: localgov_directories_channel_selector
     weight: 9
@@ -283,6 +261,16 @@ content:
     weight: 0
     region: content
     settings: {  }
+    third_party_settings: {  }
+  localgov_service_contacts:
+    type: entity_reference_autocomplete
+    weight: 28
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default

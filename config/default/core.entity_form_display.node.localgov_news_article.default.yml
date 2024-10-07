@@ -4,14 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.localgov_news_article.body
-    - field.field.node.localgov_news_article.field_content_owner
-    - field.field.node.localgov_news_article.field_content_sme
     - field.field.node.localgov_news_article.field_media_image
-    - field.field.node.localgov_news_article.localgov_restricted_content
     - field.field.node.localgov_news_article.localgov_news_categories
     - field.field.node.localgov_news_article.localgov_news_date
     - field.field.node.localgov_news_article.localgov_news_related
     - field.field.node.localgov_news_article.localgov_newsroom
+    - field.field.node.localgov_news_article.localgov_restricted_content
     - node.type.localgov_news_article
     - workflows.workflow.localgov_editorial
   module:
@@ -140,26 +138,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content_owner:
-    type: entity_reference_autocomplete
-    weight: 14
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_content_sme:
-    type: entity_reference_autocomplete
-    weight: 15
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_media_image:
     type: media_library_widget
     weight: 3
@@ -221,6 +199,16 @@ content:
     weight: 1
     region: content
     settings: {  }
+    third_party_settings: {  }
+  localgov_service_contacts:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
