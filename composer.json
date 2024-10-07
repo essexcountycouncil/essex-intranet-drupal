@@ -97,6 +97,7 @@
         "drupal/stage_file_proxy": "^2.1",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/upgrade_status": "^4.0",
+        "drupal/views_bulk_operations": "^4.2",
         "drupal/webform": "^6.2",
         "drush/drush": "^12",
         "essexcountycouncil/content_ownership": "^1.0",
