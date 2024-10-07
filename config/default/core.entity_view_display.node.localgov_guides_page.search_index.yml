@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.localgov_guides_page.field_content_owner
     - field.field.node.localgov_guides_page.field_content_sme
     - field.field.node.localgov_guides_page.field_non_publishable_notes
+    - field.field.node.localgov_guides_page.field_publish_with_parent
     - field.field.node.localgov_guides_page.localgov_guides_parent
     - field.field.node.localgov_guides_page.localgov_guides_section_title
     - field.field.node.localgov_guides_page.localgov_page_components
@@ -52,6 +53,7 @@ hidden:
   field_content_owner: true
   field_content_sme: true
   field_non_publishable_notes: true
+  field_publish_with_parent: true
   links: true
   localgov_page_components: true
   localgov_restricted_content: true
