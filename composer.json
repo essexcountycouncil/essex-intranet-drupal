@@ -162,7 +162,8 @@
             },
             "drupal/core": {
                 "Remove this patch after upgrading Localgov profile": "https://www.drupal.org/files/issues/2024-04-16/2845144-95.patch",
-                "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch"
+                "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch",
+                "dynamic transitions": "https://www.drupal.org/files/issues/2024-09-24/2797583-8775-235.patch"
             },
             "drupal/fathom_analytics": {
                 "Issue #3380665: Defer attribute should be boolean": "https://git.drupalcode.org/project/fathom_analytics/-/merge_requests/2.diff",
