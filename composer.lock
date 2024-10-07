@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "6c6c3f518b7a165261f799b4cb021e8a",
+  "content-hash": "dc3ccd97e2baa6b1ac7118aa271ce1da",
   "packages": [
     {
       "name": "asm89/stack-cors",
@@ -2842,6 +2842,50 @@
         "source": "https://git.drupalcode.org/project/config_split",
         "issues": "https://www.drupal.org/project/issues/config_split",
         "slack": "https://drupal.slack.com/archives/C45342CDD"
+      }
+    },
+    {
+      "name": "drupal/content_access_by_path",
+      "version": "1.1.0",
+      "source": {
+        "type": "git",
+        "url": "https://git.drupalcode.org/project/content_access_by_path.git",
+        "reference": "1.1.0"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://ftp.drupal.org/files/projects/content_access_by_path-1.1.0.zip",
+        "reference": "1.1.0",
+        "shasum": "739f3ecbc038d73a62d575ec1fb364b7d2ff4a70"
+      },
+      "require": {
+        "drupal/core": "^10 || ^11"
+      },
+      "type": "drupal-module",
+      "extra": {
+        "drupal": {
+          "version": "1.1.0",
+          "datestamp": "1722510522",
+          "security-coverage": {
+            "status": "covered",
+            "message": "Covered by Drupal's security advisory policy"
+          }
+        }
+      },
+      "notification-url": "https://packages.drupal.org/8/downloads",
+      "license": [
+        "GPL-2.0-or-later"
+      ],
+      "authors": [
+        {
+          "name": "markconroy",
+          "homepage": "https://www.drupal.org/user/336910"
+        }
+      ],
+      "description": "Restricts editing of content to specific sections for editors",
+      "homepage": "https://www.drupal.org/project/content_access_by_path",
+      "support": {
+        "source": "https://git.drupalcode.org/project/content_access_by_path"
       }
     },
     {
@@ -9479,16 +9523,16 @@
     },
     {
       "name": "essexcountycouncil/ecc_theme",
-      "version": "1.1.7",
+      "version": "dev-202410_curves_LP_228",
       "source": {
         "type": "git",
         "url": "https://github.com/essexcountycouncil/ecc_theme.git",
-        "reference": "d682c2e192d0ee7f62e99315c5f338acce18ba26"
+        "reference": "c6cb3cd6148feb547f1a87e9d72a763dde3e6537"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/essexcountycouncil/ecc_theme/zipball/d682c2e192d0ee7f62e99315c5f338acce18ba26",
-        "reference": "d682c2e192d0ee7f62e99315c5f338acce18ba26",
+        "url": "https://api.github.com/repos/essexcountycouncil/ecc_theme/zipball/c6cb3cd6148feb547f1a87e9d72a763dde3e6537",
+        "reference": "c6cb3cd6148feb547f1a87e9d72a763dde3e6537",
         "shasum": ""
       },
       "type": "drupal-theme",
@@ -9500,10 +9544,10 @@
       ],
       "description": "Consolidated Essex County Council Drupal theme",
       "support": {
-        "source": "https://github.com/essexcountycouncil/ecc_theme/tree/1.1.7",
+        "source": "https://github.com/essexcountycouncil/ecc_theme/tree/202410_curves_LP_228",
         "issues": "https://github.com/essexcountycouncil/ecc_theme/issues"
       },
-      "time": "2024-07-30T11:01:52+00:00"
+      "time": "2024-10-04T14:31:45+00:00"
     },
     {
       "name": "ezyang/htmlpurifier",
@@ -21672,6 +21716,7 @@
     "drupal/gin_toolbar": 5,
     "drupal/openid_connect_windows_aad": 10,
     "drupal/ultimate_cron": 15,
+    "essexcountycouncil/ecc_theme": 20,
     "localgovdrupal/localgov_forms": 10
   },
   "prefer-stable": true,
