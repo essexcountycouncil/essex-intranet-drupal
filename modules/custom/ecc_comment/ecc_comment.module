@@ -1,0 +1,44 @@
+<?php
+
+use \Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * @file
+ * Primary module hooks for ECC Comment module.
+ */
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for comments.
+ */
+function ecc_comment_theme_suggestions_comment_alter(array &$suggestions, array $variables) {
+  // Add a new template suggestion for the comment.
+  $suggestions[] = 'ecc_comment__ecc_comment';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ecc_comment_theme($existing, $type, $theme, $path) {
+  return [
+    'ecc_comment__ecc_comment' => [
+      'template' => 'ecc-comment',
+      'base hook' => 'comment',
+    ],
+  ];
+}
+
+function ecc_comment_preprocess_comment(&$variables) {
+
+  // Check if the 'submitted' variable exists and is a TranslatableMarkup object.
+  if (isset($variables['submitted']) && $variables['submitted'] instanceof \Drupal\Core\StringTranslation\TranslatableMarkup) {
+    // Convert the TranslatableMarkup object to a string.
+    $submitted_string = $variables['submitted']->render();
+
+    // Remove the "Submitted by " part from the string.
+    $submitted_string = str_replace('Submitted by ', '', $submitted_string);
+
+    // Update the 'submitted' variable with the modified string.
+    $variables['submitted'] = new TranslatableMarkup($submitted_string);
+  }
+
+}
