@@ -12,7 +12,17 @@ use \Drupal\Core\StringTranslation\TranslatableMarkup;
  */
 function ecc_comment_theme_suggestions_comment_alter(array &$suggestions, array $variables) {
   // Add a new template suggestion for the comment.
-  $suggestions[] = 'ecc_comment__ecc_comment';
+  $suggestions[] = 'comment__ecc_comment';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for comments.
+ */
+function ecc_comment_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  if ($variables['element']['#field_type'] === 'comment') {
+    // Add a new template suggestion for the comment field.
+    $suggestions[] = 'field__ecc_comment';
+  }
 }
 
 /**
@@ -20,15 +30,21 @@ function ecc_comment_theme_suggestions_comment_alter(array &$suggestions, array 
  */
 function ecc_comment_theme($existing, $type, $theme, $path) {
   return [
-    'ecc_comment__ecc_comment' => [
+    'comment__ecc_comment' => [
       'template' => 'ecc-comment',
       'base hook' => 'comment',
+    ],
+    'field__ecc_comment' => [
+      'template' => 'field--ecc-comment',
+      'base hook' => 'field',
     ],
   ];
 }
 
+/**
+ * Implements template_preprocess_comment();
+ */
 function ecc_comment_preprocess_comment(&$variables) {
-
   // Check if the 'submitted' variable exists and is a TranslatableMarkup object.
   if (isset($variables['submitted']) && $variables['submitted'] instanceof \Drupal\Core\StringTranslation\TranslatableMarkup) {
     // Convert the TranslatableMarkup object to a string.
@@ -40,5 +56,4 @@ function ecc_comment_preprocess_comment(&$variables) {
     // Update the 'submitted' variable with the modified string.
     $variables['submitted'] = new TranslatableMarkup($submitted_string);
   }
-
 }
