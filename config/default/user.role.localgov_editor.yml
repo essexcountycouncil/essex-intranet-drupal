@@ -17,8 +17,6 @@ dependencies:
     - node.type.localgov_guides_page
     - node.type.localgov_news_article
     - node.type.localgov_newsroom
-    - node.type.localgov_publication_cover_page
-    - node.type.localgov_publication_page
     - node.type.localgov_services_landing
     - node.type.localgov_services_page
     - node.type.localgov_services_status
@@ -42,6 +40,7 @@ dependencies:
     - geocoder
     - localgov_alert_banner
     - localgov_directories
+    - localgov_publications
     - media
     - menu_admin_per_menu
     - node
@@ -266,6 +265,7 @@ permissions:
   - 'revert localgov_step_by_step_page revisions'
   - 'revert localgov_subsites_overview revisions'
   - 'revert localgov_subsites_page revisions'
+  - 'skip comment approval'
   - 'update any media'
   - 'update media'
   - 'use localgov_alert_banners transition create_new_draft'
