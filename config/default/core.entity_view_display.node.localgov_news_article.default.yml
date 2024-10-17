@@ -111,6 +111,7 @@ hidden:
   entitygroupfield: true
   field_content_owner: true
   field_content_sme: true
+  field_media_image: true
   localgov_newsroom: true
   localgov_restricted_content: true
   restricted_content_sign_in: true

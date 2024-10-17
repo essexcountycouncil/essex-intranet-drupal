@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.localgov_guides_overview.body
-    - field.field.node.localgov_guides_overview.field_content_owner
-    - field.field.node.localgov_guides_overview.field_content_sme
     - field.field.node.localgov_guides_overview.field_non_publishable_notes
     - field.field.node.localgov_guides_overview.localgov_guides_description
     - field.field.node.localgov_guides_overview.localgov_guides_list_format
@@ -79,26 +77,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content_owner:
-    type: entity_reference_autocomplete
-    weight: 19
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_content_sme:
-    type: entity_reference_autocomplete
-    weight: 20
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_non_publishable_notes:
     type: text_textarea
     weight: 18
@@ -147,6 +125,16 @@ content:
     weight: 0
     region: content
     settings: {  }
+    third_party_settings: {  }
+  localgov_service_contacts:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   localgov_services_parent:
     type: entity_reference_autocomplete

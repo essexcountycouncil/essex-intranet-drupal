@@ -1,0 +1,20 @@
+uuid: e7721a6a-cdb7-4461-b9a3-2773db37f922
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: S_jxePRsrn8xmSHxUNmWrHxYNKkBFxrN4ROT8DjfMAU
+id: node.field_publish_with_parent
+field_name: field_publish_with_parent
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

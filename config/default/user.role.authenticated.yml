@@ -16,6 +16,7 @@ dependencies:
     - geo_entity
     - localgov_alert_banner
     - media
+    - poll
     - rest
     - search_api_autocomplete
     - system
@@ -31,6 +32,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access fontawesome additional settings'
+  - 'access polls'
   - 'display eu cookie compliance popup'
   - 'edit own comments'
   - 'edit own webform submission'
@@ -40,7 +42,6 @@ permissions:
   - 'use search_api_autocomplete for localgov_news_search'
   - 'use text format wysiwyg'
   - 'view all localgov alert banner entities'
-  - 'view content owner/sme entity'
   - 'view geo'
   - 'view localgov alert banner localgov_alert_banner entities'
   - 'view media'

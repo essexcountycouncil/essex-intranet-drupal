@@ -4,6 +4,7 @@ module:
   address: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
+  antibot: 0
   autologout: 0
   automated_cron: 0
   autosave_form: 0
@@ -22,8 +23,8 @@ module:
   config_ignore: 0
   config_split: 0
   contact: 0
+  content_access_by_path: 0
   content_moderation: 0
-  content_ownership: 0
   contextual: 0
   crop: 0
   ctools: 0
@@ -41,10 +42,13 @@ module:
   ecc_content_moderation: 0
   ecc_cookie_compliance: 0
   ecc_menu: 0
+  ecc_parents: 0
   editor: 0
+  embed: 0
   entity: 0
   entity_browser: 0
   entity_browser_entity_form: 0
+  entity_embed: 0
   entity_hierarchy: 0
   entity_hierarchy_breadcrumb: 0
   entity_reference_facet_link: 0
@@ -77,6 +81,7 @@ module:
   health_check_url: 0
   help: 0
   history: 0
+  honeypot: 0
   image: 0
   image_widget_crop: 0
   imagemagick: 0
@@ -138,6 +143,7 @@ module:
   localgov_subsites_paragraphs: 0
   localgov_topics: 0
   localgov_workflows: 0
+  localgov_workflows_notifications: 0
   media: 0
   media_library: 0
   media_library_edit: 0
@@ -158,10 +164,13 @@ module:
   path: 0
   path_alias: 0
   permissions_filter: 0
+  poll: 0
   preview_link: 0
   published_corrected_date: 0
   redirect: 0
   redirect_404: 0
+  replicate: 0
+  replicate_ui: 0
   responsive_image: 0
   responsive_preview: 0
   rest: 0
@@ -178,8 +187,8 @@ module:
   search_api_location_views: 0
   serialization: 0
   simple_sitemap: 0
-  smtp: 0
   sophron: 0
+  symfony_mailer: 0
   system: 0
   tablefield: 0
   taxonomy: 0
