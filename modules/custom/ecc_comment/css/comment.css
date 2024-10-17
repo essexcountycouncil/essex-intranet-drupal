@@ -19,6 +19,18 @@
   gap: 1em;
 }
 
+.comment-form .js-filter-wrapper {
+  display: none;
+}
+
+.comment-user-comments-form {
+  margin-bottom: 1em;
+}
+
+.comment a {
+  font-weight: bold;
+}
+
 .like_dislike .like a,
 .like_dislike .dislike a {
   text-indent: -10000px;
