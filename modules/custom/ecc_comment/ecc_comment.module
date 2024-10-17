@@ -1,8 +1,13 @@
 <?php
 
-use Drupal\views\ViewExecutable;
+/**
+ * @file
+ * ECC Comments.
+ */
+
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\views\Plugin\views\cache\CachePluginBase;
-use \Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\views\ViewExecutable;
 
 /**
  * @file
@@ -44,18 +49,21 @@ function ecc_comment_theme($existing, $type, $theme, $path) {
 }
 
 /**
- * Implements template_preprocess_comment();
+ * Implements template_preprocess_comment().
  */
 function ecc_comment_preprocess_comment(&$variables) {
   $comment = $variables['elements']['#comment'];
   $variables['created'] = \Drupal::service('date.formatter')->format($comment->getCreatedTime(), 'just_human_date');
 
   // New submitted string.
-  $variables['submitted'] = new TranslatableMarkup("Submitted by @user on @date", ['@user' => $variables['user']->getDisplayName(), '@date' => $variables['created']]);
+  $variables['submitted'] = new TranslatableMarkup("Submitted by @user on @date", [
+    '@user' => $variables['user']->getDisplayName(),
+    '@date' => $variables['created'],
+  ]);
 }
 
 /**
- * Implements hook_views_post_render()
+ * Implements hook_views_post_render().
  *
  * Adds custom styles to the view.
  */

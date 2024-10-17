@@ -330,8 +330,8 @@
         ],
         "phpunit-modules": "sudo -u www-data -E vendor/bin/phpunit -v --debug modules",
         "cghooks": "[ -h vendor/bin/cghooks -a -w ../.git ] && vendor/bin/cghooks --git-dir=../.git",
-        "phpcs": "bin/phpcs --standard=Drupal,DrupalPractice --ignore=*.js web/modules/custom",
-        "phpcbf": "bin/phpcbf --standard=Drupal,DrupalPractice --ignore=*.js web/modules/custom",
+        "phpcs": "bin/phpcs --standard=phpcs-ecc.xml",
+        "phpcbf": "bin/phpcbf --standard=phpcbf-ecc.xml",
         "tests-required": [
             "composer validate",
             "composer audit",
