@@ -1,0 +1,21 @@
+uuid: 493ca275-95c4-4637-a38d-12dca8489b64
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.user_comments
+    - field.storage.comment.field_comment_like
+  module:
+    - like_dislike
+id: comment.user_comments.field_comment_like
+field_name: field_comment_like
+entity_type: comment
+bundle: user_comments
+label: Like
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: like_dislike
