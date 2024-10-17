@@ -48,7 +48,7 @@ class OidcAutoLoginController extends ControllerBase {
   public function __construct(
     protected OpenIDConnectClaims $claims,
     protected OpenIDConnectSessionInterface $session,
-    protected RendererInterface $renderer
+    protected RendererInterface $renderer,
   ) {
     $this->context = new RenderContext();
   }

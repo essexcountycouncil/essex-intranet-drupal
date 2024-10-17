@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * @file
+ * ECC Comments.
+ */
+
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\views\Plugin\views\cache\CachePluginBase;
+use Drupal\views\ViewExecutable;
+
+/**
+ * @file
+ * Primary module hooks for ECC Comment module.
+ */
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for comments.
+ */
+function ecc_comment_theme_suggestions_comment_alter(array &$suggestions, array $variables) {
+  // Add a new template suggestion for the comment.
+  $suggestions[] = 'comment__ecc_comment';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for comments.
+ */
+function ecc_comment_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  if ($variables['element']['#field_type'] === 'comment') {
+    // Add a new template suggestion for the comment field.
+    $suggestions[] = 'field__ecc_comment';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ecc_comment_theme($existing, $type, $theme, $path) {
+  return [
+    'comment__ecc_comment' => [
+      'template' => 'ecc-comment',
+      'base hook' => 'comment',
+    ],
+    'field__ecc_comment' => [
+      'template' => 'field--ecc-comment',
+      'base hook' => 'field',
+    ],
+  ];
+}
+
+/**
+ * Implements template_preprocess_comment().
+ */
+function ecc_comment_preprocess_comment(&$variables) {
+  $comment = $variables['elements']['#comment'];
+  $variables['created'] = \Drupal::service('date.formatter')->format($comment->getCreatedTime(), 'just_human_date');
+
+  // New submitted string.
+  $variables['submitted'] = new TranslatableMarkup("Submitted by @user on @date", [
+    '@user' => $variables['user']->getDisplayName(),
+    '@date' => $variables['created'],
+  ]);
+}
+
+/**
+ * Implements hook_views_post_render().
+ *
+ * Adds custom styles to the view.
+ */
+function ecc_comment_views_post_render(ViewExecutable $view, array &$output, CachePluginBase $cache) {
+  if ($view->id() == 'new_comments_for_review') {
+    $output['#attached']['library'][] = 'ecc_comment/ecc-comment';
+  }
+}

@@ -25,7 +25,8 @@ class PageHeaderSubscriber implements EventSubscriberInterface {
    */
   public function __construct(
     protected AccountInterface $account,
-    protected RestrictedContentInterface $restrictedContent) {
+    protected RestrictedContentInterface $restrictedContent,
+  ) {
   }
 
   /**

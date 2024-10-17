@@ -3,6 +3,7 @@ oidc_auto_login.login:
   defaults:
     _controller: \Drupal\oidc_auto_login\Controller\OidcAutoLoginController::login
   requirements:
+    # Allow access to all anonymous users.
     _access: 'TRUE'
 
 oidc_auto_login.settings:

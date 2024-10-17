@@ -1,0 +1,42 @@
+uuid: ae3eb055-bc1a-44d7-989d-5255943af6b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.user_comments
+    - field.field.comment.user_comments.comment_body
+    - field.field.comment.user_comments.field_comment_like
+  module:
+    - field_formatter_class
+    - like_dislike
+    - text
+id: comment.user_comments.default
+targetEntityType: comment
+bundle: user_comments
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_comment_like:
+    type: like_dislike_formatter
+    label: hidden
+    settings:
+      likes_label: Like
+      dislikes_label: Dislike
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true
