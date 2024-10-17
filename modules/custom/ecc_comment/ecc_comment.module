@@ -47,13 +47,12 @@ function ecc_comment_theme($existing, $type, $theme, $path) {
  * Implements template_preprocess_comment();
  */
 function ecc_comment_preprocess_comment(&$variables) {
-  // Check if the 'submitted' variable exists and is a TranslatableMarkup object.
-  if (isset($variables['submitted']) && $variables['submitted'] instanceof \Drupal\Core\StringTranslation\TranslatableMarkup) {
-    // Convert the TranslatableMarkup object to a string.
-    $submitted_string = $variables['submitted']->render();
+  $comment = $variables['elements']['#comment'];
+  $variables['created'] = \Drupal::service('date.formatter')->format($comment->getCreatedTime(), 'just_human_date');
 
-    // Remove the "Submitted by " part from the string.
-    $submitted_string = str_replace('Submitted by ', '', $submitted_string);
+  // New submitted string.
+  $variables['submitted'] = new TranslatableMarkup("Submitted by @user on @date", ['@user' => $variables['user']->getDisplayName(), '@date' => $variables['created']]);
+}
 
 /**
  * Implements hook_views_post_render()
