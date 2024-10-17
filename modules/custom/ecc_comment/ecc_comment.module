@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\cache\CachePluginBase;
 use \Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
@@ -53,7 +55,13 @@ function ecc_comment_preprocess_comment(&$variables) {
     // Remove the "Submitted by " part from the string.
     $submitted_string = str_replace('Submitted by ', '', $submitted_string);
 
-    // Update the 'submitted' variable with the modified string.
-    $variables['submitted'] = new TranslatableMarkup($submitted_string);
+/**
+ * Implements hook_views_post_render()
+ *
+ * Adds custom styles to the view.
+ */
+function ecc_comment_views_post_render(ViewExecutable $view, array &$output, CachePluginBase $cache) {
+  if ($view->id() == 'new_comments_for_review') {
+    $output['#attached']['library'][] = 'ecc_comment/ecc-comment';
   }
 }
