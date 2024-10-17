@@ -2657,7 +2657,7 @@
                 "shasum": "b6bec32730bf19778e7136a271ccb5491d8a5662"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
@@ -5012,7 +5012,7 @@
                 "shasum": "244db45d8e423dc5f11c5af1a91cd574d1766347"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
