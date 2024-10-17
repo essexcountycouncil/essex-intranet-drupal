@@ -5,6 +5,7 @@ dependencies:
   config:
     - comment.type.user_comments
     - field.field.comment.user_comments.comment_body
+    - field.field.comment.user_comments.field_comment_like
   module:
     - text
 id: comment.user_comments.default
@@ -12,25 +13,15 @@ targetEntityType: comment
 bundle: user_comments
 mode: default
 content:
-  author:
-    weight: -2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   comment_body:
     type: text_textarea
-    weight: 11
+    weight: 0
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  subject:
-    type: string_textfield
-    weight: 10
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  author: true
+  field_comment_like: true
+  subject: true
