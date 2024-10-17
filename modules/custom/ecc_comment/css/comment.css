@@ -31,6 +31,11 @@
   font-weight: bold;
 }
 
+.comment mark {
+  color: var(--color-section-header-bg);
+  font-weight: bold;
+}
+
 .like_dislike .like a,
 .like_dislike .dislike a {
   text-indent: -10000px;
@@ -61,4 +66,13 @@ main .like_dislike .dislike {
 
 .field--name-field-like-dislike .field__label {
   margin-bottom: 1em
+}
+
+.comment-alert {
+  background-color: #fff;
+  color: #000;
+  border-top: 2px solid var(--color-section-header-bg);
+  border-bottom: 2px solid var(--color-section-header-bg);
+  padding: 0.5em;
+  line-height: 2.5em;
 }
