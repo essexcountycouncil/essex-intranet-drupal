@@ -59,13 +59,10 @@ hidden:
   body: true
   content_moderation_control: true
   entitygroupfield: true
-<<<<<<< HEAD
   field_comments: true
   field_content_owner: true
   field_content_sme: true
   field_like_dislike: true
-=======
->>>>>>> develop
   links: true
   localgov_news_categories: true
   localgov_news_related: true
