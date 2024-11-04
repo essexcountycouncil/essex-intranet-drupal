@@ -28,6 +28,7 @@ dependencies:
     - workflows.workflow.localgov_alert_banners
     - workflows.workflow.localgov_editorial
   module:
+    - comment
     - content_moderation
     - entity_hierarchy
     - localgov_alert_banner
@@ -60,6 +61,7 @@ permissions:
   - 'add scheduled transitions localgov_alert_banner localgov_alert_banner'
   - 'add scheduled transitions node localgov_news_article'
   - 'add scheduled transitions node localgov_newsroom'
+  - 'administer comments'
   - 'administer redirects'
   - 'create document media'
   - 'create image media'
@@ -101,6 +103,7 @@ permissions:
   - 'revert localgov_news_article revisions'
   - 'revert localgov_newsroom revisions'
   - 'revert localgov_subsites_overview revisions'
+  - 'skip comment approval'
   - 'use localgov_alert_banners transition create_new_draft'
   - 'use localgov_alert_banners transition publish'
   - 'use localgov_alert_banners transition unpublish'

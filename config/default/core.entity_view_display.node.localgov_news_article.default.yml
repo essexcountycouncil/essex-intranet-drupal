@@ -3,8 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.user_comments.default
     - facets.facet.localgov_news_category
     - field.field.node.localgov_news_article.body
+    - field.field.node.localgov_news_article.field_comments
+    - field.field.node.localgov_news_article.field_like_dislike
     - field.field.node.localgov_news_article.field_media_image
     - field.field.node.localgov_news_article.localgov_news_categories
     - field.field.node.localgov_news_article.localgov_news_date
@@ -13,9 +16,11 @@ dependencies:
     - field.field.node.localgov_news_article.localgov_restricted_content
     - node.type.localgov_news_article
   module:
+    - comment
     - datetime
     - entity_reference_facet_link
     - field_formatter_class
+    - like_dislike
     - text
     - user
   enforced:
@@ -34,6 +39,26 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_comments:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_like_dislike:
+    type: like_dislike_formatter
+    label: above
+    settings:
+      likes_label: 'Yes'
+      dislikes_label: 'No'
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 6
     region: content
   field_media_image:
     type: entity_reference_entity_view
