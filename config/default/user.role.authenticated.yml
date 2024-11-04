@@ -9,7 +9,6 @@ dependencies:
   module:
     - cludo_search
     - comment
-    - content_ownership
     - eu_cookie_compliance
     - filter
     - fontawesome
