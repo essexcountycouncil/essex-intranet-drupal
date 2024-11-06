@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "9fe30a807452f597b99830d0a5da07e5",
+  "content-hash": "670f7eccd17377bb033d2f97080fecb7",
   "packages": [
     {
       "name": "asm89/stack-cors",
@@ -4782,28 +4782,28 @@
     },
     {
       "name": "drupal/facets",
-      "version": "2.0.6",
+      "version": "2.0.9",
       "source": {
         "type": "git",
         "url": "https://git.drupalcode.org/project/facets.git",
-        "reference": "2.0.6"
+        "reference": "2.0.9"
       },
       "dist": {
         "type": "zip",
-        "url": "https://ftp.drupal.org/files/projects/facets-2.0.6.zip",
-        "reference": "2.0.6",
-        "shasum": "e984e6ce69026c20d2049d4ec53748e67c5e70de"
+        "url": "https://ftp.drupal.org/files/projects/facets-2.0.9.zip",
+        "reference": "2.0.9",
+        "shasum": "54512df3448c2464ef2bee7eefa825115562c9d5"
       },
       "require": {
-        "drupal/core": "^9.3 || ^10.0"
+        "drupal/core": "^10 || ^11"
       },
       "conflict": {
-        "drupal/search_api": "<1.14"
+        "drupal/search_api": "<1.30"
       },
       "require-dev": {
-        "drupal/jquery_ui_slider": "~2.0",
-        "drupal/jquery_ui_touch_punch": "~1.1",
-        "drupal/search_api": "^1.28||1.x-dev"
+        "drupal/jquery_ui_slider": "^2.1",
+        "drupal/jquery_ui_touch_punch": "^1.1",
+        "drupal/search_api": "1.x-dev"
       },
       "suggest": {
         "drupal/jquery_ui_slider": "Required for the 'Facets Range Widget' module to work",
@@ -4812,8 +4812,8 @@
       "type": "drupal-module",
       "extra": {
         "drupal": {
-          "version": "2.0.6",
-          "datestamp": "1671207897",
+          "version": "2.0.9",
+          "datestamp": "1728492418",
           "security-coverage": {
             "status": "covered",
             "message": "Covered by Drupal's security advisory policy"
@@ -4838,18 +4838,18 @@
           "homepage": "https://www.drupal.org/user/124705"
         },
         {
-          "name": "Nick_vh",
+          "name": "nick_vh",
           "homepage": "https://www.drupal.org/user/122682"
         },
         {
-          "name": "StryKaizer",
+          "name": "strykaizer",
           "homepage": "https://www.drupal.org/user/462700"
         }
       ],
       "description": "The Facet module allows site builders to easily create and manage faceted search interfaces.",
       "homepage": "https://www.drupal.org/project/facets",
       "support": {
-        "source": "git://git.drupal.org/project/facets.git",
+        "source": "https://git.drupalcode.org/project/facets",
         "issues": "https://www.drupal.org/project/issues/facets",
         "irc": "irc://irc.freenode.org/drupal-search-api"
       }
@@ -9189,6 +9189,56 @@
       }
     },
     {
+      "name": "drupal/webform_xlsx_export",
+      "version": "1.3.0",
+      "source": {
+        "type": "git",
+        "url": "https://git.drupalcode.org/project/webform_xlsx_export.git",
+        "reference": "8.x-1.3"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://ftp.drupal.org/files/projects/webform_xlsx_export-8.x-1.3.zip",
+        "reference": "8.x-1.3",
+        "shasum": "7e901a1f74261450837a4321982a4d8f0b9534df"
+      },
+      "require": {
+        "drupal/core": "^8 || ^9 || ^10",
+        "drupal/webform": "*",
+        "phpoffice/phpspreadsheet": "^2.2.1"
+      },
+      "type": "drupal-module",
+      "extra": {
+        "drupal": {
+          "version": "8.x-1.3",
+          "datestamp": "1725266204",
+          "security-coverage": {
+            "status": "covered",
+            "message": "Covered by Drupal's security advisory policy"
+          }
+        }
+      },
+      "notification-url": "https://packages.drupal.org/8/downloads",
+      "license": [
+        "GPL-2.0-or-later"
+      ],
+      "authors": [
+        {
+          "name": "gaëlg",
+          "homepage": "https://www.drupal.org/user/431210"
+        },
+        {
+          "name": "prudloff",
+          "homepage": "https://www.drupal.org/user/3611858"
+        }
+      ],
+      "description": "Exports Webform submissions in the Office Open XML format.",
+      "homepage": "https://www.drupal.org/project/webform_xlsx_export",
+      "support": {
+        "source": "https://git.drupalcode.org/project/webform_xlsx_export"
+      }
+    },
+    {
       "name": "drush/drush",
       "version": "12.4.3",
       "source": {
@@ -9539,16 +9589,16 @@
     },
     {
       "name": "essexcountycouncil/ecc_theme",
-      "version": "1.1.7",
+      "version": "1.1.13",
       "source": {
         "type": "git",
         "url": "https://github.com/essexcountycouncil/ecc_theme.git",
-        "reference": "d682c2e192d0ee7f62e99315c5f338acce18ba26"
+        "reference": "0243a05aae6e746d2188e6f639200bdf2acfde1e"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/essexcountycouncil/ecc_theme/zipball/d682c2e192d0ee7f62e99315c5f338acce18ba26",
-        "reference": "d682c2e192d0ee7f62e99315c5f338acce18ba26",
+        "url": "https://api.github.com/repos/essexcountycouncil/ecc_theme/zipball/0243a05aae6e746d2188e6f639200bdf2acfde1e",
+        "reference": "0243a05aae6e746d2188e6f639200bdf2acfde1e",
         "shasum": ""
       },
       "type": "drupal-theme",
@@ -9560,10 +9610,10 @@
       ],
       "description": "Consolidated Essex County Council Drupal theme",
       "support": {
-        "source": "https://github.com/essexcountycouncil/ecc_theme/tree/1.1.7",
+        "source": "https://github.com/essexcountycouncil/ecc_theme/tree/1.1.13",
         "issues": "https://github.com/essexcountycouncil/ecc_theme/issues"
       },
-      "time": "2024-07-30T11:01:52+00:00"
+      "time": "2024-10-28T10:17:40+00:00"
     },
     {
       "name": "ezyang/htmlpurifier",
@@ -11874,6 +11924,190 @@
       "time": "2024-08-23T15:00:52+00:00"
     },
     {
+      "name": "maennchen/zipstream-php",
+      "version": "3.1.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/maennchen/ZipStream-PHP.git",
+        "reference": "6187e9cc4493da94b9b63eb2315821552015fca9"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/6187e9cc4493da94b9b63eb2315821552015fca9",
+        "reference": "6187e9cc4493da94b9b63eb2315821552015fca9",
+        "shasum": ""
+      },
+      "require": {
+        "ext-mbstring": "*",
+        "ext-zlib": "*",
+        "php-64bit": "^8.1"
+      },
+      "require-dev": {
+        "ext-zip": "*",
+        "friendsofphp/php-cs-fixer": "^3.16",
+        "guzzlehttp/guzzle": "^7.5",
+        "mikey179/vfsstream": "^1.6",
+        "php-coveralls/php-coveralls": "^2.5",
+        "phpunit/phpunit": "^10.0",
+        "vimeo/psalm": "^5.0"
+      },
+      "suggest": {
+        "guzzlehttp/psr7": "^2.4",
+        "psr/http-message": "^2.0"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "ZipStream\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Paul Duncan",
+          "email": "pabs@pablotron.org"
+        },
+        {
+          "name": "Jonatan Männchen",
+          "email": "jonatan@maennchen.ch"
+        },
+        {
+          "name": "Jesse Donat",
+          "email": "donatj@gmail.com"
+        },
+        {
+          "name": "András Kolesár",
+          "email": "kolesar@kolesar.hu"
+        }
+      ],
+      "description": "ZipStream is a library for dynamically streaming dynamic zip files from PHP without writing to the disk at all on the server.",
+      "keywords": [
+        "stream",
+        "zip"
+      ],
+      "support": {
+        "issues": "https://github.com/maennchen/ZipStream-PHP/issues",
+        "source": "https://github.com/maennchen/ZipStream-PHP/tree/3.1.1"
+      },
+      "funding": [
+        {
+          "url": "https://github.com/maennchen",
+          "type": "github"
+        }
+      ],
+      "time": "2024-10-10T12:33:01+00:00"
+    },
+    {
+      "name": "markbaker/complex",
+      "version": "3.0.2",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/MarkBaker/PHPComplex.git",
+        "reference": "95c56caa1cf5c766ad6d65b6344b807c1e8405b9"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/MarkBaker/PHPComplex/zipball/95c56caa1cf5c766ad6d65b6344b807c1e8405b9",
+        "reference": "95c56caa1cf5c766ad6d65b6344b807c1e8405b9",
+        "shasum": ""
+      },
+      "require": {
+        "php": "^7.2 || ^8.0"
+      },
+      "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+        "squizlabs/php_codesniffer": "^3.7"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Complex\\": "classes/src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Mark Baker",
+          "email": "mark@lange.demon.co.uk"
+        }
+      ],
+      "description": "PHP Class for working with complex numbers",
+      "homepage": "https://github.com/MarkBaker/PHPComplex",
+      "keywords": [
+        "complex",
+        "mathematics"
+      ],
+      "support": {
+        "issues": "https://github.com/MarkBaker/PHPComplex/issues",
+        "source": "https://github.com/MarkBaker/PHPComplex/tree/3.0.2"
+      },
+      "time": "2022-12-06T16:21:08+00:00"
+    },
+    {
+      "name": "markbaker/matrix",
+      "version": "3.0.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/MarkBaker/PHPMatrix.git",
+        "reference": "728434227fe21be27ff6d86621a1b13107a2562c"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/MarkBaker/PHPMatrix/zipball/728434227fe21be27ff6d86621a1b13107a2562c",
+        "reference": "728434227fe21be27ff6d86621a1b13107a2562c",
+        "shasum": ""
+      },
+      "require": {
+        "php": "^7.1 || ^8.0"
+      },
+      "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpdocumentor/phpdocumentor": "2.*",
+        "phploc/phploc": "^4.0",
+        "phpmd/phpmd": "2.*",
+        "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+        "sebastian/phpcpd": "^4.0",
+        "squizlabs/php_codesniffer": "^3.7"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Matrix\\": "classes/src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Mark Baker",
+          "email": "mark@demon-angel.eu"
+        }
+      ],
+      "description": "PHP Class for working with matrices",
+      "homepage": "https://github.com/MarkBaker/PHPMatrix",
+      "keywords": [
+        "mathematics",
+        "matrix",
+        "vector"
+      ],
+      "support": {
+        "issues": "https://github.com/MarkBaker/PHPMatrix/issues",
+        "source": "https://github.com/MarkBaker/PHPMatrix/tree/3.0.1"
+      },
+      "time": "2022-12-02T22:17:43+00:00"
+    },
+    {
       "name": "masterminds/html5",
       "version": "2.9.0",
       "source": {
@@ -13177,6 +13411,110 @@
       "time": "2023-08-29T08:26:30+00:00"
     },
     {
+      "name": "phpoffice/phpspreadsheet",
+      "version": "2.3.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
+        "reference": "c972c146ddd5e8350ea839355b9bb0ce6a8fa33e"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/c972c146ddd5e8350ea839355b9bb0ce6a8fa33e",
+        "reference": "c972c146ddd5e8350ea839355b9bb0ce6a8fa33e",
+        "shasum": ""
+      },
+      "require": {
+        "ext-ctype": "*",
+        "ext-dom": "*",
+        "ext-fileinfo": "*",
+        "ext-gd": "*",
+        "ext-iconv": "*",
+        "ext-libxml": "*",
+        "ext-mbstring": "*",
+        "ext-simplexml": "*",
+        "ext-xml": "*",
+        "ext-xmlreader": "*",
+        "ext-xmlwriter": "*",
+        "ext-zip": "*",
+        "ext-zlib": "*",
+        "maennchen/zipstream-php": "^2.1 || ^3.0",
+        "markbaker/complex": "^3.0",
+        "markbaker/matrix": "^3.0",
+        "php": "^8.1",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/simple-cache": "^1.0 || ^2.0 || ^3.0"
+      },
+      "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "dev-main",
+        "dompdf/dompdf": "^2.0 || ^3.0",
+        "friendsofphp/php-cs-fixer": "^3.2",
+        "mitoteam/jpgraph": "^10.3",
+        "mpdf/mpdf": "^8.1.1",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpstan/phpstan": "^1.1",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.6 || ^10.5",
+        "squizlabs/php_codesniffer": "^3.7",
+        "tecnickcom/tcpdf": "^6.5"
+      },
+      "suggest": {
+        "dompdf/dompdf": "Option for rendering PDF with PDF Writer",
+        "ext-intl": "PHP Internationalization Functions",
+        "mitoteam/jpgraph": "Option for rendering charts, or including charts with PDF or HTML Writers",
+        "mpdf/mpdf": "Option for rendering PDF with PDF Writer",
+        "tecnickcom/tcpdf": "Option for rendering PDF with PDF Writer"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "PhpOffice\\PhpSpreadsheet\\": "src/PhpSpreadsheet"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Maarten Balliauw",
+          "homepage": "https://blog.maartenballiauw.be"
+        },
+        {
+          "name": "Mark Baker",
+          "homepage": "https://markbakeruk.net"
+        },
+        {
+          "name": "Franck Lefevre",
+          "homepage": "https://rootslabs.net"
+        },
+        {
+          "name": "Erik Tilt"
+        },
+        {
+          "name": "Adrien Crivelli"
+        }
+      ],
+      "description": "PHPSpreadsheet - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+      "homepage": "https://github.com/PHPOffice/PhpSpreadsheet",
+      "keywords": [
+        "OpenXML",
+        "excel",
+        "gnumeric",
+        "ods",
+        "php",
+        "spreadsheet",
+        "xls",
+        "xlsx"
+      ],
+      "support": {
+        "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
+        "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/2.3.0"
+      },
+      "time": "2024-09-29T07:06:02+00:00"
+    },
+    {
       "name": "phpowermove/docblock",
       "version": "v4.0",
       "source": {
@@ -13792,6 +14130,57 @@
         "source": "https://github.com/php-fig/log/tree/3.0.2"
       },
       "time": "2024-09-11T13:17:53+00:00"
+    },
+    {
+      "name": "psr/simple-cache",
+      "version": "3.0.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/php-fig/simple-cache.git",
+        "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/764e0b3939f5ca87cb904f570ef9be2d78a07865",
+        "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.0.0"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "3.0.x-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Psr\\SimpleCache\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "PHP-FIG",
+          "homepage": "https://www.php-fig.org/"
+        }
+      ],
+      "description": "Common interfaces for simple caching",
+      "keywords": [
+        "cache",
+        "caching",
+        "psr",
+        "psr-16",
+        "simple-cache"
+      ],
+      "support": {
+        "source": "https://github.com/php-fig/simple-cache/tree/3.0.0"
+      },
+      "time": "2021-10-29T13:26:27+00:00"
     },
     {
       "name": "psy/psysh",
@@ -14702,16 +15091,16 @@
     },
     {
       "name": "symfony/http-foundation",
-      "version": "v6.4.12",
+      "version": "v6.4.14",
       "source": {
         "type": "git",
         "url": "https://github.com/symfony/http-foundation.git",
-        "reference": "133ac043875f59c26c55e79cf074562127cce4d2"
+        "reference": "ba020a321a95519303a3f09ec2824d34d601c388"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/symfony/http-foundation/zipball/133ac043875f59c26c55e79cf074562127cce4d2",
-        "reference": "133ac043875f59c26c55e79cf074562127cce4d2",
+        "url": "https://api.github.com/repos/symfony/http-foundation/zipball/ba020a321a95519303a3f09ec2824d34d601c388",
+        "reference": "ba020a321a95519303a3f09ec2824d34d601c388",
         "shasum": ""
       },
       "require": {
@@ -14759,7 +15148,7 @@
       "description": "Defines an object-oriented layer for the HTTP specification",
       "homepage": "https://symfony.com",
       "support": {
-        "source": "https://github.com/symfony/http-foundation/tree/v6.4.12"
+        "source": "https://github.com/symfony/http-foundation/tree/v6.4.14"
       },
       "funding": [
         {
@@ -14775,7 +15164,7 @@
           "type": "tidelift"
         }
       ],
-      "time": "2024-09-20T08:18:25+00:00"
+      "time": "2024-11-05T16:39:55+00:00"
     },
     {
       "name": "symfony/http-kernel",
@@ -15838,16 +16227,16 @@
     },
     {
       "name": "symfony/process",
-      "version": "v6.4.12",
+      "version": "v6.4.14",
       "source": {
         "type": "git",
         "url": "https://github.com/symfony/process.git",
-        "reference": "3f94e5f13ff58df371a7ead461b6e8068900fbb3"
+        "reference": "25214adbb0996d18112548de20c281be9f27279f"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/symfony/process/zipball/3f94e5f13ff58df371a7ead461b6e8068900fbb3",
-        "reference": "3f94e5f13ff58df371a7ead461b6e8068900fbb3",
+        "url": "https://api.github.com/repos/symfony/process/zipball/25214adbb0996d18112548de20c281be9f27279f",
+        "reference": "25214adbb0996d18112548de20c281be9f27279f",
         "shasum": ""
       },
       "require": {
@@ -15879,7 +16268,7 @@
       "description": "Executes commands in sub-processes",
       "homepage": "https://symfony.com",
       "support": {
-        "source": "https://github.com/symfony/process/tree/v6.4.12"
+        "source": "https://github.com/symfony/process/tree/v6.4.14"
       },
       "funding": [
         {
@@ -15895,7 +16284,7 @@
           "type": "tidelift"
         }
       ],
-      "time": "2024-09-17T12:47:12+00:00"
+      "time": "2024-11-06T09:25:01+00:00"
     },
     {
       "name": "symfony/psr-http-message-bridge",
@@ -21736,7 +22125,7 @@
   },
   "prefer-stable": true,
   "prefer-lowest": false,
-  "platform": [],
-  "platform-dev": [],
+  "platform": {},
+  "platform-dev": {},
   "plugin-api-version": "2.6.0"
 }
