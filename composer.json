@@ -57,6 +57,7 @@
         "ckeditor/div": "4.10.1",
         "composer/installers": "^1.10",
         "cweagans/composer-patches": "^1.6",
+        "davidrjonas/composer-lock-diff": "^1.0",
         "drupal/antibot": "^2.0",
         "drupal/autologout": "^1.4",
         "drupal/autosave_form": "^1.4",

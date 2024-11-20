@@ -12,7 +12,7 @@ Test:Required:
   stage: Test
   image: wodby/php:8.1
   before_script:
-    - ''
+    - 'git config --global --add safe.directory /builds/essex-county-council/essex-intranet-drupal'
   script:
     - composer install && composer tests-required
   allow_failure: false
