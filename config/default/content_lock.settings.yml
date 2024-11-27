@@ -1,0 +1,117 @@
+_core:
+  default_config_hash: 6Ka3T1c-CIjEUO1Q64NXKksLthkMhj53a6zy4RJBtkc
+verbose: 1
+types:
+  block_content: {  }
+  contact_message: {  }
+  content_moderation_state: {  }
+  crop: {  }
+  entity_embed_fake_entity: {  }
+  file: {  }
+  geo_entity: {  }
+  localgov_alert_banner: {  }
+  localgov_directories_facets: {  }
+  localgov_geo: {  }
+  review_date: {  }
+  localgov_service_contact: {  }
+  media: {  }
+  menu_link_content: {  }
+  node:
+    '*': '*'
+  paragraphs_library_item: {  }
+  path_alias: {  }
+  poll: {  }
+  poll_choice: {  }
+  preview_link: {  }
+  redirect: {  }
+  scheduled_transition: {  }
+  search_api_task: {  }
+  taxonomy_term: {  }
+  user: {  }
+  webform_submission: {  }
+  paragraph: {  }
+types_translation_lock: {  }
+types_js_lock:
+  - node
+form_op_lock:
+  block_content:
+    mode: 0
+    values: {  }
+  contact_message:
+    mode: 0
+    values: {  }
+  content_moderation_state:
+    mode: null
+    values: {  }
+  crop:
+    mode: 0
+    values: {  }
+  entity_embed_fake_entity:
+    mode: null
+    values: {  }
+  file:
+    mode: 0
+    values: {  }
+  geo_entity:
+    mode: 0
+    values: {  }
+  localgov_alert_banner:
+    mode: 0
+    values: {  }
+  localgov_directories_facets:
+    mode: 0
+    values: {  }
+  localgov_geo:
+    mode: null
+    values: {  }
+  review_date:
+    mode: null
+    values: {  }
+  localgov_service_contact:
+    mode: 0
+    values: {  }
+  media:
+    mode: 0
+    values: {  }
+  menu_link_content:
+    mode: 0
+    values: {  }
+  node:
+    mode: 0
+    values: {  }
+  paragraphs_library_item:
+    mode: 0
+    values: {  }
+  path_alias:
+    mode: 0
+    values: {  }
+  poll:
+    mode: 0
+    values: {  }
+  poll_choice:
+    mode: null
+    values: {  }
+  preview_link:
+    mode: 0
+    values: {  }
+  redirect:
+    mode: 0
+    values: {  }
+  scheduled_transition:
+    mode: 0
+    values: {  }
+  search_api_task:
+    mode: null
+    values: {  }
+  taxonomy_term:
+    mode: 0
+    values: {  }
+  user:
+    mode: 0
+    values: {  }
+  webform_submission:
+    mode: 0
+    values: {  }
+  paragraph:
+    mode: 0
+    values: {  }

@@ -185,6 +185,7 @@
                 "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-07-18/cludo_search.1.0-beta2.rector.patch"
             },
             "drupal/core": {
+                "LP-67 - Claro error when table header is missing": "patches/drupal-core-claro.patch",
                 "Remove this patch after upgrading Localgov profile": "https://www.drupal.org/files/issues/2024-04-16/2845144-95.patch"
             },
             "drupal/fathom_analytics": {
