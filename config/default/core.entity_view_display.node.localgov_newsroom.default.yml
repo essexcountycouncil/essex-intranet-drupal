@@ -3,8 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.localgov_newsroom.field_content_owner
-    - field.field.node.localgov_newsroom.field_content_sme
     - field.field.node.localgov_newsroom.localgov_newsroom_featured
     - field.field.node.localgov_newsroom.localgov_page_components
     - field.field.node.localgov_newsroom.localgov_restricted_content
@@ -22,22 +20,6 @@ targetEntityType: node
 bundle: localgov_newsroom
 mode: default
 content:
-  field_content_owner:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_content_sme:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }

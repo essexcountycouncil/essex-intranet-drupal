@@ -5,7 +5,7 @@ connect_existing_users: true
 override_registration_settings: true
 end_session_enabled: true
 user_login_display: replace
-redirect_login: user
+redirect_login: '<front>'
 redirect_logout: '<front>'
 userinfo_mappings:
   timezone: zoneinfo

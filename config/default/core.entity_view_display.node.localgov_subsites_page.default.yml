@@ -3,8 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.localgov_subsites_page.field_content_owner
-    - field.field.node.localgov_subsites_page.field_content_sme
     - field.field.node.localgov_subsites_page.localgov_restricted_content
     - field.field.node.localgov_subsites_page.localgov_subsites_banner
     - field.field.node.localgov_subsites_page.localgov_subsites_content
@@ -22,22 +20,6 @@ targetEntityType: node
 bundle: localgov_subsites_page
 mode: default
 content:
-  field_content_owner:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_content_sme:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 2
-    region: content
   localgov_subsites_content:
     type: layout_paragraphs
     label: hidden
