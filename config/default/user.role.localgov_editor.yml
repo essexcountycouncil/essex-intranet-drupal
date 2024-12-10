@@ -34,7 +34,6 @@ dependencies:
   module:
     - book
     - cludo_search
-    - content_lock
     - content_moderation
     - entity_browser
     - entity_hierarchy
@@ -115,7 +114,6 @@ permissions:
   - 'administer redirects'
   - 'administer social-media menu items'
   - 'administer tools menu items'
-  - 'break content lock'
   - 'bypass node access'
   - 'create directory facets'
   - 'create document media'
