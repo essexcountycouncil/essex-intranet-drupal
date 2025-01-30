@@ -1,0 +1,6 @@
+disclosure:
+  js:
+    js/disclosure-nav.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

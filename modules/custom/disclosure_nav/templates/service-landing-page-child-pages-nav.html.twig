@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - heading_label: The name of referenced Service landing page.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - label: The menu link title/label.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - is_active: TRUE if the link is in the active trail.
+ */
+#}
+
+<div {{ attributes.addClass('disclosure-nav') }}>
+  <span class="menu--heading">{{ heading_label }}</span>
+  {% set menu_id = heading_label|clean_class %}
+  <button aria-label="{{ heading_label }} submenu" aria-expanded="false" aria-controls="{{ menu_id }}"></button>
+  <ul class="menu" id="{{ menu_id }}">
+    {% for item in items %}
+      {{ attributes.removeAttribute('class') }}
+      {%
+        set classes = [
+        'menu-item',
+        item.is_active ? 'menu-item--active-trail',
+      ]
+      %}
+      {%
+        set link_classes = [
+        'menu-item--link',
+        item.is_active ? 'menu-item--link_active',
+      ]
+      %}
+      <li {{ attributes.addClass(classes) }}>
+        {{ link(item.label, item.url, { 'class': link_classes }) }}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{{ attach_library('ecc_menu/disclosure') }}
