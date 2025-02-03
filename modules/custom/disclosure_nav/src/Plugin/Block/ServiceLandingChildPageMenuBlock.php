@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Drupal\ecc_menu\Plugin\Block;
+namespace Drupal\disclosure_nav\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -16,7 +16,7 @@ use Drupal\node\Entity\Node;
  * Provides a ServiceLandingChildPageMenu nav block.
  *
  * @Block(
- *   id = "ecc_menu_service_landing_child_page_menu",
+ *   id = "disclosure_nav_service_landing_child_page_menu",
  *   admin_label = @Translation("Service Landing Child Pages Menu"),
  *   category = @Translation("Custom"),
  * )
