@@ -1,0 +1,23 @@
+uuid: 7011c75e-2f03-46e2-92b4-c3691ffe302b
+langcode: en
+status: true
+dependencies:
+  module:
+    - disclosure_nav
+  theme:
+    - ecc_theme_intranet
+id: ecc_theme_intranet_servicelandingchildpagesmenu
+theme: ecc_theme_intranet
+region: primary_menu
+weight: -18
+provider: null
+plugin: disclosure_nav_service_landing_child_page_menu
+settings:
+  id: disclosure_nav_service_landing_child_page_menu
+  label: 'Service Landing Child Pages Menu'
+  label_display: visible
+  provider: disclosure_nav
+  referenced_landing_page:
+    -
+      target_id: '388'
+visibility: {  }

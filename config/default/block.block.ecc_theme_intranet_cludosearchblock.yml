@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - block_classes
     - cludo_search
     - system
   theme:

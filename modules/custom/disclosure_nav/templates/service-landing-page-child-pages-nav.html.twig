@@ -14,29 +14,36 @@
 #}
 
 <div {{ attributes.addClass('disclosure-nav') }}>
-  <span class="menu--heading">{{ heading_label }}</span>
   {% set menu_id = heading_label|clean_class %}
-  <button aria-label="{{ heading_label }} submenu" aria-expanded="false" aria-controls="{{ menu_id }}"></button>
-  <ul class="menu" id="{{ menu_id }}">
-    {% for item in items %}
-      {{ attributes.removeAttribute('class') }}
-      {%
-        set classes = [
-        'menu-item',
-        item.is_active ? 'menu-item--active-trail',
-      ]
-      %}
-      {%
-        set link_classes = [
-        'menu-item--link',
-        item.is_active ? 'menu-item--link_active',
-      ]
-      %}
-      <li {{ attributes.addClass(classes) }}>
-        {{ link(item.label, item.url, { 'class': link_classes }) }}
-      </li>
-    {% endfor %}
-  </ul>
+  <button class="disclosure-nav__toggle" aria-expanded="false" aria-controls="{{ menu_id }}">
+    {{ heading_label }}
+  </button>
+  <div class="disclosure-nav__menu" id="{{ menu_id }}">
+    <button class="disclosure-nav__back-button" id="{{ menu_id }}-back-button" aria-controls="{{ menu_id }}" aria-expanded="true">
+      Back
+    </button>
+    <h2 class="disclosure-nav__menu-heading">{{ heading_label }}</h2>
+    <ul class="disclosure-nav__menu-list">
+      {% for item in items %}
+        {{ attributes.removeAttribute('class') }}
+        {%
+          set classes = [
+          'disclosure-nav__menu-item',
+          item.is_active ? 'disclosure-nav__menu-item--active-trail',
+        ]
+        %}
+        {%
+          set link_classes = [
+          'disclosure-nav__menu-item--link',
+          item.is_active ? 'disclosure-nav__menu-item--link_active',
+        ]
+        %}
+        <li {{ attributes.addClass(classes) }}>
+          {{ link(item.label, item.url, { 'class': link_classes }) }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
 
 {{ attach_library('disclosure_nav/disclosure') }}
