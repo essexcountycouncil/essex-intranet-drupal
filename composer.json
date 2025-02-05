@@ -160,8 +160,7 @@
             "drupal/core-project-message": true,
             "mglaman/composer-drupal-lenient": true,
             "php-http/discovery": true,
-            "phpstan/extension-installer": true,
-            "tbachert/spi": true
+            "phpstan/extension-installer": true
         },
         "audit": {
              "ignore": {
