@@ -91,7 +91,8 @@ final class ServiceLandingChildPageMenuBlock extends BlockBase implements Contai
     $menu = [];
     $menu['#items'] = [];
     if ($this->configuration['referenced_landing_page']) {
-      $node = Node::load($this->configuration['referenced_landing_page'][0]['target_id']);
+      $node = $this->entityTypeManager->getStorage('node');
+      $node = $node->load($this->configuration['referenced_landing_page'][0]['target_id']);
       $menu['#heading_label'] = $node->getTitle();
       if ($node instanceof NodeInterface) {
         /** @var EntityReferenceFieldItemList $child_pages */
