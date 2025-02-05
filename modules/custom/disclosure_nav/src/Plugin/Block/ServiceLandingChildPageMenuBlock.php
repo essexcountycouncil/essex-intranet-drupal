@@ -1,16 +1,16 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\disclosure_nav\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\node\Entity\Node;
 
 /**
  * Provides a ServiceLandingChildPageMenu nav block.
@@ -28,9 +28,10 @@ final class ServiceLandingChildPageMenuBlock extends BlockBase implements Contai
    */
   public function __construct(
     array $configuration,
-          $plugin_id,
-          $plugin_definition,
+    $plugin_id,
+    $plugin_definition,
     protected CurrentRouteMatch $currentRouteMatch,
+    protected EntityTypeManagerInterface $entityTypeManager,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
@@ -44,6 +45,7 @@ final class ServiceLandingChildPageMenuBlock extends BlockBase implements Contai
       $plugin_id,
       $plugin_definition,
       $container->get('current_route_match'),
+      $container->get('entity_type.manager')
     );
   }
 
@@ -60,11 +62,13 @@ final class ServiceLandingChildPageMenuBlock extends BlockBase implements Contai
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state): array {
+    $node = $this->entityTypeManager->getStorage('node');
+
     $form['referenced_landing_page'] = [
       '#type' => 'entity_autocomplete',
       '#title' => $this->t('Service landing page'),
       '#target_type' => 'node',
-      '#default_value' => $this->configuration['referenced_landing_page'],
+      '#default_value' => isset($this->configuration['referenced_landing_page']) ? $node->load($this->configuration['referenced_landing_page']) : NULL,
       '#selection_settings' => ['target_bundles' => ['localgov_services_landing']],
       '#tags' => TRUE,
       '#size' => 30,
@@ -89,7 +93,7 @@ final class ServiceLandingChildPageMenuBlock extends BlockBase implements Contai
     if ($this->configuration['referenced_landing_page']) {
       $node = Node::load($this->configuration['referenced_landing_page'][0]['target_id']);
       $menu['#heading_label'] = $node->getTitle();
-      if($node instanceof NodeInterface) {
+      if ($node instanceof NodeInterface) {
         /** @var EntityReferenceFieldItemList $child_pages */
         $child_pages = $node->get('localgov_destinations');
         if ($child_pages) {
@@ -101,13 +105,14 @@ final class ServiceLandingChildPageMenuBlock extends BlockBase implements Contai
                   $menu['#items'][] = [
                     'label' => $service->title->value,
                     'url' => $service->toUrl(),
-                    'is_active' => $service->toUrl()->getRouteParameters()['node'] === $this->currentRouteMatch->getCurrentRouteMatch()->getRawParameters()->get('node')
+                    'is_active' => $service->toUrl()->getRouteParameters()['node'] === $this->currentRouteMatch->getCurrentRouteMatch()->getRawParameters()->get('node'),
                   ];
                 }
               }
             }
-          } catch(\Exception $e) {
-            \Drupal::logger('ecc_menu')->notice('Could not retrieve any child page references from the selected service landing page %title.', [
+          }
+          catch (\Exception $e) {
+            \Drupal::logger('disclosure_nav')->notice('Could not retrieve any child page references from the selected service landing page %title.', [
               '%title' => $node->getTitle(),
             ]);
           }
