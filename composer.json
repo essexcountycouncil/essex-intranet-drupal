@@ -155,12 +155,13 @@
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true,
             "mglaman/composer-drupal-lenient": true,
-            "phpstan/extension-installer": true
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true
         },
         "audit": {
              "ignore": {
@@ -222,6 +223,9 @@
             "localgovdrupal/localgov_workflows": {
                 "New Content by owner View": "https://patch-diff.githubusercontent.com/raw/localgovdrupal/localgov_workflows/pull/104.diff",
                 "Service contact delete form": "patches/localgov_workflows_delete_service_contact.patch"
+            },
+            "localgovdrupal/localgov_base": {
+                "Alter breakpoints for header menu changes [ECCI-580]": "patches/localgov_base_header.patch"
             }
         },
         "drupal-scaffold": {

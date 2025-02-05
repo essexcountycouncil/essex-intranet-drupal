@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "e5668be90466aba9c73d1d600c4eee63",
+  "content-hash": "fd738373576b7398441fb48c72059023",
   "packages": [
     {
       "name": "asm89/stack-cors",
@@ -2587,7 +2587,7 @@
         "shasum": "b6bec32730bf19778e7136a271ccb5491d8a5662"
       },
       "require": {
-        "drupal/core": "^8 || ^9 || ^10"
+        "drupal/core": "^8 || ^9 || ^10 || ^11 || ^12"
       },
       "type": "drupal-module",
       "extra": {
@@ -4917,7 +4917,7 @@
         "shasum": "244db45d8e423dc5f11c5af1a91cd574d1766347"
       },
       "require": {
-        "drupal/core": "^8 || ^9 || ^10"
+        "drupal/core": "^8 || ^9 || ^10 || ^11 || ^12"
       },
       "type": "drupal-module",
       "extra": {
@@ -11180,16 +11180,16 @@
     },
     {
       "name": "localgovdrupal/localgov_base",
-      "version": "1.4.18",
+      "version": "1.8.3",
       "source": {
         "type": "git",
         "url": "https://github.com/localgovdrupal/localgov_base.git",
-        "reference": "c1c1d29eea65a56ac9819d09d032804c546fe5dc"
+        "reference": "797ba385755581edd8d6035372c55fd863ca6daa"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/localgovdrupal/localgov_base/zipball/c1c1d29eea65a56ac9819d09d032804c546fe5dc",
-        "reference": "c1c1d29eea65a56ac9819d09d032804c546fe5dc",
+        "url": "https://api.github.com/repos/localgovdrupal/localgov_base/zipball/797ba385755581edd8d6035372c55fd863ca6daa",
+        "reference": "797ba385755581edd8d6035372c55fd863ca6daa",
         "shasum": ""
       },
       "type": "drupal-theme",
@@ -11201,9 +11201,9 @@
       "homepage": "https://github.com/localgovdrupal/localgov_base",
       "support": {
         "issues": "https://github.com/localgovdrupal/localgov_base/issues",
-        "source": "https://github.com/localgovdrupal/localgov_base/tree/1.4.18"
+        "source": "https://github.com/localgovdrupal/localgov_base/tree/1.8.3"
       },
-      "time": "2023-11-27T14:41:17+00:00"
+      "time": "2025-01-28T13:02:26+00:00"
     },
     {
       "name": "localgovdrupal/localgov_core",
