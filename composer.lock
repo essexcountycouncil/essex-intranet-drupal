@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "6c4d962c1f9d6d7c7887c56830f0e13f",
+  "content-hash": "fd738373576b7398441fb48c72059023",
   "packages": [
     {
       "name": "asm89/stack-cors",
@@ -7771,7 +7771,7 @@
       ],
       "authors": [
         {
-          "name": "Berdir",
+          "name": "berdir",
           "homepage": "https://www.drupal.org/user/214652"
         },
         {
@@ -7779,7 +7779,7 @@
           "homepage": "https://www.drupal.org/user/53892"
         },
         {
-          "name": "Kristen Pol",
+          "name": "kristen pol",
           "homepage": "https://www.drupal.org/user/8389"
         },
         {
@@ -11180,16 +11180,16 @@
     },
     {
       "name": "localgovdrupal/localgov_base",
-      "version": "1.4.22",
+      "version": "1.4.18",
       "source": {
         "type": "git",
         "url": "https://github.com/localgovdrupal/localgov_base.git",
-        "reference": "8aa694586d3bb2164a6c17b2cf256d9702ad712b"
+        "reference": "c1c1d29eea65a56ac9819d09d032804c546fe5dc"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/localgovdrupal/localgov_base/zipball/8aa694586d3bb2164a6c17b2cf256d9702ad712b",
-        "reference": "8aa694586d3bb2164a6c17b2cf256d9702ad712b",
+        "url": "https://api.github.com/repos/localgovdrupal/localgov_base/zipball/c1c1d29eea65a56ac9819d09d032804c546fe5dc",
+        "reference": "c1c1d29eea65a56ac9819d09d032804c546fe5dc",
         "shasum": ""
       },
       "type": "drupal-theme",
@@ -11201,9 +11201,9 @@
       "homepage": "https://github.com/localgovdrupal/localgov_base",
       "support": {
         "issues": "https://github.com/localgovdrupal/localgov_base/issues",
-        "source": "https://github.com/localgovdrupal/localgov_base/tree/1.4.22"
+        "source": "https://github.com/localgovdrupal/localgov_base/tree/1.4.18"
       },
-      "time": "2024-04-10T10:11:54+00:00"
+      "time": "2023-11-27T14:41:17+00:00"
     },
     {
       "name": "localgovdrupal/localgov_core",
