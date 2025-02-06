@@ -1,13 +1,13 @@
 diff --git a/js/header.js b/js/header.js
-index 1fc2c7d..4148a4e 100644
+index 07b0f25..83f36f3 100644
 --- a/js/header.js
 +++ b/js/header.js
-@@ -167,7 +167,7 @@
+@@ -130,7 +130,7 @@
        function handleWindowResized() {
          handleReset();
  
--        if (window.innerWidth < 768) {
-+        if (window.innerWidth < 956) {
-           if (
-             Object.keys(navInfo).includes('secondary') &&
-             navInfo.secondary.toggle
+-        if  (window.innerWidth < 768) {
++        if  (window.innerWidth < 956) {
+           if (Object.keys(navInfo).includes('secondary') && navInfo.secondary.toggle) {
+             navInfo.secondary.toggle.removeEventListener('click', handleSecondaryMenuToggleClick, true);
+             navInfo.secondary.toggle.removeEventListener('click', handleSecondaryMenuShiftTabClick, true);
