@@ -1,0 +1,11 @@
+uuid: 7c844a45-38ff-415d-bc66-b456b5f751be
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vACx9eu1Ddc2kEifS-FTwyvLjtNBrAcTU8XtL65ox9c
+name: 'Content Access by Path'
+vid: content_access_by_path
+description: null
+weight: 0
+new_revision: false

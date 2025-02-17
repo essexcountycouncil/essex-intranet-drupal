@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.page_components
+    - entity_browser.browser.paragraphs_library_items
     - localgov_alert_banner.localgov_alert_banner_type.localgov_alert_banner
     - media.type.document
     - media.type.image
@@ -33,6 +35,7 @@ dependencies:
     - entity_hierarchy
     - entity_usage
     - localgov_alert_banner
+    - localgov_workflows_notifications
     - media
     - menu_admin_per_menu
     - node
@@ -159,6 +162,7 @@ permissions:
   - 'view localgov_guides_page revisions'
   - 'view localgov_news_article revisions'
   - 'view localgov_newsroom revisions'
+  - 'view localgov_service_contact'
   - 'view localgov_services_landing revisions'
   - 'view localgov_services_page revisions'
   - 'view localgov_services_status revisions'

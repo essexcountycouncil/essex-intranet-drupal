@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.localgov_directories_venue.body
-    - field.field.node.localgov_directories_venue.field_content_owner
-    - field.field.node.localgov_directories_venue.field_content_sme
     - field.field.node.localgov_directories_venue.localgov_directory_channels
     - field.field.node.localgov_directories_venue.localgov_directory_email
     - field.field.node.localgov_directories_venue.localgov_directory_facets_select
@@ -71,22 +69,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_content_owner:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_content_sme:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
     region: content
   localgov_directory_email:
     type: basic_string

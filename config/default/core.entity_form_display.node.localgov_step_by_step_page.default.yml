@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.localgov_step_by_step_page.body
-    - field.field.node.localgov_step_by_step_page.field_content_owner
-    - field.field.node.localgov_step_by_step_page.field_content_sme
     - field.field.node.localgov_step_by_step_page.localgov_restricted_content
     - field.field.node.localgov_step_by_step_page.localgov_step_parent
     - field.field.node.localgov_step_by_step_page.localgov_step_section_title
@@ -59,26 +57,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content_owner:
-    type: entity_reference_autocomplete
-    weight: 15
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_content_sme:
-    type: entity_reference_autocomplete
-    weight: 16
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   localgov_restricted_content:
     type: boolean_checkbox
     weight: 18
@@ -91,6 +69,16 @@ content:
     weight: 0
     region: content
     settings: {  }
+    third_party_settings: {  }
+  localgov_service_contacts:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   localgov_step_parent:
     type: entity_reference_autocomplete
