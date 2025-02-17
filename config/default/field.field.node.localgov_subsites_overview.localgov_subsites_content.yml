@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.localgov_subsites_content
     - node.type.localgov_subsites_overview
+    - paragraphs.paragraphs_type.cta_link
     - paragraphs.paragraphs_type.from_library
     - paragraphs.paragraphs_type.localgov_accordion
     - paragraphs.paragraphs_type.localgov_block_view
@@ -20,6 +21,7 @@ dependencies:
     - paragraphs.paragraphs_type.localgov_key_contacts
     - paragraphs.paragraphs_type.localgov_key_facts
     - paragraphs.paragraphs_type.localgov_labelled_icon
+    - paragraphs.paragraphs_type.localgov_link
     - paragraphs.paragraphs_type.localgov_link_and_summary
     - paragraphs.paragraphs_type.localgov_media_with_text
     - paragraphs.paragraphs_type.localgov_newsroom_teaser
@@ -74,13 +76,18 @@ settings:
       localgov_newsroom_teaser: localgov_newsroom_teaser
       localgov_subscribe_panel: localgov_subscribe_panel
       localgov_key_contacts: localgov_key_contacts
+      localgov_link: localgov_link
       newsroom_component: newsroom_component
       news_1_4: news_1_4
       page_section: page_section
       from_library: from_library
       localgov_contact: localgov_contact
+      cta_link: cta_link
     negate: 0
     target_bundles_drag_drop:
+      cta_link:
+        weight: 45
+        enabled: true
       from_library:
         weight: -45
         enabled: true

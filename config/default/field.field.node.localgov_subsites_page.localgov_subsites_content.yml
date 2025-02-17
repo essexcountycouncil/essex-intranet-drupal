@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.localgov_subsites_content
     - node.type.localgov_subsites_page
+    - paragraphs.paragraphs_type.cta_link
     - paragraphs.paragraphs_type.from_library
     - paragraphs.paragraphs_type.localgov_accordion
     - paragraphs.paragraphs_type.localgov_block_view
@@ -65,8 +66,12 @@ settings:
       page_section: page_section
       from_library: from_library
       localgov_contact: localgov_contact
+      cta_link: cta_link
     negate: 0
     target_bundles_drag_drop:
+      cta_link:
+        weight: 45
+        enabled: true
       from_library:
         weight: -54
         enabled: true
