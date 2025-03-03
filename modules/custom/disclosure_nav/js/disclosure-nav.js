@@ -170,7 +170,6 @@
 
       // handle menu at called index
       if (this.topLevelNodes[index]) {
-        console.log(expanded);
         this.openIndex = expanded ? index : null;
         this.topLevelNodes[index].setAttribute("aria-expanded", expanded);
         this.toggleMenu(this.controlledNodes[index], expanded);
