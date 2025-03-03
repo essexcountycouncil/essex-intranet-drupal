@@ -54,7 +54,7 @@
       // close menu on window resize
       window.addEventListener("resize", this.onBlur.bind(this));
 
-      //this.rootNode.addEventListener("focusout", this.onBlur.bind(this));
+      this.rootNode.addEventListener("focusout", this.onBlur.bind(this));
     }
 
     controlFocusByKey(keyboardEvent, nodeList, currentIndex) {
