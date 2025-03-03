@@ -54,7 +54,7 @@
       // close menu on window resize
       window.addEventListener("resize", this.onBlur.bind(this));
 
-      this.rootNode.addEventListener("focusout", this.onBlur.bind(this));
+      //this.rootNode.addEventListener("focusout", this.onBlur.bind(this));
     }
 
     controlFocusByKey(keyboardEvent, nodeList, currentIndex) {
@@ -170,10 +170,17 @@
 
       // handle menu at called index
       if (this.topLevelNodes[index]) {
+        console.log(expanded);
         this.openIndex = expanded ? index : null;
         this.topLevelNodes[index].setAttribute("aria-expanded", expanded);
         this.toggleMenu(this.controlledNodes[index], expanded);
         this.topLevelNodes[index].classList.toggle("active");
+
+        var header = document.querySelector(".lgd-header");
+        var disclosureNavHeight = this.controlledNodes[index].offsetHeight;
+        header.style.height = expanded
+          ? header.offsetHeight + disclosureNavHeight + "px"
+          : "auto";
       }
     }
 
