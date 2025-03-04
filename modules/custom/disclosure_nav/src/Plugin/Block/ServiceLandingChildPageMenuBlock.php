@@ -62,13 +62,14 @@ final class ServiceLandingChildPageMenuBlock extends BlockBase implements Contai
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state): array {
-    $node = $this->entityTypeManager->getStorage('node');
+    $storage = $this->entityTypeManager->getStorage('node');
+    $node = $storage->load($this->configuration['referenced_landing_page'][0]['target_id'] ?? 0);
 
     $form['referenced_landing_page'] = [
       '#type' => 'entity_autocomplete',
       '#title' => $this->t('Service landing page'),
       '#target_type' => 'node',
-      '#default_value' => isset($this->configuration['referenced_landing_page']) ? $node->load($this->configuration['referenced_landing_page']) : NULL,
+      '#default_value' => $node ?? NULL,
       '#selection_settings' => ['target_bundles' => ['localgov_services_landing']],
       '#tags' => TRUE,
       '#size' => 30,
