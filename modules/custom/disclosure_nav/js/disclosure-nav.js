@@ -174,6 +174,12 @@
         this.topLevelNodes[index].setAttribute("aria-expanded", expanded);
         this.toggleMenu(this.controlledNodes[index], expanded);
         this.topLevelNodes[index].classList.toggle("active");
+
+        var header = document.querySelector(".lgd-header");
+        var disclosureNavHeight = this.controlledNodes[index].offsetHeight;
+        header.style.height = expanded
+          ? header.offsetHeight + disclosureNavHeight + "px"
+          : "auto";
       }
     }
 
