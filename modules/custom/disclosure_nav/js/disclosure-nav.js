@@ -36,12 +36,6 @@
             menu.addEventListener("keydown", this.onMenuKeyDown.bind(this));
             node.addEventListener("click", this.onButtonClick.bind(this));
             node.addEventListener("keydown", this.onButtonKeyDown.bind(this));
-
-            const backButton = node.parentNode.querySelector(
-              ".disclosure-nav__back-button"
-            );
-
-            backButton.addEventListener("click", this.onButtonClick.bind(this));
           }
         }
         // handle links
@@ -54,7 +48,18 @@
       // close menu on window resize
       window.addEventListener("resize", this.onBlur.bind(this));
 
-      this.rootNode.addEventListener("focusout", this.onBlur.bind(this));
+      const backButton = document.querySelectorAll(
+        ".disclosure-nav__back-button"
+      );
+      backButton.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          var menu = event.target.closest(".disclosure-nav__menu");
+          var parentButton = menu.previousElementSibling;
+          var parentIndex = this.topLevelNodes.indexOf(parentButton);
+          this.toggleExpand(parentIndex, false);
+          parentButton.focus();
+        });
+      });
     }
 
     controlFocusByKey(keyboardEvent, nodeList, currentIndex) {
@@ -163,9 +168,21 @@
     }
 
     toggleExpand(index, expanded) {
-      // close open menu, if applicable
-      if (this.openIndex !== index) {
-        this.toggleExpand(this.openIndex, false);
+      var header = document.querySelector(".lgd-header");
+
+      if (window.innerWidth > 955) {
+        // close all open menus and reset header height
+        var openMenus = document.querySelectorAll(".menu--open");
+
+        for (var i = 0; i < openMenus.length; i++) {
+          openMenus[i].classList.remove("menu--open");
+          openMenus[i].previousElementSibling.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+          openMenus[i].previousElementSibling.classList.remove("active");
+          header.style.height = "auto";
+        }
       }
 
       // handle menu at called index
@@ -173,26 +190,45 @@
         this.openIndex = expanded ? index : null;
         this.topLevelNodes[index].setAttribute("aria-expanded", expanded);
         this.toggleMenu(this.controlledNodes[index], expanded);
-        this.topLevelNodes[index].classList.toggle("active");
+        this.openIndex = expanded
+          ? this.topLevelNodes[index].classList.add("active")
+          : this.topLevelNodes[index].classList.remove("active");
 
-        var header = document.querySelector(".lgd-header");
-        var disclosureNavHeight = this.controlledNodes[index].offsetHeight;
+        let disclosureNavHeight = this.controlledNodes[index].offsetHeight;
+        const mainMenu = document.querySelector(".menu--main");
+        const isWideScreen = window.innerWidth > 955;
+
         header.style.height = expanded
-          ? header.offsetHeight + disclosureNavHeight + "px"
+          ? (isWideScreen
+              ? header.offsetHeight + disclosureNavHeight
+              : disclosureNavHeight + 170) + "px"
           : "auto";
+
+        if (!isWideScreen) {
+          this.openIndex = expanded
+            ? (mainMenu.style.display = "none")
+            : (mainMenu.style.display = "block");
+        }
+
+        window.addEventListener("resize", function () {
+          header.style.height = expanded
+            ? header.offsetHeight + disclosureNavHeight + "px"
+            : "auto";
+
+          if (!isWideScreen) {
+            this.openIndex = expanded
+              ? (mainMenu.style.display = "none")
+              : (mainMenu.style.display = "flex");
+          }
+        });
       }
     }
 
     toggleMenu(domNode, show) {
       if (domNode) {
-        var headerHeight = document.querySelector(
-          ".lgd-header__inner--bottom"
-        ).offsetHeight;
-        //domNode.style.display = show ? "block" : "none";
         show
           ? domNode.classList.add("menu--open")
           : domNode.classList.remove("menu--open");
-        domNode.style.top = show ? headerHeight : "auto";
       }
     }
 
