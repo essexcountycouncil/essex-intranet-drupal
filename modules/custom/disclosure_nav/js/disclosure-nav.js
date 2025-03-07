@@ -48,6 +48,26 @@
       // close menu on window resize
       window.addEventListener("resize", this.onBlur.bind(this));
 
+      // Reset header height if main menu button is clicked
+      const header = document.querySelector(".lgd-header");
+      const mainMenuButton = header.querySelector(".lgd-header__toggle");
+
+      if (mainMenuButton) {
+        mainMenuButton.addEventListener("click", function () {
+          header.style.height = "auto";
+        });
+      }
+
+      // Reset display of main menu on resize (it is closed when the disclosure nav is toggled on small screens)
+      window.addEventListener("resize", function () {
+        const isWideScreen = window.innerWidth > 955;
+        const mainMenu = header.querySelector(".menu--main");
+
+        if (mainMenu) {
+          mainMenu.style.display = isWideScreen ? "flex" : "block";
+        }
+      });
+
       const backButton = document.querySelectorAll(
         ".disclosure-nav__back-button"
       );
@@ -98,8 +118,12 @@
 
     onBlur(event) {
       var menuContainsFocus = this.rootNode.contains(event.relatedTarget);
+      var header = document.querySelector(".lgd-header");
       if (!menuContainsFocus && this.openIndex !== null) {
         this.toggleExpand(this.openIndex, false);
+      }
+      if (header) {
+        header.style.height = "auto";
       }
     }
 
@@ -209,18 +233,6 @@
             ? (mainMenu.style.display = "none")
             : (mainMenu.style.display = "block");
         }
-
-        window.addEventListener("resize", function () {
-          header.style.height = expanded
-            ? header.offsetHeight + disclosureNavHeight + "px"
-            : "auto";
-
-          if (!isWideScreen) {
-            this.openIndex = expanded
-              ? (mainMenu.style.display = "none")
-              : (mainMenu.style.display = "flex");
-          }
-        });
       }
     }
 
