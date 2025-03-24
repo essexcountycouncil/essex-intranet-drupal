@@ -21,10 +21,11 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: localgov_services
+  handler: ecc_services_navigation_node_selection
   handler_settings:
     target_bundles:
       localgov_services_landing: localgov_services_landing
+      localgov_services_sublanding: localgov_services_sublanding
       localgov_subsites_overview: localgov_subsites_overview
       localgov_subsites_page: localgov_subsites_page
 field_type: entity_reference
