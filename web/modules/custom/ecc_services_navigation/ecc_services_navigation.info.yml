@@ -1,0 +1,7 @@
+name: 'ECC Services Navigation'
+type: module
+description: 'Overrides LGD services navigation'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - localgov_services_navigation:localgov_services_navigation
