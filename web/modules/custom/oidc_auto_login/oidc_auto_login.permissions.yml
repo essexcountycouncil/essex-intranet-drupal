@@ -1,0 +1,4 @@
+administer oidc_auto_login:
+  title: 'Administer OpenID Connect Auto-login'
+  description: 'Allow access to the administration pages for OpenID Connect Auto-login'
+  restrict access: true

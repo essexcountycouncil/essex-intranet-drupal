@@ -2,12 +2,18 @@
 /bin
 /drush/contrib/
 /vendor/
-/web/
+
+# Ignore web except custom modules.
+/web/*
+!/web/modules/
+/web/modules/contrib/
+/web/modules/README.txt
+!/web/modules/custom/
+!/web/modules/custom/*
 
 # Ignore scaffold files
 /.editorconfig
 /.gitattributes
-/web
 
 # Ignore IDE files
 .idea/

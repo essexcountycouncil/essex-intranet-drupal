@@ -1,0 +1,14 @@
+oidc_auto_login.login:
+  path: /user/auto-login
+  defaults:
+    _controller: \Drupal\oidc_auto_login\Controller\OidcAutoLoginController::login
+  requirements:
+    _access: 'TRUE'
+
+oidc_auto_login.settings:
+  path: '/admin/config/people/openid-connect/oidc-auto-login'
+  defaults:
+    _title: 'OpenID Connect auto-login settings'
+    _form: '\Drupal\oidc_auto_login\Form\SettingsForm'
+  requirements:
+    _permission: 'administer oidc_auto_login'

@@ -1,0 +1,5 @@
+localgov_restricted_content.settings:
+  title: 'Restricted Content settings'
+  parent: system.admin_config_content
+  description: 'Settings for LocalGov restricted content'
+  route_name: localgov_restricted_content.config_form

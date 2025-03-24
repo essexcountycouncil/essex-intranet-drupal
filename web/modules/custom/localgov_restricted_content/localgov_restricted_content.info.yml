@@ -1,0 +1,7 @@
+name: "LocalGov Restricted Content"
+type: module
+description: "Restricted access to content"
+core_version_requirement: ^9 || ^10
+package: LocalGov Drupal
+dependencies:
+  - localgov_core:localgov_core
