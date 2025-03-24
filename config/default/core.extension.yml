@@ -41,6 +41,7 @@ module:
   ecc_cookie_compliance: 0
   ecc_menu: 0
   ecc_parents: 0
+  ecc_services_navigation: 0
   editor: 0
   embed: 0
   entity: 0
