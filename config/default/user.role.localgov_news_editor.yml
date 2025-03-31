@@ -60,6 +60,7 @@ permissions:
   - 'add scheduled transitions localgov_alert_banner localgov_alert_banner'
   - 'add scheduled transitions node localgov_news_article'
   - 'add scheduled transitions node localgov_newsroom'
+  - 'administer polls'
   - 'administer redirects'
   - 'create document media'
   - 'create image media'
