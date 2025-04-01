@@ -119,11 +119,14 @@
     onBlur(event) {
       var menuContainsFocus = this.rootNode.contains(event.relatedTarget);
       var header = document.querySelector(".lgd-header");
+
+      // Prevent auto height reset if menu is open
       if (!menuContainsFocus && this.openIndex !== null) {
         this.toggleExpand(this.openIndex, false);
-      }
-      if (header) {
-        header.style.height = "auto";
+
+        if (header) {
+          header.style.height = "auto";
+        }
       }
     }
 
