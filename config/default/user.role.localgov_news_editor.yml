@@ -56,6 +56,7 @@ permissions:
   - 'access localgov alert banner listing page'
   - 'access media overview'
   - 'access responsive preview'
+  - 'access poll overview'
   - 'access toolbar'
   - 'add scheduled transitions localgov_alert_banner localgov_alert_banner'
   - 'add scheduled transitions node localgov_news_article'
