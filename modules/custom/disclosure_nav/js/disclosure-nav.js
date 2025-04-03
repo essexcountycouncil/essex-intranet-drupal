@@ -46,20 +46,27 @@
       });
 
       // close menu on window resize
+      let initialWidth = window.innerWidth;
+      let initialHeight = window.innerHeight;
+
       window.addEventListener("resize", () => {
-        let initialWidth = window.innerWidth;
+        if (
+          window.innerWidth === initialWidth ||
+          window.outerHeight === initialHeight
+        ) {
+          return;
+        }
+
         const header = document.querySelector(".lgd-header");
 
-        window.addEventListener("resize", () => {
-          if (window.innerWidth !== initialWidth) {
-            initialWidth = window.innerWidth; // Update stored width
-            if (header) {
-              header.style.height = "auto";
-            }
+        if (header) {
+          header.style.height = "auto";
+        }
 
-            this.onBlur.bind(this);
-          }
-        });
+        this.onBlur.bind(this);
+
+        initialHeight = window.innerHeight;
+        initialWidth = window.innerWidth;
       });
 
       // Reset header height if main menu button is clicked
