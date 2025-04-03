@@ -2,7 +2,7 @@ name: 'ECC Comment'
 type: module
 description: 'Comment customisations'
 package: Custom
-core_version_requirement: ^10
+core_version_requirement: ^10 || ^11
 dependencies:
   - drupal:comment
   - like_dislike:like_dislike
