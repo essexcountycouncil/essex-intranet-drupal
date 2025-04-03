@@ -3,6 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.localgov_geo_library
+    - entity_browser.browser.page_components
+    - entity_browser.browser.paragraphs_library_items
     - localgov_alert_banner.localgov_alert_banner_type.localgov_alert_banner
     - media.type.document
     - media.type.image
@@ -110,6 +113,7 @@ permissions:
   - 'administer footer menu items'
   - 'administer localgov_service_contact'
   - 'administer paragraphs library'
+  - 'administer polls'
   - 'administer quick-actions menu items'
   - 'administer redirects'
   - 'administer social-media menu items'

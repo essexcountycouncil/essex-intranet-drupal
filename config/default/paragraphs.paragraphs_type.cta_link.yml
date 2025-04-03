@@ -1,0 +1,10 @@
+uuid: 126496cf-5d28-410b-a81f-167ba02f931d
+langcode: en
+status: true
+dependencies: {  }
+id: cta_link
+label: 'CTA Link'
+icon_uuid: null
+icon_default: null
+description: 'For the purpose of supplying a Call to action link on the Homepage'
+behavior_plugins: {  }

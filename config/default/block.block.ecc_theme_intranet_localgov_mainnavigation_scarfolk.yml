@@ -5,6 +5,7 @@ dependencies:
   config:
     - system.menu.main
   module:
+    - block_classes
     - system
   theme:
     - ecc_theme_intranet
@@ -13,13 +14,13 @@ _core:
 id: ecc_theme_intranet_localgov_mainnavigation_scarfolk
 theme: ecc_theme_intranet
 region: primary_menu
-weight: -1
+weight: -16
 provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
-  label: 'Main navigation'
-  label_display: '0'
+  label: 'Quick links'
+  label_display: visible
   provider: system
   level: 1
   depth: 0

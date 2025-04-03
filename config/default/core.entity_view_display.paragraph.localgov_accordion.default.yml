@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.localgov_accordion.localgov_allow_multiple_open
+    - field.field.paragraph.localgov_accordion.localgov_display_show_hide_all
     - field.field.paragraph.localgov_accordion.localgov_heading_level
     - field.field.paragraph.localgov_accordion.localgov_paragraphs
     - field.field.paragraph.localgov_accordion.localgov_title
@@ -42,4 +44,6 @@ content:
     weight: 0
     region: content
 hidden:
+  localgov_allow_multiple_open: true
+  localgov_display_show_hide_all: true
   search_api_excerpt: true
