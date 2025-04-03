@@ -1,4 +1,5 @@
 disclosure:
+  version: 1.0.0
   js:
     js/disclosure-nav.js: {}
   dependencies:
