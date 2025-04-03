@@ -46,7 +46,13 @@
       });
 
       // close menu on window resize
-      window.addEventListener("resize", this.onBlur.bind(this));
+      window.addEventListener("resize", () => {
+        if (header) {
+          header.style.height = "auto";
+        }
+
+        this.onBlur.bind(this);
+      });
 
       // Reset header height if main menu button is clicked
       const header = document.querySelector(".lgd-header");
@@ -117,26 +123,10 @@
     }
 
     onBlur(event) {
-      let isScrolling = false;
       var menuContainsFocus = this.rootNode.contains(event.relatedTarget);
-      var header = document.querySelector(".lgd-header");
 
-      window.addEventListener("scroll", () => {
-        isScrolling = true;
-        setTimeout(() => {
-          isScrolling = false;
-        }, 100); // Delay reset check
-      });
-
-      if (isScrolling) return;
-
-      // Prevent auto height reset if menu is open
       if (!menuContainsFocus && this.openIndex !== null) {
         this.toggleExpand(this.openIndex, false);
-
-        if (header) {
-          header.style.height = "auto";
-        }
       }
     }
 
