@@ -47,6 +47,8 @@
 
       // close menu on window resize
       window.addEventListener("resize", () => {
+        const header = document.querySelector(".lgd-header");
+
         if (header) {
           header.style.height = "auto";
         }
