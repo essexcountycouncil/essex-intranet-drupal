@@ -47,20 +47,19 @@
 
       // close menu on window resize
       window.addEventListener("resize", () => {
-        let browserHeight = window.innerHeight;
+        let initialWidth = window.innerWidth;
         const header = document.querySelector(".lgd-header");
 
-        // Prevent window resize from triggering if the height is the same
-        // This is to prevent the header from collapsing when the window is resized
-        if (window.innerHeight === browserHeight) {
-          return;
-        }
+        window.addEventListener("resize", () => {
+          if (window.innerWidth !== initialWidth) {
+            initialWidth = window.innerWidth; // Update stored width
+            if (header) {
+              header.style.height = "auto";
+            }
 
-        if (header) {
-          header.style.height = "auto";
-        }
-
-        this.onBlur.bind(this);
+            this.onBlur.bind(this);
+          }
+        });
       });
 
       // Reset header height if main menu button is clicked
