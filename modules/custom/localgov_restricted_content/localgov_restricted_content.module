@@ -22,7 +22,7 @@ function localgov_restricted_content_entity_view_mode_alter(&$view_mode, $entity
   ) {
     // Check the anonymous view display mode exists before using it.
     $entity_view_display = \Drupal::entityTypeManager()->getStorage('entity_view_display');
-    $anonymous_view_mode =  $view_mode . '_anonymous';
+    $anonymous_view_mode = $view_mode . '_anonymous';
     if ($entity_view_display->load('node.' . $entity->bundle() . '.' . $anonymous_view_mode)) {
       $view_mode = $anonymous_view_mode;
     }
@@ -30,7 +30,7 @@ function localgov_restricted_content_entity_view_mode_alter(&$view_mode, $entity
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_FORM_ID_alter().
  */
 function localgov_restricted_content_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 

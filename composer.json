@@ -90,6 +90,7 @@
         "drupal/imagemagick": "^3.4",
         "drupal/key": "^1.17",
         "drupal/leaflet": "^10.2",
+        "drupal/like_dislike": "^2.4",
         "drupal/menu_admin_per_menu": "^1.5",
         "drupal/menu_item_limit": "^2",
         "drupal/monolog": "^2.2",
@@ -160,8 +161,9 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "mglaman/composer-drupal-lenient": true,
-            "php-http/discovery": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true,
+            "php-http/discovery": true
         },
         "audit": {
              "ignore": {
@@ -340,8 +342,8 @@
         ],
         "phpunit-modules": "sudo -u www-data -E vendor/bin/phpunit -v --debug modules",
         "cghooks": "[ -h vendor/bin/cghooks -a -w ../.git ] && vendor/bin/cghooks --git-dir=../.git",
-        "phpcs": "bin/phpcs --standard=Drupal,DrupalPractice --ignore=*.js web/modules/custom",
-        "phpcbf": "bin/phpcbf --standard=Drupal,DrupalPractice --ignore=*.js web/modules/custom",
+        "phpcs": "bin/phpcs --standard=phpcs-ecc.xml",
+        "phpcbf": "bin/phpcbf --standard=phpcbf-ecc.xml",
         "tests-required": [
             "composer validate",
             "composer audit",

@@ -34,6 +34,7 @@ dependencies:
   module:
     - book
     - cludo_search
+    - comment
     - content_moderation
     - entity_browser
     - entity_hierarchy
@@ -107,6 +108,8 @@ permissions:
   - 'add scheduled transitions node localgov_subsites_overview'
   - 'add scheduled transitions node localgov_subsites_page'
   - 'administer book outlines'
+  - 'administer comments'
+  - 'administer content owner/sme entity'
   - 'administer footer menu items'
   - 'administer localgov_service_contact'
   - 'administer paragraphs library'
@@ -278,6 +281,7 @@ permissions:
   - 'revert localgov_step_by_step_page revisions'
   - 'revert localgov_subsites_overview revisions'
   - 'revert localgov_subsites_page revisions'
+  - 'skip comment approval'
   - 'update any media'
   - 'update media'
   - 'use localgov_alert_banners transition create_new_draft'

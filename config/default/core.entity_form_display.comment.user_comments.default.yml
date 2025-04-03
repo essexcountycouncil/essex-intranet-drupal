@@ -1,0 +1,27 @@
+uuid: f64b0679-11e1-4469-ae0d-5bd76a82304f
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.user_comments
+    - field.field.comment.user_comments.comment_body
+    - field.field.comment.user_comments.field_comment_like
+  module:
+    - text
+id: comment.user_comments.default
+targetEntityType: comment
+bundle: user_comments
+mode: default
+content:
+  comment_body:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  author: true
+  field_comment_like: true
+  subject: true

@@ -16,6 +16,7 @@ module:
   ckeditor5: 0
   ckeditor5_icons: 0
   cludo_search: 0
+  comment: 0
   condition_field: 0
   config: 0
   config_filter: 0
@@ -38,6 +39,7 @@ module:
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
   ecc_cludo_search: 0
+  ecc_comment: 0
   ecc_content_moderation: 0
   ecc_cookie_compliance: 0
   ecc_menu: 0
@@ -94,6 +96,7 @@ module:
   layout_paragraphs: 0
   leaflet: 0
   leaflet_views: 0
+  like_dislike: 0
   link: 0
   link_attributes: 0
   linkit: 0
