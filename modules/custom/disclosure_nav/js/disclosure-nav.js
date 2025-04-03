@@ -117,8 +117,18 @@
     }
 
     onBlur(event) {
+      let isScrolling = false;
       var menuContainsFocus = this.rootNode.contains(event.relatedTarget);
       var header = document.querySelector(".lgd-header");
+
+      window.addEventListener("scroll", () => {
+        isScrolling = true;
+        setTimeout(() => {
+          isScrolling = false;
+        }, 100); // Delay reset check
+      });
+
+      if (isScrolling) return;
 
       // Prevent auto height reset if menu is open
       if (!menuContainsFocus && this.openIndex !== null) {
