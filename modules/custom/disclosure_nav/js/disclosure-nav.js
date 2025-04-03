@@ -47,7 +47,14 @@
 
       // close menu on window resize
       window.addEventListener("resize", () => {
+        let browserHeight = window.innerHeight;
         const header = document.querySelector(".lgd-header");
+
+        // Prevent window resize from triggering if the height is the same
+        // This is to prevent the header from collapsing when the window is resized
+        if (window.innerHeight === browserHeight) {
+          return;
+        }
 
         if (header) {
           header.style.height = "auto";
