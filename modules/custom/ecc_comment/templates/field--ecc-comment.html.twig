@@ -26,6 +26,7 @@
  * @see comment_preprocess_field()
  */
 #}
+{{ attach_library('ecc_comment/ecc-comment') }}
 <section{{ attributes }}>
   {% if comment_form %}
     <h2{{ content_attributes }}>{{ 'Add new comment'|t }}</h2>
