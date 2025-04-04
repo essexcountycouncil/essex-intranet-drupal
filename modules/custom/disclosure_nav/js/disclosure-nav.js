@@ -46,7 +46,17 @@
       });
 
       // close menu on window resize
+      let initialWidth = window.innerWidth;
+      let initialHeight = window.innerHeight;
+
       window.addEventListener("resize", () => {
+        if (
+          window.innerWidth === initialWidth ||
+          window.outerHeight === initialHeight
+        ) {
+          return;
+        }
+
         const header = document.querySelector(".lgd-header");
 
         if (header) {
@@ -54,6 +64,9 @@
         }
 
         this.onBlur.bind(this);
+
+        initialHeight = window.innerHeight;
+        initialWidth = window.innerWidth;
       });
 
       // Reset header height if main menu button is clicked
