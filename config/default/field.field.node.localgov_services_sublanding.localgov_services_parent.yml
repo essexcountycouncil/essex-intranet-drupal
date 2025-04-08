@@ -25,6 +25,7 @@ settings:
   handler_settings:
     target_bundles:
       localgov_services_landing: localgov_services_landing
+      localgov_services_sublanding: localgov_services_sublanding
       localgov_subsites_overview: localgov_subsites_overview
       localgov_subsites_page: localgov_subsites_page
 field_type: entity_reference

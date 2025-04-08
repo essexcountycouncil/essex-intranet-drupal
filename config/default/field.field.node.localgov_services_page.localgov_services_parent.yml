@@ -25,14 +25,20 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: localgov_services
+  handler: 'default:node'
   handler_settings:
     target_bundles:
       localgov_guides_overview: localgov_guides_overview
       localgov_guides_page: localgov_guides_page
       localgov_services_landing: localgov_services_landing
+      localgov_services_page: localgov_services_page
       localgov_services_sublanding: localgov_services_sublanding
       localgov_step_by_step_page: localgov_step_by_step_page
       localgov_subsites_overview: localgov_subsites_overview
       localgov_subsites_page: localgov_subsites_page
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: localgov_guides_overview
 field_type: entity_reference
