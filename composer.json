@@ -90,6 +90,7 @@
         "drupal/imagemagick": "^3.4",
         "drupal/key": "^1.17",
         "drupal/leaflet": "^10.2",
+        "drupal/like_dislike": "^2.4",
         "drupal/menu_admin_per_menu": "^1.5",
         "drupal/menu_item_limit": "^2",
         "drupal/monolog": "^2.2",
@@ -112,6 +113,7 @@
         "drupal/stage_file_proxy": "^2.1",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/upgrade_status": "^4.0",
+        "drupal/views_bulk_operations": "^4.2",
         "drupal/webform": "^6.2",
         "drupal/webform_xlsx_export": "^1.3",
         "drush/drush": "^12",
@@ -123,7 +125,7 @@
         "essexcountycouncil/ecc_parents": "^1.0",
         "essexcountycouncil/ecc_theme": "^1.1",
         "localgovdrupal/localgov": "^3",
-        "localgovdrupal/localgov_base": "^1.4",
+        "localgovdrupal/localgov_base": "~1.4.0",
         "localgovdrupal/localgov_eu_cookie_compliance": "^1.0",
         "localgovdrupal/localgov_forms": "^1.0@beta",
         "localgovdrupal/localgov_geo": "^2",
@@ -155,12 +157,13 @@
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true,
             "mglaman/composer-drupal-lenient": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true,
+            "php-http/discovery": true
         },
         "audit": {
              "ignore": {
@@ -185,6 +188,9 @@
                 "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-07-18/cludo_search.1.0-beta2.rector.patch"
             },
             "drupal/core": {
+                "Remove this patch after upgrading Localgov profile": "https://www.drupal.org/files/issues/2024-04-16/2845144-95.patch",
+                "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch",
+                "dynamic transitions": "https://www.drupal.org/files/issues/2024-09-24/2797583-8775-235.patch",
                 "LP-67 - Claro error when table header is missing": "patches/drupal-core-claro.patch",
                 "Remove this patch after upgrading Localgov profile": "https://www.drupal.org/files/issues/2024-04-16/2845144-95.patch"
             },
@@ -222,6 +228,9 @@
             "localgovdrupal/localgov_workflows": {
                 "New Content by owner View": "https://patch-diff.githubusercontent.com/raw/localgovdrupal/localgov_workflows/pull/104.diff",
                 "Service contact delete form": "patches/localgov_workflows_delete_service_contact.patch"
+            },
+            "localgovdrupal/localgov_base": {
+                "Alter breakpoints for header menu changes [ECCI-580]": "patches/localgov_base_header.patch"
             }
         },
         "drupal-scaffold": {
@@ -333,8 +342,8 @@
         ],
         "phpunit-modules": "sudo -u www-data -E vendor/bin/phpunit -v --debug modules",
         "cghooks": "[ -h vendor/bin/cghooks -a -w ../.git ] && vendor/bin/cghooks --git-dir=../.git",
-        "phpcs": "bin/phpcs --standard=Drupal,DrupalPractice --ignore=*.js web/modules/custom",
-        "phpcbf": "bin/phpcbf --standard=Drupal,DrupalPractice --ignore=*.js web/modules/custom",
+        "phpcs": "bin/phpcs --standard=phpcs-ecc.xml",
+        "phpcbf": "bin/phpcbf --standard=phpcbf-ecc.xml",
         "tests-required": [
             "composer validate",
             "composer audit",

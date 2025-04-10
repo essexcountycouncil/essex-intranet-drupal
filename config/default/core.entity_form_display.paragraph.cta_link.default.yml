@@ -1,0 +1,39 @@
+uuid: 27f04170-c08b-4e6e-8d85-a77136b04f0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cta_link.field_link_title
+    - field.field.paragraph.cta_link.localgov_link
+    - paragraphs.paragraphs_type.cta_link
+  module:
+    - link
+id: paragraph.cta_link.default
+targetEntityType: paragraph
+bundle: cta_link
+mode: default
+content:
+  field_link_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  layout_paragraphs_fields:
+    weight: -200
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  localgov_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

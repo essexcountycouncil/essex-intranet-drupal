@@ -1,0 +1,78 @@
+.comment {
+  border: 1px solid black;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.comment > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comment .field--name-comment-body {
+  width: 100%;
+}
+
+.comment .links.inline {
+  display: flex;
+  list-style-type: none;
+  gap: 1em;
+}
+
+.comment-form .js-filter-wrapper {
+  display: none;
+}
+
+.comment-user-comments-form {
+  margin-bottom: 1em;
+}
+
+.comment a {
+  font-weight: bold;
+}
+
+.comment mark {
+  color: var(--color-section-header-bg);
+  font-weight: bold;
+}
+
+.like_dislike .like a,
+.like_dislike .dislike a {
+  text-indent: -10000px;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background-image: url(../assets/icons/like.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 0.5em;
+  position: relative;
+  top: -0.5em;
+}
+
+.like_dislike .dislike a {
+  background-image: url(../assets/icons/dislike.svg);
+}
+
+main .like_dislike .like,
+main .like_dislike .dislike {
+  border: none;
+  width: auto;
+}
+
+.node .indented {
+  margin-left: 4em;
+}
+
+.field--name-field-like-dislike .field__label {
+  margin-bottom: 1em
+}
+
+.comment-alert {
+  background-color: #fff;
+  color: #000;
+  border-top: 2px solid var(--color-section-header-bg);
+  border-bottom: 2px solid var(--color-section-header-bg);
+  padding: 0.5em;
+  line-height: 2.5em;
+}

@@ -1,0 +1,16 @@
+<?php
+
+function disclosure_nav_theme($existing, $type, $theme, $path) {
+  $return = [];
+
+  $return['service_landing_page_child_pages_nav'] = [
+    'variables' => [
+      'items' => [],
+      'menu_name' => '',
+      'heading_label' => '',
+      'attributes' => [],
+    ],
+  ];
+
+  return $return;
+}

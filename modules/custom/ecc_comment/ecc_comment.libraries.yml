@@ -1,0 +1,4 @@
+ecc-comment:
+  css:
+    component:
+      css/comment.css: {}

@@ -1,0 +1,6 @@
+name: "Essex Intranet - Disclosure navigation"
+type: module
+description: "Essex intranet specific dropdown menu behavior"
+core_version_requirement: ^9 || ^10
+package: Custom
+

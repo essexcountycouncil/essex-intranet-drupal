@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_index_anonymous
     - field.field.node.localgov_news_article.body
+    - field.field.node.localgov_news_article.field_comments
+    - field.field.node.localgov_news_article.field_like_dislike
     - field.field.node.localgov_news_article.field_media_image
     - field.field.node.localgov_news_article.localgov_news_categories
     - field.field.node.localgov_news_article.localgov_news_date
@@ -33,6 +35,8 @@ hidden:
   body: true
   content_moderation_control: true
   entitygroupfield: true
+  field_comments: true
+  field_like_dislike: true
   field_media_image: true
   links: true
   localgov_news_categories: true

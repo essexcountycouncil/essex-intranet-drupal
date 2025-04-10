@@ -1,0 +1,21 @@
+uuid: 850aea21-7540-4cab-bf18-e2e7bae25805
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_like_dislike
+    - node.type.localgov_news_article
+  module:
+    - like_dislike
+id: node.localgov_news_article.field_like_dislike
+field_name: field_like_dislike
+entity_type: node
+bundle: localgov_news_article
+label: 'Do you like this?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: like_dislike
