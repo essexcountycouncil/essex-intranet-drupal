@@ -52,12 +52,13 @@ function ecc_comment_theme($existing, $type, $theme, $path) {
  * Implements template_preprocess_comment().
  */
 function ecc_comment_preprocess_comment(&$variables) {
+
   $comment = $variables['elements']['#comment'];
   $variables['created'] = \Drupal::service('date.formatter')->format($comment->getCreatedTime(), 'just_human_date');
-
+  $author = $comment->getOwner();
   // New submitted string.
   $variables['submitted'] = new TranslatableMarkup("Submitted by @user on @date", [
-    '@user' => $variables['user']->getDisplayName(),
+    '@user' => $author->getDisplayName(),
     '@date' => $variables['created'],
   ]);
 }
@@ -71,4 +72,16 @@ function ecc_comment_views_post_render(ViewExecutable $view, array &$output, Cac
   if ($view->id() == 'new_comments_for_review') {
     $output['#attached']['library'][] = 'ecc_comment/ecc-comment';
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * @param  array $form
+ * @param  array $form_state
+ * @return void
+ */
+function ecc_comment_form_comment_user_comments_form_alter(&$form, &$form_state) {
+  $form['actions']['preview']['#access'] = FALSE;
+  $form['actions']['submit']['#value'] = t('Submit');
 }
