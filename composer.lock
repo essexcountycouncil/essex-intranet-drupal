@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "4ea78ad9f759e7327be3b8d489a103aa",
+  "content-hash": "a680cfa59e55d3702a4f6295fe483ff5",
   "packages": [
     {
       "name": "asm89/stack-cors",
@@ -11292,16 +11292,16 @@
     },
     {
       "name": "localgovdrupal/localgov_base",
-      "version": "1.4.18",
+      "version": "1.8.11",
       "source": {
         "type": "git",
         "url": "https://github.com/localgovdrupal/localgov_base.git",
-        "reference": "c1c1d29eea65a56ac9819d09d032804c546fe5dc"
+        "reference": "10ada6f22d5e104814273019da2ed51d308b25db"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/localgovdrupal/localgov_base/zipball/c1c1d29eea65a56ac9819d09d032804c546fe5dc",
-        "reference": "c1c1d29eea65a56ac9819d09d032804c546fe5dc",
+        "url": "https://api.github.com/repos/localgovdrupal/localgov_base/zipball/10ada6f22d5e104814273019da2ed51d308b25db",
+        "reference": "10ada6f22d5e104814273019da2ed51d308b25db",
         "shasum": ""
       },
       "type": "drupal-theme",
@@ -11313,9 +11313,9 @@
       "homepage": "https://github.com/localgovdrupal/localgov_base",
       "support": {
         "issues": "https://github.com/localgovdrupal/localgov_base/issues",
-        "source": "https://github.com/localgovdrupal/localgov_base/tree/1.4.18"
+        "source": "https://github.com/localgovdrupal/localgov_base/tree/1.8.11"
       },
-      "time": "2023-11-27T14:41:17+00:00"
+      "time": "2025-04-15T15:05:44+00:00"
     },
     {
       "name": "localgovdrupal/localgov_core",
