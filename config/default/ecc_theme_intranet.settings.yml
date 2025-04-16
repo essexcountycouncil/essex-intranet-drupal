@@ -1,0 +1,18 @@
+localgov_base_remove_css: false
+localgov_base_remove_js: false
+localgov_base_add_unpublished_background_colour: false
+localgov_base_add_draft_note_to_unpublished_content: true
+localgov_base_add_archived_note_to_archived_content: true
+features:
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+localgov_base_show_back_to_top_link: 0
+localgov_base_header_behaviour: null
+localgov_base_localgov_guides_stacked_heading: 0
+localgov_base_localgov_guides_vertical_navigation: 0
