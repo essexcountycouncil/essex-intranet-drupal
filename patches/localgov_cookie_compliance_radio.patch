@@ -1,0 +1,47 @@
+diff --git a/js/localgov_eu_cookie_compliance.es6.js b/js/localgov_eu_cookie_compliance.es6.js
+index f19d69d..3362642 100644
+--- a/js/localgov_eu_cookie_compliance.es6.js
++++ b/js/localgov_eu_cookie_compliance.es6.js
+@@ -88,10 +88,18 @@
+    */
+   function setupUpClickHandlersForRadios() {
+     $(
+-      ".eu-cookie-compliance-categories--on :radio, .eu-cookie-compliance-categories--off :radio"
++      ".eu-cookie-compliance-categories--on :radio"
+     ).click(event => {
+       const key = event.target.value;
+-      const relatedCheckboxId = `cookie-category-${key}`;
++      const relatedCheckboxId = `cookie-category-${key}:not(:checked)`;
++
++      $(`#${relatedCheckboxId}`).click();
++    });
++    $(
++      ".eu-cookie-compliance-categories--off :radio"
++    ).click(event => {
++      const key = event.target.value;
++      const relatedCheckboxId = `cookie-category-${key}:checked`;
+
+       $(`#${relatedCheckboxId}`).click();
+     });
+diff --git a/js/localgov_eu_cookie_compliance.js b/js/localgov_eu_cookie_compliance.js
+index de15a8d..262df82 100644
+--- a/js/localgov_eu_cookie_compliance.js
++++ b/js/localgov_eu_cookie_compliance.js
+@@ -39,9 +39,15 @@
+   }
+
+   function setupUpClickHandlersForRadios() {
+-    $(".eu-cookie-compliance-categories--on :radio, .eu-cookie-compliance-categories--off :radio").click(event => {
++    $(".eu-cookie-compliance-categories--on :radio").click(event => {
+       const key = event.target.value;
+-      const relatedCheckboxId = `cookie-category-${key}`;
++      const relatedCheckboxId = `cookie-category-${key}:not(:checked)`;
++
++      $(`#${relatedCheckboxId}`).click();
++    });
++    $(".eu-cookie-compliance-categories--off :radio").click(event => {
++      const key = event.target.value;
++      const relatedCheckboxId = `cookie-category-${key}:checked`;
+
+       $(`#${relatedCheckboxId}`).click();
+     });
