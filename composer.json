@@ -191,8 +191,7 @@
                 "Remove this patch after upgrading Localgov profile": "https://www.drupal.org/files/issues/2024-04-16/2845144-95.patch",
                 "Allow chmod to fail in the public namespace if the resultant mode is 777": "patches/filesystem-chmod-0001.patch",
                 "dynamic transitions": "https://www.drupal.org/files/issues/2024-09-24/2797583-8775-235.patch",
-                "LP-67 - Claro error when table header is missing": "patches/drupal-core-claro.patch",
-                "Remove this patch after upgrading Localgov profile": "https://www.drupal.org/files/issues/2024-04-16/2845144-95.patch"
+                "LP-67 - Claro error when table header is missing": "patches/drupal-core-claro.patch"
             },
             "drupal/fathom_analytics": {
                 "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-06-15/fathom_analytics.3.0.0.rector.patch"
