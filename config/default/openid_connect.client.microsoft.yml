@@ -1,0 +1,20 @@
+uuid: f791bfcf-0eb6-483d-b513-03abd732e4f9
+langcode: en
+status: true
+dependencies: {  }
+id: microsoft
+label: Microsoft
+plugin: generic
+settings:
+  client_id: test
+  client_secret: test
+  iss_allowed_domains: ''
+  issuer_url: ''
+  authorization_endpoint: 'https://example.com/oauth2/authorize'
+  token_endpoint: 'https://example.com/oauth2/token'
+  userinfo_endpoint: 'https://example.com/oauth2/userinfo'
+  end_session_endpoint: ''
+  scopes:
+    - openid
+    - email
+  tenant: empty

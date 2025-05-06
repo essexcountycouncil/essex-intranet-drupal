@@ -1,6 +1,6 @@
 uuid: 92c823cb-e671-49ae-a80d-373b52daee94
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - openid_connect_windows_aad
@@ -8,7 +8,7 @@ id: essex_entra_id
 label: Essex
 plugin: windows_aad
 settings:
-  client_id: b3d4c041-33ba-4748-976f-b4dbc0ebf564
+  client_id: 8625cc50-e162-477b-b8cb-f91ec2dc8a54
   client_secret: client_aad_key
   authorization_endpoint_wa: 'https://login.microsoftonline.com/essex.gov.uk/oauth2/v2.0/authorize'
   token_endpoint_wa: 'https://login.microsoftonline.com/essex.gov.uk/oauth2/v2.0/token'
@@ -26,4 +26,4 @@ settings:
   end_session_endpoint: ''
   iss_allowed_domains: ''
   front_channel_logout_url: ''
-  tenant: a8b4324f-155c-4215-a0f1-7ed8cc9a992f
+  tenant: essexgovukb2cpre
