@@ -11,10 +11,10 @@
  * Clear all personal data from the feed back form.
  */
 function ecc_webform_install() {
-
   $offset = 50;
+  $webform_id = 'feedback_form';
   $total = \Drupal::entityQuery('webform_submission')
-    ->condition('webform_id', 'feedback_form')
+    ->condition('webform_id', $webform_id)
     ->accessCheck(FALSE)
     ->count()->execute();
 
@@ -26,7 +26,7 @@ function ecc_webform_install() {
   for ($i = 0; $i < $num_batches; $i++) {
     $operations[] = [
       '\Drupal\ecc_webform\EccWebformBatch::processSubmissions',
-      [$i * $offset, $offset],
+      [$webform_id, $i * $offset, $offset],
     ];
   }
   $batch = [

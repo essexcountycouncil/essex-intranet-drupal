@@ -15,6 +15,8 @@ class EccWebformBatch {
   /**
    * Clear all personal data from the feedback form.
    *
+   * @param string $webform_id
+   *   The webform ID.
    * @param int $offset
    *   The offset value.
    * @param int $limit
@@ -22,10 +24,10 @@ class EccWebformBatch {
    * @param array $context
    *   The context array.
    */
-  public static function processSubmissions(int $offset, int $limit, array &$context): void {
+  public static function processSubmissions(string $webform_id, int $offset, int $limit, array &$context): void {
     // Query the submissions within the given range.
     $submission_ids = \Drupal::entityQuery('webform_submission')
-      ->condition('webform_id', 'feedback_form')
+      ->condition('webform_id', $webform_id)
       ->accessCheck(FALSE)
       ->range($offset, $limit)
       ->execute();
