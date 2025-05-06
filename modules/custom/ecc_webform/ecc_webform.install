@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Requirements and update functions for the ecc_webform module.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Clear all personal data from the feed back form.
+ */
+function ecc_webform_install() {
+
+  $offset = 50;
+  $total = \Drupal::entityQuery('webform_submission')
+    ->condition('webform_id', 'feedback_form')
+    ->accessCheck(FALSE)
+    ->count()->execute();
+
+  // Calculate the number of batches needed.
+  $num_batches = ceil($total / $offset);
+
+  // Prepare the batch operations.
+  $operations = [];
+  for ($i = 0; $i < $num_batches; $i++) {
+    $operations[] = [
+      '\Drupal\ecc_webform\EccWebformBatch::processSubmissions',
+      [$i * $offset, $offset],
+    ];
+  }
+  $batch = [
+    'title' => t('Processing submissions...'),
+    'operations' => $operations,
+    'finished' => '\Drupal\ecc_webform\EccWebformBatch::finishBatch',
+  ];
+
+  // Set the batch.
+  batch_set($batch);
+
+}

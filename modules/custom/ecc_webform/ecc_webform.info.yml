@@ -1,0 +1,5 @@
+name: 'ECC Webform'
+type: module
+description: 'Provide additional features for webform module'
+package: Custom
+core_version_requirement: ^10

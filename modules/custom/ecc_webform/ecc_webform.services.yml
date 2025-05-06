@@ -1,0 +1,3 @@
+services:
+  ecc_webform.manager:
+    class: Drupal\ecc_webform\EccWebformManager
