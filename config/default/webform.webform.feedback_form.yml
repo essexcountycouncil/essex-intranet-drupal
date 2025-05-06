@@ -1,7 +1,9 @@
 uuid: 674aa2f3-d9fc-4216-9383-612a7a6bd87a
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - ecc_webform
 weight: 0
 open: null
 close: null
@@ -261,5 +263,14 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  clear_personal_data:
+    id: ecc_webform_clear_personal_data
+    handler_id: clear_personal_data
+    label: 'Clear personal data'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings: {  }
 variants: {  }
