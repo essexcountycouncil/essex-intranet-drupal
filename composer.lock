@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "4ea78ad9f759e7327be3b8d489a103aa",
+  "content-hash": "121d5daed8942a97ec905875fc92d0cc",
   "packages": [
     {
       "name": "asm89/stack-cors",
@@ -11173,16 +11173,16 @@
     },
     {
       "name": "localgovdrupal/localgov",
-      "version": "3.0.0",
+      "version": "3.0.4",
       "source": {
         "type": "git",
         "url": "https://github.com/localgovdrupal/localgov.git",
-        "reference": "f79359218abe12ffdb773c3549a4ce6163ff410a"
+        "reference": "ccae132fa549e5f7393a80f024d8f58742c252b4"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/localgovdrupal/localgov/zipball/f79359218abe12ffdb773c3549a4ce6163ff410a",
-        "reference": "f79359218abe12ffdb773c3549a4ce6163ff410a",
+        "url": "https://api.github.com/repos/localgovdrupal/localgov/zipball/ccae132fa549e5f7393a80f024d8f58742c252b4",
+        "reference": "ccae132fa549e5f7393a80f024d8f58742c252b4",
         "shasum": ""
       },
       "require": {
@@ -11213,7 +11213,8 @@
         "localgovdrupal/localgov_services": "^2.1.0",
         "localgovdrupal/localgov_step_by_step": "^2.1.0",
         "localgovdrupal/localgov_subsites": "^2.3.0",
-        "localgovdrupal/localgov_workflows": "^1.2.0"
+        "localgovdrupal/localgov_workflows": "^1.2.0",
+        "php": ">=8.1.0"
       },
       "require-dev": {
         "drupal/core-dev": "^10.0",
@@ -11221,22 +11222,19 @@
       },
       "type": "drupal-profile",
       "extra": {
-        "enable-patching": true,
-        "composer-exit-on-patch-failure": true,
+        "patches": {
+          "drupal/core": {
+            "Users can't reference unpublished content even when they have access to it. See https://www.drupal.org/project/drupal/issues/2845144": "https://www.drupal.org/files/issues/2024-02-13/2845144-87.patch"
+          },
+          "drupal/content_lock": {
+            "Fix PHP 8.2 deprecation notices": "https://www.drupal.org/files/issues/2023-05-22/3343964-5.patch"
+          }
+        },
         "patchLevel": {
           "drupal/core": "-p2"
         },
-        "patches": {
-          "drupal/content_lock": {
-            "Fix PHP 8.2 deprecation notices": "https://www.drupal.org/files/issues/2023-05-22/3343964-5.patch"
-          },
-          "drupal/core": {
-            "Users can't reference unpublished content even when they have access to it. See https://www.drupal.org/project/drupal/issues/2845144": "https://www.drupal.org/files/issues/2022-06-17/2845144-67.patch"
-          },
-          "drupal/entity_browser": {
-            "Fix PHP 8.2 deprecation issue with WidgetSelectorBase-class, https://www.drupal.org/project/entity_browser/issues/3350169": "https://www.drupal.org/files/issues/2023-06-15/3350169-8_0.patch"
-          }
-        }
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": true
       },
       "notification-url": "https://packagist.org/downloads/",
       "license": [
@@ -11246,9 +11244,9 @@
       "homepage": "https://github.com/localgovdrupal/localgov",
       "support": {
         "issues": "https://github.com/localgovdrupal/localgov/issues",
-        "source": "https://github.com/localgovdrupal/localgov/tree/3.0.0"
+        "source": "https://github.com/localgovdrupal/localgov/tree/3.0.4"
       },
-      "time": "2023-11-09T13:10:41+00:00"
+      "time": "2024-03-19T12:13:00+00:00"
     },
     {
       "name": "localgovdrupal/localgov_alert_banner",
@@ -22375,7 +22373,7 @@
   },
   "prefer-stable": true,
   "prefer-lowest": false,
-  "platform": {},
-  "platform-dev": {},
+  "platform": [],
+  "platform-dev": [],
   "plugin-api-version": "2.6.0"
 }

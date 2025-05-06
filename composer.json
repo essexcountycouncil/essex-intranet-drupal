@@ -280,6 +280,11 @@
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
         },
+        "merge-plugin": {
+            "include": [
+                "web/modules/contrib/dropzonejs/composer.libraries.json"
+            ]
+        },
         "drupal-core-project-message": {
             "post-create-project-cmd-message": [
                 "<bg=blue;fg=white>                                                                  </>",
